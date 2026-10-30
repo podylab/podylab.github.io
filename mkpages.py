@@ -56,8 +56,8 @@ home = head("Pody Lab", "Pody Lab делает небольшие програм
 
   <section>
     <div class="grid g2">
-      <div class="card"><div class="ic">💚</div><h3>Поддержать</h3><p>Программы бесплатные. Если они вам пригодились, можно отправить любую сумму картой или криптой.</p><p style="margin-top:14px"><a class="btn main" href="support.html">Поддержать</a></p></div>
-      <div class="card"><div class="ic">✍️</div><h3>Сделать лучше вместе</h3><p>Напишите, чего не хватает в программах или какую сделать следующей. Платить для этого не нужно.</p><p style="margin-top:14px"><a class="btn ghost" href="support.html#wish">Написать пожелание</a></p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19.5s-7-4.3-7-9.4A4 4 0 0 1 12 7.6a4 4 0 0 1 7 2.5c0 5.1-7 9.4-7 9.4z"/></svg></div><h3>Поддержать</h3><p>Программы бесплатные. Если они вам пригодились, можно отправить любую сумму картой, через Kaspi QR или криптой.</p><p style="margin-top:14px"><a class="btn main" href="support.html">Поддержать</a></p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 19.5h3.8L18.6 9.2a2.2 2.2 0 0 0-3.1-3.1L5.2 16.4z"/><path d="M13.6 8l2.9 2.9"/><path d="M13 19.5h6.5"/></svg></div><h3>Сделать лучше вместе</h3><p>Напишите, чего не хватает в программах или какую сделать следующей. Платить для этого не нужно.</p><p style="margin-top:14px"><a class="btn ghost" href="support.html#wish">Написать пожелание</a></p></div>
     </div>
   </section>
 </main>
@@ -80,12 +80,12 @@ podee = head("PoDee · Pody Lab", "PoDee: остров вверху экрана
     <h2>Что умеет PoDee</h2>
     <p class="sub">Бесплатный для всех. Windows 10 и 11.</p>
     <div class="grid g3">
-      <div class="card"><div class="ic">🎵</div><h3>Музыка</h3><p>Обложка, кнопки и текст песни в такт, из любого плеера.</p></div>
-      <div class="card"><div class="ic">🎙️</div><h3>Голос и чат</h3><p>Скажите «открой Телеграм», и он откроется. Остальное спросите у ИИ: Claude, ChatGPT, Gemini.</p></div>
-      <div class="card"><div class="ic">🗓️</div><h3>Календарь</h3><p>Google, Outlook или любая iCal-ссылка. Ближайшая встреча видна под часами.</p></div>
-      <div class="card"><div class="ic">🤖</div><h3>Claude Code</h3><p>Что агент делает в терминале, его вопросы «разрешить?» и сколько осталось лимита.</p></div>
-      <div class="card"><div class="ic">💧</div><h3>Здоровье</h3><p>Вода за день, отдых для глаз 20-20-20 и минута дыхания.</p></div>
-      <div class="card"><div class="ic">🧩</div><h3>Виджеты и док</h3><p>Свой док с живыми превью окон и виджеты на рабочем столе.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 17.5V6.2l9-2v11.3"/><circle cx="7" cy="17.5" r="2.5"/><circle cx="16" cy="15.5" r="2.5"/><path d="M9.5 9.6l9-2"/></svg></div><h3>Музыка</h3><p>Обложка, кнопки и текст песни в такт, из любого плеера.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M5.8 11.2a6.2 6.2 0 0 0 12.4 0"/><path d="M12 17.4v3.1"/></svg></div><h3>Голос и чат</h3><p>Скажите «открой Телеграм», и он откроется. Остальное спросите у ИИ: Claude, ChatGPT, Gemini.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3.5"/><path d="M3.5 10h17"/><path d="M8 3.2v3.5M16 3.2v3.5"/><path d="M8 14h.01M12 14h.01M16 14h.01"/></svg></div><h3>Календарь</h3><p>Google, Outlook или любая iCal-ссылка. Ближайшая встреча видна под часами.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="3.5"/><path d="M7.5 10l3 2.5-3 2.5"/><path d="M13 15.2h3.5"/></svg></div><h3>Claude Code</h3><p>Что агент делает в терминале, его вопросы «разрешить?» и сколько осталось лимита.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6s6 6.3 6 10.4a6 6 0 0 1-12 0c0-4.1 6-10.4 6-10.4z"/><path d="M9.2 14.4a2.9 2.9 0 0 0 2.6 2.6"/></svg></div><h3>Здоровье</h3><p>Вода за день, отдых для глаз 20-20-20 и минута дыхания.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><path d="M17 13.8v6.4M13.8 17h6.4"/></svg></div><h3>Виджеты и док</h3><p>Свой док с живыми превью окон и виджеты на рабочем столе.</p></div>
     </div>
   </section>
 
@@ -109,9 +109,9 @@ podoo = head("PoDoo · Pody Lab", "PoDoo: старый телефон или п�
     <h2>Что будет в PoDoo</h2>
     <p class="sub">Телефон на Android и компьютер с Windows. Подключение по Wi-Fi, кабелю или Bluetooth.</p>
     <div class="grid g3">
-      <div class="card"><div class="ic">🚀</div><h3>Быстрый запуск</h3><p>Иконки любимых программ, сайтов и папок уже на месте, настраивать ничего не нужно.</p></div>
-      <div class="card"><div class="ic">🎛️</div><h3>Кнопки под программу</h3><p>Открыт Photoshop, на телефоне инструменты. Открыт OBS, на нём сцены, микрофон и эфир.</p></div>
-      <div class="card"><div class="ic">🎵</div><h3>Музыка и тачпад</h3><p>Пауза, громкость, следующий трек. Фильм на телевизоре можно листать с дивана.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 3L5.5 13.4h6l-1 7.6 8-10.6h-6z"/></svg></div><h3>Быстрый запуск</h3><p>Иконки любимых программ, сайтов и папок уже на месте, настраивать ничего не нужно.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v16M12 4v16M19 4v16"/><circle cx="5" cy="9" r="2" class="f"/><circle cx="12" cy="15" r="2" class="f"/><circle cx="19" cy="8" r="2" class="f"/></svg></div><h3>Кнопки под программу</h3><p>Открыт Photoshop, на телефоне инструменты. Открыт OBS, на нём сцены, микрофон и эфир.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 17.5V6.2l9-2v11.3"/><circle cx="7" cy="17.5" r="2.5"/><circle cx="16" cy="15.5" r="2.5"/><path d="M9.5 9.6l9-2"/></svg></div><h3>Музыка и тачпад</h3><p>Пауза, громкость, следующий трек. Фильм на телевизоре можно листать с дивана.</p></div>
     </div>
   </section>
 
@@ -142,20 +142,20 @@ support = head("Поддержать · Pody Lab", "Поддержать Pody La
 
   <section id="donate">
     <div class="card pay pay-bar">
-      <div class="pay-head"><div class="ic">💳</div><div><h3>Картой</h3><p>Банковская карта, сумму выбираете сами</p></div></div>
+      <div class="pay-head"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M3 10h18"/><path d="M7 14.6h3.5"/></svg></div><div><h3>Картой</h3><p>Банковская карта, сумму выбираете сами</p></div></div>
       <p class="pay-text">Откроется страница оплаты. Введите сумму и, если хотите, напишите пожелание в сообщении к платежу.</p>
       <a class="btn main" id="card" href="#" target="_blank" rel="noopener">Отправить картой</a>
     </div>
     <div class="grid g2 pay-pair">
       <div class="card pay" id="kaspi">
-        <div class="pay-head"><div class="ic">📱</div><div><h3>Kaspi QR</h3><p>Для Казахстана</p></div></div>
-        <div class="kaspi-body">
-          <img class="kaspi-qr" src="kaspi-qr.png" width="160" height="237" alt="Kaspi QR для оплаты" loading="lazy">
+        <div class="pay-head"><div class="ic kaspi"><img src="media/kaspi-logo.png" width="34" height="35" alt=""></div><div><h3>Kaspi QR</h3><p>Для Казахстана</p></div></div>
+        <div class="wallet">
+          <div class="qr"><img src="kaspi-qr.png" width="132" height="132" alt="Kaspi QR для оплаты" loading="lazy"></div>
           <ol class="pay-steps"><li>Откройте приложение Kaspi.kz.</li><li>Нажмите «Kaspi QR» и наведите камеру на код.</li><li>Введите любую сумму и подтвердите.</li></ol>
         </div>
       </div>
       <div class="card pay">
-        <div class="pay-head"><div class="ic">🪙</div><div><h3>Криптой</h3><p>USDT, TON, BTC, ETH, BNB, DOGE</p></div></div>
+        <div class="pay-head"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M14.6 9.4a2.9 2.9 0 0 0-2.6-1.4c-1.6 0-2.7.8-2.7 1.9s.9 1.6 2.7 1.9 2.7.9 2.7 2-1.1 2-2.7 2a3 3 0 0 1-2.7-1.5"/><path d="M12 6.3v1.7M12 16v1.7"/></svg></div><div><h3>Криптой</h3><p>USDT, TON, BTC, ETH, BNB, DOGE</p></div></div>
         <div class="coins" id="coins"></div>
         <div class="wallet">
           <div class="qr" id="qr"></div>
