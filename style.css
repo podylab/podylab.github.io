@@ -220,3 +220,10 @@ html.fx .rise.in { opacity: 1; translate: none; }
   .pody svg, .cloud { animation: none; }
   .btn.main::after { display: none; }
 }
+
+/* the icons in the download buttons: Windows, Microsoft Store */
+.btn .bi { width: 18px; height: 18px; flex: none; fill: currentColor; }
+/* in a card the two download buttons fit side by side; the card's rows keep their own height */
+.app { align-content: start; }
+.app .btn { padding: 10px 16px; font-size: 16px; }
+.app .btns { gap: 10px; }

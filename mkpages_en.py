@@ -41,7 +41,7 @@ home = head("Pody Lab", "Pody Lab makes small Windows apps: PoDee, an island at 
     <div class="apps">
       <div class="card app">
         <img src="../media/podee-icon.svg" alt="" />
-        <div class="btns"><a class="btn main" data-podee href="#">Download PoDee</a></div>
+        <div class="btns"><a class="btn main" data-podee href="https://github.com/podylab/PoDee-releases/releases/latest/download/PoDee_x64-setup.exe"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Download for Windows</a><a class="btn ghost" href="https://apps.microsoft.com/detail/9P3ZM16J8S2B?hl=en-us" target="_blank" rel="noopener"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6V5a4 4 0 0 1 8 0v1h4.2a.8.8 0 0 1 .8.8V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.8a.8.8 0 0 1 .8-.8zm1.6 0h4.8V5a2.4 2.4 0 0 0-4.8 0zM7.5 10v3.4h4.1V10zm4.9 0v3.4h4.1V10zm-4.9 4.2v3.4h4.1v-3.4zm4.9 0v3.4h4.1v-3.4z" fill-rule="evenodd"/></svg>Microsoft Store</a></div>
         <h3><a class="stretch" href="podee.html">PoDee</a></h3>
         <p>An island at the top of the screen: clock, music, voice and AI chat, calendar, Claude Code. PoDy the cloud lives next to it.</p>
         <span class="more">Learn more →</span>
@@ -72,7 +72,7 @@ podee = head("PoDee · Pody Lab", "PoDee: an island at the top of the Windows sc
     <h1>An island at the top <em>of your Windows screen</em></h1>
     <p class="lead">PoDee sits at the top edge of the screen. It shows the time and your music, listens to your voice, answers in a chat and tells you what Claude Code is up to. PoDy the cloud sits next to it and follows your mouse with its eyes.</p>
     <div class="btns">
-      <a class="btn main" data-podee href="#">Download PoDee</a>
+      <a class="btn main" data-podee href="https://github.com/podylab/PoDee-releases/releases/latest/download/PoDee_x64-setup.exe"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Download for Windows</a><a class="btn ghost" href="https://apps.microsoft.com/detail/9P3ZM16J8S2B?hl=en-us" target="_blank" rel="noopener"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6V5a4 4 0 0 1 8 0v1h4.2a.8.8 0 0 1 .8.8V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.8a.8.8 0 0 1 .8-.8zm1.6 0h4.8V5a2.4 2.4 0 0 0-4.8 0zM7.5 10v3.4h4.1V10zm4.9 0v3.4h4.1V10zm-4.9 4.2v3.4h4.1v-3.4zm4.9 0v3.4h4.1v-3.4z" fill-rule="evenodd"/></svg>Microsoft Store</a>
       <a class="btn ghost" href="support.html">Support</a>
     </div>
     <div class="shot"><img src="../media/real-island.gif" alt="PoDee on screen: the island with its tabs and PoDy the cloud" /></div>
