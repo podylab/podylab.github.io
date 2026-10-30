@@ -1,14 +1,19 @@
 // Pody Lab site: everything to fill in sits in CONFIG; the header, the footer,
 // the crypto wallets and the wish form are built here for every page.
 const CONFIG = {
-  podee: "https://github.com/podylab/PoDee-releases/releases/latest",
+  podee: "https://github.com/podylab/PoDee-releases/releases/latest/download/", // + PoDee_x64-setup.exe or PoDee_x86-setup.exe
+  podeeVersion: "1.3.4", // shown until GitHub answers with the latest release; update it with every release
   releases: "https://github.com/podylab/PoDee-releases/releases",
   card: "https://www.donationalerts.com/r/polab", // the DonationAlerts page, e.g. https://www.donationalerts.com/r/name
   form: "https://formspree.io/f/xwllnbpp", // Formspree endpoint, e.g. https://formspree.io/f/xxxxxxx
   mail: "podylab@gmail.com", // without Formspree, the form opens a letter to this address
   wallets: [
-    { coin: "USDT", net: ["Сеть TRC-20 (Tron). Другие сети не подойдут.", "TRC-20 (Tron) network only."], address: "" },
-    { coin: "TON", net: ["Сеть TON. В комментарии к переводу можно написать пожелание.", "TON network. The transfer comment can carry a wish."], address: "" },
+    { coin: "USDT", net: ["Сеть TRC-20 (Tron). Другие сети не подойдут.", "TRC-20 (Tron) network only."], address: "TWoqgVrM1kEFTNZnZzkmJYT2uTYx5Yh58E" },
+    { coin: "TON", net: ["Сеть TON: Toncoin и USDT в сети TON. В комментарии к переводу можно написать пожелание.", "TON network: Toncoin, or USDT on TON. The transfer comment can carry a wish."], address: "UQBBy_XIcwbK0A04cF81YYehXb24dbEczQlWIqpyE05nnsIi" },
+    { coin: "BTC", net: ["Сеть Bitcoin.", "Bitcoin network."], address: "bc1qdus0f49gu3qupe9et8all9mt90fyaph74qv884" },
+    { coin: "ETH", net: ["Сеть Ethereum (ERC-20): ETH и USDT в этой сети.", "Ethereum network (ERC-20): ETH, or USDT on it."], address: "0x5685fd91Db09F496a4d09EF4343aFb8Fcb1fbA47" },
+    { coin: "BNB", net: ["Сеть BNB Smart Chain (BEP-20): BNB и USDT в этой сети.", "BNB Smart Chain (BEP-20): BNB, or USDT on it."], address: "0x5685fd91Db09F496a4d09EF4343aFb8Fcb1fbA47" },
+    { coin: "DOGE", net: ["Сеть Dogecoin.", "Dogecoin network."], address: "D6C7TCRabX6jr8x6c9qoZUGB7evSUsf727" },
   ],
 };
 
@@ -52,7 +57,34 @@ document.body.insertAdjacentHTML(
 $("lang").addEventListener("click", () => {
   try { localStorage.setItem(LANG_KEY, EN ? "ru" : "en"); } catch {}
 });
-document.querySelectorAll("[data-podee]").forEach((a) => (a.href = CONFIG.podee));
+// ---- download: the setup itself, for this Windows (64- or 32-bit) ----
+// Chrome and Edge always say «Win64» in the user agent, so the real bitness is asked separately
+async function windowsBits() {
+  try {
+    const h = await navigator.userAgentData?.getHighEntropyValues(["bitness"]);
+    if (h?.bitness) return h.bitness === "32" ? 32 : 64;
+  } catch {}
+  const ua = navigator.userAgent;
+  return !/Windows/.test(ua) || /Win64|WOW64|x64|amd64|arm64/i.test(ua) ? 64 : 32;
+}
+const setup = (bits) => `${CONFIG.podee}PoDee_${bits === 32 ? "x86" : "x64"}-setup.exe`;
+const podee = [...document.querySelectorAll("[data-podee]")];
+podee.forEach((a) => (a.href = setup(64)));
+windowsBits().then((bits) => {
+  for (const a of podee) {
+    a.href = setup(bits);
+    const other = bits === 32 ? 64 : 32;
+    a.closest(".btns")?.insertAdjacentHTML(
+      "afterend",
+      `<p class="dl-alt">${T(`Версия <span data-podee-version>${CONFIG.podeeVersion}</span> для ${bits}-битной Windows · <a href="${setup(other)}">нужна ${other}-битная</a>`, `Version <span data-podee-version>${CONFIG.podeeVersion}</span> for ${bits}-bit Windows · <a href="${setup(other)}">need ${other}-bit?</a>`)}</p>`,
+    );
+  }
+  // the number of the release the button actually downloads
+  fetch("https://api.github.com/repos/podylab/PoDee-releases/releases/latest")
+    .then((r) => (r.ok ? r.json() : null))
+    .then((r) => r?.tag_name && document.querySelectorAll("[data-podee-version]").forEach((s) => (s.textContent = r.tag_name.replace(/^v/, ""))))
+    .catch(() => {});
+});
 
 // ---- card: the DonationAlerts page ----
 const card = $("card");

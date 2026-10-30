@@ -26,6 +26,10 @@ home = head("Pody Lab", "Pody Lab делает небольшие програм
     <img class="cloud" src="media/podee-icon.svg" alt="Облачко PoDy" />
     <h1>Небольшие программы <em>для Windows</em></h1>
     <p class="lead">Pody Lab делает программы, которые берут на себя мелочи: показать музыку и встречу, открыть нужное одной кнопкой, напомнить попить воды. Все они бесплатные.</p>
+    <div class="btns">
+      <a class="btn main big" data-podee href="#">Скачать PoDee</a>
+      <a class="btn ghost" href="podee.html">Что умеет PoDee</a>
+    </div>
   </div>
 
   <section style="padding-top:24px">
