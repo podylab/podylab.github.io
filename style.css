@@ -229,7 +229,5 @@ html.fx .rise.in { opacity: 1; translate: none; }
 .app .btns { gap: 10px; }
 /* support: the card and Kaspi QR stacked in one column, crypto in the other */
 .stack { display: grid; gap: 16px; align-content: start; }
-#kaspi .btns { margin-top: 6px; }
-#kaspi .btn { align-self: auto; margin-top: 0; }
-#kaspi-qr { width: 172px; height: 172px; }
+.kaspi-qr { display: block; width: 232px; max-width: 100%; height: auto; padding: 10px; border-radius: 16px; background: #fff; }
 #donate .grid { align-items: start; }

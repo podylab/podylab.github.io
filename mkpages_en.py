@@ -154,9 +154,8 @@ support = head("Support · Pody Lab", "Support Pody Lab with any amount by card 
       <div class="card pay" id="kaspi">
         <div class="ic">📱</div>
         <h3>Kaspi QR</h3>
-        <p>For Kazakhstan: pay in the Kaspi.kz app, any amount.</p>
-        <div class="btns"><a class="btn main" href="https://qr.kaspi.kz/19100198756798464001329908786128832254117" target="_blank" rel="noopener">Open in Kaspi</a><button class="btn ghost" id="kaspi-show" type="button" aria-expanded="false">Show the QR</button></div>
-        <div class="qr" id="kaspi-qr" hidden></div>
+        <p>For Kazakhstan. Scan the code with the camera in the Kaspi.kz app, any amount.</p>
+        <img class="kaspi-qr" src="../kaspi-qr.png" width="232" height="343" alt="Kaspi QR for payment" loading="lazy">
       </div>
       </div>
       <div class="card pay">

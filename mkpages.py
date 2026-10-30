@@ -152,9 +152,8 @@ support = head("Поддержать · Pody Lab", "Поддержать Pody La
       <div class="card pay" id="kaspi">
         <div class="ic">📱</div>
         <h3>Kaspi QR</h3>
-        <p>Для Казахстана: оплата в приложении Kaspi.kz, сумму выбираете сами.</p>
-        <div class="btns"><a class="btn main" href="https://qr.kaspi.kz/19100198756798464001329908786128832254117" target="_blank" rel="noopener">Открыть в Kaspi</a><button class="btn ghost" id="kaspi-show" type="button" aria-expanded="false">Показать QR</button></div>
-        <div class="qr" id="kaspi-qr" hidden></div>
+        <p>Для Казахстана. Отсканируйте код камерой в приложении Kaspi.kz, сумму выбираете сами.</p>
+        <img class="kaspi-qr" src="kaspi-qr.png" width="232" height="343" alt="Kaspi QR для оплаты" loading="lazy">
       </div>
       </div>
       <div class="card pay">
