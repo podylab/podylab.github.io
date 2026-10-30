@@ -1,7 +1,14 @@
 # The English site in en/: the same pages as mkpages.py, with paths one folder up.
+import hashlib
 import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 os.makedirs("en", exist_ok=True)
+
+
+def ver(name):
+    """A mark of the file's content for its address: after a publish the browser takes the new file, not its cached one."""
+    with open(name, "rb") as f:
+        return hashlib.md5(f.read()).hexdigest()[:8]
 
 
 def head(title, desc, icon="podee-icon.svg"):
@@ -15,34 +22,30 @@ def head(title, desc, icon="podee-icon.svg"):
 <link rel="icon" href="../media/{icon}" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../style.css?v={ver("style.css")}" />
 </head>
 '''
 
 
-tail = '<script src="../site.js"></script>\n</body>\n</html>\n'
+tail = f'<script src="../site.js?v={ver("site.js")}"></script>\n</body>\n</html>\n'
 
 home = head("Pody Lab", "Pody Lab makes small Windows apps: PoDee, an island at the top of the screen, and PoDoo, which turns an old phone into a remote for your PC.") + '''<body>
 <main class="wrap">
   <div class="hero">
     <img class="cloud" src="../media/podee-icon.svg" alt="PoDy the cloud" />
-    <h1>Small apps <em>for Windows</em></h1>
-    <p class="lead">Pody Lab makes apps that take care of the little things: show the music and the next meeting, open what you need with one tap, remind you to drink water. They're all free.</p>
-    <div class="btns">
-      <a class="btn main big" data-podee href="#">Download PoDee</a>
-      <a class="btn ghost" href="podee.html">What PoDee does</a>
-    </div>
+    <h1>Your PC, <em>only cosier</em></h1>
+    <p class="lead">Pody Lab makes Windows apps that take care of the little things: show the music and the next meeting, open what you need with one tap, remind you to drink water. They're all free.</p>
   </div>
 
   <section style="padding-top:24px">
     <div class="apps">
-      <a class="card app" href="podee.html">
+      <div class="card app">
         <img src="../media/podee-icon.svg" alt="" />
-        <span class="tag">Available</span>
-        <h3>PoDee</h3>
+        <div class="btns"><a class="btn main" data-podee href="#">Download PoDee</a></div>
+        <h3><a class="stretch" href="podee.html">PoDee</a></h3>
         <p>An island at the top of the screen: clock, music, voice and AI chat, calendar, Claude Code. PoDy the cloud lives next to it.</p>
         <span class="more">Learn more →</span>
-      </a>
+      </div>
       <a class="card app" href="podoo.html">
         <img src="../media/podoo-icon.svg" alt="" />
         <span class="tag soon">Coming soon</span>

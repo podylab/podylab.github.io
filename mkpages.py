@@ -1,5 +1,12 @@
+import hashlib
 import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+
+def ver(name):
+    """A mark of the file's content for its address: after a publish the browser takes the new file, not its cached one."""
+    with open(name, "rb") as f:
+        return hashlib.md5(f.read()).hexdigest()[:8]
 
 
 def head(title, desc, icon="podee-icon.svg"):
@@ -13,34 +20,30 @@ def head(title, desc, icon="podee-icon.svg"):
 <link rel="icon" href="media/{icon}" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css?v={ver("style.css")}" />
 </head>
 '''
 
 
-tail = '<script src="site.js"></script>\n</body>\n</html>\n'
+tail = f'<script src="site.js?v={ver("site.js")}"></script>\n</body>\n</html>\n'
 
 home = head("Pody Lab", "Pody Lab делает небольшие программы для Windows: PoDee, остров вверху экрана, и PoDoo, пульт для ПК из старого телефона.") + '''<body>
 <main class="wrap">
   <div class="hero">
     <img class="cloud" src="media/podee-icon.svg" alt="Облачко PoDy" />
-    <h1>Небольшие программы <em>для Windows</em></h1>
-    <p class="lead">Pody Lab делает программы, которые берут на себя мелочи: показать музыку и встречу, открыть нужное одной кнопкой, напомнить попить воды. Все они бесплатные.</p>
-    <div class="btns">
-      <a class="btn main big" data-podee href="#">Скачать PoDee</a>
-      <a class="btn ghost" href="podee.html">Что умеет PoDee</a>
-    </div>
+    <h1>Ваш ПК, <em>только уютнее</em></h1>
+    <p class="lead">Pody Lab делает программы для Windows, которые берут на себя мелочи: показать музыку и встречу, открыть нужное одной кнопкой, напомнить попить воды. Все они бесплатные.</p>
   </div>
 
   <section style="padding-top:24px">
     <div class="apps">
-      <a class="card app" href="podee.html">
+      <div class="card app">
         <img src="media/podee-icon.svg" alt="" />
-        <span class="tag">Можно скачать</span>
-        <h3>PoDee</h3>
+        <div class="btns"><a class="btn main" data-podee href="#">Скачать PoDee</a></div>
+        <h3><a class="stretch" href="podee.html">PoDee</a></h3>
         <p>Остров вверху экрана: часы, музыка, голос и ИИ-чат, календарь, Claude Code. Рядом живёт облачко PoDy.</p>
         <span class="more">Подробнее →</span>
-      </a>
+      </div>
       <a class="card app" href="podoo.html">
         <img src="media/podoo-icon.svg" alt="" />
         <span class="tag soon">Скоро</span>
