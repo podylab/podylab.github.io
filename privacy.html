@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Конфиденциальность PoDee · Pody Lab</title>
+<meta name="description" content="Какие данные PoDee хранит и куда отправляет. Privacy policy of PoDee." />
+<link rel="icon" href="media/podee-icon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="wrap legal">
+  <section>
+    <h1 style="font-size:40px">Политика конфиденциальности PoDee</h1>
+    <p class="sub">Действует с 30 октября 2026 года. Pody Lab, podylab@gmail.com</p>
+
+    <h2>Коротко</h2>
+    <p>PoDee работает на вашем компьютере. У Pody Lab нет своего сервера: мы не собираем статистику, не следим за тем, как вы пользуетесь программой, и ничего о вас не получаем. Данные уходят в интернет только в сервисы, которые вы сами подключили в настройках.</p>
+
+    <h2>Что хранится на компьютере</h2>
+    <ul>
+      <li>Настройки, задачи, заметки, буфер обмена, экранное время, история уведомлений: в папке PoDee в вашем профиле Windows.</li>
+      <li>Ключи API для ИИ, ключи бирж и закрытые ссылки календарей: в диспетчере учётных данных Windows.</li>
+      <li>Всё это остаётся у вас. Версия из Microsoft Store удаляет свои данные вместе с собой.</li>
+    </ul>
+
+    <h2>Микрофон</h2>
+    <p>PoDee слушает микрофон, только пока вы держите или нажали кнопку голоса, и во время записи созвона, которую вы включили сами. Речь распознаётся на компьютере (Whisper) или в облачном сервисе, если вы выбрали его в настройках. Звук не сохраняется, остаётся только текст.</p>
+
+    <h2>Куда PoDee обращается в интернете</h2>
+    <ul>
+      <li>ИИ-чат и распознавание речи: в выбранный вами сервис (Anthropic, OpenAI, Google Gemini, Groq, OpenRouter или свой адрес) уходят ваши вопросы. Данные обрабатываются по правилам этого сервиса.</li>
+      <li>Календарь: по ссылкам Google, Outlook или iCal, которые вы добавили.</li>
+      <li>Тексты песен: название и исполнитель трека уходят в LRCLIB (lrclib.net).</li>
+      <li>Погода: город уходит в wttr.in. Если город не указан, wttr.in определяет его по IP-адресу.</li>
+      <li>Портфель: запросы к Binance, Bybit, OKX по ключам только для чтения и к публичным узлам блокчейнов по адресам кошельков, которые вы добавили.</li>
+      <li>Лимиты Claude: запрос к api.anthropic.com от имени вашей учётной записи Claude Code.</li>
+      <li>Модели для распознавания речи скачиваются с huggingface.co, когда вы нажимаете «Скачать».</li>
+    </ul>
+    <p>Как при любом запросе в интернете, эти сервисы видят ваш IP-адрес. Агенты Claude Code передают события в PoDee только внутри компьютера (127.0.0.1), в интернет они не уходят.</p>
+
+    <h2>Дети</h2>
+    <p>PoDee не предназначен для детей до 13 лет и не собирает о них данные.</p>
+
+    <h2>Изменения и связь</h2>
+    <p>Если политика изменится, новая версия появится на этой странице. Вопросы: <a href="mailto:podylab@gmail.com">podylab@gmail.com</a>.</p>
+  </section>
+
+  <section lang="en">
+    <h1 style="font-size:40px">PoDee privacy policy</h1>
+    <p class="sub">Effective October 30, 2026. Pody Lab, podylab@gmail.com</p>
+
+    <h2>In short</h2>
+    <p>PoDee runs on your computer. Pody Lab has no server of its own: we collect no analytics, don't track how you use the app and receive nothing about you. Data goes online only to the services you connect in the settings yourself.</p>
+
+    <h2>What stays on your computer</h2>
+    <ul>
+      <li>Settings, tasks, notes, clipboard history, screen time and notification history: in PoDee's folder in your Windows profile.</li>
+      <li>AI API keys, exchange keys and private calendar links: in Windows Credential Manager.</li>
+      <li>All of it stays with you. The Microsoft Store version removes its data when uninstalled.</li>
+    </ul>
+
+    <h2>Microphone</h2>
+    <p>PoDee listens only while you hold or press the voice button, and during a call recording you start yourself. Speech is recognised on your computer (Whisper) or by a cloud service if you choose one. Audio is not kept, only the text.</p>
+
+    <h2>Where PoDee connects</h2>
+    <ul>
+      <li>AI chat and speech recognition: your questions go to the service you pick (Anthropic, OpenAI, Google Gemini, Groq, OpenRouter or your own address), under that service's terms.</li>
+      <li>Calendar: the Google, Outlook or iCal links you add.</li>
+      <li>Lyrics: the track's title and artist go to LRCLIB (lrclib.net).</li>
+      <li>Weather: the city goes to wttr.in. With no city set, wttr.in finds it from your IP address.</li>
+      <li>Portfolio: Binance, Bybit and OKX with read-only keys, and public blockchain nodes for the wallet addresses you add.</li>
+      <li>Claude limits: a request to api.anthropic.com as your Claude Code account.</li>
+      <li>Speech models download from huggingface.co when you press «Download».</li>
+    </ul>
+    <p>As with any request online, these services see your IP address. Claude Code agents send their events to PoDee only inside your computer (127.0.0.1); nothing goes online.</p>
+
+    <h2>Children</h2>
+    <p>PoDee is not meant for children under 13 and collects no data about them.</p>
+
+    <h2>Changes and contact</h2>
+    <p>If this policy changes, the new version will be on this page. Questions: <a href="mailto:podylab@gmail.com">podylab@gmail.com</a>.</p>
+  </section>
+</main>
+<script src="site.js"></script>
+</body>
+</html>

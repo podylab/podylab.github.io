@@ -34,6 +34,7 @@ document.body.insertAdjacentHTML(
     <span>© 2026 Pody Lab</span>
     <a href="${CONFIG.releases}">Все версии PoDee</a>
     <a href="support.html#wish">Улучшить вместе</a>
+    <a href="privacy.html">Конфиденциальность</a>
     <span>Сделано с облачком PoDy</span>
   </div></footer>`,
 );

@@ -114,3 +114,7 @@
   .orange { --accent: #f2793a; --accent2: #cf4619; }
   .orange .btn.main { background: linear-gradient(180deg, #f59a66, #cf4619); color: #2a0e02; box-shadow: 0 10px 30px rgb(207 70 25 / .35); }
   @media (max-width: 860px) { .apps { grid-template-columns: 1fr; } .page-head { flex-direction: column; align-items: flex-start; } }
+.legal h2 { font-size: 22px; margin: 28px 0 8px; }
+.legal p, .legal li { color: var(--muted); }
+.legal ul { padding-left: 22px; margin: 0; }
+.legal li { margin: 4px 0; }
