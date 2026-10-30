@@ -57,7 +57,7 @@ home = head("Pody Lab", "Pody Lab делает небольшие програм
   <section>
     <div class="grid g2">
       <div class="card"><div class="ic">💚</div><h3>Поддержать</h3><p>Программы бесплатные. Если они вам пригодились, можно отправить любую сумму картой или криптой.</p><p style="margin-top:14px"><a class="btn main" href="support.html">Поддержать</a></p></div>
-      <div class="card"><div class="ic">✍️</div><h3>Сделать лучше вместе</h3><p>Поддержите донатом и напишите в сообщении, что улучшить или какую программу сделать следующей.</p><p style="margin-top:14px"><a class="btn ghost" href="support.html#wish">Как это работает</a></p></div>
+      <div class="card"><div class="ic">✍️</div><h3>Сделать лучше вместе</h3><p>Напишите, чего не хватает в программах или какую сделать следующей. Платить для этого не нужно.</p><p style="margin-top:14px"><a class="btn ghost" href="support.html#wish">Написать пожелание</a></p></div>
     </div>
   </section>
 </main>
@@ -132,7 +132,7 @@ podoo = head("PoDoo · Pody Lab", "PoDoo: старый телефон или п�
 </main>
 ''' + tail
 
-support = head("Поддержать · Pody Lab", "Поддержать Pody Lab любой суммой картой или криптой и отправить пожелание к PoDee или PoDoo.") + '''<body>
+support = head("Поддержать · Pody Lab", "Поддержать Pody Lab любой суммой картой, через Kaspi QR или криптой и отправить пожелание к PoDee или PoDoo.") + '''<body>
 <main class="wrap">
   <div class="hero" style="padding-bottom:0">
     <img class="cloud" src="media/podee-icon.svg" alt="Облачко PoDy" />
@@ -141,24 +141,21 @@ support = head("Поддержать · Pody Lab", "Поддержать Pody La
   </div>
 
   <section id="donate">
-    <div class="grid g2">
-      <div class="stack">
-      <div class="card pay">
-        <div class="ic">💳</div>
-        <h3>Картой</h3>
-        <p>Сумму выбираете сами. В сообщении к платежу можно написать пожелание.</p>
-        <a class="btn main" id="card" href="#" target="_blank" rel="noopener">Отправить картой</a>
-      </div>
+    <div class="card pay pay-bar">
+      <div class="pay-head"><div class="ic">💳</div><div><h3>Картой</h3><p>Банковская карта, сумму выбираете сами</p></div></div>
+      <p class="pay-text">Откроется страница оплаты. Введите сумму и, если хотите, напишите пожелание в сообщении к платежу.</p>
+      <a class="btn main" id="card" href="#" target="_blank" rel="noopener">Отправить картой</a>
+    </div>
+    <div class="grid g2 pay-pair">
       <div class="card pay" id="kaspi">
-        <div class="ic">📱</div>
-        <h3>Kaspi QR</h3>
-        <p>Для Казахстана. Отсканируйте код камерой в приложении Kaspi.kz, сумму выбираете сами.</p>
-        <img class="kaspi-qr" src="kaspi-qr.png" width="232" height="343" alt="Kaspi QR для оплаты" loading="lazy">
-      </div>
+        <div class="pay-head"><div class="ic">📱</div><div><h3>Kaspi QR</h3><p>Для Казахстана</p></div></div>
+        <div class="kaspi-body">
+          <img class="kaspi-qr" src="kaspi-qr.png" width="160" height="237" alt="Kaspi QR для оплаты" loading="lazy">
+          <ol class="pay-steps"><li>Откройте приложение Kaspi.kz.</li><li>Нажмите «Kaspi QR» и наведите камеру на код.</li><li>Введите любую сумму и подтвердите.</li></ol>
+        </div>
       </div>
       <div class="card pay">
-        <div class="ic">🪙</div>
-        <h3>Криптой</h3>
+        <div class="pay-head"><div class="ic">🪙</div><div><h3>Криптой</h3><p>USDT, TON, BTC, ETH, BNB, DOGE</p></div></div>
         <div class="coins" id="coins"></div>
         <div class="wallet">
           <div class="qr" id="qr"></div>
@@ -173,12 +170,19 @@ support = head("Поддержать · Pody Lab", "Поддержать Pody La
   </section>
 
   <section id="wish">
-    <h2>Сделать программу лучше вместе</h2>
-    <p class="sub">Донат необязателен: программы бесплатные и работают без него. Если хотите, донатом можно поддержать Pody Lab и заодно сказать, что улучшить. Так программы растут вместе с теми, кто ими пользуется. Сумма любая.</p>
-    <div class="grid g3">
-      <div class="card"><div class="ic">1</div><h3>Отправьте донат</h3><p>Картой или в TON. В USDT к переводу нельзя приложить текст, поэтому для пожеланий он не подходит.</p></div>
-      <div class="card"><div class="ic">2</div><h3>Напишите, что улучшить</h3><p>В сообщении к платежу или в комментарии к переводу TON: какая программа и чего в ней не хватает. Можно ничего не писать, просто поддержать.</p></div>
-      <div class="card"><div class="ic">3</div><h3>Мы прочитаем</h3><p>Читаем каждое пожелание и берём в работу то, что подходит программе.</p></div>
+    <h2>Сделать программы лучше вместе</h2>
+    <p class="sub">Платить для этого не нужно. Напишите, чего не хватает в PoDee или PoDoo или какую программу сделать следующей. Мы читаем каждое пожелание.</p>
+    <div class="card">
+      <form data-send="Спасибо, получили. Прочитаем.">
+        <input type="hidden" name="about" value="Пожелание" />
+        <div class="row2">
+          <label>Программа <select name="app"><option>PoDee</option><option>PoDoo</option><option>Новая программа</option></select></label>
+          <label>Почта, если ждёте ответа <input name="email" type="email" autocomplete="email" placeholder="you@mail.com" /></label>
+        </div>
+        <label>Что улучшить <textarea name="message" required placeholder="Например: хочу, чтобы остров показывал погоду"></textarea></label>
+        <div class="btns" style="align-items:center"><button class="btn main" type="submit">Отправить пожелание</button><span class="sent"></span></div>
+      </form>
+      <p class="wish-also">Пожелание можно отправить и вместе с донатом: картой в сообщении к платежу, в TON в комментарии к переводу.</p>
     </div>
   </section>
 </main>

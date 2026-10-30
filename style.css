@@ -227,7 +227,25 @@ html.fx .rise.in { opacity: 1; translate: none; }
 .app { align-content: start; }
 .app .btn { padding: 10px 16px; font-size: 16px; }
 .app .btns { gap: 10px; }
-/* support: the card and Kaspi QR stacked in one column, crypto in the other */
-.stack { display: grid; gap: 16px; align-content: start; }
-.kaspi-qr { display: block; width: 232px; max-width: 100%; height: auto; padding: 10px; border-radius: 16px; background: #fff; }
-#donate .grid { align-items: start; }
+/* support: the icon beside each heading; the card as one wide bar, Kaspi and crypto as a pair */
+.pay-head { display: flex; align-items: center; gap: 14px; }
+.pay-head .ic { margin: 0; flex: none; }
+.pay-head h3 { margin: 0; }
+.pay-head p { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
+.pay-bar { display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center; margin-bottom: 16px; }
+.pay-bar .pay-text { margin: 0; color: var(--muted); max-width: 30em; }
+.pay-bar .btn { margin: 0; align-self: center; }
+.pay-pair { align-items: stretch; }
+.kaspi-body { display: grid; grid-template-columns: 160px 1fr; gap: 20px; align-items: center; }
+.kaspi-qr { display: block; width: 160px; height: auto; padding: 7px; border-radius: 14px; background: #fff; }
+.pay-steps { margin: 0; padding-left: 1.2em; display: grid; gap: 10px; color: var(--muted); }
+.pay-steps li::marker { color: var(--accent); font-weight: 800; }
+.wish-also { margin: 22px 0 0; color: var(--muted); font-size: 15px; }
+@media (max-width: 860px) {
+  .pay-bar { grid-template-columns: 1fr; gap: 14px; }
+  .pay-bar .btn { justify-self: start; }
+}
+@media (max-width: 480px) {
+  .kaspi-body { grid-template-columns: 1fr; }
+  .kaspi-qr { width: 200px; }
+}

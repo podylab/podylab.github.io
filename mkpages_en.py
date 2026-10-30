@@ -59,7 +59,7 @@ home = head("Pody Lab", "Pody Lab makes small Windows apps: PoDee, an island at 
   <section>
     <div class="grid g2">
       <div class="card"><div class="ic">💚</div><h3>Support</h3><p>The apps are free. If they help you, send any amount by card or crypto.</p><p style="margin-top:14px"><a class="btn main" href="support.html">Support</a></p></div>
-      <div class="card"><div class="ic">✍️</div><h3>Improve them together</h3><p>Support with a donation and say in the message what to improve or which app to make next.</p><p style="margin-top:14px"><a class="btn ghost" href="support.html#wish">How it works</a></p></div>
+      <div class="card"><div class="ic">✍️</div><h3>Improve them together</h3><p>Tell us what the apps are missing or which one to make next. No payment needed.</p><p style="margin-top:14px"><a class="btn ghost" href="support.html#wish">Send a wish</a></p></div>
     </div>
   </section>
 </main>
@@ -134,7 +134,7 @@ podoo = head("PoDoo · Pody Lab", "PoDoo: an old phone or tablet becomes a remot
 </main>
 ''' + tail
 
-support = head("Support · Pody Lab", "Support Pody Lab with any amount by card or crypto and send a wish for PoDee or PoDoo.") + '''<body>
+support = head("Support · Pody Lab", "Support Pody Lab with any amount by card, Kaspi QR or crypto and send a wish for PoDee or PoDoo.") + '''<body>
 <main class="wrap">
   <div class="hero" style="padding-bottom:0">
     <img class="cloud" src="../media/podee-icon.svg" alt="PoDy the cloud" />
@@ -143,24 +143,21 @@ support = head("Support · Pody Lab", "Support Pody Lab with any amount by card 
   </div>
 
   <section id="donate">
-    <div class="grid g2">
-      <div class="stack">
-      <div class="card pay">
-        <div class="ic">💳</div>
-        <h3>By card</h3>
-        <p>You choose the amount. The payment page is in Russian; type the sum, a message if you like, and pay.</p>
-        <a class="btn main" id="card" href="#" target="_blank" rel="noopener">Pay by card</a>
-      </div>
+    <div class="card pay pay-bar">
+      <div class="pay-head"><div class="ic">💳</div><div><h3>By card</h3><p>Any bank card, any amount</p></div></div>
+      <p class="pay-text">A payment page opens (it's in Russian). Type the sum and, if you like, a wish in the payment message.</p>
+      <a class="btn main" id="card" href="#" target="_blank" rel="noopener">Pay by card</a>
+    </div>
+    <div class="grid g2 pay-pair">
       <div class="card pay" id="kaspi">
-        <div class="ic">📱</div>
-        <h3>Kaspi QR</h3>
-        <p>For Kazakhstan. Scan the code with the camera in the Kaspi.kz app, any amount.</p>
-        <img class="kaspi-qr" src="../kaspi-qr.png" width="232" height="343" alt="Kaspi QR for payment" loading="lazy">
-      </div>
+        <div class="pay-head"><div class="ic">📱</div><div><h3>Kaspi QR</h3><p>For Kazakhstan</p></div></div>
+        <div class="kaspi-body">
+          <img class="kaspi-qr" src="../kaspi-qr.png" width="160" height="237" alt="Kaspi QR for payment" loading="lazy">
+          <ol class="pay-steps"><li>Open the Kaspi.kz app.</li><li>Tap «Kaspi QR» and point the camera at the code.</li><li>Type any amount and confirm.</li></ol>
+        </div>
       </div>
       <div class="card pay">
-        <div class="ic">🪙</div>
-        <h3>In crypto</h3>
+        <div class="pay-head"><div class="ic">🪙</div><div><h3>In crypto</h3><p>USDT, TON, BTC, ETH, BNB, DOGE</p></div></div>
         <div class="coins" id="coins"></div>
         <div class="wallet">
           <div class="qr" id="qr"></div>
@@ -176,11 +173,18 @@ support = head("Support · Pody Lab", "Support Pody Lab with any amount by card 
 
   <section id="wish">
     <h2>Make the apps better together</h2>
-    <p class="sub">Donating is optional: the apps are free and work without it. If you'd like, a donation supports Pody Lab and lets you say what to improve, so the apps grow with the people who use them. Any amount.</p>
-    <div class="grid g3">
-      <div class="card"><div class="ic">1</div><h3>Send a donation</h3><p>By card or in TON. A USDT transfer can't carry a message, so it won't do for wishes.</p></div>
-      <div class="card"><div class="ic">2</div><h3>Say what to improve</h3><p>In the payment message or the TON transfer comment: which app and what it's missing. Or write nothing and just support.</p></div>
-      <div class="card"><div class="ic">3</div><h3>We read it</h3><p>We read every wish and take on the ones that fit the app.</p></div>
+    <p class="sub">No payment needed for this. Tell us what PoDee or PoDoo is missing, or which app to make next. We read every wish.</p>
+    <div class="card">
+      <form data-send="Thanks, got it. We'll read it.">
+        <input type="hidden" name="about" value="Wish" />
+        <div class="row2">
+          <label>App <select name="app"><option>PoDee</option><option>PoDoo</option><option>A new app</option></select></label>
+          <label>Email, if you'd like a reply <input name="email" type="email" autocomplete="email" placeholder="you@mail.com" /></label>
+        </div>
+        <label>What to improve <textarea name="message" required placeholder="For example: show the weather on the island"></textarea></label>
+        <div class="btns" style="align-items:center"><button class="btn main" type="submit">Send the wish</button><span class="sent"></span></div>
+      </form>
+      <p class="wish-also">You can also send a wish with a donation: in the payment message by card, or in the transfer comment in TON.</p>
     </div>
   </section>
 </main>
