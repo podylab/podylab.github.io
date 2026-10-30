@@ -134,3 +134,90 @@ nav a.lang { border: 1px solid var(--line, rgb(255 255 255 / .18)); border-radiu
   nav { gap: 9px; font-size: 13px; align-items: center; }
   nav a.lang { padding: 1px 7px; font-size: 12px; }
 }
+
+/* ---------- richer cards: a soft light follows the mouse, buttons catch a shine ---------- */
+@property --g { syntax: "<number>"; inherits: false; initial-value: 0; }
+.card {
+  --mx: 50%; --my: 0%;
+  background:
+    radial-gradient(420px circle at var(--mx) var(--my), rgb(126 214 190 / calc(var(--g) * .16)), transparent 60%),
+    linear-gradient(160deg, rgb(255 255 255 / .075), rgb(255 255 255 / .02)), var(--card);
+  transition: --g .35s, transform .25s, border-color .25s, box-shadow .25s;
+}
+.card:hover { --g: 1; border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); box-shadow: 0 24px 60px rgb(0 0 0 / .28); }
+.pay:hover, .app:hover { transform: translateY(-4px); }
+.ic { width: 52px; height: 52px; border-radius: 16px; font-size: 26px; background: linear-gradient(160deg, rgb(126 214 190 / .28), rgb(35 128 108 / .14)); box-shadow: inset 0 1px 0 rgb(255 255 255 / .12); transition: transform .3s; }
+.card:hover .ic { transform: translateY(-3px) rotate(-6deg); }
+.btn { position: relative; overflow: hidden; }
+.btn.main::after { content: ""; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 35%, rgb(255 255 255 / .45) 50%, transparent 65%); translate: -120% 0; transition: translate .7s; pointer-events: none; }
+.btn.main:hover::after { translate: 120% 0; }
+.coin { transition: background .2s, color .2s, border-color .2s, transform .15s; }
+.coin:hover { color: var(--text); border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); transform: translateY(-1px); }
+/* the address keeps room for two lines and the note for two, so switching coins doesn't make the card jump */
+.addr { min-height: calc(2 * 1.45em + 22px); display: flex; align-items: center; }
+.net { min-height: 3.2em; }
+.qr { box-shadow: 0 10px 30px rgb(0 0 0 / .25); }
+
+/* ---------- the sky behind the page: a few big soft clouds drifting ---------- */
+.sky { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.sky i { position: absolute; width: 46vmax; height: 26vmax; border-radius: 50%; background: radial-gradient(closest-side, rgb(255 255 255 / .05), transparent); filter: blur(8px); animation: drift 60s linear infinite; }
+.sky i:nth-child(1) { top: 8%; left: -20%; }
+.sky i:nth-child(2) { top: 42%; left: 60%; animation-duration: 80s; animation-delay: -30s; background: radial-gradient(closest-side, rgb(126 214 190 / .06), transparent); }
+.sky i:nth-child(3) { top: 70%; left: 10%; animation-duration: 70s; animation-delay: -50s; }
+.sky i:nth-child(4) { top: 22%; left: 40%; width: 30vmax; height: 16vmax; animation-duration: 90s; animation-delay: -10s; }
+@keyframes drift { from { transform: translateX(-12vw); } 50% { transform: translateX(12vw) translateY(2vh); } to { transform: translateX(-12vw); } }
+
+/* blocks rise into view as you scroll (only with JS on: the class fx comes from pody.js) */
+html.fx .rise { opacity: 0; translate: 0 22px; transition: opacity .7s ease var(--d, 0ms), translate .7s cubic-bezier(.2, .7, .3, 1) var(--d, 0ms); }
+html.fx .rise.in { opacity: 1; translate: none; }
+
+/* ---------- PoDy in the corner ---------- */
+.pody-dock { position: fixed; right: 20px; bottom: 18px; z-index: 20; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; pointer-events: none; }
+.pody-dock > * { pointer-events: auto; }
+.pody-wrap { position: relative; }
+.pody { display: block; width: 96px; height: 78px; padding: 0; border: 0; background: none; cursor: pointer; filter: drop-shadow(0 12px 22px rgb(0 0 0 / .35)); -webkit-tap-highlight-color: transparent; }
+.pody svg { width: 100%; height: 100%; overflow: visible; }
+.pody-body { transform-box: fill-box; transform-origin: 50% 95%; animation: breathe 4.2s ease-in-out infinite; }
+.pody:hover .pody-body { animation-duration: 1.6s; }
+@keyframes breathe { 50% { transform: scale(1.03, .97); } }
+.pody-face .white, .pody-face .o-mouth { fill: #22302d; }
+.pody-face .pupil ellipse { fill: #0f1817; }
+.pody-face .sparkle { fill: #fff; }
+.pody-face :is(.happy, .cross, .dizzy, .mouth) { fill: none; stroke: #22302d; stroke-width: 0.9; stroke-linecap: round; stroke-linejoin: round; }
+.pody-face .blush { fill: #ff9fb2; opacity: .5; transition: opacity .3s; }
+.pody-face .pupil { transition: transform .15s ease-out; }
+.pody-face .lid { transform-box: fill-box; transform-origin: center; transition: transform .08s; }
+.pody.blink .lid { transform: scaleY(.12); }
+.pody-face :is(.happy, .cross, .dizzy, .o-mouth) { display: none; }
+.pody[data-mood="petted"] .eye, .pody[data-mood="poked"] .eye, .pody[data-mood="dizzy"] .eye { display: none; }
+.pody[data-mood="petted"] .happy, .pody[data-mood="poked"] .cross, .pody[data-mood="dizzy"] .dizzy { display: inline; }
+.pody[data-mood="petted"] .blush, .pody:hover .blush { opacity: .9; }
+.pody[data-mood="talking"] .mouth { display: none; }
+.pody[data-mood="talking"] .o-mouth { display: inline; }
+.pody-sound { position: absolute; left: -10px; top: -6px; z-index: 1; width: 28px; height: 28px; display: grid; place-items: center; padding: 0; border-radius: 50%; border: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 80%, transparent); backdrop-filter: blur(8px); color: var(--muted); cursor: pointer; opacity: 0; transition: opacity .2s; }
+.pody-wrap:hover .pody-sound, .pody-sound:focus-visible { opacity: 1; }
+@media (hover: none) { .pody-sound { opacity: .8; } }
+.pody-sound svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.pody-sound svg path:first-child { fill: currentColor; stroke: none; }
+.pody-talk { position: relative; width: min(290px, calc(100vw - 40px)); padding: 14px 16px; border-radius: 18px; border: 1px solid var(--line); background: color-mix(in srgb, var(--bg2) 88%, transparent); backdrop-filter: blur(14px); box-shadow: var(--shadow); font-size: 15px; line-height: 1.5; transform-origin: 85% 100%; }
+.pody-talk::after { content: ""; position: absolute; right: 38px; bottom: -7px; width: 14px; height: 14px; rotate: 45deg; background: inherit; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.pody-talk p { margin: 0 22px 0 0; }
+.pody-talk:not(.chat) form { display: none; }
+.pody-talk input { width: 100%; margin-top: 10px; padding: 8px 12px; border-radius: 12px; border: 1px solid var(--line); background: rgb(0 0 0 / .18); color: var(--text); font: inherit; outline: none; }
+.pody-talk input:focus { border-color: var(--accent); }
+.pody-close { position: absolute; top: 4px; right: 8px; border: 0; background: none; color: var(--muted); font-size: 22px; line-height: 1; cursor: pointer; padding: 4px; }
+.pody-link { display: inline-block; margin-top: 4px; font-weight: 800; color: var(--accent); }
+.pody-heart { position: fixed; z-index: 30; color: #ff7b98; font-size: 20px; pointer-events: none; text-shadow: 0 2px 8px rgb(255 123 152 / .5); }
+.to-top { width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border-radius: 50%; border: 1px solid var(--line); background: color-mix(in srgb, var(--bg2) 85%, transparent); backdrop-filter: blur(10px); color: var(--text); cursor: pointer; box-shadow: 0 10px 26px rgb(0 0 0 / .3); opacity: 0; translate: 0 10px; pointer-events: none; transition: opacity .25s, translate .25s, border-color .2s; margin-right: 26px; }
+.to-top.show { opacity: 1; translate: none; pointer-events: auto; }
+.to-top:hover { border-color: var(--accent); }
+.to-top svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 480px) {
+  .pody-dock { right: 12px; bottom: 12px; }
+  .pody { width: 72px; height: 58px; }
+  .to-top { margin-right: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pody-body, .cloud { animation: none; }
+  .btn.main::after { display: none; }
+}

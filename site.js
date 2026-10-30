@@ -9,7 +9,7 @@ const CONFIG = {
   mail: "podylab@gmail.com", // without Formspree, the form opens a letter to this address
   wallets: [
     { coin: "USDT", net: ["Сеть TRC-20 (Tron). Другие сети не подойдут.", "TRC-20 (Tron) network only."], address: "TWoqgVrM1kEFTNZnZzkmJYT2uTYx5Yh58E" },
-    { coin: "TON", net: ["Сеть TON: Toncoin и USDT в сети TON. В комментарии к переводу можно написать пожелание.", "TON network: Toncoin, or USDT on TON. The transfer comment can carry a wish."], address: "UQBBy_XIcwbK0A04cF81YYehXb24dbEczQlWIqpyE05nnsIi" },
+    { coin: "TON", net: ["Сеть TON: Toncoin и USDT. В комментарии можно написать пожелание.", "TON network: Toncoin or USDT. The comment can carry a wish."], address: "UQBBy_XIcwbK0A04cF81YYehXb24dbEczQlWIqpyE05nnsIi" },
     { coin: "BTC", net: ["Сеть Bitcoin.", "Bitcoin network."], address: "bc1qdus0f49gu3qupe9et8all9mt90fyaph74qv884" },
     { coin: "ETH", net: ["Сеть Ethereum (ERC-20): ETH и USDT в этой сети.", "Ethereum network (ERC-20): ETH, or USDT on it."], address: "0x5685fd91Db09F496a4d09EF4343aFb8Fcb1fbA47" },
     { coin: "BNB", net: ["Сеть BNB Smart Chain (BEP-20): BNB и USDT в этой сети.", "BNB Smart Chain (BEP-20): BNB, or USDT on it."], address: "0x5685fd91Db09F496a4d09EF4343aFb8Fcb1fbA47" },
@@ -106,6 +106,8 @@ if ($("coins")) {
     const w = wallets[i];
     [...$("coins").children].forEach((b, j) => b.setAttribute("aria-pressed", String(i === j)));
     $("addr").textContent = w.address || T("Адрес появится скоро", "The address is coming soon");
+    // the new address and its QR fade in instead of popping
+    for (const el of [$("addr"), $("qr"), $("net")]) el.animate?.([{ opacity: 0.2, filter: "blur(2px)" }, { opacity: 1, filter: "blur(0)" }], { duration: 260, easing: "ease-out" });
     $("net").textContent = w.net[EN ? 1 : 0];
     $("copy").disabled = !w.address;
     if (w.address && window.qrcode) {

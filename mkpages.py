@@ -25,7 +25,7 @@ def head(title, desc, icon="podee-icon.svg"):
 '''
 
 
-tail = f'<script src="site.js?v={ver("site.js")}"></script>\n</body>\n</html>\n'
+tail = f'<script src="site.js?v={ver("site.js")}"></script>\n<script src="pody.js?v={ver("pody.js")}"></script>\n</body>\n</html>\n'
 
 home = head("Pody Lab", "Pody Lab делает небольшие программы для Windows: PoDee, остров вверху экрана, и PoDoo, пульт для ПК из старого телефона.") + '''<body>
 <main class="wrap">
