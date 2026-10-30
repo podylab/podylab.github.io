@@ -144,11 +144,20 @@ support = head("Support · Pody Lab", "Support Pody Lab with any amount by card 
 
   <section id="donate">
     <div class="grid g2">
+      <div class="stack">
       <div class="card pay">
         <div class="ic">💳</div>
         <h3>By card</h3>
         <p>You choose the amount. The payment page is in Russian; type the sum, a message if you like, and pay.</p>
         <a class="btn main" id="card" href="#" target="_blank" rel="noopener">Pay by card</a>
+      </div>
+      <div class="card pay" id="kaspi">
+        <div class="ic">📱</div>
+        <h3>Kaspi QR</h3>
+        <p>For Kazakhstan: pay in the Kaspi.kz app, any amount.</p>
+        <div class="btns"><a class="btn main" href="https://qr.kaspi.kz/19100198756798464001329908786128832254117" target="_blank" rel="noopener">Open in Kaspi</a><button class="btn ghost" id="kaspi-show" type="button" aria-expanded="false">Show the QR</button></div>
+        <div class="qr" id="kaspi-qr" hidden></div>
+      </div>
       </div>
       <div class="card pay">
         <div class="ic">🪙</div>

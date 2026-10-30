@@ -86,6 +86,21 @@ windowsBits().then((bits) => {
     .catch(() => {});
 });
 
+// ---- Kaspi QR: the code shows only when asked, so it never sits next to the crypto one ----
+$("kaspi-show")?.addEventListener("click", (e) => {
+  const box = $("kaspi-qr");
+  const open = box.hidden;
+  if (open && !box.firstChild && window.qrcode) {
+    const q = qrcode(0, "M");
+    q.addData(document.querySelector("#kaspi a.btn").href);
+    q.make();
+    box.innerHTML = q.createSvgTag({ cellSize: 4, margin: 2, scalable: true });
+  }
+  box.hidden = !open;
+  e.currentTarget.setAttribute("aria-expanded", String(open));
+  e.currentTarget.textContent = open ? T("Скрыть QR", "Hide the QR") : T("Показать QR", "Show the QR");
+});
+
 // ---- card: the DonationAlerts page ----
 const card = $("card");
 if (card) {

@@ -142,11 +142,20 @@ support = head("Поддержать · Pody Lab", "Поддержать Pody La
 
   <section id="donate">
     <div class="grid g2">
+      <div class="stack">
       <div class="card pay">
         <div class="ic">💳</div>
         <h3>Картой</h3>
         <p>Сумму выбираете сами. В сообщении к платежу можно написать пожелание.</p>
         <a class="btn main" id="card" href="#" target="_blank" rel="noopener">Отправить картой</a>
+      </div>
+      <div class="card pay" id="kaspi">
+        <div class="ic">📱</div>
+        <h3>Kaspi QR</h3>
+        <p>Для Казахстана: оплата в приложении Kaspi.kz, сумму выбираете сами.</p>
+        <div class="btns"><a class="btn main" href="https://qr.kaspi.kz/19100198756798464001329908786128832254117" target="_blank" rel="noopener">Открыть в Kaspi</a><button class="btn ghost" id="kaspi-show" type="button" aria-expanded="false">Показать QR</button></div>
+        <div class="qr" id="kaspi-qr" hidden></div>
+      </div>
       </div>
       <div class="card pay">
         <div class="ic">🪙</div>
