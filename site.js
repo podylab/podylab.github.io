@@ -1,8 +1,8 @@
 // Pody Lab site: everything to fill in sits in CONFIG; the header, the footer,
 // the crypto wallets and the wish form are built here for every page.
 const CONFIG = {
-  podee: "https://github.com/Zametki1Cnika/PoDe-releases/releases/latest", // podylab/PoDee-releases once moved
-  releases: "https://github.com/Zametki1Cnika/PoDe-releases/releases",
+  podee: "https://github.com/podylab/PoDee-releases/releases/latest",
+  releases: "https://github.com/podylab/PoDee-releases/releases",
   card: "https://www.donationalerts.com/r/polab", // the DonationAlerts page, e.g. https://www.donationalerts.com/r/name
   form: "https://formspree.io/f/xwllnbpp", // Formspree endpoint, e.g. https://formspree.io/f/xxxxxxx
   mail: "podylab@gmail.com", // without Formspree, the form opens a letter to this address
