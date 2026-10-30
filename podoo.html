@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PoDoo · Pody Lab</title>
+<meta name="description" content="PoDoo: старый телефон или планшет становится пультом для ПК, как Stream Deck. Скоро." />
+<link rel="icon" href="media/podoo-icon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="orange">
+<main class="wrap">
+  <div class="hero">
+    <img class="cloud" src="media/podoo-icon.svg" alt="" style="filter:drop-shadow(0 18px 30px rgb(207 70 25 / .35))" />
+    <span class="tag soon" style="justify-self:center;margin-top:18px">В разработке</span>
+    <h1>Пульт для ПК <em>из старого телефона</em></h1>
+    <p class="lead">Поставьте телефон или планшет у монитора, и на нём появятся иконки ваших программ. Одно нажатие, и Photoshop, Telegram или папка проекта открыты. Отдельный Stream Deck покупать не нужно.</p>
+    <div class="btns"><a class="btn main" href="#notify">Сообщить, когда выйдет</a></div>
+  </div>
+
+  <section>
+    <h2>Что будет в PoDoo</h2>
+    <p class="sub">Телефон на Android и компьютер с Windows. Подключение по Wi-Fi, кабелю или Bluetooth.</p>
+    <div class="grid g3">
+      <div class="card"><div class="ic">🚀</div><h3>Быстрый запуск</h3><p>Иконки любимых программ, сайтов и папок уже на месте, настраивать ничего не нужно.</p></div>
+      <div class="card"><div class="ic">🎛️</div><h3>Кнопки под программу</h3><p>Открыт Photoshop, на телефоне инструменты. Открыт OBS, на нём сцены, микрофон и эфир.</p></div>
+      <div class="card"><div class="ic">🎵</div><h3>Музыка и тачпад</h3><p>Пауза, громкость, следующий трек. Фильм на телевизоре можно листать с дивана.</p></div>
+    </div>
+  </section>
+
+  <section id="notify">
+    <h2>Сообщить, когда выйдет</h2>
+    <p class="sub">Оставьте почту, и мы напишем один раз, когда PoDoo можно будет скачать.</p>
+    <div class="card">
+      <form data-send="Записали. Напишем, когда PoDoo выйдет.">
+        <input type="hidden" name="about" value="PoDoo: сообщить о выходе" />
+        <div class="row2">
+          <label>Почта <input name="email" type="email" required autocomplete="email" placeholder="you@mail.com" /></label>
+          <label>Что хотите делать с PoDoo <input name="message" placeholder="Можно не писать" /></label>
+        </div>
+        <div class="btns" style="align-items:center"><button class="btn main" type="submit">Сообщить мне</button><span class="sent"></span></div>
+      </form>
+    </div>
+  </section>
+</main>
+<script src="site.js"></script>
+</body>
+</html>

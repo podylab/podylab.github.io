@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- PoDe's app icon: Podi as a soft white cloud on a teal tile.
+       The source for `npx tauri icon` (every size and the .ico come from it). -->
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7fdcc4"/>
+      <stop offset="1" stop-color="#23806c"/>
+    </linearGradient>
+    <radialGradient id="tileGlow" cx="0.3" cy="0.18" r="0.75">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="body" cx="0.36" cy="0.26" r="0.85">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.6" stop-color="#f6fbfa"/>
+      <stop offset="1" stop-color="#d5ebe6"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <clipPath id="cloudClip">
+      <circle cx="372" cy="520" r="138"/>
+      <circle cx="530" cy="430" r="182"/>
+      <circle cx="690" cy="530" r="132"/>
+      <rect x="238" y="500" width="590" height="228" rx="114"/>
+    </clipPath>
+  </defs>
+
+  <rect x="56" y="56" width="912" height="912" rx="216" fill="url(#tile)"/>
+  <rect x="56" y="56" width="912" height="912" rx="216" fill="url(#tileGlow)"/>
+
+  <!-- soft shadow under the cloud -->
+  <ellipse cx="532" cy="776" rx="268" ry="34" fill="#0d4a3d" opacity="0.45" filter="url(#shadow)"/>
+
+  <!-- the cloud: one shape, a gradient over the whole of it -->
+  <g clip-path="url(#cloudClip)">
+    <rect x="200" y="230" width="660" height="520" fill="url(#body)"/>
+    <!-- a faint rim light along the bottom -->
+    <ellipse cx="532" cy="770" rx="300" ry="70" fill="#8fd0c2" opacity="0.35"/>
+  </g>
+
+  <!-- shine on the top puffs -->
+  <path d="M300 498 a96 96 0 0 1 82 -70" fill="none" stroke="#ffffff" stroke-opacity="0" stroke-width="22" stroke-linecap="round"/>
+  <path d="M452 330 a150 150 0 0 1 108 -48" fill="none" stroke="#ffffff" stroke-opacity="0" stroke-width="22" stroke-linecap="round"/>
+
+  <!-- eyes: whites, pupils looking a little down, sparkles -->
+  <ellipse cx="458" cy="572" rx="40" ry="48" fill="#1a2226"/>
+  <ellipse cx="606" cy="572" rx="40" ry="48" fill="#1a2226"/>
+  <circle cx="446" cy="556" r="13" fill="#ffffff"/>
+  <circle cx="594" cy="556" r="13" fill="#ffffff"/>
+  <circle cx="470" cy="592" r="6" fill="#ffffff" opacity="0.85"/>
+  <circle cx="618" cy="592" r="6" fill="#ffffff" opacity="0.85"/>
+
+  <!-- cheeks and a small smile -->
+  <ellipse cx="384" cy="640" rx="34" ry="18" fill="#ff8fa6" opacity="0.7"/>
+  <ellipse cx="680" cy="640" rx="34" ry="18" fill="#ff8fa6" opacity="0.7"/>
+  <path d="M512 650 q20 20 40 0" fill="none" stroke="#1a2226" stroke-width="10" stroke-linecap="round"/>
+</svg>

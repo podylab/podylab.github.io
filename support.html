@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Поддержать · Pody Lab</title>
+<meta name="description" content="Поддержать Pody Lab любой суммой картой или криптой и отправить пожелание к PoDee или PoDoo." />
+<link rel="icon" href="media/podee-icon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="wrap">
+  <div class="hero" style="padding-bottom:0">
+    <img class="cloud" src="media/podee-icon.svg" alt="Облачко PoDy" />
+    <h1>Поддержать <em>Pody Lab</em></h1>
+    <p class="lead">Программы Pody Lab бесплатные. Если они вам пригодились, можно отправить любую сумму. Деньги идут на новые функции и следующие программы.</p>
+  </div>
+
+  <section id="donate">
+    <div class="grid g2">
+      <div class="card pay">
+        <div class="ic">💳</div>
+        <h3>Картой</h3>
+        <p>Сумму выбираете сами. В сообщении к платежу можно написать пожелание.</p>
+        <a class="btn main" id="card" href="#" target="_blank" rel="noopener">Отправить картой</a>
+      </div>
+      <div class="card pay">
+        <div class="ic">🪙</div>
+        <h3>Криптой</h3>
+        <div class="coins" id="coins"></div>
+        <div class="wallet">
+          <div class="qr" id="qr"></div>
+          <div>
+            <div class="addr" id="addr"></div>
+            <div class="net" id="net"></div>
+            <button class="btn ghost copy" id="copy" type="button">Скопировать адрес</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wish">
+    <h2>Сделать программу лучше вместе</h2>
+    <p class="sub">Донат необязателен: программы бесплатные и работают без него. Если хотите, донатом можно поддержать Pody Lab и заодно сказать, что улучшить. Так программы растут вместе с теми, кто ими пользуется. Сумма любая.</p>
+    <div class="grid g3">
+      <div class="card"><div class="ic">1</div><h3>Отправьте донат</h3><p>Картой или в TON. В USDT к переводу нельзя приложить текст, поэтому для пожеланий он не подходит.</p></div>
+      <div class="card"><div class="ic">2</div><h3>Напишите, что улучшить</h3><p>В сообщении к платежу или в комментарии к переводу TON: какая программа и чего в ней не хватает. Можно ничего не писать, просто поддержать.</p></div>
+      <div class="card"><div class="ic">3</div><h3>Мы прочитаем</h3><p>Читаем каждое пожелание и берём в работу то, что подходит программе.</p></div>
+    </div>
+  </section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
