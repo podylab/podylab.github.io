@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Support · Pody Lab</title>
+<meta name="description" content="Support Pody Lab with any amount by card or crypto and send a wish for PoDee or PoDoo." />
+<link rel="icon" href="../media/podee-icon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+<main class="wrap">
+  <div class="hero" style="padding-bottom:0">
+    <img class="cloud" src="../media/podee-icon.svg" alt="PoDy the cloud" />
+    <h1>Support <em>Pody Lab</em></h1>
+    <p class="lead">Pody Lab's apps are free. If they help you, send any amount you like. The money goes into new features and the next apps.</p>
+  </div>
+
+  <section id="donate">
+    <div class="grid g2">
+      <div class="card pay">
+        <div class="ic">💳</div>
+        <h3>By card</h3>
+        <p>You choose the amount. The payment page is in Russian; type the sum, a message if you like, and pay.</p>
+        <a class="btn main" id="card" href="#" target="_blank" rel="noopener">Pay by card</a>
+      </div>
+      <div class="card pay">
+        <div class="ic">🪙</div>
+        <h3>In crypto</h3>
+        <div class="coins" id="coins"></div>
+        <div class="wallet">
+          <div class="qr" id="qr"></div>
+          <div>
+            <div class="addr" id="addr"></div>
+            <div class="net" id="net"></div>
+            <button class="btn ghost copy" id="copy" type="button">Copy address</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wish">
+    <h2>Make the apps better together</h2>
+    <p class="sub">Donating is optional: the apps are free and work without it. If you'd like, a donation supports Pody Lab and lets you say what to improve, so the apps grow with the people who use them. Any amount.</p>
+    <div class="grid g3">
+      <div class="card"><div class="ic">1</div><h3>Send a donation</h3><p>By card or in TON. A USDT transfer can't carry a message, so it won't do for wishes.</p></div>
+      <div class="card"><div class="ic">2</div><h3>Say what to improve</h3><p>In the payment message or the TON transfer comment: which app and what it's missing. Or write nothing and just support.</p></div>
+      <div class="card"><div class="ic">3</div><h3>We read it</h3><p>We read every wish and take on the ones that fit the app.</p></div>
+    </div>
+  </section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="../site.js"></script>
+</body>
+</html>

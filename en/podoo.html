@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PoDoo · Pody Lab</title>
+<meta name="description" content="PoDoo: an old phone or tablet becomes a remote for your PC, like a Stream Deck. Coming soon." />
+<link rel="icon" href="../media/podoo-icon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body class="orange">
+<main class="wrap">
+  <div class="hero">
+    <img class="cloud" src="../media/podoo-icon.svg" alt="" style="filter:drop-shadow(0 18px 30px rgb(207 70 25 / .35))" />
+    <span class="tag soon" style="justify-self:center;margin-top:18px">In the works</span>
+    <h1>A remote for your PC <em>from an old phone</em></h1>
+    <p class="lead">Stand a phone or tablet by your monitor and it shows the icons of your apps. One tap and Photoshop, Telegram or your project folder is open. No need to buy a Stream Deck.</p>
+    <div class="btns"><a class="btn main" href="#notify">Tell me when it's out</a></div>
+  </div>
+
+  <section>
+    <h2>What PoDoo will do</h2>
+    <p class="sub">An Android phone and a Windows PC, connected over Wi-Fi, cable or Bluetooth.</p>
+    <div class="grid g3">
+      <div class="card"><div class="ic">🚀</div><h3>Quick launch</h3><p>Icons of your favourite apps, sites and folders are already there. Nothing to set up.</p></div>
+      <div class="card"><div class="ic">🎛️</div><h3>Buttons for each app</h3><p>Photoshop is open, the phone shows its tools. OBS is open, it shows scenes, the mic and going live.</p></div>
+      <div class="card"><div class="ic">🎵</div><h3>Music and touchpad</h3><p>Pause, volume, next track. Scroll through a film on the TV from the sofa.</p></div>
+    </div>
+  </section>
+
+  <section id="notify">
+    <h2>Tell me when it's out</h2>
+    <p class="sub">Leave your email and we'll write once, when PoDoo can be downloaded.</p>
+    <div class="card">
+      <form data-send="Got it. We'll write when PoDoo is out.">
+        <input type="hidden" name="about" value="PoDoo: tell me when it's out (en)" />
+        <div class="row2">
+          <label>Email <input name="email" type="email" required autocomplete="email" placeholder="you@mail.com" /></label>
+          <label>What you'd do with PoDoo <input name="message" placeholder="Optional" /></label>
+        </div>
+        <div class="btns" style="align-items:center"><button class="btn main" type="submit">Tell me</button><span class="sent"></span></div>
+      </form>
+    </div>
+  </section>
+</main>
+<script src="../site.js"></script>
+</body>
+</html>
