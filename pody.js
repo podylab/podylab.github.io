@@ -102,8 +102,10 @@
           <svg viewBox="214 236 632 512" aria-hidden="true">
             <defs>
               <radialGradient id="pody-body" cx="0.36" cy="0.26" r="0.85"><stop offset="0" stop-color="#fff"/><stop offset="0.6" stop-color="#f6fbfa"/><stop offset="1" stop-color="#d5ebe6"/></radialGradient>
+              <radialGradient id="pody-shadow"><stop offset="0" stop-color="#000" stop-opacity=".45"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
               <clipPath id="pody-clip"><circle cx="372" cy="520" r="138"/><circle cx="530" cy="430" r="182"/><circle cx="690" cy="530" r="132"/><rect x="238" y="500" width="590" height="228" rx="114"/></clipPath>
             </defs>
+            <ellipse cx="532" cy="742" rx="290" ry="34" fill="url(#pody-shadow)"/>
             <g class="pody-body">
               <g clip-path="url(#pody-clip)"><rect x="200" y="230" width="660" height="520" fill="url(#pody-body)"/><ellipse cx="532" cy="770" rx="300" ry="70" fill="#8fd0c2" opacity="0.35"/></g>
               <g class="pody-face" transform="translate(338 400) scale(12)">${face}</g>
@@ -170,7 +172,10 @@
 
   // eyes follow the mouse
   const pupils = [...pody.querySelectorAll(".pupil")];
+  let look = 0;
   addEventListener("pointermove", (e) => {
+    if (look) return;
+    look = requestAnimationFrame(() => (look = 0));
     const r = pody.getBoundingClientRect();
     const dx = e.clientX - (r.left + r.width / 2);
     const dy = e.clientY - (r.top + r.height * 0.55);
@@ -298,13 +303,18 @@
 
   // ---------- soft effects: light under the mouse on cards, drifting clouds, blocks rising into view ----------
 
-  document.querySelectorAll(".card").forEach((c) =>
+  document.querySelectorAll(".card").forEach((c) => {
+    let frame = 0;
     c.addEventListener("pointermove", (e) => {
-      const r = c.getBoundingClientRect();
-      c.style.setProperty("--mx", `${e.clientX - r.left}px`);
-      c.style.setProperty("--my", `${e.clientY - r.top}px`);
-    }),
-  );
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        const r = c.getBoundingClientRect();
+        c.style.setProperty("--mx", `${e.clientX - r.left}px`);
+        c.style.setProperty("--my", `${e.clientY - r.top}px`);
+      });
+    });
+  });
 
   if (still) return;
   document.body.insertAdjacentHTML("afterbegin", '<div class="sky" aria-hidden="true"><i></i><i></i><i></i><i></i></div>');

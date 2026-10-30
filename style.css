@@ -35,7 +35,7 @@
   .dl-alt { color: var(--muted); font-size: 14px; margin: 12px 0 0; }
   .dl-alt a { color: inherit; }
   .hero .shot { margin-top: 44px; width: 100%; }
-  .cloud { width: 96px; animation: float 5s ease-in-out infinite; filter: drop-shadow(0 18px 30px rgb(35 128 108 / .35)); }
+  .cloud { width: 96px; animation: float 5s ease-in-out infinite; filter: drop-shadow(0 18px 30px rgb(35 128 108 / .35)); will-change: transform; }
   @keyframes float { 50% { transform: translateY(-10px) rotate(-2deg); } }
   h1 { font-size: clamp(36px, 5.4vw, 60px); line-height: 1.05; margin: 18px 0 16px; font-weight: 900; letter-spacing: -.02em; }
   h1 em { font-style: normal; color: var(--accent); }
@@ -158,14 +158,14 @@ nav a.lang { border: 1px solid var(--line, rgb(255 255 255 / .18)); border-radiu
 .net { min-height: 3.2em; }
 .qr { box-shadow: 0 10px 30px rgb(0 0 0 / .25); }
 
-/* ---------- the sky behind the page: a few big soft clouds drifting ---------- */
+/* ---------- the sky behind the page: a few big soft clouds, standing still ---------- */
+/* (no blur filter and no motion: under the see-through header that would cost a repaint every frame) */
 .sky { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
-.sky i { position: absolute; width: 46vmax; height: 26vmax; border-radius: 50%; background: radial-gradient(closest-side, rgb(255 255 255 / .05), transparent); filter: blur(8px); animation: drift 60s linear infinite; }
+.sky i { position: absolute; width: 46vmax; height: 26vmax; border-radius: 50%; background: radial-gradient(closest-side, rgb(255 255 255 / .045), transparent); }
 .sky i:nth-child(1) { top: 8%; left: -20%; }
-.sky i:nth-child(2) { top: 42%; left: 60%; animation-duration: 80s; animation-delay: -30s; background: radial-gradient(closest-side, rgb(126 214 190 / .06), transparent); }
-.sky i:nth-child(3) { top: 70%; left: 10%; animation-duration: 70s; animation-delay: -50s; }
-.sky i:nth-child(4) { top: 22%; left: 40%; width: 30vmax; height: 16vmax; animation-duration: 90s; animation-delay: -10s; }
-@keyframes drift { from { transform: translateX(-12vw); } 50% { transform: translateX(12vw) translateY(2vh); } to { transform: translateX(-12vw); } }
+.sky i:nth-child(2) { top: 42%; left: 60%; background: radial-gradient(closest-side, rgb(126 214 190 / .06), transparent); }
+.sky i:nth-child(3) { top: 70%; left: 10%; }
+.sky i:nth-child(4) { top: 22%; left: 40%; width: 30vmax; height: 16vmax; }
 
 /* blocks rise into view as you scroll (only with JS on: the class fx comes from pody.js) */
 html.fx .rise { opacity: 0; translate: 0 22px; transition: opacity .7s ease var(--d, 0ms), translate .7s cubic-bezier(.2, .7, .3, 1) var(--d, 0ms); }
@@ -175,10 +175,9 @@ html.fx .rise.in { opacity: 1; translate: none; }
 .pody-dock { position: fixed; right: 20px; bottom: 18px; z-index: 20; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; pointer-events: none; }
 .pody-dock > * { pointer-events: auto; }
 .pody-wrap { position: relative; }
-.pody { display: block; width: 96px; height: 78px; padding: 0; border: 0; background: none; cursor: pointer; filter: drop-shadow(0 12px 22px rgb(0 0 0 / .35)); -webkit-tap-highlight-color: transparent; }
-.pody svg { width: 100%; height: 100%; overflow: visible; }
-.pody-body { transform-box: fill-box; transform-origin: 50% 95%; animation: breathe 4.2s ease-in-out infinite; }
-.pody:hover .pody-body { animation-duration: 1.6s; }
+.pody { display: block; width: 96px; height: 78px; padding: 0; border: 0; background: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.pody svg { width: 100%; height: 100%; overflow: visible; transform-origin: 50% 95%; animation: breathe 4.2s ease-in-out infinite; will-change: transform; }
+.pody:hover svg { animation-duration: 1.6s; }
 @keyframes breathe { 50% { transform: scale(1.03, .97); } }
 .pody-face .white, .pody-face .o-mouth { fill: #22302d; }
 .pody-face .pupil ellipse { fill: #0f1817; }
@@ -218,6 +217,6 @@ html.fx .rise.in { opacity: 1; translate: none; }
   .to-top { margin-right: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .pody-body, .cloud { animation: none; }
+  .pody svg, .cloud { animation: none; }
   .btn.main::after { display: none; }
 }
