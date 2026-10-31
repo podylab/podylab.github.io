@@ -27,7 +27,7 @@ def head(title, desc, icon="podee-icon.svg"):
 
 tail = f'<script src="site.js?v={ver("site.js")}"></script>\n<script src="pody.js?v={ver("pody.js")}"></script>\n</body>\n</html>\n'
 
-home = head("Pody Lab", "Pody Lab делает небольшие программы для Windows: PoDee, остров вверху экрана, и PoDoo, пульт для ПК из старого телефона.") + '''<body>
+home = head("Pody Lab", "Pody Lab делает небольшие программы для Windows: PoDee, остров вверху экрана, и PoDoo, пульт для ПК из телефона.") + '''<body>
 <main class="wrap">
   <div class="hero">
     <img class="cloud" src="media/podee-icon.svg" alt="Облачко PoDy" />
@@ -44,19 +44,21 @@ home = head("Pody Lab", "Pody Lab делает небольшие програм
         <p>Остров вверху экрана: часы, музыка, голос и ИИ-чат, календарь, Claude Code. Рядом живёт облачко PoDy.</p>
         <span class="more">Подробнее →</span>
       </div>
-      <a class="card app" href="podoo.html">
+      <div class="card app">
         <img src="media/podoo-icon.svg" alt="" />
-        <h3>PoDoo</h3>
-        <p>Старый телефон или планшет у монитора становится пультом для ПК: программы, кнопки для OBS и Photoshop, музыка, тачпад.</p>
-        <span class="more" style="color:#f2a074">Подробнее →</span>
-      </a>
+        <div class="btns"><a class="btn main" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Скачать для Windows</a><a class="btn ghost" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9.5h12V17a1.5 1.5 0 0 1-1.5 1.5H16V21a1.2 1.2 0 0 1-2.4 0v-2.5h-3.2V21A1.2 1.2 0 0 1 8 21v-2.5h-.5A1.5 1.5 0 0 1 6 17zM6.2 8.5a6 6 0 0 1 11.6 0zM9.5 5.8a.7.7 0 1 0 0 .01zM14.5 5.8a.7.7 0 1 0 0 .01zM8 3l1.4 2M16 3l-1.4 2"/></svg>Для Android</a></div>
+        <p class="dl-alt">Версия 1.0.1 · Windows 10 и 11, Android 5 и новее</p>
+        <h3><a class="stretch" href="podoo.html">PoDoo</a></h3>
+        <p>Телефон или планшет у монитора становится пультом для ПК: программы, кнопки для OBS и Photoshop, музыка, тачпад. Подойдёт любой Android, даже старый из ящика.</p>
+        <span class="more">Подробнее →</span>
+      </div>
     </div>
   </section>
 
   <section>
     <div class="grid g2">
       <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19.5s-7-4.3-7-9.4A4 4 0 0 1 12 7.6a4 4 0 0 1 7 2.5c0 5.1-7 9.4-7 9.4z"/></svg></div><h3>Поддержать</h3><p>Программы бесплатные. Если они вам пригодились, можно отправить любую сумму картой, через Kaspi QR или криптой.</p><p style="margin-top:14px"><a class="btn main" href="support.html">Поддержать</a></p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 19.5h3.8L18.6 9.2a2.2 2.2 0 0 0-3.1-3.1L5.2 16.4z"/><path d="M13.6 8l2.9 2.9"/><path d="M13 19.5h6.5"/></svg></div><h3>Сделать лучше вместе</h3><p>Напишите, чего не хватает в программах или какую сделать следующей. Платить для этого не нужно.</p><p style="margin-top:14px"><a class="btn ghost" href="support.html#wish">Написать пожелание</a></p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 19.5h3.8L18.6 9.2a2.2 2.2 0 0 0-3.1-3.1L5.2 16.4z"/><path d="M13.6 8l2.9 2.9"/><path d="M13 19.5h6.5"/></svg></div><h3>Сделать лучше вместе</h3><p>Напишите, чего не хватает в программах или какую сделать следующей. Платить для этого не нужно.</p><p style="margin-top:14px"><a class="btn main" href="support.html#wish">Написать пожелание</a></p></div>
     </div>
   </section>
 </main>
@@ -94,12 +96,12 @@ podee = head("PoDee · Pody Lab", "PoDee: остров вверху экрана
 </main>
 ''' + tail
 
-podoo = head("PoDoo · Pody Lab", "PoDoo: старый телефон или планшет становится пультом для ПК, как Stream Deck.", "podoo-icon.svg") + '''<body class="orange">
+podoo = head("PoDoo · Pody Lab", "PoDoo: телефон или планшет становится пультом для ПК, как Stream Deck.", "podoo-icon.svg") + '''<body>
 <main class="wrap">
   <div class="hero">
-    <img class="cloud" src="media/podoo-icon.svg" alt="" style="filter:drop-shadow(0 18px 30px rgb(207 70 25 / .35))" />
-    <h1>Пульт для ПК <em>из старого телефона</em></h1>
-    <p class="lead">Поставьте телефон или планшет у монитора, и на нём появятся иконки ваших программ. Одно нажатие, и Photoshop, Telegram или папка проекта открыты. Отдельный Stream Deck покупать не нужно.</p>
+    <img class="cloud" src="media/podoo-icon.svg" alt="" />
+    <h1>Пульт для ПК <em>из телефона</em></h1>
+    <p class="lead">Поставьте телефон или планшет у монитора, и на нём появятся иконки ваших программ. Одно нажатие, и Photoshop, Telegram или папка проекта открыты. Отдельный Stream Deck покупать не нужно. Подойдёт любой Android, а старому телефону из ящика это даст вторую жизнь.</p>
     <div class="btns"><a class="btn main" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Скачать для Windows</a><a class="btn ghost" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9.5h12V17a1.5 1.5 0 0 1-1.5 1.5H16V21a1.2 1.2 0 0 1-2.4 0v-2.5h-3.2V21A1.2 1.2 0 0 1 8 21v-2.5h-.5A1.5 1.5 0 0 1 6 17zM6.2 8.5a6 6 0 0 1 11.6 0zM9.5 5.8a.7.7 0 1 0 0 .01zM14.5 5.8a.7.7 0 1 0 0 .01zM8 3l1.4 2M16 3l-1.4 2"/></svg>Скачать для Android</a></div>
     <p class="dl-alt">Версия 1.0.1 для 64-битной Windows · <a href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x86-setup.exe">нужна 32-битная</a> · <a href="https://github.com/podylab/PoDoo-releases/releases/latest">все файлы</a></p>
   </div>

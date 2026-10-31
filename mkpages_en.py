@@ -29,7 +29,7 @@ def head(title, desc, icon="podee-icon.svg"):
 
 tail = f'<script src="../site.js?v={ver("site.js")}"></script>\n<script src="../pody.js?v={ver("pody.js")}"></script>\n</body>\n</html>\n'
 
-home = head("Pody Lab", "Pody Lab makes small Windows apps: PoDee, an island at the top of the screen, and PoDoo, which turns an old phone into a remote for your PC.") + '''<body>
+home = head("Pody Lab", "Pody Lab makes small Windows apps: PoDee, an island at the top of the screen, and PoDoo, which turns your phone into a remote for your PC.") + '''<body>
 <main class="wrap">
   <div class="hero">
     <img class="cloud" src="../media/podee-icon.svg" alt="PoDy the cloud" />
@@ -46,19 +46,21 @@ home = head("Pody Lab", "Pody Lab makes small Windows apps: PoDee, an island at 
         <p>An island at the top of the screen: clock, music, voice and AI chat, calendar, Claude Code. PoDy the cloud lives next to it.</p>
         <span class="more">Learn more →</span>
       </div>
-      <a class="card app" href="podoo.html">
+      <div class="card app">
         <img src="../media/podoo-icon.svg" alt="" />
-        <h3>PoDoo</h3>
-        <p>An old phone or tablet by your monitor becomes a remote for your PC: apps, buttons for OBS and Photoshop, music, a touchpad.</p>
-        <span class="more" style="color:#f2a074">Learn more →</span>
-      </a>
+        <div class="btns"><a class="btn main" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Download for Windows</a><a class="btn ghost" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9.5h12V17a1.5 1.5 0 0 1-1.5 1.5H16V21a1.2 1.2 0 0 1-2.4 0v-2.5h-3.2V21A1.2 1.2 0 0 1 8 21v-2.5h-.5A1.5 1.5 0 0 1 6 17zM6.2 8.5a6 6 0 0 1 11.6 0zM9.5 5.8a.7.7 0 1 0 0 .01zM14.5 5.8a.7.7 0 1 0 0 .01zM8 3l1.4 2M16 3l-1.4 2"/></svg>For Android</a></div>
+        <p class="dl-alt">Version 1.0.1 · Windows 10 and 11, Android 5 or newer</p>
+        <h3><a class="stretch" href="podoo.html">PoDoo</a></h3>
+        <p>A phone or tablet by your monitor becomes a remote for your PC: apps, buttons for OBS and Photoshop, music, a touchpad. Any Android phone works, even the old one in your drawer.</p>
+        <span class="more">Learn more →</span>
+      </div>
     </div>
   </section>
 
   <section>
     <div class="grid g2">
       <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19.5s-7-4.3-7-9.4A4 4 0 0 1 12 7.6a4 4 0 0 1 7 2.5c0 5.1-7 9.4-7 9.4z"/></svg></div><h3>Support</h3><p>The apps are free. If they help you, send any amount by card, Kaspi QR or crypto.</p><p style="margin-top:14px"><a class="btn main" href="support.html">Support</a></p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 19.5h3.8L18.6 9.2a2.2 2.2 0 0 0-3.1-3.1L5.2 16.4z"/><path d="M13.6 8l2.9 2.9"/><path d="M13 19.5h6.5"/></svg></div><h3>Improve them together</h3><p>Tell us what the apps are missing or which one to make next. No payment needed.</p><p style="margin-top:14px"><a class="btn ghost" href="support.html#wish">Send a wish</a></p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 19.5h3.8L18.6 9.2a2.2 2.2 0 0 0-3.1-3.1L5.2 16.4z"/><path d="M13.6 8l2.9 2.9"/><path d="M13 19.5h6.5"/></svg></div><h3>Improve them together</h3><p>Tell us what the apps are missing or which one to make next. No payment needed.</p><p style="margin-top:14px"><a class="btn main" href="support.html#wish">Send a wish</a></p></div>
     </div>
   </section>
 </main>
@@ -96,12 +98,12 @@ podee = head("PoDee · Pody Lab", "PoDee: an island at the top of the Windows sc
 </main>
 ''' + tail
 
-podoo = head("PoDoo · Pody Lab", "PoDoo: an old phone or tablet becomes a remote for your PC, like a Stream Deck.", "podoo-icon.svg") + '''<body class="orange">
+podoo = head("PoDoo · Pody Lab", "PoDoo: a phone or tablet becomes a remote for your PC, like a Stream Deck.", "podoo-icon.svg") + '''<body>
 <main class="wrap">
   <div class="hero">
-    <img class="cloud" src="../media/podoo-icon.svg" alt="" style="filter:drop-shadow(0 18px 30px rgb(207 70 25 / .35))" />
-    <h1>A remote for your PC <em>from an old phone</em></h1>
-    <p class="lead">Stand a phone or tablet by your monitor and it shows the icons of your apps. One tap and Photoshop, Telegram or your project folder is open. No need to buy a Stream Deck.</p>
+    <img class="cloud" src="../media/podoo-icon.svg" alt="" />
+    <h1>A remote for your PC <em>from your phone</em></h1>
+    <p class="lead">Stand a phone or tablet by your monitor and it shows the icons of your apps. One tap and Photoshop, Telegram or your project folder is open. No need to buy a Stream Deck. Any Android phone works, and an old one from your drawer gets a second life.</p>
     <div class="btns"><a class="btn main" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Download for Windows</a><a class="btn ghost" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9.5h12V17a1.5 1.5 0 0 1-1.5 1.5H16V21a1.2 1.2 0 0 1-2.4 0v-2.5h-3.2V21A1.2 1.2 0 0 1 8 21v-2.5h-.5A1.5 1.5 0 0 1 6 17zM6.2 8.5a6 6 0 0 1 11.6 0zM9.5 5.8a.7.7 0 1 0 0 .01zM14.5 5.8a.7.7 0 1 0 0 .01zM8 3l1.4 2M16 3l-1.4 2"/></svg>Download for Android</a></div>
     <p class="dl-alt">Version 1.0.1 for 64-bit Windows · <a href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x86-setup.exe">need 32-bit?</a> · <a href="https://github.com/podylab/PoDoo-releases/releases/latest">all files</a></p>
   </div>
