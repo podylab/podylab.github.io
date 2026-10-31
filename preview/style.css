@@ -496,3 +496,49 @@ h1, h2, h3 { overflow-wrap: break-word; -webkit-hyphens: auto; hyphens: auto; }
 /* the island in a hero spans the column; its tab icons can be clicked too */
 .hero .desk { width: 100%; margin-top: 8px; }
 .isl-tabs span[data-t] { cursor: pointer; }
+
+/* ---------- more on the island: one small drawn scene in each card instead of a screenshot ---------- */
+.mini.pic { aspect-ratio: 16 / 10; color: #eef4f2; font-size: clamp(8px, 3.9cqi, 12.5px); }
+.m-isl { width: 90%; padding: .9em 1em; border-radius: 1.3em; background: #0a0e0f; box-shadow: 0 .6em 1.6em rgb(0 0 0 / .3); display: grid; gap: .55em; min-width: 0; }
+.m-isl span, .m-isl em { color: #8fa29d; font-style: normal; font-size: .9em; }
+.m-head { display: flex; justify-content: space-between; align-items: baseline; gap: .6em; }
+.m-head b { font-size: 1.15em; }
+/* screen time: an app, its bar, its minutes */
+.m-bars { display: grid; gap: .45em; }
+.m-bars p { margin: 0; display: grid; grid-template-columns: 5em 1fr auto; align-items: center; gap: .6em; }
+.m-bars span { color: #eef4f2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.m-bars i { height: .35em; border-radius: .2em; background: rgb(255 255 255 / .1); position: relative; overflow: hidden; }
+.m-bars i::after { content: ""; position: absolute; inset: 0; background: #7ed6be; transform-origin: left; transform: scaleX(var(--w)); }
+/* control: two sliders and four tiles */
+.m-slide { display: grid; grid-template-columns: 1.2em 1fr 1.6em; align-items: center; gap: .6em; }
+.m-slide svg { width: 1.2em; height: 1.2em; fill: none; stroke: #8fa29d; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.m-slide i { height: .35em; border-radius: .2em; background: rgb(255 255 255 / .12); position: relative; }
+.m-slide i::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: #7ed6be; transform-origin: left; transform: scaleX(var(--w)); }
+.m-slide b { font-size: .9em; text-align: right; font-variant-numeric: tabular-nums; }
+.m-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: .4em; }
+.m-tiles span { padding: .3em .6em; border-radius: .6em; background: rgb(255 255 255 / .07); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.m-tiles .on { background: #23806c; color: #fff; }
+/* eyes and breathing side by side */
+.m-two { grid-template-columns: 1fr 1fr; }
+.m-two > div { display: grid; gap: .3em; align-content: start; padding: .6em; border-radius: .8em; background: rgb(255 255 255 / .05); min-width: 0; }
+.m-two u { justify-self: start; text-decoration: none; padding: .2em .7em; border-radius: 1em; background: #23806c; color: #fff; font-size: .85em; font-weight: 700; }
+.m-breath i { width: 1.4em; height: 1.4em; border-radius: 50%; background: #7ed6be; }
+/* tasks */
+.m-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .3em; }
+.m-list li { display: flex; align-items: center; gap: .5em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.m-list li::before { content: ""; width: .85em; height: .85em; flex: none; border-radius: .25em; border: 1.5px solid #8fa29d; }
+.m-list .done { color: #8fa29d; text-decoration: line-through; }
+.m-list .done::before { background: #7ed6be; border-color: #7ed6be; }
+/* clipboard */
+.m-clips { display: grid; gap: .35em; }
+.m-clips p { margin: 0; padding: .3em .6em; border-radius: .6em; background: rgb(255 255 255 / .06); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.m-clips .img { display: flex; align-items: center; gap: .5em; }
+.m-clips .img i { width: 1.6em; height: 1.1em; flex: none; border-radius: .25em; background: linear-gradient(135deg, #e0735f, #6a4fa8); }
+/* notifications */
+.m-note { display: grid; grid-template-columns: 1.7em 1fr auto; align-items: center; gap: .6em; }
+.m-note > i { width: 1.7em; height: 1.7em; border-radius: .5em; display: grid; place-items: center; font-style: normal; font-weight: 900; font-size: .85em; color: #fff; }
+.m-note p { margin: 0; min-width: 0; display: grid; line-height: 1.25; }
+.m-note p span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.more-grid h3 { margin-top: 2px; }
+/* the widgets read at the size of the small pictures */
+@container (min-width: 440px) { .ba .d-widgets { font-size: 1.25em; } }

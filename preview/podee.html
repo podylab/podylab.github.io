@@ -9,7 +9,7 @@
 <link rel="icon" href="../media/podee-icon.svg?v=41ecf9f3" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css?v=fcbfea3d" />
+<link rel="stylesheet" href="style.css?v=a7b13b72" />
 </head>
 <body>
 <main class="wrap">
@@ -144,6 +144,10 @@
       <figure>
         <div class="desk tall" aria-hidden="true">
           <div class="screen">
+            <div class="d-widgets">
+              <div><div class="temp">+12°</div><div class="mut">Облачно, без дождя</div></div>
+              <div><b>Задачи на сегодня</b><ul><li class="done">Ответить Ане</li><li>Купить корм коту</li><li>Созвон в 15:00</li></ul></div>
+            </div>
             <div class="isl-cloud"><i></i><i></i><i></i><i></i><b data-clock>14:32</b></div>
             <div class="d-pody near"><b></b><i></i><i></i></div>
             <div class="d-dock low">
@@ -155,7 +159,7 @@
             </div>
           </div>
         </div>
-        <figcaption><b>После.</b> Время и встреча на острове вверху, нужные программы в доке. Значки и панель задач Windows спрятаны, на столе чисто.</figcaption>
+        <figcaption><b>После.</b> Время и встреча на острове вверху, нужные программы в доке, погода и задачи в виджетах. Значки и панель задач Windows спрятаны.</figcaption>
       </figure>
     </div>
   </section>
@@ -195,7 +199,58 @@
   </section>
 
   <section>
-    <div class="shot"><img src="../media/tabs.png" alt="Вкладки PoDee: Главная, Календарь, Здоровье, Экранное время, Управление, Музыка" /></div>
+    <h2>Ещё на острове</h2>
+    <p class="sub">Каждая вкладка открывается одним щелчком, окна переключать не нужно.</p>
+    <div class="grid g3 more-grid">
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-head"><b>3 ч 56 мин</b><span>сегодня</span></div>
+          <div class="m-bars">
+            <p><span>Telegram</span><i style="--w:.86"></i><em>1 ч 30 мин</em></p>
+            <p><span>VS Code</span><i style="--w:.66"></i><em>1 ч 8 мин</em></p>
+            <p><span>Edge</span><i style="--w:.34"></i><em>48 мин</em></p>
+          </div>
+        </div></div>
+        <h3>Экранное время</h3><p>Сколько вы сегодня просидели за компьютером и в каких программах.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-slide"><svg viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4z"/><path d="M15.5 9a4 4 0 0 1 0 6"/></svg><i style="--w:.42"></i><b>42</b></div>
+          <div class="m-slide"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M5.6 18.4l1.8-1.8M16.6 7.4l1.8-1.8"/></svg><i style="--w:.9"></i><b>90</b></div>
+          <div class="m-tiles"><span class="on">Wi-Fi</span><span class="on">Bluetooth</span><span>Не спать</span><span>Не мешать</span></div>
+        </div></div>
+        <h3>Управление</h3><p>Громкость, яркость, Wi-Fi и Bluetooth без захода в настройки Windows.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl m-two">
+          <div><b>Глаза</b><span>перерыв через 20 мин</span><u>Отдохнуть</u></div>
+          <div class="m-breath"><i></i><b>Дыхание</b><span>вдох 4 с, выдох 6 с</span></div>
+        </div></div>
+        <h3>Глаза и дыхание</h3><p>Каждые 20 минут PoDee напомнит посмотреть вдаль. Минута спокойного дыхания запускается одной кнопкой.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-head"><b>Задачи</b><span>2 / 4</span></div>
+          <ul class="m-list"><li class="done">Отправить макет</li><li class="done">Оплатить интернет</li><li>Позвонить маме</li><li>Купить корм коту</li></ul>
+        </div></div>
+        <h3>Задачи и заметки</h3><p>Список дел на сегодня и быстрые заметки, всё хранится у вас на компьютере.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-head"><b>Буфер обмена</b><span>12 записей</span></div>
+          <div class="m-clips"><p>podylab.github.io</p><p>Встреча в четверг в 15:00</p><p class="img"><i></i>снимок экрана</p></div>
+        </div></div>
+        <h3>Буфер обмена</h3><p>Всё, что вы копировали, под рукой: текст, ссылки и картинки.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-note"><i style="background:#2aa3e0">T</i><p><b>Аня</b><span>Скинула фото с выходных</span></p><em>14:05</em></div>
+          <div class="m-note"><i style="background:#5865f2">D</i><p><b>Discord</b><span>Новое сообщение в #general</span></p><em>13:48</em></div>
+          <div class="m-note"><i style="background:#e0735f">M</i><p><b>Почта</b><span>Счёт за октябрь</span></p><em>12:30</em></div>
+        </div></div>
+        <h3>Уведомления</h3><p>Уведомления собираются на острове, и пропущенное легко найти позже.</p>
+      </div>
+    </div>
   </section>
 </main>
 <script src="site.js?v=53bcacf3"></script>
