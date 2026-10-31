@@ -30,7 +30,7 @@ const page = location.pathname.split("/").pop() || "index.html";
 // the RU / EN switch remembers their own choice
 const LANG_KEY = "podylab.lang";
 const chosen = (() => { try { return localStorage.getItem(LANG_KEY); } catch { return null; } })();
-if (!EN && page === "index.html" && !chosen && !/^(ru|uk|be|kk)/i.test(navigator.language || "")) location.replace("en/");
+if (!EN && !up && page === "index.html" && !chosen && !/^(ru|uk|be|kk)/i.test(navigator.language || "")) location.replace("en/");
 
 // ---- header and footer ----
 const links = [
@@ -214,7 +214,7 @@ if (desks.length) {
   document.querySelectorAll("[data-drops]").forEach((el) => (el.innerHTML = Array.from({ length: 8 }, (_, i) => `<span${i < 5 ? ' class="full"' : ""}>${drop}</span>`).join("")));
 }
 const isl = $("isl");
-if (isl) {
+if (isl && $("feats")) {
   const cards = [...document.querySelectorAll("#feats [data-tab]")];
   const open = (tab) => {
     isl.dataset.tab = tab;
@@ -244,3 +244,11 @@ if (mods) {
   });
   show();
 }
+// the tab icons on the island itself open their tab, like in the app
+document.querySelectorAll(".isl-tabs span[data-t]").forEach((t) => {
+  t.addEventListener("click", () => {
+    const desk = t.closest(".desk");
+    desk.dataset.tab = t.dataset.t;
+    document.querySelectorAll("#feats [data-tab]").forEach((c) => c.classList.toggle("on", c.dataset.tab === t.dataset.t));
+  });
+});

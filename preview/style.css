@@ -394,7 +394,7 @@ h1, h2, h3 { overflow-wrap: break-word; -webkit-hyphens: auto; hyphens: auto; }
 .feats .card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 /* on a phone the picture stays under the header while the cards scroll past it */
 @media (max-width: 860px) {
-  .desk.stick { position: sticky; top: 72px; z-index: 3; }
+  .desk.stick:has(+ .feats) { position: sticky; top: 72px; z-index: 3; }
 }
 
 /* the closed island: PoDee's thought cloud with the time */
@@ -445,3 +445,54 @@ h1, h2, h3 { overflow-wrap: break-word; -webkit-hyphens: auto; hyphens: auto; }
   .mods .d-pody { left: auto; right: .8em; }
   .desk.tall .screen { min-height: 25em; }
 }
+
+/* ---------- before / after: the same desktop without PoDee and with it ---------- */
+.ba { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.ba figure { margin: 0; min-width: 0; }
+.ba figcaption { margin-top: 12px; color: var(--muted); }
+.ba figcaption b { color: var(--text); margin-right: 4px; }
+.ba .desk .screen { min-height: 0; aspect-ratio: 16 / 10; font-size: clamp(7px, 1.9cqi, 12px); }
+/* the icons scattered on the desktop, in two columns */
+.d-icons { position: absolute; left: 1.2em; top: 1.2em; display: grid; grid-template-columns: repeat(2, 2.6em); gap: 1.1em .9em; }
+.d-icons i { width: 2.6em; height: 2.6em; border-radius: .5em; background: rgb(255 255 255 / .55); box-shadow: inset 0 -.8em 0 rgb(0 0 0 / .12); }
+.d-icons i:nth-child(3n) { background: #ffd166; } .d-icons i:nth-child(4n) { background: #6cb6ff; } .d-icons i:nth-child(5n) { background: #ff8a7a; }
+/* a crowded taskbar with the tray clock */
+.d-taskbar.full { justify-content: flex-start; padding: 0 1em; gap: .5em; }
+.d-taskbar.full i:first-child { margin-right: .5em; }
+.d-taskbar .tray { margin-left: auto; font-weight: 700; font-size: .9em; font-variant-numeric: tabular-nums; }
+/* after: the taskbar hides itself and the dock sits low */
+.d-dock.low { bottom: 1em; }
+.d-pody.near { left: calc(50% + 5.4em); top: .9em; }
+@media (max-width: 860px) { .ba { grid-template-columns: 1fr; } }
+
+/* ---------- install in three steps ---------- */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.steps h3 { display: flex; align-items: center; gap: 10px; }
+.steps .n { width: 30px; height: 30px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-size: 16px; font-weight: 900; }
+.mini { container-type: inline-size; margin: -6px -6px 16px; border-radius: 14px; overflow: hidden; aspect-ratio: 4 / 3; max-width: calc(100% + 12px); display: grid; place-items: center;
+  background: linear-gradient(180deg, #6e9894, #557c78); font-size: clamp(8px, 4.4cqi, 13px); line-height: 1.4; color: #1b1b1b; }
+/* 1: the file in the browser's downloads */
+.m-dl { width: 88%; padding: .9em 1em; border-radius: .8em; background: #fbfbfb; box-shadow: 0 .6em 1.6em rgb(0 0 0 / .25); display: grid; gap: .6em; }
+.m-file { display: flex; align-items: center; gap: .6em; font-weight: 700; overflow-wrap: anywhere; min-width: 0; }
+.m-file i { width: 1.8em; height: 2.2em; flex: none; border-radius: .25em; background: linear-gradient(160deg, #8fe3cc, #23806c); }
+.m-open { justify-self: start; color: #0b63c4; font-weight: 700; }
+/* 2: SmartScreen, the blue window that comes before the installer */
+.m-ss { width: 92%; padding: .9em 1em; background: #0067b8; color: #fff; box-shadow: 0 .6em 1.6em rgb(0 0 0 / .3); font-size: .86em; }
+.m-ss b { display: block; font-size: 1.25em; line-height: 1.2; margin-bottom: .4em; font-weight: 600; }
+.m-ss p { margin: 0 0 .45em; }
+.m-ss .m-more { display: flex; align-items: center; gap: .4em; }
+.m-ss-btns { display: flex; justify-content: flex-end; gap: .5em; margin-top: .3em; }
+.m-ss-btns span { position: relative; padding: .35em .8em; border: 1px solid rgb(255 255 255 / .8); }
+.m-ss-btns .hot { background: #fff; color: #0067b8; font-weight: 700; }
+.tap { width: 1.5em; height: 1.5em; flex: none; display: inline-grid; place-items: center; border-radius: 50%; background: #f3c77a; color: #2a1d02; font-style: normal; font-weight: 900; font-size: .85em; }
+.m-ss-btns .tap { position: absolute; right: -.7em; top: -.7em; }
+/* 3: PoDee at the top of the desktop */
+.m-desk { position: relative; width: 100%; height: 100%; font-size: 1.1em; }
+.m-desk .isl-cloud { top: 1.4em; margin-left: -6.4em; }
+.m-desk .d-pody.near { left: calc(50% + 3.4em); top: 1.4em; }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
+.steps h3 { align-items: flex-start; }
+.steps .n { margin-top: 1px; }
+/* the island in a hero spans the column; its tab icons can be clicked too */
+.hero .desk { width: 100%; margin-top: 8px; }
+.isl-tabs span[data-t] { cursor: pointer; }
