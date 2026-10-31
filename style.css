@@ -291,3 +291,12 @@ h1, h2, h3 { overflow-wrap: break-word; -webkit-hyphens: auto; hyphens: auto; }
 @media (max-width: 480px) { .page-head h1 { font-size: clamp(24px, 7.4vw, 34px); } }
 .legal-title { font-size: 40px; }
 @media (max-width: 480px) { .legal-title { font-size: clamp(24px, 7.4vw, 34px); } }
+
+/* download counter: a green dot that breathes, like a live number */
+.dl-count { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; margin: 8px 0 0; position: relative; z-index: 1; }
+.hero .dl-count, .page-hero .dl-count { justify-content: center; }
+.dl-count b { color: var(--text, inherit); font-weight: 800; }
+.live-dot { width: 8px; height: 8px; border-radius: 50%; background: #34c77b; box-shadow: 0 0 0 0 rgba(52, 199, 123, .5); animation: live 2.4s ease-out infinite; }
+@keyframes live { 70% { box-shadow: 0 0 0 7px rgba(52, 199, 123, 0); } 100% { box-shadow: 0 0 0 0 rgba(52, 199, 123, 0); } }
+@media (prefers-reduced-motion: reduce) { .live-dot { animation: none; } }
+.stores + .dl-count { margin-top: 14px; padding-left: 6px; }

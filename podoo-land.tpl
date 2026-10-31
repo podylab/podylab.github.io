@@ -20,6 +20,7 @@
           <a class="chip" href="{REL}PoDoo.apk"><span class="chip-dot"></span><span data-en="Android app">Приложение для Android</span></a>
           <a class="chip" href="support.html"><span class="chip-dot"></span><span data-en="Support">Поддержать</span></a>
         </p>
+        <p class="dl-count" data-downloads="PoDoo-releases" hidden></p>
       </div>
 
       <!-- Сцена: касание на телефоне, результат на мониторе. Клавиши можно нажимать самому. -->

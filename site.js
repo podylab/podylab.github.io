@@ -86,6 +86,33 @@ windowsBits().then((bits) => {
     .catch(() => {});
 });
 
+// ---- downloads: GitHub counts every installer taken from the releases (updates too) ----
+// one request per repo, kept for an hour so the GitHub limit of 60 an hour is never reached
+async function downloads(repo) {
+  const key = "dl:" + repo;
+  try {
+    const c = JSON.parse(localStorage.getItem(key));
+    if (c && Date.now() - c.t < 3600e3) return c.n;
+  } catch {}
+  const r = await fetch(`https://api.github.com/repos/podylab/${repo}/releases?per_page=100`);
+  if (!r.ok) return null;
+  const n = (await r.json()).flatMap((rel) => rel.assets).filter((a) => /\.(exe|apk)$/.test(a.name)).reduce((s, a) => s + a.download_count, 0);
+  try {
+    localStorage.setItem(key, JSON.stringify({ n, t: Date.now() }));
+  } catch {}
+  return n;
+}
+const word = (n) => {
+  const d = n % 10, h = n % 100;
+  return d === 1 && h !== 11 ? "скачивание" : d >= 2 && d <= 4 && (h < 12 || h > 14) ? "скачивания" : "скачиваний";
+};
+document.querySelectorAll("[data-downloads]").forEach(async (el) => {
+  const n = await downloads(el.dataset.downloads).catch(() => null);
+  if (!n) return;
+  el.innerHTML = `<i class="live-dot" aria-hidden="true"></i><b>${n.toLocaleString(T("ru-RU", "en-US"))}</b> ${T(word(n), n === 1 ? "download" : "downloads")}`;
+  el.hidden = false;
+});
+
 // ---- card: the DonationAlerts page ----
 const card = $("card");
 if (card) {
