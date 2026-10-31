@@ -1,5 +1,6 @@
 # The English site in en/: the same pages as mkpages.py, with paths one folder up.
 import hashlib
+import re
 import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 os.makedirs("en", exist_ok=True)
@@ -9,6 +10,15 @@ def ver(name):
     """A mark of the file's content for its address: after a publish the browser takes the new file, not its cached one."""
     with open(name, "rb") as f:
         return hashlib.md5(f.read()).hexdigest()[:8]
+
+
+def land(en):
+    """The PoDoo page body from podoo-land.tpl; the English page gets the data-en words in place."""
+    s = open("podoo-land.tpl", encoding="utf-8").read().split("\n", 1)[1]
+    s = s.replace("{REL}", "https://github.com/podylab/PoDoo-releases/releases/latest/download/")
+    if en:
+        s = re.sub(r'(<(\w+)\b[^>]*?\sdata-en="([^"]*)"[^>]*>)[^<]*(</\2>)', lambda m: m.group(1) + m.group(3) + m.group(4), s)
+    return s
 
 
 def head(title, desc, icon="podee-icon.svg"):
@@ -98,36 +108,10 @@ podee = head("PoDee · Pody Lab", "PoDee: an island at the top of the Windows sc
 </main>
 ''' + tail
 
-podoo = head("PoDoo · Pody Lab", "PoDoo: a phone or tablet becomes a remote for your PC, like a Stream Deck.", "podoo-icon.svg") + '''<body>
-<main class="wrap">
-  <div class="hero">
-    <img class="cloud" src="../media/podoo-icon.svg" alt="" />
-    <h1>A remote for your PC <em>from your phone</em></h1>
-    <p class="lead">Stand a phone or tablet by your monitor and it shows the icons of your apps. One tap and Photoshop, Telegram or your project folder is open. No need to buy a Stream Deck. Any Android phone works, and an old one from your drawer gets a second life.</p>
-    <div class="btns"><a class="btn main" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Download for Windows</a><a class="btn ghost" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9.5h12V17a1.5 1.5 0 0 1-1.5 1.5H16V21a1.2 1.2 0 0 1-2.4 0v-2.5h-3.2V21A1.2 1.2 0 0 1 8 21v-2.5h-.5A1.5 1.5 0 0 1 6 17zM6.2 8.5a6 6 0 0 1 11.6 0zM9.5 5.8a.7.7 0 1 0 0 .01zM14.5 5.8a.7.7 0 1 0 0 .01zM8 3l1.4 2M16 3l-1.4 2"/></svg>Download for Android</a></div>
-    <p class="dl-alt">Version 1.0.1 for 64-bit Windows · <a href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x86-setup.exe">need 32-bit?</a> · <a href="https://github.com/podylab/PoDoo-releases/releases/latest">all files</a></p>
-  </div>
-
-  <section>
-    <h2>What PoDoo does</h2>
-    <p class="sub">An Android phone and a Windows PC, connected over Wi-Fi, cable or Bluetooth.</p>
-    <div class="grid g3">
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 3L5.5 13.4h6l-1 7.6 8-10.6h-6z"/></svg></div><h3>Quick launch</h3><p>Icons of your favourite apps, sites and folders are already there. Nothing to set up.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v16M12 4v16M19 4v16"/><circle cx="5" cy="9" r="2" class="f"/><circle cx="12" cy="15" r="2" class="f"/><circle cx="19" cy="8" r="2" class="f"/></svg></div><h3>Buttons for each app</h3><p>Photoshop is open, the phone shows its tools. OBS is open, it shows scenes, the mic and going live.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 17.5V6.2l9-2v11.3"/><circle cx="7" cy="17.5" r="2.5"/><circle cx="16" cy="15.5" r="2.5"/><path d="M9.5 9.6l9-2"/></svg></div><h3>Music and touchpad</h3><p>Pause, volume, next track. Scroll through a film on the TV from the sofa.</p></div>
-    </div>
-  </section>
-
-  <section id="start">
-    <h2>Getting started</h2>
-    <div class="grid g3">
-      <div class="card"><h3>1. Install on your PC</h3><p>Download PoDoo for Windows and run the setup. It sits in the tray and waits for your phone.</p></div>
-      <div class="card"><h3>2. Install on your phone</h3><p>Download PoDoo.apk on the phone itself and open it. Android asks to allow installs from your browser: allow it.</p></div>
-      <div class="card"><h3>3. Connect</h3><p>With the phone and PC on the same Wi-Fi, the app finds your computer. Tap it and enter the code shown in PoDoo.</p></div>
-    </div>
-  </section>
-</main>
-''' + tail
+podoo = (head("PoDoo · Pody Lab", "PoDoo: a phone or tablet becomes a remote for your PC, like a Stream Deck. Apps, shortcuts, music and a touchpad, one tap each.", "podoo-icon.svg")
+         .replace("</head>", f'<link rel="stylesheet" href="../podoo.css?v={ver("podoo.css")}" />\n</head>')
+         + "<body>\n" + land(True) + "\n"
+         + tail.replace("</body>", f'<script src="../podoo.js?v={ver("podoo.js")}"></script>\n</body>'))
 
 support = head("Support · Pody Lab", "Support Pody Lab with any amount by card, Kaspi QR or crypto and send a wish for PoDee or PoDoo.") + '''<body>
 <main class="wrap">

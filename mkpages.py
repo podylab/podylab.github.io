@@ -1,4 +1,5 @@
 import hashlib
+import re
 import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
@@ -7,6 +8,15 @@ def ver(name):
     """A mark of the file's content for its address: after a publish the browser takes the new file, not its cached one."""
     with open(name, "rb") as f:
         return hashlib.md5(f.read()).hexdigest()[:8]
+
+
+def land(en):
+    """The PoDoo page body from podoo-land.tpl; the English page gets the data-en words in place."""
+    s = open("podoo-land.tpl", encoding="utf-8").read().split("\n", 1)[1]
+    s = s.replace("{REL}", "https://github.com/podylab/PoDoo-releases/releases/latest/download/")
+    if en:
+        s = re.sub(r'(<(\w+)\b[^>]*?\sdata-en="([^"]*)"[^>]*>)[^<]*(</\2>)', lambda m: m.group(1) + m.group(3) + m.group(4), s)
+    return s
 
 
 def head(title, desc, icon="podee-icon.svg"):
@@ -96,36 +106,10 @@ podee = head("PoDee · Pody Lab", "PoDee: остров вверху экрана
 </main>
 ''' + tail
 
-podoo = head("PoDoo · Pody Lab", "PoDoo: телефон или планшет становится пультом для ПК, как Stream Deck.", "podoo-icon.svg") + '''<body>
-<main class="wrap">
-  <div class="hero">
-    <img class="cloud" src="media/podoo-icon.svg" alt="" />
-    <h1>Пульт для ПК <em>из телефона</em></h1>
-    <p class="lead">Поставьте телефон или планшет у монитора, и на нём появятся иконки ваших программ. Одно нажатие, и Photoshop, Telegram или папка проекта открыты. Отдельный Stream Deck покупать не нужно. Подойдёт любой Android, а старому телефону из ящика это даст вторую жизнь.</p>
-    <div class="btns"><a class="btn main" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Скачать для Windows</a><a class="btn ghost" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9.5h12V17a1.5 1.5 0 0 1-1.5 1.5H16V21a1.2 1.2 0 0 1-2.4 0v-2.5h-3.2V21A1.2 1.2 0 0 1 8 21v-2.5h-.5A1.5 1.5 0 0 1 6 17zM6.2 8.5a6 6 0 0 1 11.6 0zM9.5 5.8a.7.7 0 1 0 0 .01zM14.5 5.8a.7.7 0 1 0 0 .01zM8 3l1.4 2M16 3l-1.4 2"/></svg>Скачать для Android</a></div>
-    <p class="dl-alt">Версия 1.0.1 для 64-битной Windows · <a href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x86-setup.exe">нужна 32-битная</a> · <a href="https://github.com/podylab/PoDoo-releases/releases/latest">все файлы</a></p>
-  </div>
-
-  <section>
-    <h2>Что умеет PoDoo</h2>
-    <p class="sub">Телефон на Android и компьютер с Windows. Подключение по Wi-Fi, кабелю или Bluetooth.</p>
-    <div class="grid g3">
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 3L5.5 13.4h6l-1 7.6 8-10.6h-6z"/></svg></div><h3>Быстрый запуск</h3><p>Иконки любимых программ, сайтов и папок уже на месте, настраивать ничего не нужно.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v16M12 4v16M19 4v16"/><circle cx="5" cy="9" r="2" class="f"/><circle cx="12" cy="15" r="2" class="f"/><circle cx="19" cy="8" r="2" class="f"/></svg></div><h3>Кнопки под программу</h3><p>Открыт Photoshop, на телефоне инструменты. Открыт OBS, на нём сцены, микрофон и эфир.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 17.5V6.2l9-2v11.3"/><circle cx="7" cy="17.5" r="2.5"/><circle cx="16" cy="15.5" r="2.5"/><path d="M9.5 9.6l9-2"/></svg></div><h3>Музыка и тачпад</h3><p>Пауза, громкость, следующий трек. Фильм на телевизоре можно листать с дивана.</p></div>
-    </div>
-  </section>
-
-  <section id="start">
-    <h2>Как начать</h2>
-    <div class="grid g3">
-      <div class="card"><h3>1. Поставьте на ПК</h3><p>Скачайте PoDoo для Windows и запустите установщик. Программа сядет в трей и будет ждать телефон.</p></div>
-      <div class="card"><h3>2. Поставьте на телефон</h3><p>Скачайте PoDoo.apk прямо на телефоне и откройте. Android попросит разрешить установку из браузера: разрешите.</p></div>
-      <div class="card"><h3>3. Подключитесь</h3><p>Телефон и ПК в одной сети Wi-Fi: приложение само найдёт компьютер. Нажмите на него и введите код из окна PoDoo.</p></div>
-    </div>
-  </section>
-</main>
-''' + tail
+podoo = (head("PoDoo · Pody Lab", "PoDoo: телефон или планшет становится пультом для ПК, как Stream Deck. Программы, горячие клавиши, музыка и тачпад в одно касание.", "podoo-icon.svg")
+         .replace("</head>", f'<link rel="stylesheet" href="podoo.css?v={ver("podoo.css")}" />\n</head>')
+         + "<body>\n" + land(False) + "\n"
+         + tail.replace("</body>", f'<script src="podoo.js?v={ver("podoo.js")}"></script>\n</body>'))
 
 support = head("Поддержать · Pody Lab", "Поддержать Pody Lab любой суммой картой, через Kaspi QR или криптой и отправить пожелание к PoDee или PoDoo.") + '''<body>
 <main class="wrap">
