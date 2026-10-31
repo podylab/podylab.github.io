@@ -192,7 +192,7 @@ support = head("Поддержать · Pody Lab", "Поддержать Pody La
 privacy = head("Конфиденциальность PoDee · Pody Lab", "Какие данные PoDee хранит и куда отправляет. Privacy policy of PoDee.") + '''<body>
 <main class="wrap legal">
   <section>
-    <h1 style="font-size:40px">Политика конфиденциальности PoDee</h1>
+    <h1 class="legal-title">Политика конфиденциальности PoDee</h1>
     <p class="sub">Действует с 30 октября 2026 года. Pody Lab, podylab@gmail.com</p>
 
     <h2>Коротко</h2>

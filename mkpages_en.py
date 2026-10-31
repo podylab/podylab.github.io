@@ -194,7 +194,7 @@ support = head("Support · Pody Lab", "Support Pody Lab with any amount by card,
 privacy = head("PoDee privacy policy · Pody Lab", "What PoDee keeps and where it sends it.") + '''<body>
 <main class="wrap legal">
   <section>
-    <h1 style="font-size:40px">PoDee privacy policy</h1>
+    <h1 class="legal-title">PoDee privacy policy</h1>
     <p class="sub">Effective October 30, 2026. Pody Lab, podylab@gmail.com</p>
 
     <h2>In short</h2>

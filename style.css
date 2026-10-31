@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --bg: #0d1113; --bg2: #121a1c; --card: rgb(255 255 255 / .05); --line: rgb(255 255 255 / .09);
     --text: #eef4f2; --muted: #9db0ab; --accent: #7ed6be; --accent2: #23806c; --on-accent: #08231d;
     --shadow: 0 30px 80px rgb(0 0 0 / .45);
@@ -258,3 +258,36 @@ select option { background: var(--bg2); color: var(--text); }
   :root:not([data-theme="dark"]) :is(input, textarea, select, .addr) { background: #fff; border-color: rgb(10 40 32 / .14); }
   :root:not([data-theme="dark"]) .ic.kaspi { box-shadow: inset 0 0 0 1px rgb(10 40 32 / .1); }
 }
+
+/* ---------- phones ---------- */
+/* Android stretches the whole page, PoDy included, when you pull past the top or bottom: the page simply stops there */
+html, body { overscroll-behavior-y: none; }
+/* the phone's own font boost doesn't push text out of cards */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+/* a wallet address wraps anywhere and never sticks out of its card */
+.addr { display: block; min-width: 0; max-width: 100%; overflow-wrap: anywhere; word-break: break-all; }
+.wallet > * { min-width: 0; }
+.card, .pay, .grid > * { min-width: 0; }
+@media (max-width: 480px) {
+  .wrap { padding: 0 16px; }
+  .hero { padding-top: 28px; }
+  h1 { font-size: clamp(30px, 9vw, 40px); }
+  .lead { font-size: 17px; }
+  section { padding: 44px 0; }
+  .card { padding: 18px; border-radius: 18px; }
+  .pay .btn, .pay-bar .btn { align-self: stretch; justify-self: stretch; justify-content: center; }
+  .copy { width: 100%; justify-content: center; }
+  .coins { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .coin { padding: 8px 0; text-align: center; }
+  .addr { font-size: 13px; text-align: center; }
+  .net { text-align: center; min-height: 0; }
+  .wallet { justify-items: center; }
+  .wallet > div:last-child { width: 100%; }
+  .pay-steps { justify-self: stretch; }
+  .pody-talk { width: min(260px, calc(100vw - 32px)); font-size: 14px; }
+}
+/* long Russian words in headings («конфиденциальности») break with a hyphen instead of sticking out */
+h1, h2, h3 { overflow-wrap: break-word; -webkit-hyphens: auto; hyphens: auto; }
+@media (max-width: 480px) { .page-head h1 { font-size: clamp(24px, 7.4vw, 34px); } }
+.legal-title { font-size: 40px; }
+@media (max-width: 480px) { .legal-title { font-size: clamp(24px, 7.4vw, 34px); } }
