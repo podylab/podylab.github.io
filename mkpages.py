@@ -46,7 +46,6 @@ home = head("Pody Lab", "Pody Lab делает небольшие програм
       </div>
       <a class="card app" href="podoo.html">
         <img src="media/podoo-icon.svg" alt="" />
-        <span class="tag soon">Скоро</span>
         <h3>PoDoo</h3>
         <p>Старый телефон или планшет у монитора становится пультом для ПК: программы, кнопки для OBS и Photoshop, музыка, тачпад.</p>
         <span class="more" style="color:#f2a074">Подробнее →</span>
@@ -95,18 +94,18 @@ podee = head("PoDee · Pody Lab", "PoDee: остров вверху экрана
 </main>
 ''' + tail
 
-podoo = head("PoDoo · Pody Lab", "PoDoo: старый телефон или планшет становится пультом для ПК, как Stream Deck. Скоро.", "podoo-icon.svg") + '''<body class="orange">
+podoo = head("PoDoo · Pody Lab", "PoDoo: старый телефон или планшет становится пультом для ПК, как Stream Deck.", "podoo-icon.svg") + '''<body class="orange">
 <main class="wrap">
   <div class="hero">
     <img class="cloud" src="media/podoo-icon.svg" alt="" style="filter:drop-shadow(0 18px 30px rgb(207 70 25 / .35))" />
-    <span class="tag soon" style="justify-self:center;margin-top:18px">В разработке</span>
     <h1>Пульт для ПК <em>из старого телефона</em></h1>
     <p class="lead">Поставьте телефон или планшет у монитора, и на нём появятся иконки ваших программ. Одно нажатие, и Photoshop, Telegram или папка проекта открыты. Отдельный Stream Deck покупать не нужно.</p>
-    <div class="btns"><a class="btn main" href="#notify">Сообщить, когда выйдет</a></div>
+    <div class="btns"><a class="btn main" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Скачать для Windows</a><a class="btn ghost" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9.5h12V17a1.5 1.5 0 0 1-1.5 1.5H16V21a1.2 1.2 0 0 1-2.4 0v-2.5h-3.2V21A1.2 1.2 0 0 1 8 21v-2.5h-.5A1.5 1.5 0 0 1 6 17zM6.2 8.5a6 6 0 0 1 11.6 0zM9.5 5.8a.7.7 0 1 0 0 .01zM14.5 5.8a.7.7 0 1 0 0 .01zM8 3l1.4 2M16 3l-1.4 2"/></svg>Скачать для Android</a></div>
+    <p class="dl-alt">Версия 1.0.0 для 64-битной Windows · <a href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x86-setup.exe">нужна 32-битная</a> · <a href="https://github.com/podylab/PoDoo-releases/releases/latest">все файлы</a></p>
   </div>
 
   <section>
-    <h2>Что будет в PoDoo</h2>
+    <h2>Что умеет PoDoo</h2>
     <p class="sub">Телефон на Android и компьютер с Windows. Подключение по Wi-Fi, кабелю или Bluetooth.</p>
     <div class="grid g3">
       <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 3L5.5 13.4h6l-1 7.6 8-10.6h-6z"/></svg></div><h3>Быстрый запуск</h3><p>Иконки любимых программ, сайтов и папок уже на месте, настраивать ничего не нужно.</p></div>
@@ -115,18 +114,12 @@ podoo = head("PoDoo · Pody Lab", "PoDoo: старый телефон или п�
     </div>
   </section>
 
-  <section id="notify">
-    <h2>Сообщить, когда выйдет</h2>
-    <p class="sub">Оставьте почту, и мы напишем один раз, когда PoDoo можно будет скачать.</p>
-    <div class="card">
-      <form data-send="Записали. Напишем, когда PoDoo выйдет.">
-        <input type="hidden" name="about" value="PoDoo: сообщить о выходе" />
-        <div class="row2">
-          <label>Почта <input name="email" type="email" required autocomplete="email" placeholder="you@mail.com" /></label>
-          <label>Что хотите делать с PoDoo <input name="message" placeholder="Можно не писать" /></label>
-        </div>
-        <div class="btns" style="align-items:center"><button class="btn main" type="submit">Сообщить мне</button><span class="sent"></span></div>
-      </form>
+  <section id="start">
+    <h2>Как начать</h2>
+    <div class="grid g3">
+      <div class="card"><h3>1. Поставьте на ПК</h3><p>Скачайте PoDoo для Windows и запустите установщик. Программа сядет в трей и будет ждать телефон.</p></div>
+      <div class="card"><h3>2. Поставьте на телефон</h3><p>Скачайте PoDoo.apk прямо на телефоне и откройте. Android попросит разрешить установку из браузера: разрешите.</p></div>
+      <div class="card"><h3>3. Подключитесь</h3><p>Телефон и ПК в одной сети Wi-Fi: приложение само найдёт компьютер. Нажмите на него и введите код из окна PoDoo.</p></div>
     </div>
   </section>
 </main>
