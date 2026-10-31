@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../../" />
+<title>Dukung · Pody Lab</title>
+<meta name="description" content="Dukung Pody Lab dengan jumlah berapa pun lewat kartu, Kaspi QR, atau kripto, dan kirim keinginan untuk PoDee atau PoDoo." />
+<link rel="icon" href="../../media/podee-icon.svg?v=41ecf9f3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=629f9e8f" />
+</head>
+<body>
+<main class="wrap">
+  <div class="hero" style="padding-bottom:0">
+    <img class="cloud" src="../../media/podee-icon.svg?v=41ecf9f3" alt="Awan PoDy" />
+    <h1>Dukung <em>Pody Lab</em></h1>
+    <p class="lead">Aplikasi Pody Lab gratis. Kalau bermanfaat, kirim berapa pun yang kamu mau. Uangnya untuk fitur baru dan aplikasi berikutnya.</p>
+  </div>
+
+  <section id="donate">
+    <div class="card pay pay-bar">
+      <div class="pay-head"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M3 10h18"/><path d="M7 14.6h3.5"/></svg></div><div><h3>Dengan kartu</h3><p>Kartu apa pun, jumlah berapa pun</p></div></div>
+      <p class="pay-text">Halaman pembayaran akan terbuka (dalam bahasa Rusia). Masukkan jumlahnya dan, kalau mau, keinginan di pesan pembayaran.</p>
+      <a class="btn main" id="card" href="#" target="_blank" rel="noopener">Bayar dengan kartu</a>
+    </div>
+    <div class="grid g2 pay-pair">
+      <div class="card pay" id="kaspi">
+        <div class="pay-head"><div class="ic kaspi"><img src="../../media/kaspi-logo.png" width="34" height="35" alt=""></div><div><h3>Kaspi QR</h3><p>Untuk Kazakhstan</p></div></div>
+        <div class="wallet">
+          <div class="qr"><img src="../../kaspi-qr.png" width="132" height="132" alt="Kaspi QR untuk pembayaran" loading="lazy"></div>
+          <ol class="pay-steps"><li>Buka aplikasi Kaspi.kz.</li><li>Ketuk «Kaspi QR» dan arahkan kamera ke kodenya.</li><li>Masukkan jumlah berapa pun dan konfirmasi.</li></ol>
+        </div>
+      </div>
+      <div class="card pay">
+        <div class="pay-head"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M14.6 9.4a2.9 2.9 0 0 0-2.6-1.4c-1.6 0-2.7.8-2.7 1.9s.9 1.6 2.7 1.9 2.7.9 2.7 2-1.1 2-2.7 2a3 3 0 0 1-2.7-1.5"/><path d="M12 6.3v1.7M12 16v1.7"/></svg></div><div><h3>Dengan kripto</h3><p>USDT, TON, BTC, ETH, BNB, DOGE</p></div></div>
+        <div class="coins" id="coins"></div>
+        <div class="wallet">
+          <div class="qr" id="qr"></div>
+          <div>
+            <div class="addr" id="addr"></div>
+            <div class="net" id="net"></div>
+            <button class="btn ghost copy" id="copy" type="button">Salin alamat</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wish">
+    <h2>Kembangkan aplikasinya bersama</h2>
+    <p class="sub">Untuk ini tidak perlu bayar. Ceritakan apa yang kurang dari PoDee atau PoDoo, atau aplikasi apa yang dibuat berikutnya. Kami membaca setiap keinginan.</p>
+    <div class="card">
+      <form data-send="Terima kasih, sudah diterima. Akan kami baca.">
+        <input type="hidden" name="about" value="Keinginan" />
+        <div class="row2">
+          <label>Aplikasi <select name="app"><option>PoDee</option><option>PoDoo</option><option>Aplikasi baru</option></select></label>
+          <label>Email, kalau ingin dibalas <input name="email" type="email" autocomplete="email" placeholder="you@mail.com" /></label>
+        </div>
+        <label>Yang perlu diperbaiki <textarea name="message" required placeholder="Misalnya: tampilkan cuaca di pulau"></textarea></label>
+        <div class="btns" style="align-items:center"><button class="btn main" type="submit">Kirim keinginan</button><span class="sent"></span></div>
+      </form>
+      <p class="wish-also">Kamu juga bisa mengirim keinginan bersama donasi: di pesan pembayaran kartu atau di komentar transfer TON.</p>
+    </div>
+  </section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "Pesan untuk PoDy", "js.about_podoo": "Tentang PoDoo", "js.all_podee_versions": "Semua versi PoDee", "js.back_to_top": "Kembali ke atas", "js.click": "Klik", "js.close": "Tutup", "js.copied": "Tersalin", "js.copy_address": "Salin alamat", "js.couldn_t_copy_select": "Gagal menyalin, pilih alamatnya", "js.download_podee_and_i": "Unduh PoDee, dan aku pindah ke atas layarmu", "js.downloads.few": "unduhan", "js.downloads.many": "unduhan", "js.downloads.one": "unduhan", "js.downloads.other": "unduhan", "js.good_even_better_when": "Baik. Lebih baik lagi kalau dielus", "js.hi_glad_you_came": "Hai! Senang kamu mampir", "js.hi_i_m_pody": "Hai, aku PoDy. Boleh dielus", "js.i_like_you_too": "Aku juga suka kamu", "js.i_live_at_the": "Aku tinggal di atas layarmu dan menampilkan musik dan jam. Kamu juga bisa ngobrol denganku", "js.i_m_dizzy": "Aku pusing…", "js.i_only_know_a": "Aku baru tahu sedikit kata. Tanya apa yang bisa kulakukan", "js.if_podee_helps_you": "Kalau PoDee membantumu, kamu bisa mendukung proyeknya", "js.improve_together": "Kembangkan bersama", "js.language": "Bahasa situs", "js.learn_more": "Selengkapnya", "js.made_with_pody_the": "Dibuat bersama awan PoDy", "js.message": "pesan", "js.mute_pody": "Bisukan PoDy", "js.net_bnb": "BNB Smart Chain (BEP-20): BNB atau USDT di jaringan ini.", "js.net_btc": "Jaringan Bitcoin.", "js.net_doge": "Jaringan Dogecoin.", "js.net_eth": "Jaringan Ethereum (ERC-20): ETH atau USDT di jaringan ini.", "js.net_ton": "Jaringan TON: Toncoin atau USDT. Di komentar kamu bisa menulis keinginan.", "js.net_usdt": "Hanya jaringan TRC-20 (Tron). Jaringan lain tidak bisa.", "js.next_track": "Lagu berikutnya", "js.paused": "Dijeda", "js.playing": "Diputar", "js.podoo_is_out": "PoDoo sudah rilis: ponsel atau tablet lama jadi remote PC kamu", "js.pody_the_cloud_pet": "Awan PoDy: elus dan ajak ngobrol", "js.previous_track": "Lagu sebelumnya", "js.privacy": "Privasi", "js.soon": "Segera", "js.sound_off": "Suara mati", "js.sound_on": "Suara nyala", "js.support": "Dukung", "js.thank_you_here_s": "Terima kasih! Ini halaman dukungannya", "js.thanks_for_stopping_by": "Terima kasih sudah mampir. Berapa pun membantu", "js.that_tickles": "Geli!", "js.the_address_is_coming": "Alamatnya segera hadir", "js.the_download_podee_button": "Tombol «Unduh PoDee» ada di beranda dan di halaman PoDee", "js.the_form_will_work": "Formulirnya akan segera berfungsi", "js.track_1": "Jalan malam", "js.track_2": "Lampu kota", "js.track_3": "Fajar", "js.typed_text": "Diketik: {text}", "js.unmute_pody": "Nyalakan suara PoDy", "js.version_line": "Versi {v} untuk Windows {bits}-bit · <a href=\"{link}\">perlu yang {other}-bit?<\/a>", "js.volume_n": "Volume {n}%", "js.write_to_pody": "Tulis ke PoDy…"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=f49b63dc"></script>
+<script src="../pody.js?v=3bf6c807"></script>
+</body>
+</html>

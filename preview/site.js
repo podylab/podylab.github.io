@@ -8,56 +8,82 @@ const CONFIG = {
   form: "https://formspree.io/f/xwllnbpp", // Formspree endpoint, e.g. https://formspree.io/f/xxxxxxx
   mail: "podylab@gmail.com", // without Formspree, the form opens a letter to this address
   wallets: [
-    { coin: "USDT", net: ["Сеть TRC-20 (Tron). Другие сети не подойдут.", "TRC-20 (Tron) network only."], address: "TWoqgVrM1kEFTNZnZzkmJYT2uTYx5Yh58E" },
-    { coin: "TON", net: ["Сеть TON: Toncoin и USDT. В комментарии можно написать пожелание.", "TON network: Toncoin or USDT. The comment can carry a wish."], address: "UQBBy_XIcwbK0A04cF81YYehXb24dbEczQlWIqpyE05nnsIi" },
-    { coin: "BTC", net: ["Сеть Bitcoin.", "Bitcoin network."], address: "bc1qdus0f49gu3qupe9et8all9mt90fyaph74qv884" },
-    { coin: "ETH", net: ["Сеть Ethereum (ERC-20): ETH и USDT в этой сети.", "Ethereum network (ERC-20): ETH, or USDT on it."], address: "0x5685fd91Db09F496a4d09EF4343aFb8Fcb1fbA47" },
-    { coin: "BNB", net: ["Сеть BNB Smart Chain (BEP-20): BNB и USDT в этой сети.", "BNB Smart Chain (BEP-20): BNB, or USDT on it."], address: "0x5685fd91Db09F496a4d09EF4343aFb8Fcb1fbA47" },
-    { coin: "DOGE", net: ["Сеть Dogecoin.", "Dogecoin network."], address: "D6C7TCRabX6jr8x6c9qoZUGB7evSUsf727" },
+    { coin: "USDT", net: "js.net_usdt", address: "TWoqgVrM1kEFTNZnZzkmJYT2uTYx5Yh58E" },
+    { coin: "TON", net: "js.net_ton", address: "UQBBy_XIcwbK0A04cF81YYehXb24dbEczQlWIqpyE05nnsIi" },
+    { coin: "BTC", net: "js.net_btc", address: "bc1qdus0f49gu3qupe9et8all9mt90fyaph74qv884" },
+    { coin: "ETH", net: "js.net_eth", address: "0x5685fd91Db09F496a4d09EF4343aFb8Fcb1fbA47" },
+    { coin: "BNB", net: "js.net_bnb", address: "0x5685fd91Db09F496a4d09EF4343aFb8Fcb1fbA47" },
+    { coin: "DOGE", net: "js.net_doge", address: "D6C7TCRabX6jr8x6c9qoZUGB7evSUsf727" },
   ],
 };
 
-// the English pages live in en/; T picks a page's words: T("русский", "English")
-const EN = document.documentElement.lang === "en";
-const T = (ru, en) => (EN ? en : ru);
+// the page's language: build.py writes PODY into every page (its words, the languages, this page's folder)
+const LANG = document.documentElement.lang;
+const WORDS = window.PODY?.words || {};
+// W("js.key", { name: value }) gives this page's words with {name} filled in
+const W = (k, vars = {}) => (WORDS[k] ?? k).replace(/\{(\w+)\}/g, (m, v) => vars[v] ?? m);
+// P(n, "js.downloads") picks the plural this language needs for n: js.downloads.one, .few, .many or .other
+const P = (n, k) => WORDS[`${k}.${new Intl.PluralRules(LANG).select(n)}`] ?? WORDS[`${k}.other`] ?? "";
 // the path to the site root: build.py writes it into the page (en/, preview/ and the like are one folder down)
-const up = document.querySelector('meta[name="root"]')?.content ?? (EN ? "../" : "");
+const up = document.querySelector('meta[name="root"]')?.content ?? "";
+// the way to the Russian pages of this build (the site, or its preview): every language's folder starts there
+const HOME = window.PODY?.home ?? up;
 
 const $ = (id) => document.getElementById(id);
 const page = location.pathname.split("/").pop() || "index.html";
 
-// the home page sends visitors whose browser isn't Russian-speaking to English, once;
-// the RU / EN switch remembers their own choice
+// the home page at the root opens in the browser's language, once; a choice in the menu is remembered
+const LANGS = window.PODY?.langs || [];
 const LANG_KEY = "podylab.lang";
 const chosen = (() => { try { return localStorage.getItem(LANG_KEY); } catch { return null; } })();
-if (!EN && !up && page === "index.html" && !chosen && !/^(ru|uk|be|kk)/i.test(navigator.language || "")) location.replace("en/");
+const pick = () => {
+  for (const want of navigator.languages || [navigator.language || ""]) {
+    const w = want.toLowerCase();
+    if (/^(ru|be|kk)/.test(w)) return "ru";
+    const hit = LANGS.find(([code]) => w === code.toLowerCase()) || LANGS.find(([code]) => w.split("-")[0] === code.split("-")[0].toLowerCase());
+    if (hit) return hit[0];
+  }
+  return "en";
+};
+if (LANG === "ru" && !HOME && page === "index.html" && !chosen) {
+  const to = LANGS.find(([code]) => code === pick());
+  if (to && to[1]) location.replace(to[1] + page);
+}
 
 // ---- header and footer ----
 const links = [
   ["podee.html", "PoDee"],
   ["podoo.html", "PoDoo"],
-  ["support.html", T("Поддержать", "Support")],
+  ["support.html", W("js.support")],
 ];
+const here = LANGS.find(([code]) => code === LANG);
 document.body.insertAdjacentHTML(
   "afterbegin",
   `<header><div class="wrap">
     <a class="brand" href="index.html"><img src="${up}media/podee-icon.svg" alt="" /> Pody Lab</a>
-    <nav>${links.map(([href, name]) => `<a href="${href}"${href === page ? ' aria-current="page"' : ""}>${name}</a>`).join("")}<a class="lang" id="lang" href="${EN ? "../" : "en/"}${page}${location.hash}" lang="${EN ? "ru" : "en"}">${EN ? "RU" : "EN"}</a></nav>
+    <nav>${links.map(([href, name]) => `<a href="${href}"${href === page ? ' aria-current="page"' : ""}>${name}</a>`).join("")}
+      <details class="langs" id="langs"><summary aria-label="${W("js.language")}">${(here?.[0] || LANG).split("-")[0].toUpperCase()}</summary>
+        <div class="langs-list">${LANGS.map(([code, folder, name]) => `<a href="${HOME}${folder}${page}${location.hash}" lang="${code}" hreflang="${code}" data-lang="${code}"${code === LANG ? ' aria-current="true"' : ""}>${name}</a>`).join("")}</div>
+      </details></nav>
   </div></header>`,
 );
 document.body.insertAdjacentHTML(
   "beforeend",
   `<footer><div class="wrap">
     <span>© 2026 Pody Lab</span>
-    <a href="${CONFIG.releases}">${T("Все версии PoDee", "All PoDee versions")}</a>
-    <a href="support.html#wish">${T("Улучшить вместе", "Improve together")}</a>
-    <a href="privacy.html">${T("Конфиденциальность", "Privacy")}</a>
-    <span>${T("Сделано с облачком PoDy", "Made with PoDy the cloud")}</span>
+    <a href="${CONFIG.releases}">${W("js.all_podee_versions")}</a>
+    <a href="support.html#wish">${W("js.improve_together")}</a>
+    <a href="privacy.html">${W("js.privacy")}</a>
+    <span>${W("js.made_with_pody_the")}</span>
   </div></footer>`,
 );
-$("lang").addEventListener("click", () => {
-  try { localStorage.setItem(LANG_KEY, EN ? "ru" : "en"); } catch {}
-});
+document.querySelectorAll("#langs a").forEach((a) =>
+  a.addEventListener("click", () => {
+    try { localStorage.setItem(LANG_KEY, a.dataset.lang); } catch {}
+  }),
+);
+// the menu closes on a click anywhere else
+document.addEventListener("click", (e) => { if (!e.target.closest("#langs")) $("langs")?.removeAttribute("open"); });
 // ---- download: the setup itself, for this Windows (64- or 32-bit) ----
 // Chrome and Edge always say «Win64» in the user agent, so the real bitness is asked separately
 async function windowsBits() {
@@ -77,7 +103,7 @@ windowsBits().then((bits) => {
     const other = bits === 32 ? 64 : 32;
     a.closest(".btns")?.insertAdjacentHTML(
       "afterend",
-      `<p class="dl-alt">${T(`Версия <span data-podee-version>${CONFIG.podeeVersion}</span> для ${bits}-битной Windows · <a href="${setup(other)}">нужна ${other}-битная</a>`, `Version <span data-podee-version>${CONFIG.podeeVersion}</span> for ${bits}-bit Windows · <a href="${setup(other)}">need ${other}-bit?</a>`)}</p>`,
+      `<p class="dl-alt">${W("js.version_line", { v: `<span data-podee-version>${CONFIG.podeeVersion}</span>`, bits, other, link: setup(other) })}</p>`,
     );
   }
   // the number of the release the button actually downloads
@@ -103,14 +129,10 @@ async function downloads(repo) {
   } catch {}
   return n;
 }
-const word = (n) => {
-  const d = n % 10, h = n % 100;
-  return d === 1 && h !== 11 ? "скачивание" : d >= 2 && d <= 4 && (h < 12 || h > 14) ? "скачивания" : "скачиваний";
-};
 document.querySelectorAll("[data-downloads]").forEach(async (el) => {
   const n = await downloads(el.dataset.downloads).catch(() => null);
   if (!n) return;
-  el.innerHTML = `<i class="live-dot" aria-hidden="true"></i><b>${n.toLocaleString(T("ru-RU", "en-US"))}</b> ${T(word(n), n === 1 ? "download" : "downloads")}`;
+  el.innerHTML = `<i class="live-dot" aria-hidden="true"></i><b>${n.toLocaleString(LANG)}</b> ${P(n, "js.downloads")}`;
   el.hidden = false;
 });
 
@@ -120,7 +142,7 @@ if (card) {
   if (CONFIG.card) card.href = CONFIG.card;
   else {
     card.removeAttribute("href");
-    card.textContent = T("Скоро", "Soon");
+    card.textContent = W("js.soon");
     card.style.opacity = 0.5;
   }
 }
@@ -133,10 +155,10 @@ if ($("coins")) {
     shown = i;
     const w = wallets[i];
     [...$("coins").children].forEach((b, j) => b.setAttribute("aria-pressed", String(i === j)));
-    $("addr").textContent = w.address || T("Адрес появится скоро", "The address is coming soon");
+    $("addr").textContent = w.address || W("js.the_address_is_coming");
     // the new address and its QR fade in instead of popping
     for (const el of [$("addr"), $("qr"), $("net")]) el.animate?.([{ opacity: 0.2 }, { opacity: 1 }], { duration: 260, easing: "ease-out" });
-    $("net").textContent = w.net[EN ? 1 : 0];
+    $("net").textContent = W(w.net);
     $("copy").disabled = !w.address;
     if (w.address && window.qrcode) {
       const q = qrcode(0, "M");
@@ -157,11 +179,11 @@ if ($("coins")) {
   $("copy").onclick = async () => {
     try {
       await navigator.clipboard.writeText(wallets[shown].address);
-      $("copy").textContent = T("Скопировано", "Copied");
+      $("copy").textContent = W("js.copied");
     } catch {
-      $("copy").textContent = T("Не вышло, выделите адрес", "Couldn't copy, select the address");
+      $("copy").textContent = W("js.couldn_t_copy_select");
     }
-    setTimeout(() => ($("copy").textContent = T("Скопировать адрес", "Copy address")), 1800);
+    setTimeout(() => ($("copy").textContent = W("js.copy_address")), 1800);
   };
 }
 
@@ -182,9 +204,9 @@ document.querySelectorAll("form[data-send]").forEach((form) => {
     }
     if (CONFIG.mail) {
       const text = [...data.entries()].map(([k, v]) => `${k}: ${v}`).join("\n");
-      location.href = `mailto:${CONFIG.mail}?subject=${encodeURIComponent("Pody Lab: " + (data.get("about") || T("сообщение", "message")))}&body=${encodeURIComponent(text)}`;
+      location.href = `mailto:${CONFIG.mail}?subject=${encodeURIComponent("Pody Lab: " + (data.get("about") || W("js.message")))}&body=${encodeURIComponent(text)}`;
     } else {
-      done.textContent = T("Форма заработает совсем скоро", "The form will work very soon");
+      done.textContent = W("js.the_form_will_work");
       done.style.display = "inline";
     }
   };

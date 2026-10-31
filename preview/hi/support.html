@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../../" />
+<title>सहयोग करें · Pody Lab</title>
+<meta name="description" content="कार्ड, Kaspi QR या क्रिप्टो से कोई भी रकम देकर Pody Lab का साथ दें, और PoDee या PoDoo के लिए अपनी इच्छा भेजें।" />
+<link rel="icon" href="../../media/podee-icon.svg?v=41ecf9f3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=629f9e8f" />
+</head>
+<body>
+<main class="wrap">
+  <div class="hero" style="padding-bottom:0">
+    <img class="cloud" src="../../media/podee-icon.svg?v=41ecf9f3" alt="बादल PoDy" />
+    <h1>सहयोग करें <em>Pody Lab</em></h1>
+    <p class="lead">Pody Lab के ऐप मुफ़्त हैं। अगर काम आएँ, तो जितना चाहें भेजें। पैसा नई सुविधाओं और अगले ऐप में लगता है।</p>
+  </div>
+
+  <section id="donate">
+    <div class="card pay pay-bar">
+      <div class="pay-head"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M3 10h18"/><path d="M7 14.6h3.5"/></svg></div><div><h3>कार्ड से</h3><p>कोई भी कार्ड, कोई भी रकम</p></div></div>
+      <p class="pay-text">भुगतान पेज खुलेगा (रूसी में)। रकम डालें और चाहें तो भुगतान संदेश में अपनी इच्छा लिखें।</p>
+      <a class="btn main" id="card" href="#" target="_blank" rel="noopener">कार्ड से भुगतान करें</a>
+    </div>
+    <div class="grid g2 pay-pair">
+      <div class="card pay" id="kaspi">
+        <div class="pay-head"><div class="ic kaspi"><img src="../../media/kaspi-logo.png" width="34" height="35" alt=""></div><div><h3>Kaspi QR</h3><p>कज़ाख़स्तान के लिए</p></div></div>
+        <div class="wallet">
+          <div class="qr"><img src="../../kaspi-qr.png" width="132" height="132" alt="भुगतान के लिए Kaspi QR" loading="lazy"></div>
+          <ol class="pay-steps"><li>Kaspi.kz ऐप खोलें।</li><li>«Kaspi QR» पर टैप करें और कैमरा कोड की ओर करें।</li><li>कोई भी रकम डालें और पुष्टि करें।</li></ol>
+        </div>
+      </div>
+      <div class="card pay">
+        <div class="pay-head"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M14.6 9.4a2.9 2.9 0 0 0-2.6-1.4c-1.6 0-2.7.8-2.7 1.9s.9 1.6 2.7 1.9 2.7.9 2.7 2-1.1 2-2.7 2a3 3 0 0 1-2.7-1.5"/><path d="M12 6.3v1.7M12 16v1.7"/></svg></div><div><h3>क्रिप्टो में</h3><p>USDT, TON, BTC, ETH, BNB, DOGE</p></div></div>
+        <div class="coins" id="coins"></div>
+        <div class="wallet">
+          <div class="qr" id="qr"></div>
+          <div>
+            <div class="addr" id="addr"></div>
+            <div class="net" id="net"></div>
+            <button class="btn ghost copy" id="copy" type="button">पता कॉपी करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wish">
+    <h2>साथ मिलकर ऐप बेहतर बनाएँ</h2>
+    <p class="sub">इसके लिए पैसे नहीं लगते। बताइए PoDee या PoDoo में क्या कमी है, या अगला ऐप कौन-सा बने। हम हर इच्छा पढ़ते हैं।</p>
+    <div class="card">
+      <form data-send="धन्यवाद, मिल गया। हम पढ़ेंगे।">
+        <input type="hidden" name="about" value="इच्छा" />
+        <div class="row2">
+          <label>ऐप <select name="app"><option>PoDee</option><option>PoDoo</option><option>नया ऐप</option></select></label>
+          <label>ईमेल, अगर जवाब चाहिए <input name="email" type="email" autocomplete="email" placeholder="you@mail.com" /></label>
+        </div>
+        <label>क्या बेहतर करें <textarea name="message" required placeholder="जैसे: द्वीप पर मौसम दिखाओ"></textarea></label>
+        <div class="btns" style="align-items:center"><button class="btn main" type="submit">इच्छा भेजें</button><span class="sent"></span></div>
+      </form>
+      <p class="wish-also">दान के साथ भी इच्छा भेज सकते हैं: कार्ड भुगतान के संदेश में या TON ट्रांसफ़र की टिप्पणी में।</p>
+    </div>
+  </section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "PoDy के लिए संदेश", "js.about_podoo": "PoDoo के बारे में", "js.all_podee_versions": "PoDee के सभी संस्करण", "js.back_to_top": "ऊपर जाएँ", "js.click": "क्लिक", "js.close": "बंद करें", "js.copied": "कॉपी हो गया", "js.copy_address": "पता कॉपी करें", "js.couldn_t_copy_select": "कॉपी नहीं हुआ, पता चुनें", "js.download_podee_and_i": "PoDee डाउनलोड करें और मैं आपकी स्क्रीन के ऊपर आ जाऊँगा", "js.downloads.few": "डाउनलोड", "js.downloads.many": "डाउनलोड", "js.downloads.one": "डाउनलोड", "js.downloads.other": "डाउनलोड", "js.good_even_better_when": "अच्छा हूँ। सहलाओ तो और भी अच्छा", "js.hi_glad_you_came": "नमस्ते! अच्छा लगा कि आप आए", "js.hi_i_m_pody": "नमस्ते, मैं PoDy हूँ। मुझे सहला सकते हैं", "js.i_like_you_too": "आप भी मुझे अच्छे लगते हैं", "js.i_live_at_the": "मैं आपकी स्क्रीन के ऊपर रहता हूँ और संगीत व समय दिखाता हूँ। मुझसे बात भी कर सकते हैं", "js.i_m_dizzy": "चक्कर आ रहा है…", "js.i_only_know_a": "मुझे अभी कम शब्द आते हैं। पूछिए मैं क्या कर सकता हूँ", "js.if_podee_helps_you": "अगर PoDee काम आता है, तो प्रोजेक्ट का साथ दे सकते हैं", "js.improve_together": "साथ मिलकर बेहतर बनाएँ", "js.language": "साइट की भाषा", "js.learn_more": "और जानें", "js.made_with_pody_the": "बादल PoDy के साथ बनाया गया", "js.message": "संदेश", "js.mute_pody": "PoDy को म्यूट करें", "js.net_bnb": "BNB Smart Chain (BEP-20): इस नेटवर्क पर BNB या USDT।", "js.net_btc": "Bitcoin नेटवर्क।", "js.net_doge": "Dogecoin नेटवर्क।", "js.net_eth": "Ethereum नेटवर्क (ERC-20): इस नेटवर्क पर ETH या USDT।", "js.net_ton": "TON नेटवर्क: Toncoin या USDT। टिप्पणी में अपनी इच्छा लिख सकते हैं।", "js.net_usdt": "सिर्फ़ TRC-20 (Tron) नेटवर्क। दूसरे नेटवर्क नहीं चलेंगे।", "js.next_track": "अगला गाना", "js.paused": "रुका हुआ", "js.playing": "चल रहा है", "js.podoo_is_out": "PoDoo आ गया: फ़ोन या पुराना टैबलेट आपके PC का रिमोट बन जाता है", "js.pody_the_cloud_pet": "बादल PoDy: सहलाइए और बात कीजिए", "js.previous_track": "पिछला गाना", "js.privacy": "गोपनीयता", "js.soon": "जल्द", "js.sound_off": "आवाज़ बंद", "js.sound_on": "आवाज़ चालू", "js.support": "सहयोग करें", "js.thank_you_here_s": "धन्यवाद! यह रहा सहयोग पेज", "js.thanks_for_stopping_by": "आने के लिए धन्यवाद। हर रकम मदद करती है", "js.that_tickles": "गुदगुदी हो रही है!", "js.the_address_is_coming": "पता जल्द आएगा", "js.the_download_podee_button": "«PoDee डाउनलोड करें» बटन होम पेज और PoDee पेज पर है", "js.the_form_will_work": "फ़ॉर्म जल्द ही काम करेगा", "js.track_1": "रात का सफ़र", "js.track_2": "शहर की रोशनी", "js.track_3": "भोर", "js.typed_text": "टाइप किया: {text}", "js.unmute_pody": "PoDy की आवाज़ चालू करें", "js.version_line": "{bits}-बिट Windows के लिए संस्करण {v} · <a href=\"{link}\">{other}-बिट चाहिए?<\/a>", "js.volume_n": "आवाज़ {n}%", "js.write_to_pody": "PoDy को लिखें…"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=f49b63dc"></script>
+<script src="../pody.js?v=3bf6c807"></script>
+</body>
+</html>

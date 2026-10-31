@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../../" />
+<title>PoDee · Pody Lab</title>
+<meta name="description" content="PoDee: uma ilha no topo da tela do Windows com relógio, música, voz, chat com IA, calendário e a nuvem PoDy." />
+<link rel="icon" href="../../media/podee-icon.svg?v=41ecf9f3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=629f9e8f" />
+</head>
+<body>
+<main class="wrap">
+  <div class="hero">
+    <img class="cloud" src="../../media/podee-icon.svg?v=41ecf9f3" alt="A nuvem PoDy" />
+    <h1>Uma ilha no topo <em>da sua tela do Windows</em></h1>
+    <p class="lead">O PoDee fica na borda de cima da tela. Mostra a hora e sua música, ouve sua voz, responde num chat e conta o que o Claude Code está fazendo. Ao lado fica a nuvem PoDy, que segue o mouse com os olhos.</p>
+    <div class="btns">
+      <a class="btn main" data-podee href="https://github.com/podylab/PoDee-releases/releases/latest/download/PoDee_x64-setup.exe"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Baixar para Windows</a><a class="btn ghost" href="https://apps.microsoft.com/detail/9P3ZM16J8S2B?hl=pt-br" target="_blank" rel="noopener"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6V5a4 4 0 0 1 8 0v1h4.2a.8.8 0 0 1 .8.8V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.8a.8.8 0 0 1 .8-.8zm1.6 0h4.8V5a2.4 2.4 0 0 0-4.8 0zM7.5 10v3.4h4.1V10zm4.9 0v3.4h4.1V10zm-4.9 4.2v3.4h4.1v-3.4zm4.9 0v3.4h4.1v-3.4z" fill-rule="evenodd"/></svg>Microsoft Store</a>
+      <a class="btn ghost" href="support.html">Apoiar</a>
+    </div>
+    <p class="dl-count" data-downloads="PoDee-releases" hidden></p>
+  </div>
+
+  <section>
+    <h2>O que o PoDee faz</h2>
+    <p class="sub">Grátis para todos. Windows 10 e 11. O app está em russo e em inglês.</p>
+    <div class="desk stick" id="isl" data-tab="home" aria-hidden="true">
+      <div class="screen">
+        <div class="isl">
+          <div class="isl-tabs">
+            <span data-t="home"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v8.5a1 1 0 0 1-1 1h-4.5V15h-5v5.5H5a1 1 0 0 1-1-1z"/></svg></span>
+            <span data-t="music"><svg viewBox="0 0 24 24"><path d="M9.5 17.5V6.2l9-2v11.3"/><circle cx="7" cy="17.5" r="2.5"/><circle cx="16" cy="15.5" r="2.5"/></svg></span>
+            <span data-t="cal"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3.5"/><path d="M3.5 10h17M8 3.2v3.5M16 3.2v3.5"/></svg></span>
+            <span data-t="chat"><svg viewBox="0 0 24 24"><path d="M5 5.5h14a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 3.5V16.5H5A1.5 1.5 0 0 1 3.5 15V7A1.5 1.5 0 0 1 5 5.5z"/></svg></span>
+            <span data-t="timer"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.3 1.6M9.5 3h5"/></svg></span>
+            <span data-t="water"><svg viewBox="0 0 24 24"><path d="M12 3.6s6 6.3 6 10.4a6 6 0 0 1-12 0c0-4.1 6-10.4 6-10.4z"/></svg></span>
+            <span data-t="code"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="3.5"/><path d="M7.5 10l3 2.5-3 2.5M13 15.2h3.5"/></svg></span>
+            <span class="heart"><svg viewBox="0 0 24 24"><path d="M12 19.5s-7-4.3-7-9.4A4 4 0 0 1 12 7.6a4 4 0 0 1 7 2.5c0 5.1-7 9.4-7 9.4z"/></svg></span>
+          </div>
+          <div class="isl-scene home">
+            <div class="big" data-clock>14:32</div>
+            <div class="mut" data-today>sábado, 1º de novembro</div>
+            <div class="soon">Em 12 min · Ligação com o designer</div>
+          </div>
+          <div class="isl-scene music">
+            <div class="row">
+              <span class="isl-art"></span>
+              <div class="t"><b>Cidade quente</b><span>Bonde noturno</span><span class="isl-lyric">e os postes ficam acesos até o amanhecer</span></div>
+              <div class="ctl">
+                <i><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></i>
+                <i><svg viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></i>
+                <i><svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></i>
+              </div>
+            </div>
+            <div class="isl-bar"></div>
+          </div>
+          <div class="isl-scene cal">
+            <div class="isl-week" data-week></div>
+            <div class="isl-meet"><span>Em 12 min · <em>Ligação com o designer</em></span></div>
+          </div>
+          <div class="isl-scene chat">
+            <div class="isl-say"><p class="me">Abre o Telegram</p><p class="ai">Abrindo o Telegram</p></div>
+            <div class="isl-input">Pergunte ao PoDee ou dê um comando…</div>
+          </div>
+          <div class="isl-scene code">
+            <div class="isl-term"><p class="top"><span>› editando site.js</span><span class="mut">limite: restam 62%</span></p><p class="ok">✓ testes passaram, 24 de 24</p><p class="q">? Executar npm run build?</p></div>
+            <div class="isl-ask"><span>Permitir</span><span>Não</span></div>
+          </div>
+          <div class="isl-scene water">
+            <div class="row"><b>Água</b><span class="mut" style="margin-left:auto">próximo lembrete em 60 min</span></div>
+            <div class="isl-drops" data-drops></div>
+            <div class="row"><b style="font-size:1.3em">5</b><span class="mut">de 8 copos</span><span class="isl-pill">+ copo</span></div>
+          </div>
+          <div class="isl-scene timer">
+            <div class="row">
+              <div class="isl-ring"><svg viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="42"/><circle class="arc" cx="50" cy="50" r="42"/></svg><b>18:42</b></div>
+              <div class="t"><b>Timer</b><span>faltam 18 minutos</span></div>
+              <div class="ctl"><i><svg viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="d-pody"><b></b><i></i><i></i></div>
+        <div class="d-taskbar"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+    <div class="grid g3 feats" id="feats">
+      <div class="card" tabindex="0" data-tab="music"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 17.5V6.2l9-2v11.3"/><circle cx="7" cy="17.5" r="2.5"/><circle cx="16" cy="15.5" r="2.5"/><path d="M9.5 9.6l9-2"/></svg></div><h3>Música</h3><p>Capa, botões e letra no ritmo, de qualquer player.</p></div>
+      <div class="card" tabindex="0" data-tab="chat"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M5.8 11.2a6.2 6.2 0 0 0 12.4 0"/><path d="M12 17.4v3.1"/></svg></div><h3>Voz e chat</h3><p>Diga «abre o Telegram» e ele abre. O resto pergunte a uma IA: Claude, ChatGPT, Gemini.</p></div>
+      <div class="card" tabindex="0" data-tab="cal"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3.5"/><path d="M3.5 10h17"/><path d="M8 3.2v3.5M16 3.2v3.5"/><path d="M8 14h.01M12 14h.01M16 14h.01"/></svg></div><h3>Calendário</h3><p>Google, Outlook ou qualquer link iCal. A próxima reunião aparece embaixo do relógio.</p></div>
+      <div class="card" tabindex="0" data-tab="code"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="3.5"/><path d="M7.5 10l3 2.5-3 2.5"/><path d="M13 15.2h3.5"/></svg></div><h3>Claude Code</h3><p>O que o agente está fazendo no terminal, as perguntas de «permitir?» e quanto limite resta.</p></div>
+      <div class="card" tabindex="0" data-tab="water"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6s6 6.3 6 10.4a6 6 0 0 1-12 0c0-4.1 6-10.4 6-10.4z"/><path d="M9.2 14.4a2.9 2.9 0 0 0 2.6 2.6"/></svg></div><h3>Saúde</h3><p>Água do dia, pausas 20-20-20 para os olhos e um minuto de respiração.</p></div>
+      <div class="card" tabindex="0" data-tab="timer"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.3 1.6M9.5 3h5"/></svg></div><h3>Timer</h3><p>O tempo que falta fica na ilha, sem precisar trocar de janela.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Monte sua própria área de trabalho</h2>
+    <p class="sub">A ilha, o dock e os widgets ligam separadamente. Fique só com o que precisa.</p>
+    <div class="mods-pick" role="group" aria-label="O que ligar">
+      <button type="button" id="mod-island" data-mod="island" aria-pressed="true"><i></i>Ilha</button>
+      <button type="button" id="mod-dock" data-mod="dock" aria-pressed="true"><i></i>Dock</button>
+      <button type="button" id="mod-widgets" data-mod="widgets" aria-pressed="true"><i></i>Widgets</button>
+    </div>
+    <div class="desk tall mods" id="mods" aria-hidden="true">
+      <div class="screen">
+        <div data-part="widgets" class="d-widgets">
+          <div><div class="temp">+12°</div><div class="mut">Nublado, sem chuva</div></div>
+          <div><b>Tarefas de hoje</b><ul><li class="done">Responder a Ana</li><li>Comprar ração para o gato</li><li>Ligação às 15:00</li></ul></div>
+        </div>
+        <div data-part="island">
+          <div class="isl-cloud"><i></i><i></i><i></i><i></i><b data-clock>14:32</b></div>
+          <div class="d-pody"><b></b><i></i><i></i></div>
+        </div>
+        <div data-part="dock" class="d-dock">
+          <span class="run" style="background:linear-gradient(160deg,#ffd166,#f0a33a)"></span>
+          <span class="run" style="background:linear-gradient(160deg,#6cb6ff,#2f6fd6)"></span>
+          <span class="run" style="background:linear-gradient(160deg,#5ed1e8,#2896b8)"></span>
+          <span style="background:linear-gradient(160deg,#ff8a7a,#d9485f)"></span>
+          <span style="background:linear-gradient(160deg,#b39cff,#6a4fd0)"></span>
+          <span style="background:linear-gradient(160deg,#8fe3cc,#23806c)"></span>
+        </div>
+        <div class="d-taskbar"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+    <p class="mods-note" id="mods-note" data-n111="Tudo junto: a ilha em cima, o dock embaixo, os widgets do lado." data-n110="A ilha e o dock, com a área de trabalho limpa." data-n101="A ilha e os widgets, com a barra de tarefas de sempre embaixo." data-n011="Sem ilha: só o dock e os widgets." data-n100="Só a ilha. O resto é o Windows de sempre." data-n010="Só o dock, com prévias das janelas." data-n001="Só widgets na área de trabalho." data-n000="Tudo desligado: é o Windows de sempre. Ligue algo para começar.">Tudo junto: a ilha em cima, o dock embaixo, os widgets do lado.</p>
+  </section>
+
+  <section>
+    <h2>Antes e depois</h2>
+    <p class="sub">A mesma área de trabalho, o mesmo dia. Na da direita o PoDee está ligado.</p>
+    <div class="ba">
+      <figure>
+        <div class="desk tall" aria-hidden="true">
+          <div class="screen">
+            <div class="d-icons"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="d-taskbar full"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b class="tray" data-clock>14:32</b></div>
+          </div>
+        </div>
+        <figcaption><b>Antes.</b> O Windows de sempre: uma barra de tarefas cheia de ícones e um relógio minúsculo no canto.</figcaption>
+      </figure>
+      <figure>
+        <div class="desk tall" aria-hidden="true">
+          <div class="screen">
+            <div class="d-widgets">
+              <div><div class="temp">+12°</div><div class="mut">Nublado, sem chuva</div></div>
+              <div><b>Tarefas de hoje</b><ul><li class="done">Responder a Ana</li><li>Comprar ração para o gato</li><li>Ligação às 15:00</li></ul></div>
+            </div>
+            <div class="isl-cloud"><i></i><i></i><i></i><i></i><b data-clock>14:32</b></div>
+            <div class="d-pody near"><b></b><i></i><i></i></div>
+            <div class="d-dock low">
+              <span class="run" style="background:linear-gradient(160deg,#ffd166,#f0a33a)"></span>
+              <span class="run" style="background:linear-gradient(160deg,#6cb6ff,#2f6fd6)"></span>
+              <span class="run" style="background:linear-gradient(160deg,#5ed1e8,#2896b8)"></span>
+              <span style="background:linear-gradient(160deg,#ff8a7a,#d9485f)"></span>
+              <span style="background:linear-gradient(160deg,#8fe3cc,#23806c)"></span>
+            </div>
+          </div>
+        </div>
+        <figcaption><b>Depois.</b> A hora e a próxima reunião na ilha lá em cima, seus apps no dock, o clima e as tarefas em widgets. Os ícones da área de trabalho e a barra de tarefas do Windows ficam escondidos.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="install">
+    <h2>Instalação em um minuto</h2>
+    <p class="sub">O Windows pode avisar sobre um app que ainda não conhece. É normal com desenvolvedores pequenos, e é isto que você clica.</p>
+    <ol class="steps">
+      <li class="card">
+        <div class="mini" aria-hidden="true">
+          <div class="m-dl"><span class="m-file"><i></i>PoDee_x64-setup.exe</span><span class="m-open">Abrir arquivo</span></div>
+        </div>
+        <h3><span class="n">1</span>Baixe o instalador</h3>
+        <p>O botão acima escolhe sozinho a versão certa para o seu Windows.</p>
+      </li>
+      <li class="card">
+        <div class="mini" aria-hidden="true">
+          <div class="m-ss">
+            <b>O Windows protegeu o computador</b>
+            <p>O Microsoft Defender SmartScreen impediu a inicialização de um aplicativo não reconhecido.</p>
+            <p class="m-more"><u>Mais informações</u><i class="tap">1</i></p>
+            <p>Aplicativo: PoDee_x64-setup.exe<br>Editor: Editor desconhecido</p>
+            <div class="m-ss-btns"><span class="hot">Executar assim mesmo<i class="tap">2</i></span><span>Não executar</span></div>
+          </div>
+        </div>
+        <h3><span class="n">2</span>Passe pelo aviso</h3>
+        <p>Se aparecer uma janela azul, clique em «Mais informações» e depois em «Executar assim mesmo». Pela Microsoft Store o PoDee instala sem essa janela.</p>
+      </li>
+      <li class="card">
+        <div class="mini" aria-hidden="true">
+          <div class="m-desk"><div class="isl-cloud"><i></i><i></i><i></i><i></i><b data-clock>14:32</b></div><div class="d-pody near"><b></b><i></i><i></i></div></div>
+        </div>
+        <h3><span class="n">3</span>O PoDee já está no topo da tela</h3>
+        <p>A instalação leva alguns segundos, e a nuvem PoDy aparece na hora.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Mais na ilha</h2>
+    <p class="sub">Cada aba abre com um clique, sem trocar de janela.</p>
+    <div class="grid g3 more-grid">
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-head"><b>3 h 56 min</b><span>hoje</span></div>
+          <div class="m-bars">
+            <p><span>Telegram</span><i style="--w:.86"></i><em>1 h 30 min</em></p>
+            <p><span>VS Code</span><i style="--w:.66"></i><em>1 h 8 min</em></p>
+            <p><span>Edge</span><i style="--w:.34"></i><em>48 min</em></p>
+          </div>
+        </div></div>
+        <h3>Tempo de tela</h3><p>Quanto tempo você passou no computador hoje e em quais apps.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-slide"><svg viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4z"/><path d="M15.5 9a4 4 0 0 1 0 6"/></svg><i style="--w:.42"></i><b>42</b></div>
+          <div class="m-slide"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M5.6 18.4l1.8-1.8M16.6 7.4l1.8-1.8"/></svg><i style="--w:.9"></i><b>90</b></div>
+          <div class="m-tiles"><span class="on">Wi-Fi</span><span class="on">Bluetooth</span><span>Sem suspensão</span><span>Não perturbe</span></div>
+        </div></div>
+        <h3>Controles</h3><p>Volume, brilho, Wi-Fi e Bluetooth sem abrir as configurações do Windows.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl m-two">
+          <div><b>Olhos</b><span>pausa em 20 min</span><u>Descansar</u></div>
+          <div class="m-breath"><i></i><b>Respiração</b><span>inspire 4 s, expire 6 s</span></div>
+        </div></div>
+        <h3>Olhos e respiração</h3><p>A cada 20 minutos o PoDee lembra você de olhar para longe. Um minuto de respiração calma começa com um botão.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-head"><b>Tarefas</b><span>2 / 4</span></div>
+          <ul class="m-list"><li class="done">Enviar o layout</li><li class="done">Pagar a internet</li><li>Ligar para a mãe</li><li>Comprar ração para o gato</li></ul>
+        </div></div>
+        <h3>Tarefas e notas</h3><p>A lista de tarefas de hoje e notas rápidas, tudo guardado no seu computador.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-head"><b>Área de transferência</b><span>12 itens</span></div>
+          <div class="m-clips"><p>podylab.github.io</p><p>Reunião na quinta às 15:00</p><p class="img"><i></i>captura de tela</p></div>
+        </div></div>
+        <h3>Área de transferência</h3><p>Tudo o que você copiou, à mão: texto, links e imagens.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-note"><i style="background:#2aa3e0">T</i><p><b>Ana</b><span>Mandou as fotos do fim de semana</span></p><em>14:05</em></div>
+          <div class="m-note"><i style="background:#5865f2">D</i><p><b>Discord</b><span>Mensagem nova em #geral</span></p><em>13:48</em></div>
+          <div class="m-note"><i style="background:#e0735f">M</i><p><b>E-mail</b><span>Sua fatura de outubro</span></p><em>12:30</em></div>
+        </div></div>
+        <h3>Notificações</h3><p>As notificações se juntam na ilha, então fica fácil achar o que você perdeu.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "Uma mensagem para o PoDy", "js.about_podoo": "Sobre o PoDoo", "js.all_podee_versions": "Todas as versões do PoDee", "js.back_to_top": "Voltar ao topo", "js.click": "Clique", "js.close": "Fechar", "js.copied": "Copiado", "js.copy_address": "Copiar endereço", "js.couldn_t_copy_select": "Não deu para copiar, selecione o endereço", "js.download_podee_and_i": "Baixe o PoDee e eu me mudo para o topo da sua tela", "js.downloads.few": "downloads", "js.downloads.many": "downloads", "js.downloads.one": "download", "js.downloads.other": "downloads", "js.good_even_better_when": "Bem. Melhor ainda quando fazem carinho", "js.hi_glad_you_came": "Oi! Que bom que você veio", "js.hi_i_m_pody": "Oi, eu sou o PoDy. Pode fazer carinho", "js.i_like_you_too": "Também gosto de você", "js.i_live_at_the": "Eu moro no topo da sua tela e mostro a música e a hora. Dá para conversar comigo também", "js.i_m_dizzy": "Estou tonto…", "js.i_only_know_a": "Ainda sei poucas palavras. Pergunte o que eu sei fazer", "js.if_podee_helps_you": "Se o PoDee ajuda você, dá para apoiar o projeto", "js.improve_together": "Melhorar juntos", "js.language": "Idioma do site", "js.learn_more": "Saiba mais", "js.made_with_pody_the": "Feito com a nuvem PoDy", "js.message": "mensagem", "js.mute_pody": "Silenciar o PoDy", "js.net_bnb": "BNB Smart Chain (BEP-20): BNB ou USDT nesta rede.", "js.net_btc": "Rede Bitcoin.", "js.net_doge": "Rede Dogecoin.", "js.net_eth": "Rede Ethereum (ERC-20): ETH ou USDT nesta rede.", "js.net_ton": "Rede TON: Toncoin ou USDT. No comentário você pode escrever um pedido.", "js.net_usdt": "Só a rede TRC-20 (Tron). Outras redes não servem.", "js.next_track": "Próxima faixa", "js.paused": "Pausado", "js.playing": "Tocando", "js.podoo_is_out": "O PoDoo já saiu: um celular ou tablet antigo vira o controle do seu PC", "js.pody_the_cloud_pet": "A nuvem PoDy: faça carinho e converse com ela", "js.previous_track": "Faixa anterior", "js.privacy": "Privacidade", "js.soon": "Em breve", "js.sound_off": "Som desligado", "js.sound_on": "Som ligado", "js.support": "Apoiar", "js.thank_you_here_s": "Obrigado! Aqui está a página de apoio", "js.thanks_for_stopping_by": "Obrigado pela visita. Qualquer valor ajuda", "js.that_tickles": "Que cócegas!", "js.the_address_is_coming": "O endereço vem em breve", "js.the_download_podee_button": "O botão «Baixar PoDee» fica na página inicial e na página do PoDee", "js.the_form_will_work": "O formulário vai funcionar em breve", "js.track_1": "Estrada à noite", "js.track_2": "Luzes da cidade", "js.track_3": "Amanhecer", "js.typed_text": "Digitado: {text}", "js.unmute_pody": "Ligar o som do PoDy", "js.version_line": "Versão {v} para Windows {bits} bits · <a href=\"{link}\">precisa da de {other} bits?<\/a>", "js.volume_n": "Volume {n}%", "js.write_to_pody": "Escreva para o PoDy…"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=f49b63dc"></script>
+<script src="../pody.js?v=3bf6c807"></script>
+</body>
+</html>

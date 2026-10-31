@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../../" />
+<title>PoDoo · Pody Lab</title>
+<meta name="description" content="PoDoo: ein Handy oder Tablet wird zur Fernbedienung für deinen PC, wie ein Stream Deck. Apps, Shortcuts, Musik und Touchpad, je mit einem Tipp." />
+<link rel="icon" href="../../media/podoo-icon.svg?v=9a46ef14" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=629f9e8f" />
+<link rel="stylesheet" href="../podoo.css?v=763de113" />
+</head>
+<body>
+<main class="land">
+    <section class="lhero wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="status"><i class="led"></i><span>Windows + Android · kostenlos</span></p>
+        <h1 id="hero-title">
+          <span class="line"><span>Die Fernbedienung für deinen PC,</span></span>
+          <span class="line"><span>direkt auf deinem Handy.</span></span>
+        </h1>
+        <p class="lede">Stell ein Handy oder Tablet neben den Monitor und du hast dein eigenes Stream Deck: Apps, Shortcuts, Musik und Touchpad, je mit einem Tipp. Jedes Android passt, und ein altes Handy aus der Schublade bekommt ein zweites Leben.</p>
+
+        <div class="cta">
+          <a class="lbtn lbtn-lit magnet" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10.5 4.5v6.9H3zM11.6 4.3 21 3v8.4h-9.4zM3 12.6h7.5v6.9L3 18.5zM11.6 12.6H21V21l-9.4-1.3z"/></svg>
+            <span>Für Windows herunterladen</span>
+          </a>
+          <a class="lbtn" href="#try">Gleich hier ausprobieren</a>
+        </div>
+        <p class="stores">
+          <a class="chip" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk"><span class="chip-dot"></span><span>Android-App</span></a>
+          <a class="chip" href="support.html"><span class="chip-dot"></span><span>Unterstützen</span></a>
+        </p>
+        <p class="dl-count" data-downloads="PoDoo-releases" hidden></p>
+      </div>
+
+      <!-- Сцена: касание на телефоне, результат на мониторе. Клавиши можно нажимать самому. -->
+      <div class="scene" id="scene">
+        <div class="monitor" aria-hidden="true">
+          <div class="mon-screen">
+            <div class="mon-wall"></div>
+            <div class="win win-editor">
+              <div class="win-top"><i></i><i></i><i></i><span>Fotoeditor</span></div>
+              <div class="win-body"><span class="shape s1"></span><span class="shape s2"></span><span class="shape s3"></span></div>
+            </div>
+            <div class="win win-player">
+              <div class="win-top"><i></i><i></i><i></i><span>Player</span></div>
+              <div class="win-body">
+                <div class="cover"></div>
+                <div class="track"><b>Nachtfahrt</b><span class="eq"><i></i><i></i><i></i><i></i><i></i></span><span class="prog"><i></i></span></div>
+              </div>
+            </div>
+            <div class="hud"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7"/></svg><span class="hud-bar"><i></i></span></div>
+            <div class="pc-toast"><kbd>Ctrl</kbd>+<kbd>S</kbd><span>Gespeichert</span></div>
+            <div class="rec"><i></i>REC</div>
+            <div class="cursor"><svg viewBox="0 0 24 24"><path d="M5 3l14 8-6 2-3 6z" fill="#fff" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <div class="taskbar"><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="mon-neck"></div><div class="mon-foot"></div>
+        </div>
+
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="pkeys" id="pkeys">
+              <button class="pk" type="button" data-act="editor" aria-label="Fotoeditor öffnen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><small>Editor</small></button>
+              <button class="pk" type="button" data-act="music" aria-label="Musik abspielen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><small>Musik</small></button>
+              <button class="pk" type="button" data-act="vol" aria-label="Lauter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><small>Lauter</small></button>
+              <button class="pk" type="button" data-act="save" aria-label="Speichern, Strg+S"><b class="pk-combo">Ctrl+S</b><small>Speichern</small></button>
+              <button class="pk" type="button" data-act="touch" aria-label="Touchpad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V5a2 2 0 0 1 4 0v6l3 .5a2 2 0 0 1 1.7 2L17 19a2 2 0 0 1-2 2h-4a2 2 0 0 1-1.6-.8L5 15.5a1.7 1.7 0 0 1 2.4-2.4L9 14.5"/></svg><small>Touchpad</small></button>
+              <button class="pk" type="button" data-act="rec" aria-label="Bildschirmaufnahme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/></svg><small>Aufnahme</small></button>
+            </div>
+            <div class="ptouch" aria-hidden="true"><span class="ptouch-hint">Touchpad</span><span class="trail"></span></div>
+          </div>
+        </div>
+
+        <span class="packet" aria-hidden="true"></span>
+        <span class="finger" aria-hidden="true"></span>
+        <p class="scene-hint">Tippe auf die Tasten am Handy.</p>
+      </div>
+    </section>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Ctrl + S</span><span>Win + D</span><span>Alt + Tab</span><span>Ctrl + Shift + M</span><span>F5</span><span>Ctrl + Z</span><span>Win + Shift + S</span><span>Ctrl + Alt + Del</span><span>Mute</span><span>Next track</span>
+        <span>Ctrl + S</span><span>Win + D</span><span>Alt + Tab</span><span>Ctrl + Shift + M</span><span>F5</span><span>Ctrl + Z</span><span>Win + Shift + S</span><span>Ctrl + Alt + Del</span><span>Mute</span><span>Next track</span>
+      </div>
+    </div>
+
+    <section class="story" id="story" aria-labelledby="story-title">
+      <div class="story-pin">
+        <div class="wrap story-in">
+          <div class="story-copy">
+            <h2 id="story-title" data-split>Ein Bildschirm. Vier Werkzeuge.</h2>
+            <ol class="story-steps">
+              <li class="on"><h3>Apps und Ordner</h3><p>Deine Apps, Ordner und Websites mit ihren echten Symbolen. Ein Tipp öffnet sie am PC.</p></li>
+              <li><h3>Shortcuts für jede App</h3><p>Wechsle am PC zu Photoshop oder OBS, und die Fernbedienung zeigt die passenden Tasten.</p></li>
+              <li><h3>Musik und Lautstärke</h3><p>Pause, Skip, Spulen und Lautstärke. Titel und Cover kommen vom PC.</p></li>
+              <li><h3>Touchpad und Tastatur</h3><p>Der ganze Bildschirm wird zum Touchpad. Tipp auf dem Handy, und der Text landet am PC.</p></li>
+            </ol>
+            <div class="story-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+          </div>
+
+          <div class="story-device" aria-hidden="true">
+            <div class="sphone">
+              <div class="sphone-screen">
+                <div class="sstrip" id="sstrip">
+                  <!-- 1. программы -->
+                  <div class="spage spage-apps">
+                    <span class="sk" style="--c:#e9a23b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><small>Dateien</small></span>
+                    <span class="sk" style="--c:#4a7bf2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><small>Browser</small></span>
+                    <span class="sk" style="--c:#2fb37a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><small>Chat</small></span>
+                    <span class="sk" style="--c:#9b6bf2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><small>Code</small></span>
+                    <span class="sk" style="--c:#ee6a2e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><small>Fotos</small></span>
+                    <span class="sk" style="--c:#e2506a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg><small>Video</small></span>
+                    <span class="sk" style="--c:#38b6d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><small>Musik</small></span>
+                    <span class="sk" style="--c:#8d8a80"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.8 1.2V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-2.8-1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0-1.2-2.8H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.2-2.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 2.8-1.2V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 2.8 1.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0 1.2 2.8H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg><small>Einstellungen</small></span>
+                  </div>
+                  <!-- 2. горячие клавиши -->
+                  <div class="spage spage-keys">
+                    <span class="sapp"><i></i>Photoshop</span>
+                    <span class="hk"><b>B</b><small>Pinsel</small></span>
+                    <span class="hk"><b>E</b><small>Radierer</small></span>
+                    <span class="hk hk-lit"><b>Ctrl Z</b><small>Rückgängig</small></span>
+                    <span class="hk"><b>[ ]</b><small>Größe</small></span>
+                    <span class="hk"><b>Ctrl J</b><small>Duplizieren</small></span>
+                    <span class="hk"><b>Ctrl S</b><small>Speichern</small></span>
+                  </div>
+                  <!-- 3. музыка -->
+                  <div class="spage spage-media">
+                    <div class="scover"><span class="eq"><i></i><i></i><i></i><i></i><i></i></span></div>
+                    <div class="smeta">
+                      <b>Nachtfahrt</b><small>Synthwave-Mix</small>
+                      <span class="sprog"><i></i></span>
+                      <span class="sctrl"><i class="prev"></i><i class="play"></i><i class="next"></i></span>
+                      <span class="svol"><i></i></span>
+                    </div>
+                  </div>
+                  <!-- 4. тачпад -->
+                  <div class="spage spage-pad">
+                    <span class="pad-glow"></span>
+                    <span class="pad-hint">Touchpad</span>
+                    <span class="pad-kb"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="story-glow"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="try wrap" id="try" aria-labelledby="try-title">
+      <div class="section-head">
+        <h2 id="try-title" data-split>Gleich hier ausprobieren.</h2>
+        <p>Eine vereinfachte Fernbedienung im Browser. Tippe auf Tasten, wische zwischen Seiten, öffne unten das Feld für Ton, Touchpad und Tastatur. Nichts wird an einen PC gesendet.</p>
+      </div>
+
+      <div class="stage" id="stage" data-orient="land">
+        <div class="stage-light" aria-hidden="true"></div>
+        <div class="device" id="device">
+          <div class="device-body">
+            <div class="mock" id="mock" aria-label="Vereinfachte PoDoo-Fernbedienung">
+              <div class="m-strip"><span class="m-pc"><i class="led"></i>DESKTOP</span><b id="m-name">Главная</b></div>
+
+              <div class="m-viewport" id="m-viewport">
+                <div class="m-pages" id="m-pages">
+                  <div class="m-page m-apps" data-name="Start">
+                    <button class="mk" type="button" data-say="Explorer geöffnet" style="--c:#e9a23b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><small>Dateien</small></button>
+                    <button class="mk" type="button" data-say="Browser geöffnet" style="--c:#4a7bf2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><small>Browser</small></button>
+                    <button class="mk" type="button" data-say="Chat geöffnet" style="--c:#2fb37a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><small>Chat</small></button>
+                    <button class="mk" type="button" data-say="Code-Editor geöffnet" style="--c:#9b6bf2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><small>Code</small></button>
+                    <button class="mk" type="button" data-say="Photoshop geöffnet" style="--c:#ee6a2e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><small>Fotos</small></button>
+                    <button class="mk" type="button" data-say="OBS geöffnet" style="--c:#e2506a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg><small>Stream</small></button>
+                    <button class="mk" type="button" data-say="Musik geöffnet" style="--c:#38b6d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><small>Musik</small></button>
+                    <button class="mk" type="button" data-say="Alle Fenster minimiert" style="--c:#8d8a80"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><small>Desktop</small></button>
+                  </div>
+                  <div class="m-page m-keys" data-name="Photoshop">
+                    <button class="mk mk-key" type="button" data-say="Pinsel · B"><b>B</b><small>Pinsel</small></button>
+                    <button class="mk mk-key" type="button" data-say="Radierer · E"><b>E</b><small>Radierer</small></button>
+                    <button class="mk mk-key" type="button" data-say="Rückgängig · Strg+Z"><b>Ctrl Z</b><small>Rückgängig</small></button>
+                    <button class="mk mk-key" type="button" data-say="Ebene dupliziert · Strg+J"><b>Ctrl J</b><small>Duplizieren</small></button>
+                    <button class="mk mk-key" type="button" data-say="Bildschirmausschnitt · Win+Umschalt+S"><b>Win ⇧ S</b><small>Ausschnitt</small></button>
+                    <button class="mk mk-key" type="button" data-say="Gespeichert · Strg+S"><b>Ctrl S</b><small>Speichern</small></button>
+                  </div>
+                  <div class="m-page m-media" data-name="Player">
+                    <div class="m-cover"><span class="eq"><i></i><i></i><i></i><i></i><i></i></span></div>
+                    <div class="m-meta">
+                      <b>Nachtfahrt</b><small>Synthwave-Mix</small>
+                      <span class="m-prog"><i id="m-prog"></i></span>
+                      <span class="m-ctrl">
+                        <button type="button" class="m-round" data-media="prev" aria-label="Vorheriger Titel"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+                        <button type="button" class="m-round m-play" data-media="play" aria-label="Pause"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path class="i-pause" d="M7 5h4v14H7zM13 5h4v14h-4z"/><path class="i-play" d="M8 5v14l11-7z"/></svg></button>
+                        <button type="button" class="m-round" data-media="next" aria-label="Nächster Titel"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="m-dots" id="m-dots"><i class="on"></i><i></i><i></i></div>
+              <button class="m-handle" id="m-handle" type="button" aria-label="Feld öffnen: Ton, Touchpad, Tastatur"><i></i></button>
+
+              <div class="m-sheet" id="m-sheet" aria-hidden="true">
+                <div class="m-sheet-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7"/></svg>
+                  <input id="m-vol" type="range" min="0" max="100" value="60" aria-label="Lautstärke">
+                  <output id="m-vol-out">60</output>
+                </div>
+                <div class="m-sheet-btns">
+                  <button type="button" class="m-tool" data-tool="pad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V5a2 2 0 0 1 4 0v6l3 .5a2 2 0 0 1 1.7 2L17 19a2 2 0 0 1-2 2h-4a2 2 0 0 1-1.6-.8L5 15.5a1.7 1.7 0 0 1 2.4-2.4L9 14.5"/></svg><span>Touchpad</span></button>
+                  <button type="button" class="m-tool" data-tool="kb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg><span>Tastatur</span></button>
+                  <button type="button" class="m-tool" data-tool="mute"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM22 9l-6 6M16 9l6 6"/></svg><span>Stumm</span></button>
+                  <button type="button" class="m-tool" data-tool="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg><span>Schließen</span></button>
+                </div>
+                <form class="m-kb" id="m-kb" hidden>
+                  <input id="m-kb-in" type="text" autocomplete="off" placeholder="Text für den PC">
+                  <button type="submit">Senden</button>
+                </form>
+              </div>
+
+              <div class="m-pad" id="m-pad" hidden>
+                <span class="m-pad-hint">Finger oder Maus bewegen</span>
+                <span class="m-pad-dot" id="m-pad-dot"></span>
+                <button type="button" class="m-pad-done" id="m-pad-done">Fertig</button>
+              </div>
+
+              <div class="m-toast" id="m-toast" role="status" aria-live="polite"></div>
+            </div>
+            <span class="device-cam" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="stage-shadow" aria-hidden="true"></div>
+      </div>
+
+      <div class="stage-tools">
+        <button class="lbtn lbtn-sm" type="button" id="rotate">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3L4 15"/><path d="M4 20v-5h5"/></svg>
+          <span>Handy drehen</span>
+        </button>
+      </div>
+
+      <ul class="gestures">
+        <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Zur Seite wischen: Seiten</span></li>
+        <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span>Untere Leiste: Ton, Touchpad, Tastatur</span></li>
+      </ul>
+    </section>
+
+    <section class="features wrap" id="features" aria-labelledby="feat-title">
+      <div class="section-head">
+        <h2 id="feat-title" data-split>Ein Tipp statt fünf Klicks.</h2>
+        <p>Alles wird am PC mit der Maus eingerichtet. Das Handy aktualisiert sich, sobald du ein Symbol ablegst.</p>
+      </div>
+
+      <div class="board">
+        <article class="cap cap-w2 cap-lit" data-drop="0">
+          <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><circle cx="12" cy="12" r="2"/></svg>
+          <h3>Folgt der aktiven App</h3>
+          <p>Wechsle am PC die App, und die Fernbedienung springt auf die Seite für diese App. Für Photoshop, Figma, Premiere, OBS und Musik gibt es fertige Seiten.</p>
+        </article>
+        <article class="cap" data-drop="1">
+          <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>
+          <h3>Mit der Maus eingerichtet</h3>
+          <p>Zieh Apps, Dateien und Shortcuts am PC. Das Handy ändert sich sofort.</p>
+        </article>
+        <article class="cap" data-drop="2">
+          <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2 0-1.5-1-1.7-1-3a2 2 0 0 1 2-2h2a4 4 0 0 0 4-4c0-3.9-4-7-9-7z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7" r="1"/></svg>
+          <h3>Zehn Themes</h3>
+          <p>Himmel, Glas mit Wolken, Skizzenbuch, Ton und mehr. Such dir aus, was zu deinem Schreibtisch passt.</p>
+        </article>
+        <article class="cap cap-w2" data-drop="3">
+          <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+          <h3>Aktionsfolgen</h3>
+          <p>Mehrere Schritte auf einer Taste: Projekt öffnen, Musik starten, Benachrichtigungen stummschalten.</p>
+        </article>
+        <article class="cap" data-drop="4">
+          <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.5 1.5A3.75 3.75 0 0 0 6.5 19z"/></svg>
+          <h3>PoDee auf dem Handy</h3>
+          <p>Mit PoDee auf dem PC bekommt das Handy eine eigene Seite: die Insel, Timer, Aufgaben und einen Chat mit PoDy.</p>
+        </article>
+        <article class="cap" data-drop="5">
+          <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          <h3>Bleibt zu Hause</h3>
+          <p>Nur dein PC und dein Handy, in deinem eigenen Netz. Kein Konto, keine Cloud.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="connect" id="connect" aria-labelledby="conn-title">
+      <div class="wrap connect-in">
+        <div class="connect-copy">
+          <h2 id="conn-title" data-split>Dein Schreibtisch. Dein Netz. Nichts dazwischen.</h2>
+          <p>Das Handy spricht direkt mit deinem PC: über WLAN, USB-Kabel oder Bluetooth. Gekoppelt wird einmal per QR-Code oder sechsstelligem Code. Kein Konto, keine Werbung, keine Datensammlung.</p>
+        </div>
+
+        <figure class="link-art" aria-label="Schema: PC und Handy direkt verbunden">
+          <svg viewBox="0 0 520 220" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="var(--signal)" stop-opacity="0"/><stop offset=".5" stop-color="var(--signal)"/><stop offset="1" stop-color="var(--signal)" stop-opacity="0"/></linearGradient>
+            </defs>
+            <!-- ПК -->
+            <g class="art-pc">
+              <rect x="20" y="40" width="150" height="104" rx="10" class="art-fill"/>
+              <rect x="30" y="50" width="130" height="80" rx="4" class="art-screen"/>
+              <rect x="82" y="150" width="26" height="22" class="art-fill"/>
+              <rect x="62" y="170" width="66" height="8" rx="4" class="art-fill"/>
+              <rect x="42" y="64" width="26" height="26" rx="6" class="art-app a1"/>
+              <rect x="76" y="64" width="26" height="26" rx="6" class="art-app a2"/>
+              <rect x="110" y="64" width="26" height="26" rx="6" class="art-app a3"/>
+            </g>
+            <!-- линия -->
+            <path d="M178 92 H342" class="art-line"/>
+            <path d="M178 92 H342" class="art-beam"/>
+            <circle r="5" class="art-dot d1" cx="178" cy="92"/>
+            <circle r="5" class="art-dot d2" cx="178" cy="92"/>
+            <circle r="5" class="art-dot d3" cx="178" cy="92"/>
+            <!-- телефон -->
+            <g class="art-phone">
+              <rect x="350" y="46" width="150" height="92" rx="14" class="art-fill"/>
+              <rect x="358" y="54" width="134" height="76" rx="8" class="art-screen"/>
+              <rect x="368" y="64" width="26" height="26" rx="6" class="art-key k1"/>
+              <rect x="400" y="64" width="26" height="26" rx="6" class="art-key k2"/>
+              <rect x="432" y="64" width="26" height="26" rx="6" class="art-key k3"/>
+              <rect x="368" y="96" width="26" height="26" rx="6" class="art-key k4"/>
+              <rect x="400" y="96" width="26" height="26" rx="6" class="art-key k5"/>
+              <rect x="432" y="96" width="26" height="26" rx="6" class="art-key k6"/>
+            </g>
+            <text x="260" y="76" text-anchor="middle" class="art-label">WLAN</text>
+            <text x="260" y="124" text-anchor="middle" class="art-label art-label-dim">ohne Cloud</text>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <section class="setup wrap" id="setup" aria-labelledby="setup-title">
+      <div class="section-head">
+        <h2 id="setup-title" data-split>In drei Schritten fertig.</h2>
+        <p>Ein Windows-PC, ein Handy und dasselbe WLAN.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="step-no" aria-hidden="true">1</span>
+          <h3>PoDoo auf dem PC installieren</h3>
+          <p>Starte das Setup. PoDoo wartet im Infobereich auf das Handy.</p>
+          <a class="textlink" href="#download">Für Windows herunterladen</a>
+        </li>
+        <li>
+          <span class="step-no" aria-hidden="true">2</span>
+          <h3>App auf dem Handy installieren</h3>
+          <p>Lade PoDoo.apk direkt auf dem Handy herunter und öffne sie. Android fragt, ob der Browser installieren darf: erlaube es.</p>
+          <a class="textlink" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk">Android-App holen</a>
+        </li>
+        <li>
+          <span class="step-no" aria-hidden="true">3</span>
+          <h3>Verbinden</h3>
+          <p>Im selben WLAN findet die App deinen PC selbst. Tippe darauf und gib den Code aus dem PoDoo-Fenster ein.</p>
+          <a class="textlink" href="#faq">Hilfe nötig?</a>
+        </li>
+      </ol>
+    </section>
+
+    <section class="download" id="download" aria-labelledby="dl-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="dl-title" data-split>Hol dir PoDoo kostenlos.</h2>
+          <p>Du brauchst zwei Teile: das Programm für deinen Windows-PC und die App für dein Handy.</p>
+          <p><span class="pill"><i class="led"></i><span>Version</span> 1.0.1</span></p>
+        </div>
+
+        <div class="dl-grid">
+          <article class="dl dl-main">
+            <svg class="dl-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10.5 4.5v6.9H3zM11.6 4.3 21 3v8.4h-9.4zM3 12.6h7.5v6.9L3 18.5zM11.6 12.6H21V21l-9.4-1.3z"/></svg>
+            <h3>Windows</h3>
+            <p>Das PoDoo-Programm für deinen PC, Windows 10 und 11. Es ist nötig: Das Handy spricht mit ihm.</p>
+            <a class="lbtn lbtn-lit magnet" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe">.exe herunterladen</a>
+            <a class="textlink" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x86-setup.exe">Für 32-Bit-Windows</a>
+          </article>
+          <article class="dl">
+            <svg class="dl-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 18a1 1 0 0 0 1 1h1v3.5a1.5 1.5 0 0 0 3 0V19h2v3.5a1.5 1.5 0 0 0 3 0V19h1a1 1 0 0 0 1-1V8H6zM3.5 8A1.5 1.5 0 0 0 2 9.5v6a1.5 1.5 0 0 0 3 0v-6A1.5 1.5 0 0 0 3.5 8zm17 0A1.5 1.5 0 0 0 19 9.5v6a1.5 1.5 0 0 0 3 0v-6A1.5 1.5 0 0 0 20.5 8zM15.5 2.7l1.2-1.2-.7-.7-1.4 1.4A5.8 5.8 0 0 0 12 1.6c-.9 0-1.7.2-2.6.6L8 .8l-.7.7 1.2 1.2A5.9 5.9 0 0 0 6 7h12a5.9 5.9 0 0 0-2.5-4.3zM10 5H9V4h1zm5 0h-1V4h1z"/></svg>
+            <h3>Android</h3>
+            <p>Handys und Tablets mit Android 5.0 oder neuer.</p>
+            <a class="lbtn" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk">.apk herunterladen</a>
+          </article>
+        </div>
+        <p class="fineprint"><a class="textlink" href="https://github.com/podylab/PoDoo-releases/releases/latest">Alle Dateien und Versionshinweise</a></p>
+      </div>
+    </section>
+
+    <section class="faq wrap" id="faq" aria-labelledby="faq-title">
+      <div class="section-head">
+        <h2 id="faq-title" data-split>Gut zu wissen</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>Brauche ich ein Konto oder Internet?</summary>
+          <p>Kein Konto. Handy und PC müssen nur im selben lokalen Netz sein oder per Kabel oder Bluetooth verbunden. PoDoo läuft ohne Internet.</p>
+        </details>
+        <details>
+          <summary>Geht es ohne das PC-Programm?</summary>
+          <p>Nein. Die Handy-App ist nur der Bildschirm, die Aktionen macht das PC-Programm. Deshalb braucht es das PC-Programm.</p>
+        </details>
+        <details>
+          <summary>Welche Handys passen?</summary>
+          <p>Jedes Handy oder Tablet mit Android 5.0 oder neuer. Auch ein altes Handy aus der Schublade passt und bekommt so einen neuen Job. Für das iPhone gibt es PoDoo noch nicht.</p>
+        </details>
+        <details>
+          <summary>Was sieht die App?</summary>
+          <p>Nur das Netz und die Kamera, und die Kamera nur zum Scannen des QR-Codes. Nichts geht an uns oder an sonst jemanden.</p>
+        </details>
+        <details>
+          <summary>Geht es ohne WLAN?</summary>
+          <p>Ja. Schließ das Handy per USB-Kabel an den PC an oder kopple beide per Bluetooth, und wähle das auf dem ersten Bildschirm der App.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "Eine Nachricht für PoDy", "js.about_podoo": "Über PoDoo", "js.all_podee_versions": "Alle PoDee-Versionen", "js.back_to_top": "Nach oben", "js.click": "Klick", "js.close": "Schließen", "js.copied": "Kopiert", "js.copy_address": "Adresse kopieren", "js.couldn_t_copy_select": "Kopieren ging nicht, markiere die Adresse", "js.download_podee_and_i": "Lade PoDee herunter, dann ziehe ich oben auf deinen Bildschirm", "js.downloads.few": "Downloads", "js.downloads.many": "Downloads", "js.downloads.one": "Download", "js.downloads.other": "Downloads", "js.good_even_better_when": "Gut. Noch besser, wenn man mich streichelt", "js.hi_glad_you_came": "Hallo! Schön, dass du da bist", "js.hi_i_m_pody": "Hallo, ich bin PoDy. Du darfst mich streicheln", "js.i_like_you_too": "Ich mag dich auch", "js.i_live_at_the": "Ich wohne oben auf deinem Bildschirm und zeige Musik und Uhrzeit. Du kannst auch mit mir reden", "js.i_m_dizzy": "Mir ist schwindelig…", "js.i_only_know_a": "Ich kenne erst ein paar Wörter. Frag mich, was ich kann", "js.if_podee_helps_you": "Wenn PoDee dir hilft, kannst du das Projekt unterstützen", "js.improve_together": "Gemeinsam verbessern", "js.language": "Sprache der Website", "js.learn_more": "Mehr erfahren", "js.made_with_pody_the": "Gemacht mit der Wolke PoDy", "js.message": "Nachricht", "js.mute_pody": "PoDy stummschalten", "js.net_bnb": "BNB Smart Chain (BEP-20): BNB oder USDT in diesem Netz.", "js.net_btc": "Bitcoin-Netz.", "js.net_doge": "Dogecoin-Netz.", "js.net_eth": "Ethereum-Netz (ERC-20): ETH oder USDT in diesem Netz.", "js.net_ton": "TON-Netz: Toncoin oder USDT. In den Kommentar kannst du einen Wunsch schreiben.", "js.net_usdt": "Nur das TRC-20-Netz (Tron). Andere Netze gehen nicht.", "js.next_track": "Nächster Titel", "js.paused": "Pausiert", "js.playing": "Läuft", "js.podoo_is_out": "PoDoo ist da: ein Handy oder altes Tablet wird zur Fernbedienung für deinen PC", "js.pody_the_cloud_pet": "Die Wolke PoDy: streicheln und mit ihr reden", "js.previous_track": "Vorheriger Titel", "js.privacy": "Datenschutz", "js.soon": "Bald", "js.sound_off": "Ton aus", "js.sound_on": "Ton an", "js.support": "Unterstützen", "js.thank_you_here_s": "Danke! Hier ist die Unterstützungsseite", "js.thanks_for_stopping_by": "Danke für den Besuch. Jeder Betrag hilft", "js.that_tickles": "Das kitzelt!", "js.the_address_is_coming": "Die Adresse kommt bald", "js.the_download_podee_button": "Der Knopf „PoDee herunterladen“ ist auf der Startseite und auf der PoDee-Seite", "js.the_form_will_work": "Das Formular funktioniert bald", "js.track_1": "Nachtfahrt", "js.track_2": "Lichter der Stadt", "js.track_3": "Morgendämmerung", "js.typed_text": "Getippt: {text}", "js.unmute_pody": "PoDy wieder laut", "js.version_line": "Version {v} für {bits}-Bit-Windows · <a href=\"{link}\">brauchst du {other} Bit?<\/a>", "js.volume_n": "Lautstärke {n} %", "js.write_to_pody": "Schreib PoDy…"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=f49b63dc"></script>
+<script src="../pody.js?v=3bf6c807"></script>
+<script src="../podoo.js?v=b4d9e8c0"></script>
+</body>
+</html>

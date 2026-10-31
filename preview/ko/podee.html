@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../../" />
+<title>PoDee · Pody Lab</title>
+<meta name="description" content="PoDee: Windows 화면 위쪽의 아일랜드. 시계, 음악, 음성, AI 채팅, 캘린더, 그리고 구름 PoDy." />
+<link rel="icon" href="../../media/podee-icon.svg?v=41ecf9f3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=629f9e8f" />
+</head>
+<body>
+<main class="wrap">
+  <div class="hero">
+    <img class="cloud" src="../../media/podee-icon.svg?v=41ecf9f3" alt="구름 PoDy" />
+    <h1>Windows 화면 위의 <em>작은 아일랜드</em></h1>
+    <p class="lead">PoDee는 화면 위쪽 가장자리에 있습니다. 시간과 음악을 보여 주고, 목소리를 듣고, 채팅으로 답하고, Claude Code가 지금 무엇을 하는지 알려 줍니다. 옆에는 마우스를 눈으로 따라가는 구름 PoDy가 있어요.</p>
+    <div class="btns">
+      <a class="btn main" data-podee href="https://github.com/podylab/PoDee-releases/releases/latest/download/PoDee_x64-setup.exe"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Windows용 다운로드</a><a class="btn ghost" href="https://apps.microsoft.com/detail/9P3ZM16J8S2B?hl=ko-kr" target="_blank" rel="noopener"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6V5a4 4 0 0 1 8 0v1h4.2a.8.8 0 0 1 .8.8V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.8a.8.8 0 0 1 .8-.8zm1.6 0h4.8V5a2.4 2.4 0 0 0-4.8 0zM7.5 10v3.4h4.1V10zm4.9 0v3.4h4.1V10zm-4.9 4.2v3.4h4.1v-3.4zm4.9 0v3.4h4.1v-3.4z" fill-rule="evenodd"/></svg>Microsoft Store</a>
+      <a class="btn ghost" href="support.html">후원하기</a>
+    </div>
+    <p class="dl-count" data-downloads="PoDee-releases" hidden></p>
+  </div>
+
+  <section>
+    <h2>PoDee가 하는 일</h2>
+    <p class="sub">누구나 무료. Windows 10, 11. 앱은 러시아어와 영어를 지원합니다.</p>
+    <div class="desk stick" id="isl" data-tab="home" aria-hidden="true">
+      <div class="screen">
+        <div class="isl">
+          <div class="isl-tabs">
+            <span data-t="home"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v8.5a1 1 0 0 1-1 1h-4.5V15h-5v5.5H5a1 1 0 0 1-1-1z"/></svg></span>
+            <span data-t="music"><svg viewBox="0 0 24 24"><path d="M9.5 17.5V6.2l9-2v11.3"/><circle cx="7" cy="17.5" r="2.5"/><circle cx="16" cy="15.5" r="2.5"/></svg></span>
+            <span data-t="cal"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3.5"/><path d="M3.5 10h17M8 3.2v3.5M16 3.2v3.5"/></svg></span>
+            <span data-t="chat"><svg viewBox="0 0 24 24"><path d="M5 5.5h14a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 3.5V16.5H5A1.5 1.5 0 0 1 3.5 15V7A1.5 1.5 0 0 1 5 5.5z"/></svg></span>
+            <span data-t="timer"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.3 1.6M9.5 3h5"/></svg></span>
+            <span data-t="water"><svg viewBox="0 0 24 24"><path d="M12 3.6s6 6.3 6 10.4a6 6 0 0 1-12 0c0-4.1 6-10.4 6-10.4z"/></svg></span>
+            <span data-t="code"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="3.5"/><path d="M7.5 10l3 2.5-3 2.5M13 15.2h3.5"/></svg></span>
+            <span class="heart"><svg viewBox="0 0 24 24"><path d="M12 19.5s-7-4.3-7-9.4A4 4 0 0 1 12 7.6a4 4 0 0 1 7 2.5c0 5.1-7 9.4-7 9.4z"/></svg></span>
+          </div>
+          <div class="isl-scene home">
+            <div class="big" data-clock>14:32</div>
+            <div class="mut" data-today>11월 1일 토요일</div>
+            <div class="soon">12분 후 · 디자이너와 통화</div>
+          </div>
+          <div class="isl-scene music">
+            <div class="row">
+              <span class="isl-art"></span>
+              <div class="t"><b>따뜻한 도시</b><span>밤의 전차</span><span class="isl-lyric">가로등은 새벽까지 꺼지지 않고</span></div>
+              <div class="ctl">
+                <i><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></i>
+                <i><svg viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></i>
+                <i><svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></i>
+              </div>
+            </div>
+            <div class="isl-bar"></div>
+          </div>
+          <div class="isl-scene cal">
+            <div class="isl-week" data-week></div>
+            <div class="isl-meet"><span>12분 후 · <em>디자이너와 통화</em></span></div>
+          </div>
+          <div class="isl-scene chat">
+            <div class="isl-say"><p class="me">Telegram 열어 줘</p><p class="ai">Telegram을 여는 중</p></div>
+            <div class="isl-input">PoDee에게 묻거나 명령하기…</div>
+          </div>
+          <div class="isl-scene code">
+            <div class="isl-term"><p class="top"><span>› site.js 수정 중</span><span class="mut">한도: 62% 남음</span></p><p class="ok">✓ 테스트 통과, 24/24</p><p class="q">? npm run build를 실행할까요?</p></div>
+            <div class="isl-ask"><span>허용</span><span>아니요</span></div>
+          </div>
+          <div class="isl-scene water">
+            <div class="row"><b>물</b><span class="mut" style="margin-left:auto">다음 알림 60분 후</span></div>
+            <div class="isl-drops" data-drops></div>
+            <div class="row"><b style="font-size:1.3em">5</b><span class="mut">/ 8잔</span><span class="isl-pill">+ 한 잔</span></div>
+          </div>
+          <div class="isl-scene timer">
+            <div class="row">
+              <div class="isl-ring"><svg viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="42"/><circle class="arc" cx="50" cy="50" r="42"/></svg><b>18:42</b></div>
+              <div class="t"><b>타이머</b><span>18분 남음</span></div>
+              <div class="ctl"><i><svg viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="d-pody"><b></b><i></i><i></i></div>
+        <div class="d-taskbar"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+    <div class="grid g3 feats" id="feats">
+      <div class="card" tabindex="0" data-tab="music"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 17.5V6.2l9-2v11.3"/><circle cx="7" cy="17.5" r="2.5"/><circle cx="16" cy="15.5" r="2.5"/><path d="M9.5 9.6l9-2"/></svg></div><h3>음악</h3><p>앨범 커버, 버튼, 노래에 맞춰 흐르는 가사. 어떤 플레이어든.</p></div>
+      <div class="card" tabindex="0" data-tab="chat"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M5.8 11.2a6.2 6.2 0 0 0 12.4 0"/><path d="M12 17.4v3.1"/></svg></div><h3>음성과 채팅</h3><p>«Telegram 열어 줘»라고 말하면 열립니다. 나머지는 AI에게 물어보세요: Claude, ChatGPT, Gemini.</p></div>
+      <div class="card" tabindex="0" data-tab="cal"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3.5"/><path d="M3.5 10h17"/><path d="M8 3.2v3.5M16 3.2v3.5"/><path d="M8 14h.01M12 14h.01M16 14h.01"/></svg></div><h3>캘린더</h3><p>Google, Outlook 또는 아무 iCal 링크. 다음 일정이 시계 아래에 보입니다.</p></div>
+      <div class="card" tabindex="0" data-tab="code"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="3.5"/><path d="M7.5 10l3 2.5-3 2.5"/><path d="M13 15.2h3.5"/></svg></div><h3>Claude Code</h3><p>에이전트가 터미널에서 하는 일, «허용할까요?» 질문, 남은 한도.</p></div>
+      <div class="card" tabindex="0" data-tab="water"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6s6 6.3 6 10.4a6 6 0 0 1-12 0c0-4.1 6-10.4 6-10.4z"/><path d="M9.2 14.4a2.9 2.9 0 0 0 2.6 2.6"/></svg></div><h3>건강</h3><p>하루 물 섭취, 눈을 위한 20-20-20 휴식, 1분 호흡.</p></div>
+      <div class="card" tabindex="0" data-tab="timer"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.3 1.6M9.5 3h5"/></svg></div><h3>타이머</h3><p>남은 시간이 아일랜드에 보여서 창을 바꿀 필요가 없어요.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>나만의 바탕 화면 만들기</h2>
+    <p class="sub">아일랜드, 독, 위젯은 따로 켤 수 있어요. 필요한 것만 남기세요.</p>
+    <div class="mods-pick" role="group" aria-label="켤 것">
+      <button type="button" id="mod-island" data-mod="island" aria-pressed="true"><i></i>아일랜드</button>
+      <button type="button" id="mod-dock" data-mod="dock" aria-pressed="true"><i></i>독</button>
+      <button type="button" id="mod-widgets" data-mod="widgets" aria-pressed="true"><i></i>위젯</button>
+    </div>
+    <div class="desk tall mods" id="mods" aria-hidden="true">
+      <div class="screen">
+        <div data-part="widgets" class="d-widgets">
+          <div><div class="temp">+12°</div><div class="mut">흐림, 비 없음</div></div>
+          <div><b>오늘 할 일</b><ul><li class="done">지민에게 답장</li><li>고양이 사료 사기</li><li>15:00 통화</li></ul></div>
+        </div>
+        <div data-part="island">
+          <div class="isl-cloud"><i></i><i></i><i></i><i></i><b data-clock>14:32</b></div>
+          <div class="d-pody"><b></b><i></i><i></i></div>
+        </div>
+        <div data-part="dock" class="d-dock">
+          <span class="run" style="background:linear-gradient(160deg,#ffd166,#f0a33a)"></span>
+          <span class="run" style="background:linear-gradient(160deg,#6cb6ff,#2f6fd6)"></span>
+          <span class="run" style="background:linear-gradient(160deg,#5ed1e8,#2896b8)"></span>
+          <span style="background:linear-gradient(160deg,#ff8a7a,#d9485f)"></span>
+          <span style="background:linear-gradient(160deg,#b39cff,#6a4fd0)"></span>
+          <span style="background:linear-gradient(160deg,#8fe3cc,#23806c)"></span>
+        </div>
+        <div class="d-taskbar"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+    <p class="mods-note" id="mods-note" data-n111="모두 함께: 위에는 아일랜드, 아래에는 독, 옆에는 위젯." data-n110="아일랜드와 독, 바탕 화면은 깔끔하게." data-n101="아일랜드와 위젯, 아래에는 늘 보던 작업 표시줄." data-n011="아일랜드 없이 독과 위젯만." data-n100="아일랜드만. 나머지는 늘 보던 Windows." data-n010="창 미리 보기가 있는 독만." data-n001="바탕 화면에 위젯만." data-n000="모두 꺼짐: 늘 보던 Windows예요. 하나를 켜 보세요.">모두 함께: 위에는 아일랜드, 아래에는 독, 옆에는 위젯.</p>
+  </section>
+
+  <section>
+    <h2>쓰기 전과 쓴 후</h2>
+    <p class="sub">같은 바탕 화면, 같은 하루. 오른쪽에는 PoDee가 켜져 있습니다.</p>
+    <div class="ba">
+      <figure>
+        <div class="desk tall" aria-hidden="true">
+          <div class="screen">
+            <div class="d-icons"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="d-taskbar full"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b class="tray" data-clock>14:32</b></div>
+          </div>
+        </div>
+        <figcaption><b>Before</b> 늘 보던 Windows. 아이콘으로 꽉 찬 작업 표시줄과 구석의 작은 시계.</figcaption>
+      </figure>
+      <figure>
+        <div class="desk tall" aria-hidden="true">
+          <div class="screen">
+            <div class="d-widgets">
+              <div><div class="temp">+12°</div><div class="mut">흐림, 비 없음</div></div>
+              <div><b>오늘 할 일</b><ul><li class="done">지민에게 답장</li><li>고양이 사료 사기</li><li>15:00 통화</li></ul></div>
+            </div>
+            <div class="isl-cloud"><i></i><i></i><i></i><i></i><b data-clock>14:32</b></div>
+            <div class="d-pody near"><b></b><i></i><i></i></div>
+            <div class="d-dock low">
+              <span class="run" style="background:linear-gradient(160deg,#ffd166,#f0a33a)"></span>
+              <span class="run" style="background:linear-gradient(160deg,#6cb6ff,#2f6fd6)"></span>
+              <span class="run" style="background:linear-gradient(160deg,#5ed1e8,#2896b8)"></span>
+              <span style="background:linear-gradient(160deg,#ff8a7a,#d9485f)"></span>
+              <span style="background:linear-gradient(160deg,#8fe3cc,#23806c)"></span>
+            </div>
+          </div>
+        </div>
+        <figcaption><b>After</b> 위쪽 아일랜드에 시계와 다음 일정, 독에 앱, 위젯에 날씨와 할 일. 바탕 화면 아이콘과 Windows 작업 표시줄은 숨겨져 있습니다.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="install">
+    <h2>1분 만에 설치</h2>
+    <p class="sub">Windows는 아직 모르는 앱에 대해 경고할 수 있습니다. 작은 개발자에게는 흔한 일이고, 누를 곳은 여기입니다.</p>
+    <ol class="steps">
+      <li class="card">
+        <div class="mini" aria-hidden="true">
+          <div class="m-dl"><span class="m-file"><i></i>PoDee_x64-setup.exe</span><span class="m-open">파일 열기</span></div>
+        </div>
+        <h3><span class="n">1</span>설치 파일 다운로드</h3>
+        <p>위 버튼이 내 Windows에 맞는 버전을 알아서 고릅니다.</p>
+      </li>
+      <li class="card">
+        <div class="mini" aria-hidden="true">
+          <div class="m-ss">
+            <b>Windows의 PC 보호</b>
+            <p>Microsoft Defender SmartScreen에서 인식할 수 없는 앱의 시작을 차단했습니다.</p>
+            <p class="m-more"><u>추가 정보</u><i class="tap">1</i></p>
+            <p>앱: PoDee_x64-setup.exe<br>게시자: 알 수 없는 게시자</p>
+            <div class="m-ss-btns"><span class="hot">실행<i class="tap">2</i></span><span>실행 안 함</span></div>
+          </div>
+        </div>
+        <h3><span class="n">2</span>경고 넘기기</h3>
+        <p>파란 창이 뜨면 «추가 정보»를 누른 뒤 «실행»을 누르세요. Microsoft Store에서 받으면 이 창 없이 설치됩니다.</p>
+      </li>
+      <li class="card">
+        <div class="mini" aria-hidden="true">
+          <div class="m-desk"><div class="isl-cloud"><i></i><i></i><i></i><i></i><b data-clock>14:32</b></div><div class="d-pody near"><b></b><i></i><i></i></div></div>
+        </div>
+        <h3><span class="n">3</span>PoDee가 화면 위에</h3>
+        <p>설치는 몇 초면 끝나고, 구름 PoDy도 바로 나타납니다.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>아일랜드에 더 있어요</h2>
+    <p class="sub">모든 탭은 한 번의 클릭으로 열리고, 창을 바꿀 필요가 없어요.</p>
+    <div class="grid g3 more-grid">
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-head"><b>3시간 56분</b><span>오늘</span></div>
+          <div class="m-bars">
+            <p><span>Telegram</span><i style="--w:.86"></i><em>1시간 30분</em></p>
+            <p><span>VS Code</span><i style="--w:.66"></i><em>1시간 8분</em></p>
+            <p><span>Edge</span><i style="--w:.34"></i><em>48분</em></p>
+          </div>
+        </div></div>
+        <h3>스크린 타임</h3><p>오늘 컴퓨터를 얼마나 썼는지, 어떤 앱에서 썼는지.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-slide"><svg viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4z"/><path d="M15.5 9a4 4 0 0 1 0 6"/></svg><i style="--w:.42"></i><b>42</b></div>
+          <div class="m-slide"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M5.6 18.4l1.8-1.8M16.6 7.4l1.8-1.8"/></svg><i style="--w:.9"></i><b>90</b></div>
+          <div class="m-tiles"><span class="on">Wi-Fi</span><span class="on">Bluetooth</span><span>절전 안 함</span><span>방해 금지</span></div>
+        </div></div>
+        <h3>제어</h3><p>볼륨, 밝기, Wi-Fi, Bluetooth를 Windows 설정을 열지 않고.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl m-two">
+          <div><b>눈</b><span>20분 후 휴식</span><u>지금 쉬기</u></div>
+          <div class="m-breath"><i></i><b>호흡</b><span>4초 들이쉬고, 6초 내쉬기</span></div>
+        </div></div>
+        <h3>눈과 호흡</h3><p>20분마다 PoDee가 먼 곳을 보라고 알려 줍니다. 1분 호흡은 버튼 하나로 시작해요.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-head"><b>할 일</b><span>2 / 4</span></div>
+          <ul class="m-list"><li class="done">시안 보내기</li><li class="done">인터넷 요금 내기</li><li>엄마에게 전화</li><li>고양이 사료 사기</li></ul>
+        </div></div>
+        <h3>할 일과 메모</h3><p>오늘 할 일 목록과 빠른 메모. 모두 내 컴퓨터에 저장됩니다.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-head"><b>클립보드</b><span>12개 항목</span></div>
+          <div class="m-clips"><p>podylab.github.io</p><p>목요일 15:00 회의</p><p class="img"><i></i>스크린샷</p></div>
+        </div></div>
+        <h3>클립보드</h3><p>복사한 모든 것을 손 닿는 곳에. 텍스트, 링크, 이미지.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-note"><i style="background:#2aa3e0">T</i><p><b>지민</b><span>주말 사진을 보냈어요</span></p><em>14:05</em></div>
+          <div class="m-note"><i style="background:#5865f2">D</i><p><b>Discord</b><span>#일반 채널에 새 메시지</span></p><em>13:48</em></div>
+          <div class="m-note"><i style="background:#e0735f">M</i><p><b>메일</b><span>10월 청구서</span></p><em>12:30</em></div>
+        </div></div>
+        <h3>알림</h3><p>알림이 아일랜드에 모여서 놓친 것을 쉽게 찾을 수 있어요.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "PoDy에게 보내는 메시지", "js.about_podoo": "PoDoo 소개", "js.all_podee_versions": "PoDee 전체 버전", "js.back_to_top": "맨 위로", "js.click": "클릭", "js.close": "닫기", "js.copied": "복사됨", "js.copy_address": "주소 복사", "js.couldn_t_copy_select": "복사하지 못했어요. 주소를 선택해 주세요", "js.download_podee_and_i": "PoDee를 받으면 내가 화면 위로 이사 갈게", "js.downloads.few": "다운로드", "js.downloads.many": "다운로드", "js.downloads.one": "다운로드", "js.downloads.other": "다운로드", "js.good_even_better_when": "좋아. 쓰다듬어 주면 더 좋아", "js.hi_glad_you_came": "안녕! 와 줘서 기뻐", "js.hi_i_m_pody": "안녕, 나는 PoDy야. 쓰다듬어도 돼", "js.i_like_you_too": "나도 네가 좋아", "js.i_live_at_the": "나는 화면 위에 살면서 음악과 시간을 보여 줘. 나랑 이야기할 수도 있어", "js.i_m_dizzy": "어지러워…", "js.i_only_know_a": "아직 아는 말이 별로 없어. 내가 뭘 할 수 있는지 물어봐", "js.if_podee_helps_you": "PoDee가 도움이 됐다면 프로젝트를 후원할 수 있어요", "js.improve_together": "함께 개선하기", "js.language": "사이트 언어", "js.learn_more": "자세히 보기", "js.made_with_pody_the": "구름 PoDy와 함께 만들었어요", "js.message": "메시지", "js.mute_pody": "PoDy 음소거", "js.net_bnb": "BNB Smart Chain(BEP-20): 이 네트워크의 BNB 또는 USDT.", "js.net_btc": "Bitcoin 네트워크.", "js.net_doge": "Dogecoin 네트워크.", "js.net_eth": "Ethereum 네트워크(ERC-20): 이 네트워크의 ETH 또는 USDT.", "js.net_ton": "TON 네트워크: Toncoin 또는 USDT. 메모에 바라는 점을 적을 수 있어요.", "js.net_usdt": "TRC-20(Tron) 네트워크만 됩니다. 다른 네트워크는 안 돼요.", "js.next_track": "다음 곡", "js.paused": "일시 정지됨", "js.playing": "재생 중", "js.podoo_is_out": "PoDoo 출시: 휴대폰이나 오래된 태블릿이 PC 리모컨이 됩니다", "js.pody_the_cloud_pet": "구름 PoDy: 쓰다듬고 이야기해 보세요", "js.previous_track": "이전 곡", "js.privacy": "개인정보", "js.soon": "곧 출시", "js.sound_off": "소리 끔", "js.sound_on": "소리 켬", "js.support": "후원하기", "js.thank_you_here_s": "고마워요! 후원 페이지는 여기예요", "js.thanks_for_stopping_by": "들러 줘서 고마워요. 얼마든 도움이 돼요", "js.that_tickles": "간지러워!", "js.the_address_is_coming": "주소는 곧 올라와요", "js.the_download_podee_button": "«PoDee 다운로드» 버튼은 홈과 PoDee 페이지에 있어요", "js.the_form_will_work": "양식은 곧 작동합니다", "js.track_1": "밤 드라이브", "js.track_2": "도시의 불빛", "js.track_3": "새벽", "js.typed_text": "입력함: {text}", "js.unmute_pody": "PoDy 음소거 해제", "js.version_line": "{bits}비트 Windows용 버전 {v} · <a href=\"{link}\">{other}비트가 필요하세요?<\/a>", "js.volume_n": "볼륨 {n}%", "js.write_to_pody": "PoDy에게 쓰기…"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=f49b63dc"></script>
+<script src="../pody.js?v=3bf6c807"></script>
+</body>
+</html>

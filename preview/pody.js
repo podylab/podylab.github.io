@@ -2,7 +2,7 @@
 // the mouse, he blinks and breathes; a click pets him (hearts and his happy chirp), poking
 // too often makes him dizzy. A little chat answers a few words, now and then he asks to
 // support Pody Lab. Also here: the «back to top» button and the page's soft effects.
-// Needs site.js first (T, EN, up).
+// Needs site.js first (W, up).
 (() => {
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const SOUND_KEY = "podylab.sound";
@@ -88,17 +88,17 @@
   document.body.insertAdjacentHTML(
     "beforeend",
     `<div class="pody-dock">
-      <button class="to-top" id="to-top" type="button" aria-label="${T("Наверх", "Back to top")}" title="${T("Наверх", "Back to top")}">
+      <button class="to-top" id="to-top" type="button" aria-label="${W("js.back_to_top")}" title="${W("js.back_to_top")}">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l6-6 6 6"/></svg>
       </button>
       <div class="pody-talk" id="pody-talk" hidden>
-        <button class="pody-close" id="pody-close" type="button" aria-label="${T("Закрыть", "Close")}">×</button>
+        <button class="pody-close" id="pody-close" type="button" aria-label="${W("js.close")}">×</button>
         <p id="pody-say"></p>
-        <form id="pody-form" autocomplete="off"><input id="pody-input" maxlength="120" placeholder="${T("Напишите PoDy…", "Write to PoDy…")}" aria-label="${T("Сообщение для PoDy", "A message for PoDy")}" /></form>
+        <form id="pody-form" autocomplete="off"><input id="pody-input" maxlength="120" placeholder="${W("js.write_to_pody")}" aria-label="${W("js.a_message_for_pody")}" /></form>
       </div>
       <div class="pody-wrap">
         <button class="pody-sound" id="pody-sound" type="button"></button>
-        <button class="pody" id="pody" type="button" aria-label="${T("Облачко PoDy: погладить и поговорить", "PoDy the cloud: pet him and talk")}">
+        <button class="pody" id="pody" type="button" aria-label="${W("js.pody_the_cloud_pet")}">
           <svg viewBox="214 236 632 512" aria-hidden="true">
             <defs>
               <radialGradient id="pody-body" cx="0.36" cy="0.26" r="0.85"><stop offset="0" stop-color="#fff"/><stop offset="0.6" stop-color="#f6fbfa"/><stop offset="1" stop-color="#d5ebe6"/></radialGradient>
@@ -127,7 +127,7 @@
   };
   const showSound = () => {
     soundBtn.innerHTML = soundOn ? SOUND_ICONS.on : SOUND_ICONS.off;
-    soundBtn.title = soundOn ? T("Выключить звуки PoDy", "Mute PoDy") : T("Включить звуки PoDy", "Unmute PoDy");
+    soundBtn.title = soundOn ? W("js.mute_pody") : W("js.unmute_pody");
     soundBtn.setAttribute("aria-label", soundBtn.title);
   };
   showSound();
@@ -207,18 +207,18 @@
     clearTimeout(hideTimer);
     if (!chat) hideTimer = setTimeout(() => (talk.hidden = true), ms);
   }
-  const support = [T("Поддержать", "Support"), `${up}support.html`];
-  const podeePage = [T("Подробнее", "Learn more"), "podee.html"];
+  const support = [W("js.support"), "support.html"];
+  const podeePage = [W("js.learn_more"), "podee.html"];
 
   // a few words he understands
   const REPLIES = [
-    [/привет|здрав|хай|hi\b|hello|hey/i, () => [T("Привет! Рад, что вы зашли", "Hi! Glad you came by")]],
-    [/скача|загруз|установ|download|install|get/i, () => [T("Кнопка «Скачать PoDee» есть на главной и на странице PoDee", "The «Download PoDee» button is on the home page and on PoDee's page"), podeePage]],
-    [/подд|донат|задонат|деньг|оплат|support|donat|money|tip/i, () => [T("Спасибо! Вот страница поддержки", "Thank you! Here's the support page"), support]],
-    [/podoo|подо|пульт|телефон|phone|remote/i, () => [T("PoDoo скоро выйдет. Старый телефон станет пультом для ПК", "PoDoo is coming soon. An old phone becomes a remote for your PC"), [T("О PoDoo", "About PoDoo"), "podoo.html"]]],
-    [/умеешь|можешь|кто ты|что ты|what.*(do|can)|who are/i, () => [T("Живу у верхнего края экрана: показываю музыку и время. Со мной можно поговорить голосом", "I live at the top of your screen and show the music and the time. You can talk to me, too"), podeePage]],
-    [/как дела|как ты|how are/i, () => [T("Хорошо. Особенно когда меня гладят", "Good. Even better when someone pets me")]],
-    [/люблю|нравишься|милый|милаш|love|cute|♥|❤/i, () => { hearts(5); return [T("И вы мне нравитесь", "I like you too")]; }],
+    [/привет|здрав|хай|hi\b|hello|hey/i, () => [W("js.hi_glad_you_came")]],
+    [/скача|загруз|установ|download|install|get/i, () => [W("js.the_download_podee_button"), podeePage]],
+    [/подд|донат|задонат|деньг|оплат|support|donat|money|tip/i, () => [W("js.thank_you_here_s"), support]],
+    [/podoo|подо|пульт|телефон|phone|remote/i, () => [W("js.podoo_is_out"), [W("js.about_podoo"), "podoo.html"]]],
+    [/умеешь|можешь|кто ты|что ты|what.*(do|can)|who are/i, () => [W("js.i_live_at_the"), podeePage]],
+    [/как дела|как ты|how are/i, () => [W("js.good_even_better_when")]],
+    [/люблю|нравишься|милый|милаш|love|cute|♥|❤/i, () => { hearts(5); return [W("js.i_like_you_too")]; }],
   ];
   document.getElementById("pody-form").addEventListener("submit", (e) => {
     e.preventDefault();
@@ -228,7 +228,7 @@
     mood("talking", 700);
     setTimeout(() => {
       const hit = REPLIES.find(([re]) => re.test(text));
-      const [words, link] = hit ? hit[1]() : [T("Я знаю пока немного слов. Спросите, что я умею", "I only know a few words so far. Ask me what I can do")];
+      const [words, link] = hit ? hit[1]() : [W("js.i_only_know_a")];
       speak(words, { link, chat: true });
       mood("petted", 1200);
       chirp("answer");
@@ -245,7 +245,7 @@
     if (pokes.length >= 6) {
       mood("dizzy", 2600);
       chirp("dizzy");
-      speak(T("Голова кружится…", "I'm dizzy…"), { ms: 2600 });
+      speak(W("js.i_m_dizzy"), { ms: 2600 });
       if (!still) pody.animate([{ rotate: "0deg" }, { rotate: "-8deg" }, { rotate: "7deg" }, { rotate: "-4deg" }, { rotate: "0deg" }], { duration: 900 });
       pokes = [];
       return;
@@ -253,7 +253,7 @@
     if (pokes.length >= 4) {
       mood("poked", 900);
       chirp("poke");
-      speak(T("Щекотно!", "That tickles!"), { ms: 1800 });
+      speak(W("js.that_tickles"), { ms: 1800 });
       hop(5);
       return;
     }
@@ -262,7 +262,7 @@
     hearts();
     hop();
     if (talk.hidden || !talk.classList.contains("chat")) {
-      speak(page === "support.html" ? T("Спасибо, что заглянули. Любая сумма помогает", "Thanks for stopping by. Any amount helps") : T("Привет, я PoDy. Можно меня погладить", "Hi, I'm PoDy. You can pet me"), { chat: true });
+      speak(page === "support.html" ? W("js.thanks_for_stopping_by") : W("js.hi_i_m_pody"), { chat: true });
       setTimeout(() => input.focus({ preventScroll: true }), 50);
     }
   });
@@ -272,7 +272,7 @@
     session.set("pody.hi", "1");
     setTimeout(() => {
       if (!talk.hidden) return;
-      speak(T("Привет, я PoDy. Можно меня погладить", "Hi, I'm PoDy. You can pet me"));
+      speak(W("js.hi_i_m_pody"));
       hop(8);
     }, 2500);
   }
@@ -280,7 +280,7 @@
   setInterval(() => {
     if (document.hidden || !talk.hidden || asked >= 2 || page === "support.html") return;
     asked++;
-    speak(T("Если PoDee пригодился, проект можно поддержать", "If PoDee helps you, you can support the project"), { link: support, ms: 8000 });
+    speak(W("js.if_podee_helps_you"), { link: support, ms: 8000 });
     mood("petted", 1200);
     hop(6);
   }, 45000);
@@ -288,7 +288,7 @@
   document.querySelectorAll("[data-podee]").forEach((a) =>
     a.addEventListener("mouseenter", () => {
       if (!talk.hidden && talk.classList.contains("chat")) return;
-      speak(T("Скачайте PoDee, и я поселюсь у вас наверху экрана", "Download PoDee and I'll move into the top of your screen"), { ms: 4000 });
+      speak(W("js.download_podee_and_i"), { ms: 4000 });
       mood("petted", 1000);
     }),
   );
