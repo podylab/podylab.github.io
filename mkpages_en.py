@@ -227,5 +227,8 @@ privacy = head("PoDee privacy policy · Pody Lab", "What PoDee keeps and where i
 ''' + tail
 
 for n, c in [("index.html", home), ("podee.html", podee), ("podoo.html", podoo), ("support.html", support), ("privacy.html", privacy)]:
+    # the icons carry a content mark too, so a new icon shows at once
+    for icon in ("podee-icon.svg", "podoo-icon.svg"):
+        c = c.replace(f"media/{icon}\"", f"media/{icon}?v={ver('media/' + icon)}\"")
     open(os.path.join("en", n), "w", encoding="utf-8").write(c)
 print("ok")
