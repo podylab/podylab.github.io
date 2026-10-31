@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../" />
+<title>Поддержать · Pody Lab</title>
+<meta name="description" content="Поддержать Pody Lab любой суммой картой, через Kaspi QR или криптой и отправить пожелание к PoDee или PoDoo." />
+<link rel="icon" href="../media/podee-icon.svg?v=41ecf9f3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=6b4de225" />
+</head>
+<body>
+<main class="wrap">
+  <div class="hero" style="padding-bottom:0">
+    <img class="cloud" src="../media/podee-icon.svg?v=41ecf9f3" alt="Облачко PoDy" />
+    <h1>Поддержать <em>Pody Lab</em></h1>
+    <p class="lead">Программы Pody Lab бесплатные. Если они вам пригодились, можно отправить любую сумму. Деньги идут на новые функции и следующие программы.</p>
+  </div>
+
+  <section id="donate">
+    <div class="card pay pay-bar">
+      <div class="pay-head"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M3 10h18"/><path d="M7 14.6h3.5"/></svg></div><div><h3>Картой</h3><p>Банковская карта, сумму выбираете сами</p></div></div>
+      <p class="pay-text">Откроется страница оплаты. Введите сумму и, если хотите, напишите пожелание в сообщении к платежу.</p>
+      <a class="btn main" id="card" href="#" target="_blank" rel="noopener">Отправить картой</a>
+    </div>
+    <div class="grid g2 pay-pair">
+      <div class="card pay" id="kaspi">
+        <div class="pay-head"><div class="ic kaspi"><img src="../media/kaspi-logo.png" width="34" height="35" alt=""></div><div><h3>Kaspi QR</h3><p>Для Казахстана</p></div></div>
+        <div class="wallet">
+          <div class="qr"><img src="../kaspi-qr.png" width="132" height="132" alt="Kaspi QR для оплаты" loading="lazy"></div>
+          <ol class="pay-steps"><li>Откройте приложение Kaspi.kz.</li><li>Нажмите «Kaspi QR» и наведите камеру на код.</li><li>Введите любую сумму и подтвердите.</li></ol>
+        </div>
+      </div>
+      <div class="card pay">
+        <div class="pay-head"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M14.6 9.4a2.9 2.9 0 0 0-2.6-1.4c-1.6 0-2.7.8-2.7 1.9s.9 1.6 2.7 1.9 2.7.9 2.7 2-1.1 2-2.7 2a3 3 0 0 1-2.7-1.5"/><path d="M12 6.3v1.7M12 16v1.7"/></svg></div><div><h3>Криптой</h3><p>USDT, TON, BTC, ETH, BNB, DOGE</p></div></div>
+        <div class="coins" id="coins"></div>
+        <div class="wallet">
+          <div class="qr" id="qr"></div>
+          <div>
+            <div class="addr" id="addr"></div>
+            <div class="net" id="net"></div>
+            <button class="btn ghost copy" id="copy" type="button">Скопировать адрес</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wish">
+    <h2>Сделать программы лучше вместе</h2>
+    <p class="sub">Платить для этого не нужно. Напишите, чего не хватает в PoDee или PoDoo или какую программу сделать следующей. Мы читаем каждое пожелание.</p>
+    <div class="card">
+      <form data-send="Спасибо, получили. Прочитаем.">
+        <input type="hidden" name="about" value="Пожелание" />
+        <div class="row2">
+          <label>Программа <select name="app"><option>PoDee</option><option>PoDoo</option><option>Новая программа</option></select></label>
+          <label>Почта, если ждёте ответа <input name="email" type="email" autocomplete="email" placeholder="you@mail.com" /></label>
+        </div>
+        <label>Что улучшить <textarea name="message" required placeholder="Например: хочу, чтобы остров показывал погоду"></textarea></label>
+        <div class="btns" style="align-items:center"><button class="btn main" type="submit">Отправить пожелание</button><span class="sent"></span></div>
+      </form>
+      <p class="wish-also">Пожелание можно отправить и вместе с донатом: картой в сообщении к платежу, в TON в комментарии к переводу.</p>
+    </div>
+  </section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="site.js?v=6d804d61"></script>
+<script src="pody.js?v=c86dcd51"></script>
+</body>
+</html>
