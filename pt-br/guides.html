@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../" />
+<script>try{var t=localStorage.getItem("podylab.theme")}catch(e){}document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")</script>
+<title>PoDee guides</title>
+<meta name="description" content="How to connect Claude Code, your calendar, voice, AI chat and a phone with PoDoo to PoDee." />
+<link rel="icon" href="../media/podee-icon.svg?v=41ecf9f3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=5db024f3" />
+<link rel="alternate" hreflang="ru" href="https://podylab.github.io/guides.html" />
+<link rel="alternate" hreflang="en" href="https://podylab.github.io/en/guides.html" />
+<link rel="alternate" hreflang="es" href="https://podylab.github.io/es/guides.html" />
+<link rel="alternate" hreflang="pt-BR" href="https://podylab.github.io/pt-br/guides.html" />
+<link rel="alternate" hreflang="de" href="https://podylab.github.io/de/guides.html" />
+<link rel="alternate" hreflang="fr" href="https://podylab.github.io/fr/guides.html" />
+<link rel="alternate" hreflang="it" href="https://podylab.github.io/it/guides.html" />
+<link rel="alternate" hreflang="tr" href="https://podylab.github.io/tr/guides.html" />
+<link rel="alternate" hreflang="pl" href="https://podylab.github.io/pl/guides.html" />
+<link rel="alternate" hreflang="uk" href="https://podylab.github.io/uk/guides.html" />
+<link rel="alternate" hreflang="id" href="https://podylab.github.io/id/guides.html" />
+<link rel="alternate" hreflang="vi" href="https://podylab.github.io/vi/guides.html" />
+<link rel="alternate" hreflang="ja" href="https://podylab.github.io/ja/guides.html" />
+<link rel="alternate" hreflang="ko" href="https://podylab.github.io/ko/guides.html" />
+<link rel="alternate" hreflang="zh-CN" href="https://podylab.github.io/zh/guides.html" />
+<link rel="alternate" hreflang="hi" href="https://podylab.github.io/hi/guides.html" />
+<link rel="alternate" hreflang="x-default" href="https://podylab.github.io/en/guides.html" />
+</head>
+<body>
+<main class="wrap">
+  <div class="page-head">
+    <img src="../media/podee-icon.svg?v=41ecf9f3" alt="" />
+    <div><h1>PoDee guides</h1><p class="lead">Step by step: Claude Code, calendar, voice with AI chat, and your phone.</p></div>
+  </div>
+
+  <section class="guides">
+    <div class="gtabs" role="tablist" aria-label="PoDee guides">
+      <a role="tab" href="#claude" data-g="claude">Claude Code</a>
+      <a role="tab" href="#calendar" data-g="calendar">Calendar</a>
+      <a role="tab" href="#voice" data-g="voice">Voice and AI chat</a>
+      <a role="tab" href="#podoo" data-g="podoo">PoDoo + PoDee</a>
+    </div>
+    <p class="note gopen">To open Settings, start PoDee again from the Start menu. No second island appears; the running app opens its settings.</p>
+
+    <article class="guide" id="claude" role="tabpanel">
+      <h2>Claude Code on the island</h2>
+      <p class="sub">The island shows what the agent is busy with and asks you when it needs permission.</p>
+      <ol class="gsteps">
+        <li><b>Open Agents</b><p>Settings → Agents → Claude Code.</p></li>
+        <li><b>Connect an account</b><p>Each account folder has its own row and its own Connect button. With several accounts, press Connect all. You can disconnect them one by one.</p></li>
+        <li><b>Restart your sessions</b><p>PoDee adds hooks to settings.json and keeps a copy as settings.json.podee-backup. Claude Code sessions that are already open pick them up after a restart.</p></li>
+        <li><b>Watch it by the clock</b><p>Appearance → “Next to the clock”: Claude's work shows right on the closed island.</p></li>
+      </ol>
+    </article>
+
+    <article class="guide" id="calendar" role="tabpanel">
+      <h2>Google or Outlook calendar</h2>
+      <p class="sub">PoDee reads your calendar from an iCal link. No login or password needed.</p>
+      <ol class="gsteps">
+        <li><b>Add a calendar</b><p>Settings → Calendar → “Connect calendar”. Enter a name and the iCal link.</p></li>
+        <li><b>The link from Google</b><p>In Google Calendar: Settings → your calendar → “Integrate calendar” → “Secret address in iCal format”. It ends in basic.ics. The public address only works if the calendar is public.</p></li>
+        <li><b>The link from Outlook</b><p>In Outlook: Settings → Calendar → Shared calendars → “Publish a calendar”. Pick the calendar and “Can view all details”, press Publish and copy the ICS link.</p></li>
+        <li><b>Reminders</b><p>Events refresh every 15 minutes. Choose how early to be reminded of a meeting in “Remind me”.</p></li>
+      </ol>
+    </article>
+
+    <article class="guide" id="voice" role="tabpanel">
+      <h2>Voice and AI chat</h2>
+      <p class="sub">Voice commands, dictation and questions to AI, right on the island.</p>
+      <ol class="gsteps">
+        <li><b>Choose recognition</b><p>Settings → Voice → Recognition. Whisper on your PC works offline: the base model is 150 MB, small 490 MB (our pick), medium 1.5 GB. There's also cloud Whisper with a free Groq key, and Windows speech recognition.</p></li>
+        <li><b>Speak</b><p>Hold Ctrl+Alt+Space and say a command, such as “open Telegram”. Ctrl+Alt+D starts dictation.</p></li>
+        <li><b>Connect AI chat</b><p>Settings → AI chat → Provider. With an API key: “Get a key” opens the provider's page, and Gemini's key is free. Without a key, chat runs through a subscription: Claude Code, Gemini CLI or Codex.</p></li>
+        <li><b>Where the keys live</b><p>In Windows Credential Manager, not in the settings file.</p></li>
+      </ol>
+      <div class="keys">
+        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd><span>voice command: hold and speak</span></p>
+        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd><span>dictation</span></p>
+        <p><kbd>Alt</kbd>+<kbd>P</kbd><span>open the island</span></p>
+        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd><span>hide the island and bring it back</span></p>
+      </div>
+    </article>
+
+    <article class="guide" id="podoo" role="tabpanel">
+      <h2>PoDoo + PoDee</h2>
+      <p class="sub">A phone with PoDoo controls the island: opens it, starts a timer, adds tasks and asks PoDy.</p>
+      <ol class="gsteps">
+        <li><b>Install PoDoo</b><p>PoDoo goes on your PC and on your phone. <a href="podoo.html">How to install</a></p></li>
+        <li><b>Turn on the link</b><p>In PoDee: Settings → Modules → “PoDoo link”. Commands are taken only from PoDoo on the same PC.</p></li>
+        <li><b>Control it from your phone</b><p>Open the PoDee page in PoDoo: the island opens and hides, timers and tasks take one tap. PoDy's answer arrives right on the phone.</p></li>
+      </ol>
+    </article>
+
+    <p class="note">Something didn't work? <a href="report.html">Write to us</a></p>
+  </section>
+</main>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "Uma mensagem para o PoDy", "js.about_podoo": "Sobre o PoDoo", "js.all_podee_versions": "Todas as versões do PoDee", "js.back_to_top": "Voltar ao topo", "js.click": "Clique", "js.close": "Fechar", "js.copied": "Copiado", "js.copy_address": "Copiar endereço", "js.couldn_t_copy_select": "Não deu para copiar, selecione o endereço", "js.download_podee_and_i": "Baixe o PoDee e eu me mudo para o topo da sua tela", "js.downloads.few": "downloads", "js.downloads.many": "downloads", "js.downloads.one": "download", "js.downloads.other": "downloads", "js.good_even_better_when": "Bem. Melhor ainda quando fazem carinho", "js.hi_glad_you_came": "Oi! Que bom que você veio", "js.hi_i_m_pody": "Oi, eu sou o PoDy. Pode fazer carinho", "js.i_like_you_too": "Também gosto de você", "js.i_live_at_the": "Eu moro no topo da sua tela e mostro a música e a hora. Dá para conversar comigo também", "js.i_m_dizzy": "Estou tonto…", "js.i_only_know_a": "Ainda sei poucas palavras. Pergunte o que eu sei fazer", "js.if_podee_helps_you": "Se o PoDee ajuda você, dá para apoiar o projeto", "js.improve_together": "Melhorar juntos", "js.language": "Idioma do site", "js.learn_more": "Saiba mais", "js.made_with_pody_the": "Feito com a nuvem PoDy", "js.message": "mensagem", "js.mute_pody": "Silenciar o PoDy", "js.net_bnb": "BNB Smart Chain (BEP-20): BNB ou USDT nesta rede.", "js.net_btc": "Rede Bitcoin.", "js.net_doge": "Rede Dogecoin.", "js.net_eth": "Rede Ethereum (ERC-20): ETH ou USDT nesta rede.", "js.net_ton": "Rede TON: Toncoin ou USDT. No comentário você pode escrever um pedido.", "js.net_usdt": "Só a rede TRC-20 (Tron). Outras redes não servem.", "js.next_track": "Próxima faixa", "js.paused": "Pausado", "js.playing": "Tocando", "js.podoo_is_out": "O PoDoo já saiu: um celular ou tablet antigo vira o controle do seu PC", "js.pody_the_cloud_pet": "A nuvem PoDy: faça carinho e converse com ela", "js.previous_track": "Faixa anterior", "js.privacy": "Privacidade", "js.soon": "Em breve", "js.sound_off": "Som desligado", "js.sound_on": "Som ligado", "js.support": "Apoiar", "js.thank_you_here_s": "Obrigado! Aqui está a página de apoio", "js.thanks_for_stopping_by": "Obrigado pela visita. Qualquer valor ajuda", "js.that_tickles": "Que cócegas!", "js.the_address_is_coming": "O endereço vem em breve", "js.the_download_podee_button": "O botão «Baixar PoDee» fica na página inicial e na página do PoDee", "js.the_form_will_work": "O formulário vai funcionar em breve", "js.track_1": "Estrada à noite", "js.track_2": "Luzes da cidade", "js.track_3": "Amanhecer", "js.typed_text": "Digitado: {text}", "js.unmute_pody": "Ligar o som do PoDy", "js.version_line": "Versão {v} para Windows {bits} bits · <a href=\"{link}\">precisa da de {other} bits?<\/a>", "js.volume_n": "Volume {n}%", "js.write_to_pody": "Escreva para o PoDy…", "js.guides": "Guides", "js.fixes": "Fixes", "js.report": "Report a problem", "js.download": "Download", "js.menu": "Menu", "js.notch": "PoDee: an island at the top of your screen", "js.theme": "Light or dark theme"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=1285ef66"></script>
+<script src="../pody.js?v=16e5b0c0"></script>
+</body>
+</html>

@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../" />
+<script>try{var t=localStorage.getItem("podylab.theme")}catch(e){}document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")</script>
+<title>PoDee · Pody Lab</title>
+<meta name="description" content="PoDee: Windows स्क्रीन के ऊपर एक द्वीप, जिसमें घड़ी, संगीत, आवाज़, AI चैट, कैलेंडर और बादल PoDy हैं।" />
+<link rel="icon" href="../media/podee-icon.svg?v=41ecf9f3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=5db024f3" />
+<link rel="alternate" hreflang="ru" href="https://podylab.github.io/podee.html" />
+<link rel="alternate" hreflang="en" href="https://podylab.github.io/en/podee.html" />
+<link rel="alternate" hreflang="es" href="https://podylab.github.io/es/podee.html" />
+<link rel="alternate" hreflang="pt-BR" href="https://podylab.github.io/pt-br/podee.html" />
+<link rel="alternate" hreflang="de" href="https://podylab.github.io/de/podee.html" />
+<link rel="alternate" hreflang="fr" href="https://podylab.github.io/fr/podee.html" />
+<link rel="alternate" hreflang="it" href="https://podylab.github.io/it/podee.html" />
+<link rel="alternate" hreflang="tr" href="https://podylab.github.io/tr/podee.html" />
+<link rel="alternate" hreflang="pl" href="https://podylab.github.io/pl/podee.html" />
+<link rel="alternate" hreflang="uk" href="https://podylab.github.io/uk/podee.html" />
+<link rel="alternate" hreflang="id" href="https://podylab.github.io/id/podee.html" />
+<link rel="alternate" hreflang="vi" href="https://podylab.github.io/vi/podee.html" />
+<link rel="alternate" hreflang="ja" href="https://podylab.github.io/ja/podee.html" />
+<link rel="alternate" hreflang="ko" href="https://podylab.github.io/ko/podee.html" />
+<link rel="alternate" hreflang="zh-CN" href="https://podylab.github.io/zh/podee.html" />
+<link rel="alternate" hreflang="hi" href="https://podylab.github.io/hi/podee.html" />
+<link rel="alternate" hreflang="x-default" href="https://podylab.github.io/en/podee.html" />
+</head>
+<body>
+<main class="wrap">
+  <div class="hero hero2">
+    <div class="h-text">
+      <div class="eyebrow"><img src="../media/podee-icon.svg?v=41ecf9f3" alt="बादल PoDy" /><b>PoDee</b><p class="dl-count" data-downloads="PoDee-releases" hidden></p></div>
+      <h1>आपकी Windows स्क्रीन के ऊपर <em>एक द्वीप</em></h1>
+      <p class="lead">PoDee स्क्रीन के ऊपरी किनारे पर रहता है। यह समय और आपका संगीत दिखाता है, आपकी आवाज़ सुनता है, चैट में जवाब देता है और बताता है कि Claude Code क्या कर रहा है। पास में बादल PoDy है, जो आँखों से माउस का पीछा करता है।</p>
+      <div class="btns">
+      <a class="btn main" data-podee href="https://github.com/podylab/PoDee-releases/releases/latest/download/PoDee_x64-setup.exe"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Windows के लिए डाउनलोड करें</a><a class="btn ghost" href="https://apps.microsoft.com/detail/9P3ZM16J8S2B?hl=hi-in" target="_blank" rel="noopener"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6V5a4 4 0 0 1 8 0v1h4.2a.8.8 0 0 1 .8.8V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.8a.8.8 0 0 1 .8-.8zm1.6 0h4.8V5a2.4 2.4 0 0 0-4.8 0zM7.5 10v3.4h4.1V10zm4.9 0v3.4h4.1V10zm-4.9 4.2v3.4h4.1v-3.4zm4.9 0v3.4h4.1v-3.4z" fill-rule="evenodd"/></svg>Microsoft Store</a>
+    </div>
+      <ul class="facts">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Windows 10 and 11, 64- and 32-bit</li>
+        <li><a href="support.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19.5s-7-4.3-7-9.4A4 4 0 0 1 12 7.6a4 4 0 0 1 7 2.5c0 5.1-7 9.4-7 9.4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Free, no subscription</a></li>
+        <li><a href="privacy.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything stays on your PC</a></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="2"/></svg>English and Russian, site in 16 languages</li>
+      </ul>
+    </div>
+    <div class="monitor" aria-hidden="true">
+      <div class="desk demo" id="demo" data-tab="home">
+        <div class="screen" style="background-image:url(../media/wallpapers/mint-small.jpg)">
+          <div class="dn">
+            <div class="dn-closed"><b data-clock>14:32</b></div>
+            <div class="dn-open">        <div class="isl">
+          <div class="isl-tabs">
+            <span data-t="home"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v8.5a1 1 0 0 1-1 1h-4.5V15h-5v5.5H5a1 1 0 0 1-1-1z"/></svg></span>
+            <span data-t="music"><svg viewBox="0 0 24 24"><path d="M9.5 17.5V6.2l9-2v11.3"/><circle cx="7" cy="17.5" r="2.5"/><circle cx="16" cy="15.5" r="2.5"/></svg></span>
+            <span data-t="cal"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3.5"/><path d="M3.5 10h17M8 3.2v3.5M16 3.2v3.5"/></svg></span>
+            <span data-t="chat"><svg viewBox="0 0 24 24"><path d="M5 5.5h14a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 3.5V16.5H5A1.5 1.5 0 0 1 3.5 15V7A1.5 1.5 0 0 1 5 5.5z"/></svg></span>
+            <span data-t="timer"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.3 1.6M9.5 3h5"/></svg></span>
+            <span data-t="water"><svg viewBox="0 0 24 24"><path d="M12 3.6s6 6.3 6 10.4a6 6 0 0 1-12 0c0-4.1 6-10.4 6-10.4z"/></svg></span>
+            <span data-t="code"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="3.5"/><path d="M7.5 10l3 2.5-3 2.5M13 15.2h3.5"/></svg></span>
+            <span class="heart"><svg viewBox="0 0 24 24"><path d="M12 19.5s-7-4.3-7-9.4A4 4 0 0 1 12 7.6a4 4 0 0 1 7 2.5c0 5.1-7 9.4-7 9.4z"/></svg></span>
+          </div>
+          <div class="isl-scene home">
+            <div class="big" data-clock>14:32</div>
+            <div class="mut" data-today>शनिवार, 1 नवंबर</div>
+            <div class="soon">12 मिनट में · डिज़ाइनर से कॉल</div>
+          </div>
+          <div class="isl-scene music">
+            <div class="row">
+              <span class="isl-art"></span>
+              <div class="t"><b>गर्म शहर</b><span>रात की ट्राम</span><span class="isl-lyric">और स्ट्रीटलाइट सुबह तक जलती रहती हैं</span></div>
+              <div class="ctl">
+                <i><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></i>
+                <i><svg viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></i>
+                <i><svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></i>
+              </div>
+            </div>
+            <div class="isl-bar"></div>
+          </div>
+          <div class="isl-scene cal">
+            <div class="isl-week" data-week></div>
+            <div class="isl-meet"><span>12 मिनट में · <em>डिज़ाइनर से कॉल</em></span></div>
+          </div>
+          <div class="isl-scene chat">
+            <div class="isl-say"><p class="me">Telegram खोलो</p><p class="ai">Telegram खोल रहा हूँ</p></div>
+            <div class="isl-input">PoDee से पूछें या आदेश दें…</div>
+          </div>
+          <div class="isl-scene code">
+            <div class="isl-term"><p class="top"><span>› site.js बदल रहा है</span><span class="mut">सीमा: 62% बाकी</span></p><p class="ok">✓ टेस्ट पास, 24 में से 24</p><p class="q">? npm run build चलाएँ?</p></div>
+            <div class="isl-ask"><span>अनुमति दें</span><span>नहीं</span></div>
+          </div>
+          <div class="isl-scene water">
+            <div class="row"><b>पानी</b><span class="mut" style="margin-left:auto">अगली याद 60 मिनट में</span></div>
+            <div class="isl-drops" data-drops></div>
+            <div class="row"><b style="font-size:1.3em">5</b><span class="mut">8 गिलास में से</span><span class="isl-pill">+ गिलास</span></div>
+          </div>
+          <div class="isl-scene timer">
+            <div class="row">
+              <div class="isl-ring"><svg viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="42"/><circle class="arc" cx="50" cy="50" r="42"/></svg><b>18:42</b></div>
+              <div class="t"><b>टाइमर</b><span>18 मिनट बाकी</span></div>
+              <div class="ctl"><i><svg viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></i></div>
+            </div>
+          </div>
+        </div></div>
+          </div>
+          <i class="d-pody char" data-c="auto"></i>
+          <div class="d-dock">
+          <span class="run" data-name="File Explorer"><svg viewBox="0 0 40 40"><path d="M4 11a3 3 0 0 1 3-3h8.5l3 3H33a3 3 0 0 1 3 3v2H4z" fill="#e9a823"/><path d="M4 15h32v15a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z" fill="#ffcf4d"/><rect x="11" y="23" width="18" height="10" rx="1.5" fill="#2f7fd8"/></svg></span>
+          <span class="run round" data-name="Browser" style="background:radial-gradient(circle at 30% 25%,#7ff0c9,#1fa8c9 55%,#1a5fc4)"><svg viewBox="0 0 40 40"><path d="M9 25c2-9 13-13 20-8-6-1-11 3-11 9 0 3 2 5 5 6-7 1-13-1-14-7z" fill="#fff" opacity=".92"/></svg></span>
+          <span class="run round" data-name="Messenger" style="background:linear-gradient(160deg,#4cc3f5,#1e88d0)"><svg viewBox="0 0 40 40"><path d="M9 19.5l20-8-3.5 17-6-4.5-3 3-.5-5.2 8.5-7.3-10.5 6.3z" fill="#fff"/></svg></span>
+          <span data-name="Music" style="background:linear-gradient(160deg,#ff7d97,#e0355f)"><svg viewBox="0 0 40 40"><path d="M16 27.5V12l13-3v15" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><circle cx="13" cy="27.5" r="3.6" fill="#fff"/><circle cx="26" cy="24.5" r="3.6" fill="#fff"/></svg></span>
+          <span data-name="Mail" style="background:linear-gradient(160deg,#5b9bff,#2b62d1)"><svg viewBox="0 0 40 40"><rect x="9" y="12" width="22" height="16" rx="2.5" fill="#fff"/><path d="M10 13.5l10 8 10-8" fill="none" stroke="#2b62d1" stroke-width="2"/></svg></span>
+          <span data-name="Notes" style="background:linear-gradient(160deg,#ffe07a,#f5b82e)"><svg viewBox="0 0 40 40"><path d="M12 14h16M12 20h16M12 26h10" stroke="#5b4300" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          <b class="sep"></b>
+          <span class="run" data-name="Terminal" style="background:linear-gradient(160deg,#3a4247,#1d2225)"><svg viewBox="0 0 40 40"><path d="M11 14l6 5.5-6 5.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 27h9" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg></span>
+          <span data-name="Photos" style="background:linear-gradient(180deg,#8fd4ff,#d9f1ff)"><svg viewBox="0 0 40 40"><circle cx="27" cy="13" r="3.5" fill="#ffc53d"/><path d="M5 31l10-12 7 8 4-4 9 8z" fill="#3aa57a"/></svg></span>
+          <span class="run" data-name="Settings" style="background:linear-gradient(160deg,#a5b1b8,#6c7a82)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="8.5" fill="none" stroke="#fff" stroke-width="4.5" stroke-dasharray="3.3 2.3"/><circle cx="20" cy="20" r="6" fill="none" stroke="#fff" stroke-width="2.6"/></svg></span>
+
+          </div>
+        </div>
+      </div>
+      <div class="stand"></div>
+    </div>
+  </div>
+
+  <section>
+    <h2>What's inside</h2>
+    <p class="sub">Point at a card and the island opens its tab. It looks the same on your screen.</p>
+    <div class="desk stick" id="isl" data-tab="home" aria-hidden="true">
+      <div class="screen">
+                <div class="isl">
+          <div class="isl-tabs">
+            <span data-t="home"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v8.5a1 1 0 0 1-1 1h-4.5V15h-5v5.5H5a1 1 0 0 1-1-1z"/></svg></span>
+            <span data-t="music"><svg viewBox="0 0 24 24"><path d="M9.5 17.5V6.2l9-2v11.3"/><circle cx="7" cy="17.5" r="2.5"/><circle cx="16" cy="15.5" r="2.5"/></svg></span>
+            <span data-t="cal"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3.5"/><path d="M3.5 10h17M8 3.2v3.5M16 3.2v3.5"/></svg></span>
+            <span data-t="chat"><svg viewBox="0 0 24 24"><path d="M5 5.5h14a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 3.5V16.5H5A1.5 1.5 0 0 1 3.5 15V7A1.5 1.5 0 0 1 5 5.5z"/></svg></span>
+            <span data-t="timer"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.3 1.6M9.5 3h5"/></svg></span>
+            <span data-t="water"><svg viewBox="0 0 24 24"><path d="M12 3.6s6 6.3 6 10.4a6 6 0 0 1-12 0c0-4.1 6-10.4 6-10.4z"/></svg></span>
+            <span data-t="code"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="3.5"/><path d="M7.5 10l3 2.5-3 2.5M13 15.2h3.5"/></svg></span>
+            <span class="heart"><svg viewBox="0 0 24 24"><path d="M12 19.5s-7-4.3-7-9.4A4 4 0 0 1 12 7.6a4 4 0 0 1 7 2.5c0 5.1-7 9.4-7 9.4z"/></svg></span>
+          </div>
+          <div class="isl-scene home">
+            <div class="big" data-clock>14:32</div>
+            <div class="mut" data-today>शनिवार, 1 नवंबर</div>
+            <div class="soon">12 मिनट में · डिज़ाइनर से कॉल</div>
+          </div>
+          <div class="isl-scene music">
+            <div class="row">
+              <span class="isl-art"></span>
+              <div class="t"><b>गर्म शहर</b><span>रात की ट्राम</span><span class="isl-lyric">और स्ट्रीटलाइट सुबह तक जलती रहती हैं</span></div>
+              <div class="ctl">
+                <i><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></i>
+                <i><svg viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></i>
+                <i><svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></i>
+              </div>
+            </div>
+            <div class="isl-bar"></div>
+          </div>
+          <div class="isl-scene cal">
+            <div class="isl-week" data-week></div>
+            <div class="isl-meet"><span>12 मिनट में · <em>डिज़ाइनर से कॉल</em></span></div>
+          </div>
+          <div class="isl-scene chat">
+            <div class="isl-say"><p class="me">Telegram खोलो</p><p class="ai">Telegram खोल रहा हूँ</p></div>
+            <div class="isl-input">PoDee से पूछें या आदेश दें…</div>
+          </div>
+          <div class="isl-scene code">
+            <div class="isl-term"><p class="top"><span>› site.js बदल रहा है</span><span class="mut">सीमा: 62% बाकी</span></p><p class="ok">✓ टेस्ट पास, 24 में से 24</p><p class="q">? npm run build चलाएँ?</p></div>
+            <div class="isl-ask"><span>अनुमति दें</span><span>नहीं</span></div>
+          </div>
+          <div class="isl-scene water">
+            <div class="row"><b>पानी</b><span class="mut" style="margin-left:auto">अगली याद 60 मिनट में</span></div>
+            <div class="isl-drops" data-drops></div>
+            <div class="row"><b style="font-size:1.3em">5</b><span class="mut">8 गिलास में से</span><span class="isl-pill">+ गिलास</span></div>
+          </div>
+          <div class="isl-scene timer">
+            <div class="row">
+              <div class="isl-ring"><svg viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="42"/><circle class="arc" cx="50" cy="50" r="42"/></svg><b>18:42</b></div>
+              <div class="t"><b>टाइमर</b><span>18 मिनट बाकी</span></div>
+              <div class="ctl"><i><svg viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></i></div>
+            </div>
+          </div>
+        </div>
+        <i class="d-pody char" data-c="auto"></i>
+        <div class="d-taskbar"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+    <div class="grid g3 feats" id="feats">
+      <div class="card" tabindex="0" data-tab="music"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 17.5V6.2l9-2v11.3"/><circle cx="7" cy="17.5" r="2.5"/><circle cx="16" cy="15.5" r="2.5"/><path d="M9.5 9.6l9-2"/></svg></div><h3>संगीत</h3><p>कवर, बटन और ताल के साथ चलते बोल, किसी भी प्लेयर से।</p></div>
+      <div class="card" tabindex="0" data-tab="chat"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M5.8 11.2a6.2 6.2 0 0 0 12.4 0"/><path d="M12 17.4v3.1"/></svg></div><h3>आवाज़ और चैट</h3><p>बोलिए «Telegram खोलो», और वह खुल जाएगा। बाकी सब AI से पूछिए: Claude, ChatGPT, Gemini।</p></div>
+      <div class="card" tabindex="0" data-tab="cal"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3.5"/><path d="M3.5 10h17"/><path d="M8 3.2v3.5M16 3.2v3.5"/><path d="M8 14h.01M12 14h.01M16 14h.01"/></svg></div><h3>कैलेंडर</h3><p>Google, Outlook या कोई भी iCal लिंक। अगली मीटिंग घड़ी के नीचे दिखती है।</p></div>
+      <div class="card" tabindex="0" data-tab="code"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="3.5"/><path d="M7.5 10l3 2.5-3 2.5"/><path d="M13 15.2h3.5"/></svg></div><h3>Claude Code</h3><p>एजेंट टर्मिनल में क्या कर रहा है, उसके «अनुमति दें?» वाले सवाल और कितनी सीमा बची है।</p></div>
+      <div class="card" tabindex="0" data-tab="water"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6s6 6.3 6 10.4a6 6 0 0 1-12 0c0-4.1 6-10.4 6-10.4z"/><path d="M9.2 14.4a2.9 2.9 0 0 0 2.6 2.6"/></svg></div><h3>सेहत</h3><p>दिनभर का पानी, आँखों के लिए 20-20-20 ब्रेक और एक मिनट की साँस।</p></div>
+      <div class="card" tabindex="0" data-tab="timer"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.3 1.6M9.5 3h5"/></svg></div><h3>टाइमर</h3><p>बचा हुआ समय द्वीप पर दिखता है, खिड़की बदलने की ज़रूरत नहीं।</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>अपना डेस्कटॉप खुद बनाएँ</h2>
+    <p class="sub">द्वीप, डॉक और विजेट अलग-अलग चालू होते हैं। बस वही रखें जो चाहिए।</p>
+    <div class="mods-pick" role="group" aria-label="क्या चालू करें">
+      <button type="button" id="mod-island" data-mod="island" aria-pressed="true"><i></i>द्वीप</button>
+      <button type="button" id="mod-dock" data-mod="dock" aria-pressed="true"><i></i>डॉक</button>
+      <button type="button" id="mod-widgets" data-mod="widgets" aria-pressed="true"><i></i>विजेट</button>
+    </div>
+    <div class="desk tall mods" id="mods" aria-hidden="true">
+      <div class="screen">
+        <div data-part="widgets" class="d-widgets">
+          <div><div class="temp">+12°</div><div class="mut">बादल, बारिश नहीं</div></div>
+          <div><b>आज के काम</b><ul><li class="done">प्रिया को जवाब देना</li><li>बिल्ली का खाना ख़रीदना</li><li>15:00 बजे कॉल</li></ul></div>
+        </div>
+        <div data-part="island">
+          <div class="isl-cloud"><i></i><i></i><i></i><i></i><b data-clock>14:32</b></div>
+          <i class="d-pody char" data-c="auto"></i>
+        </div>
+        <div data-part="dock" class="d-dock">
+          <span class="run" data-name="File Explorer"><svg viewBox="0 0 40 40"><path d="M4 11a3 3 0 0 1 3-3h8.5l3 3H33a3 3 0 0 1 3 3v2H4z" fill="#e9a823"/><path d="M4 15h32v15a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z" fill="#ffcf4d"/><rect x="11" y="23" width="18" height="10" rx="1.5" fill="#2f7fd8"/></svg></span>
+          <span class="run round" data-name="Browser" style="background:radial-gradient(circle at 30% 25%,#7ff0c9,#1fa8c9 55%,#1a5fc4)"><svg viewBox="0 0 40 40"><path d="M9 25c2-9 13-13 20-8-6-1-11 3-11 9 0 3 2 5 5 6-7 1-13-1-14-7z" fill="#fff" opacity=".92"/></svg></span>
+          <span class="run round" data-name="Messenger" style="background:linear-gradient(160deg,#4cc3f5,#1e88d0)"><svg viewBox="0 0 40 40"><path d="M9 19.5l20-8-3.5 17-6-4.5-3 3-.5-5.2 8.5-7.3-10.5 6.3z" fill="#fff"/></svg></span>
+          <span data-name="Music" style="background:linear-gradient(160deg,#ff7d97,#e0355f)"><svg viewBox="0 0 40 40"><path d="M16 27.5V12l13-3v15" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><circle cx="13" cy="27.5" r="3.6" fill="#fff"/><circle cx="26" cy="24.5" r="3.6" fill="#fff"/></svg></span>
+          <span data-name="Mail" style="background:linear-gradient(160deg,#5b9bff,#2b62d1)"><svg viewBox="0 0 40 40"><rect x="9" y="12" width="22" height="16" rx="2.5" fill="#fff"/><path d="M10 13.5l10 8 10-8" fill="none" stroke="#2b62d1" stroke-width="2"/></svg></span>
+          <span data-name="Notes" style="background:linear-gradient(160deg,#ffe07a,#f5b82e)"><svg viewBox="0 0 40 40"><path d="M12 14h16M12 20h16M12 26h10" stroke="#5b4300" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          <b class="sep"></b>
+          <span class="run" data-name="Terminal" style="background:linear-gradient(160deg,#3a4247,#1d2225)"><svg viewBox="0 0 40 40"><path d="M11 14l6 5.5-6 5.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 27h9" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg></span>
+          <span data-name="Photos" style="background:linear-gradient(180deg,#8fd4ff,#d9f1ff)"><svg viewBox="0 0 40 40"><circle cx="27" cy="13" r="3.5" fill="#ffc53d"/><path d="M5 31l10-12 7 8 4-4 9 8z" fill="#3aa57a"/></svg></span>
+          <span class="run" data-name="Settings" style="background:linear-gradient(160deg,#a5b1b8,#6c7a82)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="8.5" fill="none" stroke="#fff" stroke-width="4.5" stroke-dasharray="3.3 2.3"/><circle cx="20" cy="20" r="6" fill="none" stroke="#fff" stroke-width="2.6"/></svg></span>
+
+        </div>
+        <div class="d-taskbar"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+    <p class="mods-note" id="mods-note" data-n111="सब एक साथ: ऊपर द्वीप, नीचे डॉक, बगल में विजेट।" data-n110="द्वीप और डॉक, डेस्कटॉप साफ़।" data-n101="द्वीप और विजेट, नीचे वही पुराना टास्कबार।" data-n011="द्वीप नहीं: बस डॉक और विजेट।" data-n100="सिर्फ़ द्वीप। बाकी सब वही पुराना Windows।" data-n010="सिर्फ़ डॉक, खिड़कियों के प्रीव्यू के साथ।" data-n001="डेस्कटॉप पर सिर्फ़ विजेट।" data-n000="सब बंद: यह वही पुराना Windows है। शुरू करने के लिए कुछ चालू करें।">सब एक साथ: ऊपर द्वीप, नीचे डॉक, बगल में विजेट।</p>
+  </section>
+
+  <section>
+    <h2>पहले और बाद में</h2>
+    <p class="sub">वही डेस्कटॉप, वही दिन। दाईं ओर वाले में PoDee चालू है।</p>
+    <div class="ba">
+      <figure>
+        <div class="desk tall" aria-hidden="true">
+          <div class="screen">
+            <div class="d-icons"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="d-taskbar full"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b class="tray" data-clock>14:32</b></div>
+          </div>
+        </div>
+        <figcaption><b>पहले।</b> वही पुराना Windows: आइकनों से भरा टास्कबार और कोने में छोटी-सी घड़ी।</figcaption>
+      </figure>
+      <figure>
+        <div class="desk tall" aria-hidden="true">
+          <div class="screen">
+            <div class="d-widgets">
+              <div><div class="temp">+12°</div><div class="mut">बादल, बारिश नहीं</div></div>
+              <div><b>आज के काम</b><ul><li class="done">प्रिया को जवाब देना</li><li>बिल्ली का खाना ख़रीदना</li><li>15:00 बजे कॉल</li></ul></div>
+            </div>
+            <div class="isl-cloud"><i></i><i></i><i></i><i></i><b data-clock>14:32</b></div>
+            <i class="d-pody near char" data-c="auto"></i>
+            <div class="d-dock low">
+          <span class="run" data-name="File Explorer"><svg viewBox="0 0 40 40"><path d="M4 11a3 3 0 0 1 3-3h8.5l3 3H33a3 3 0 0 1 3 3v2H4z" fill="#e9a823"/><path d="M4 15h32v15a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z" fill="#ffcf4d"/><rect x="11" y="23" width="18" height="10" rx="1.5" fill="#2f7fd8"/></svg></span>
+          <span class="run round" data-name="Browser" style="background:radial-gradient(circle at 30% 25%,#7ff0c9,#1fa8c9 55%,#1a5fc4)"><svg viewBox="0 0 40 40"><path d="M9 25c2-9 13-13 20-8-6-1-11 3-11 9 0 3 2 5 5 6-7 1-13-1-14-7z" fill="#fff" opacity=".92"/></svg></span>
+          <span class="run round" data-name="Messenger" style="background:linear-gradient(160deg,#4cc3f5,#1e88d0)"><svg viewBox="0 0 40 40"><path d="M9 19.5l20-8-3.5 17-6-4.5-3 3-.5-5.2 8.5-7.3-10.5 6.3z" fill="#fff"/></svg></span>
+          <span data-name="Music" style="background:linear-gradient(160deg,#ff7d97,#e0355f)"><svg viewBox="0 0 40 40"><path d="M16 27.5V12l13-3v15" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><circle cx="13" cy="27.5" r="3.6" fill="#fff"/><circle cx="26" cy="24.5" r="3.6" fill="#fff"/></svg></span>
+          <span data-name="Mail" style="background:linear-gradient(160deg,#5b9bff,#2b62d1)"><svg viewBox="0 0 40 40"><rect x="9" y="12" width="22" height="16" rx="2.5" fill="#fff"/><path d="M10 13.5l10 8 10-8" fill="none" stroke="#2b62d1" stroke-width="2"/></svg></span>
+          <span data-name="Notes" style="background:linear-gradient(160deg,#ffe07a,#f5b82e)"><svg viewBox="0 0 40 40"><path d="M12 14h16M12 20h16M12 26h10" stroke="#5b4300" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          <b class="sep"></b>
+          <span class="run" data-name="Terminal" style="background:linear-gradient(160deg,#3a4247,#1d2225)"><svg viewBox="0 0 40 40"><path d="M11 14l6 5.5-6 5.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 27h9" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg></span>
+          <span data-name="Photos" style="background:linear-gradient(180deg,#8fd4ff,#d9f1ff)"><svg viewBox="0 0 40 40"><circle cx="27" cy="13" r="3.5" fill="#ffc53d"/><path d="M5 31l10-12 7 8 4-4 9 8z" fill="#3aa57a"/></svg></span>
+          <span class="run" data-name="Settings" style="background:linear-gradient(160deg,#a5b1b8,#6c7a82)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="8.5" fill="none" stroke="#fff" stroke-width="4.5" stroke-dasharray="3.3 2.3"/><circle cx="20" cy="20" r="6" fill="none" stroke="#fff" stroke-width="2.6"/></svg></span>
+
+            </div>
+          </div>
+        </div>
+        <figcaption><b>बाद में।</b> ऊपर द्वीप पर समय और अगली मीटिंग, डॉक में आपके ऐप, विजेट में मौसम और काम। डेस्कटॉप आइकन और Windows टास्कबार छिपे हुए हैं।</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="clean">
+    <h2>Make your desktop even cleaner</h2>
+    <p class="sub">PoDee can tidy away the clutter. One checkbox brings it all back.</p>
+    <div class="grid g3 clean">
+      <div class="card">
+        <div class="mini pic" aria-hidden="true">
+          <div class="m-set">
+            <b>Dock</b>
+            <p><i class="on"></i><span>Running apps</span></p>
+            <p class="hot"><i class="on"></i><span>Hide desktop icons</span><em class="tap">1</em></p>
+          </div>
+        </div>
+        <h3>Hide the icons</h3>
+        <p>Settings → Dock → “Hide desktop icons”. Untick it or close PoDee and the icons come back.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic wall" aria-hidden="true" style="background-image:url(../media/wallpapers/sky-small.jpg)">
+          <div class="m-gone"></div>
+          <div class="d-dock low">
+          <span class="run" data-name="File Explorer"><svg viewBox="0 0 40 40"><path d="M4 11a3 3 0 0 1 3-3h8.5l3 3H33a3 3 0 0 1 3 3v2H4z" fill="#e9a823"/><path d="M4 15h32v15a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z" fill="#ffcf4d"/><rect x="11" y="23" width="18" height="10" rx="1.5" fill="#2f7fd8"/></svg></span>
+          <span class="run round" data-name="Browser" style="background:radial-gradient(circle at 30% 25%,#7ff0c9,#1fa8c9 55%,#1a5fc4)"><svg viewBox="0 0 40 40"><path d="M9 25c2-9 13-13 20-8-6-1-11 3-11 9 0 3 2 5 5 6-7 1-13-1-14-7z" fill="#fff" opacity=".92"/></svg></span>
+          <span class="run round" data-name="Messenger" style="background:linear-gradient(160deg,#4cc3f5,#1e88d0)"><svg viewBox="0 0 40 40"><path d="M9 19.5l20-8-3.5 17-6-4.5-3 3-.5-5.2 8.5-7.3-10.5 6.3z" fill="#fff"/></svg></span>
+          <span data-name="Music" style="background:linear-gradient(160deg,#ff7d97,#e0355f)"><svg viewBox="0 0 40 40"><path d="M16 27.5V12l13-3v15" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><circle cx="13" cy="27.5" r="3.6" fill="#fff"/><circle cx="26" cy="24.5" r="3.6" fill="#fff"/></svg></span>
+          <span data-name="Mail" style="background:linear-gradient(160deg,#5b9bff,#2b62d1)"><svg viewBox="0 0 40 40"><rect x="9" y="12" width="22" height="16" rx="2.5" fill="#fff"/><path d="M10 13.5l10 8 10-8" fill="none" stroke="#2b62d1" stroke-width="2"/></svg></span>
+          <span data-name="Notes" style="background:linear-gradient(160deg,#ffe07a,#f5b82e)"><svg viewBox="0 0 40 40"><path d="M12 14h16M12 20h16M12 26h10" stroke="#5b4300" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          <b class="sep"></b>
+          <span class="run" data-name="Terminal" style="background:linear-gradient(160deg,#3a4247,#1d2225)"><svg viewBox="0 0 40 40"><path d="M11 14l6 5.5-6 5.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 27h9" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg></span>
+          <span data-name="Photos" style="background:linear-gradient(180deg,#8fd4ff,#d9f1ff)"><svg viewBox="0 0 40 40"><circle cx="27" cy="13" r="3.5" fill="#ffc53d"/><path d="M5 31l10-12 7 8 4-4 9 8z" fill="#3aa57a"/></svg></span>
+          <span class="run" data-name="Settings" style="background:linear-gradient(160deg,#a5b1b8,#6c7a82)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="8.5" fill="none" stroke="#fff" stroke-width="4.5" stroke-dasharray="3.3 2.3"/><circle cx="20" cy="20" r="6" fill="none" stroke="#fff" stroke-width="2.6"/></svg></span>
+
+          </div>
+        </div>
+        <h3>The dock instead of the taskbar</h3>
+        <p>Apps open from the dock and the Windows taskbar steps aside. Turn the dock off or close PoDee and the taskbar returns.</p>
+      </div>
+      <a class="card link" href="#walls">
+        <div class="mini pic wall" aria-hidden="true" style="background-image:url(../media/wallpapers/peach-small.jpg)">
+          <div class="sh notch"><b data-clock>14:32</b></div>
+          <i class="ch char cloud" data-c="cloud" data-t="dark"></i>
+        </div>
+        <h3>Put on our wallpaper</h3>
+        <p>Nine soft 4K wallpapers made for the island. Free, just below on this page.</p>
+      </a>
+    </div>
+  </section>
+
+
+  <section id="new">
+    <h2>New in 1.3.5</h2>
+    <p class="sub">What came with the latest version. PoDee updates itself.</p>
+    <div class="grid g3 news">
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div><h3>PoDoo link</h3><p>Open and hide the island, start a timer, add a task or ask PoDy from your phone. The answer comes back to the phone.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5h16M4 7.5l1.2 11a2 2 0 0 0 2 1.8h9.6a2 2 0 0 0 2-1.8L20 7.5M9 4h6"/><path d="M9.5 12h5M12 9.5v5"/></svg></div><h3>The shelf converts files</h3><p>Images to JPG and PNG, resizing, PDF from pictures, text from images, background removal. Video and audio through FFmpeg.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="8" height="6" rx="1.5"/><rect x="13" y="4" width="8" height="6" rx="1.5"/><rect x="7" y="15" width="10" height="5" rx="2.5"/></svg></div><h3>Window previews in the dock</h3><p>When an app has several windows, hovering shows each one. Clicking an app that's already in front minimizes it.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 17.5V6.2l9-2v11.3"/><circle cx="7" cy="17.5" r="2.5"/><circle cx="16" cy="15.5" r="2.5"/></svg></div><h3>The island no longer freezes</h3><p>Even when the Windows media service stops responding.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="3"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg></div><h3>Ctrl+Alt+P</h3><p>Tucks the island away at the top and brings it back.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.4-5.7M20 4v4.5h-4.5"/></svg></div><h3>Painless updates</h3><p>The installer closes PoDee before updating and starts it again afterwards.</p></div>
+    </div>
+    <p class="more-link"><a class="btn ghost" href="fixes.html">All fixes</a></p>
+  </section>
+
+
+  <section id="install">
+    <h2>एक मिनट में इंस्टॉल</h2>
+    <p class="sub">Windows किसी ऐसे ऐप पर चेतावनी दे सकता है जिसे वह अभी नहीं जानता। छोटे डेवलपरों के साथ ऐसा आम है, और यह रहा कहाँ क्लिक करना है।</p>
+    <ol class="steps">
+      <li class="card">
+        <div class="mini" aria-hidden="true">
+          <div class="m-dl"><span class="m-file"><i></i>PoDee_x64-setup.exe</span><span class="m-open">फ़ाइल खोलें</span></div>
+        </div>
+        <h3><span class="n">1</span>इंस्टॉलर डाउनलोड करें</h3>
+        <p>ऊपर वाला बटन आपके Windows के लिए सही संस्करण खुद चुन लेता है।</p>
+      </li>
+      <li class="card">
+        <div class="mini" aria-hidden="true">
+          <div class="m-ss">
+            <b>Windows ने आपके PC की सुरक्षा की</b>
+            <p>Microsoft Defender SmartScreen ने एक अपरिचित ऐप को शुरू होने से रोका।</p>
+            <p class="m-more"><u>अधिक जानकारी</u><i class="tap">1</i></p>
+            <p>ऐप: PoDee_x64-setup.exe<br>प्रकाशक: अज्ञात प्रकाशक</p>
+            <div class="m-ss-btns"><span class="hot">फिर भी चलाएँ<i class="tap">2</i></span><span>न चलाएँ</span></div>
+          </div>
+        </div>
+        <h3><span class="n">2</span>चेतावनी पार करें</h3>
+        <p>अगर नीली खिड़की दिखे, तो «अधिक जानकारी» दबाएँ, फिर «फिर भी चलाएँ»। Microsoft Store से PoDee बिना इस खिड़की के इंस्टॉल होता है।</p>
+      </li>
+      <li class="card">
+        <div class="mini" aria-hidden="true">
+          <div class="m-desk"><div class="isl-cloud"><i></i><i></i><i></i><i></i><b data-clock>14:32</b></div><i class="d-pody near char" data-c="auto"></i></div>
+        </div>
+        <h3><span class="n">3</span>PoDee स्क्रीन के ऊपर आ गया</h3>
+        <p>इंस्टॉल होने में कुछ सेकंड लगते हैं, और बादल PoDy तुरंत दिखता है।</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>द्वीप पर और भी</h2>
+    <p class="sub">हर टैब एक क्लिक में खुलता है, खिड़की बदले बिना।</p>
+    <div class="grid g3 more-grid">
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-head"><b>3 घं 56 मि</b><span>आज</span></div>
+          <div class="m-bars">
+            <p><span>Telegram</span><i style="--w:.86"></i><em>1 घं 30 मि</em></p>
+            <p><span>VS Code</span><i style="--w:.66"></i><em>1 घं 8 मि</em></p>
+            <p><span>Edge</span><i style="--w:.34"></i><em>48 मि</em></p>
+          </div>
+        </div></div>
+        <h3>स्क्रीन टाइम</h3><p>आज आपने कंप्यूटर पर कितना समय बिताया, और किन ऐप में।</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-slide"><svg viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4z"/><path d="M15.5 9a4 4 0 0 1 0 6"/></svg><i style="--w:.42"></i><b>42</b></div>
+          <div class="m-slide"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M5.6 18.4l1.8-1.8M16.6 7.4l1.8-1.8"/></svg><i style="--w:.9"></i><b>90</b></div>
+          <div class="m-tiles"><span class="on">Wi-Fi</span><span class="on">Bluetooth</span><span>स्लीप नहीं</span><span>परेशान न करें</span></div>
+        </div></div>
+        <h3>नियंत्रण</h3><p>आवाज़, चमक, Wi-Fi और Bluetooth, Windows सेटिंग्स खोले बिना।</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl m-two">
+          <div><b>आँखें</b><span>20 मिनट में ब्रेक</span><u>आराम करें</u></div>
+          <div class="m-breath"><i></i><b>साँस</b><span>4 सेकंड लें, 6 सेकंड छोड़ें</span></div>
+        </div></div>
+        <h3>आँखें और साँस</h3><p>हर 20 मिनट में PoDee दूर देखने की याद दिलाता है। एक मिनट की शांत साँस एक बटन से शुरू होती है।</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-head"><b>काम</b><span>2 / 4</span></div>
+          <ul class="m-list"><li class="done">डिज़ाइन भेजना</li><li class="done">इंटरनेट का बिल भरना</li><li>माँ को फ़ोन करना</li><li>बिल्ली का खाना ख़रीदना</li></ul>
+        </div></div>
+        <h3>काम और नोट्स</h3><p>आज के कामों की सूची और झटपट नोट्स, सब आपके कंप्यूटर पर सहेजे जाते हैं।</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-head"><b>क्लिपबोर्ड</b><span>12 आइटम</span></div>
+          <div class="m-clips"><p>podylab.github.io</p><p>गुरुवार 15:00 बजे मीटिंग</p><p class="img"><i></i>स्क्रीनशॉट</p></div>
+        </div></div>
+        <h3>क्लिपबोर्ड</h3><p>जो कुछ आपने कॉपी किया, सब हाथ में: टेक्स्ट, लिंक और तस्वीरें।</p>
+      </div>
+      <div class="card">
+        <div class="mini pic" aria-hidden="true"><div class="m-isl">
+          <div class="m-note"><i style="background:#2aa3e0">T</i><p><b>प्रिया</b><span>वीकेंड की फ़ोटो भेजीं</span></p><em>14:05</em></div>
+          <div class="m-note"><i style="background:#5865f2">D</i><p><b>Discord</b><span>#general में नया संदेश</span></p><em>13:48</em></div>
+          <div class="m-note"><i style="background:#e0735f">M</i><p><b>मेल</b><span>आपका अक्टूबर का बिल</span></p><em>12:30</em></div>
+        </div></div>
+        <h3>सूचनाएँ</h3><p>सूचनाएँ द्वीप पर इकट्ठा होती हैं, तो छूटी हुई चीज़ आसानी से मिल जाती है।</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="walls">
+    <h2>Free wallpapers</h2>
+    <p class="sub">Drawn in code for PoDee: the top of the screen stays clear for the island. Each one is 3840×2160.</p>
+    <div class="walls">
+      <figure class="wp">
+        <div class="wp-pic" style="background-image:url(../media/wallpapers/mint-small.jpg)" aria-hidden="true"><div class="sh notch light"><b data-clock>14:32</b></div><i class="ch char cloud" data-c="cloud" data-t="light"></i></div>
+        <figcaption><span><b>Mint</b>Notch · glass · PoDy</span><a class="btn ghost" href="../media/wallpapers/mint.jpg" download="PoDee-mint.jpg">Download</a></figcaption>
+      </figure>
+      <figure class="wp">
+        <div class="wp-pic" style="background-image:url(../media/wallpapers/night-small.jpg)" aria-hidden="true"><div class="sh notch"><b data-clock>14:32</b></div><i class="ch char cat" data-c="cat" data-t="dark"></i></div>
+        <figcaption><span><b>Night</b>Notch · Cat</span><a class="btn ghost" href="../media/wallpapers/night.jpg" download="PoDee-night.jpg">Download</a></figcaption>
+      </figure>
+      <figure class="wp">
+        <div class="wp-pic" style="background-image:url(../media/wallpapers/sand-small.jpg)" aria-hidden="true"><div class="sh capsule wide"><b data-clock>14:32</b><i class="char cat in" data-c="cat" data-t="inside"></i></div></div>
+        <figcaption><span><b>Sand</b>Capsule · Cat inside the island</span><a class="btn ghost" href="../media/wallpapers/sand.jpg" download="PoDee-sand.jpg">Download</a></figcaption>
+      </figure>
+      <figure class="wp">
+        <div class="wp-pic" style="background-image:url(../media/wallpapers/peach-small.jpg)" aria-hidden="true"><div class="sh capsule"><b data-clock>14:32</b></div><i class="ch char dot" data-c="dot" data-t="dark"></i></div>
+        <figcaption><span><b>Peach</b>Capsule · Dot</span><a class="btn ghost" href="../media/wallpapers/peach.jpg" download="PoDee-peach.jpg">Download</a></figcaption>
+      </figure>
+      <figure class="wp">
+        <div class="wp-pic" style="background-image:url(../media/wallpapers/sky-small.jpg)" aria-hidden="true"><div class="sh capsule"><b data-clock>14:32</b></div><i class="ch char dotb" data-c="dotb" data-t="dark"></i></div>
+        <figcaption><span><b>Sky</b>Capsule · Dot with highlight</span><a class="btn ghost" href="../media/wallpapers/sky.jpg" download="PoDee-sky.jpg">Download</a></figcaption>
+      </figure>
+      <figure class="wp">
+        <div class="wp-pic" style="background-image:url(../media/wallpapers/lavender-small.jpg)" aria-hidden="true"><div class="sh cloud light"><b data-clock>14:32</b></div><i class="ch char blob" data-c="blob" data-t="light"></i></div>
+        <figcaption><span><b>Lavender</b>Cloud · Blob</span><a class="btn ghost" href="../media/wallpapers/lavender.jpg" download="PoDee-lavender.jpg">Download</a></figcaption>
+      </figure>
+      <figure class="wp">
+        <div class="wp-pic" style="background-image:url(../media/wallpapers/end-small.jpg)" aria-hidden="true"><div class="sh notch pixel obsidian"><b data-clock>14:32</b></div><i class="ch char shade" data-c="shade" data-t="dark"></i></div>
+        <figcaption><span><b>End</b>Pixels, obsidian · Enderman</span><a class="btn ghost" href="../media/wallpapers/end.jpg" download="PoDee-end.jpg">Download</a></figcaption>
+      </figure>
+      <figure class="wp">
+        <div class="wp-pic" style="background-image:url(../media/wallpapers/snow-small.jpg)" aria-hidden="true"><div class="sh notch pixel snow"><b data-clock>14:32</b></div><i class="ch char ghast" data-c="ghast" data-t="light"></i></div>
+        <figcaption><span><b>Snow</b>Pixels, snow · Ghast</span><a class="btn ghost" href="../media/wallpapers/snow.jpg" download="PoDee-snow.jpg">Download</a></figcaption>
+      </figure>
+      <figure class="wp">
+        <div class="wp-pic" style="background-image:url(../media/wallpapers/moss-small.jpg)" aria-hidden="true"><div class="sh notch pixel"><b data-clock>14:32</b></div><i class="ch char square" data-c="square" data-t="dark"></i></div>
+        <figcaption><span><b>Moss</b>Pixels, stone · Square</span><a class="btn ghost" href="../media/wallpapers/moss.jpg" download="PoDee-moss.jpg">Download</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+  <section class="end">
+    <div class="end-card">
+      <div class="end-chars" aria-hidden="true">
+        <figure><div class="seat light"><span class="sh capsule light"></span><i class="char cloud" data-c="cloud" data-t="light"></i></div><figcaption>PoDy</figcaption></figure>
+        <figure><div class="seat dark"><span class="sh capsule"></span><i class="char cat" data-c="cat" data-t="dark"></i></div><figcaption>Cat</figcaption></figure>
+        <figure><div class="seat dark"><span class="sh capsule"></span><i class="char dot" data-c="dot" data-t="dark"></i></div><figcaption>Dot</figcaption></figure>
+        <figure><div class="seat dark"><span class="sh capsule"></span><i class="char blob" data-c="blob" data-t="dark"></i></div><figcaption>Blob</figcaption></figure>
+        <figure><div class="seat dark"><span class="sh capsule pixel obsidian"></span><i class="char shade" data-c="shade" data-t="dark"></i></div><figcaption>Enderman</figcaption></figure>
+        <figure><div class="seat light"><span class="sh capsule pixel snow"></span><i class="char ghast" data-c="ghast" data-t="light"></i></div><figcaption>Ghast</figcaption></figure>
+      </div>
+      <h2>The island is waiting</h2>
+      <p class="sub">Download PoDee, pick an island shape and a companion for it. Setup takes a couple of minutes.</p>
+      <div class="btns"><a class="btn main" data-podee href="https://github.com/podylab/PoDee-releases/releases/latest/download/PoDee_x64-setup.exe"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Windows के लिए डाउनलोड करें</a><a class="btn ghost" href="guides.html">Guides</a></div>
+    </div>
+  </section>
+
+</main>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "PoDy के लिए संदेश", "js.about_podoo": "PoDoo के बारे में", "js.all_podee_versions": "PoDee के सभी संस्करण", "js.back_to_top": "ऊपर जाएँ", "js.click": "क्लिक", "js.close": "बंद करें", "js.copied": "कॉपी हो गया", "js.copy_address": "पता कॉपी करें", "js.couldn_t_copy_select": "कॉपी नहीं हुआ, पता चुनें", "js.download_podee_and_i": "PoDee डाउनलोड करें और मैं आपकी स्क्रीन के ऊपर आ जाऊँगा", "js.downloads.few": "डाउनलोड", "js.downloads.many": "डाउनलोड", "js.downloads.one": "डाउनलोड", "js.downloads.other": "डाउनलोड", "js.good_even_better_when": "अच्छा हूँ। सहलाओ तो और भी अच्छा", "js.hi_glad_you_came": "नमस्ते! अच्छा लगा कि आप आए", "js.hi_i_m_pody": "नमस्ते, मैं PoDy हूँ। मुझे सहला सकते हैं", "js.i_like_you_too": "आप भी मुझे अच्छे लगते हैं", "js.i_live_at_the": "मैं आपकी स्क्रीन के ऊपर रहता हूँ और संगीत व समय दिखाता हूँ। मुझसे बात भी कर सकते हैं", "js.i_m_dizzy": "चक्कर आ रहा है…", "js.i_only_know_a": "मुझे अभी कम शब्द आते हैं। पूछिए मैं क्या कर सकता हूँ", "js.if_podee_helps_you": "अगर PoDee काम आता है, तो प्रोजेक्ट का साथ दे सकते हैं", "js.improve_together": "साथ मिलकर बेहतर बनाएँ", "js.language": "साइट की भाषा", "js.learn_more": "और जानें", "js.made_with_pody_the": "बादल PoDy के साथ बनाया गया", "js.message": "संदेश", "js.mute_pody": "PoDy को म्यूट करें", "js.net_bnb": "BNB Smart Chain (BEP-20): इस नेटवर्क पर BNB या USDT।", "js.net_btc": "Bitcoin नेटवर्क।", "js.net_doge": "Dogecoin नेटवर्क।", "js.net_eth": "Ethereum नेटवर्क (ERC-20): इस नेटवर्क पर ETH या USDT।", "js.net_ton": "TON नेटवर्क: Toncoin या USDT। टिप्पणी में अपनी इच्छा लिख सकते हैं।", "js.net_usdt": "सिर्फ़ TRC-20 (Tron) नेटवर्क। दूसरे नेटवर्क नहीं चलेंगे।", "js.next_track": "अगला गाना", "js.paused": "रुका हुआ", "js.playing": "चल रहा है", "js.podoo_is_out": "PoDoo आ गया: फ़ोन या पुराना टैबलेट आपके PC का रिमोट बन जाता है", "js.pody_the_cloud_pet": "बादल PoDy: सहलाइए और बात कीजिए", "js.previous_track": "पिछला गाना", "js.privacy": "गोपनीयता", "js.soon": "जल्द", "js.sound_off": "आवाज़ बंद", "js.sound_on": "आवाज़ चालू", "js.support": "सहयोग करें", "js.thank_you_here_s": "धन्यवाद! यह रहा सहयोग पेज", "js.thanks_for_stopping_by": "आने के लिए धन्यवाद। हर रकम मदद करती है", "js.that_tickles": "गुदगुदी हो रही है!", "js.the_address_is_coming": "पता जल्द आएगा", "js.the_download_podee_button": "«PoDee डाउनलोड करें» बटन होम पेज और PoDee पेज पर है", "js.the_form_will_work": "फ़ॉर्म जल्द ही काम करेगा", "js.track_1": "रात का सफ़र", "js.track_2": "शहर की रोशनी", "js.track_3": "भोर", "js.typed_text": "टाइप किया: {text}", "js.unmute_pody": "PoDy की आवाज़ चालू करें", "js.version_line": "{bits}-बिट Windows के लिए संस्करण {v} · <a href=\"{link}\">{other}-बिट चाहिए?<\/a>", "js.volume_n": "आवाज़ {n}%", "js.write_to_pody": "PoDy को लिखें…", "js.guides": "Guides", "js.fixes": "Fixes", "js.report": "Report a problem", "js.download": "Download", "js.menu": "Menu", "js.notch": "PoDee: an island at the top of your screen", "js.theme": "Light or dark theme"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=1285ef66"></script>
+<script src="../pody.js?v=16e5b0c0"></script>
+</body>
+</html>

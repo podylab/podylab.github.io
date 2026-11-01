@@ -1,0 +1,67 @@
+<main class="wrap">
+  <div class="page-head">
+    <img src="{{up}}media/podee-icon.svg" alt="" />
+    <div><h1>{{guides.title}}</h1><p class="lead">{{guides.lead}}</p></div>
+  </div>
+
+  <section class="guides">
+    <div class="gtabs" role="tablist" aria-label="{{guides.title}}">
+      <a role="tab" href="#claude" data-g="claude">Claude Code</a>
+      <a role="tab" href="#calendar" data-g="calendar">{{guides.cal}}</a>
+      <a role="tab" href="#voice" data-g="voice">{{guides.voice}}</a>
+      <a role="tab" href="#podoo" data-g="podoo">PoDoo + PoDee</a>
+    </div>
+    <p class="note gopen">{{guides.open}}</p>
+
+    <article class="guide" id="claude" role="tabpanel">
+      <h2>{{guides.claude_title}}</h2>
+      <p class="sub">{{guides.claude_sub}}</p>
+      <ol class="gsteps">
+        <li><b>{{guides.claude_1}}</b><p>{{guides.claude_1_text}}</p></li>
+        <li><b>{{guides.claude_2}}</b><p>{{guides.claude_2_text}}</p></li>
+        <li><b>{{guides.claude_3}}</b><p>{{guides.claude_3_text}}</p></li>
+        <li><b>{{guides.claude_4}}</b><p>{{guides.claude_4_text}}</p></li>
+      </ol>
+    </article>
+
+    <article class="guide" id="calendar" role="tabpanel">
+      <h2>{{guides.cal_title}}</h2>
+      <p class="sub">{{guides.cal_sub}}</p>
+      <ol class="gsteps">
+        <li><b>{{guides.cal_1}}</b><p>{{guides.cal_1_text}}</p></li>
+        <li><b>{{guides.cal_2}}</b><p>{{guides.cal_2_text}}</p></li>
+        <li><b>{{guides.cal_3}}</b><p>{{guides.cal_3_text}}</p></li>
+        <li><b>{{guides.cal_4}}</b><p>{{guides.cal_4_text}}</p></li>
+      </ol>
+    </article>
+
+    <article class="guide" id="voice" role="tabpanel">
+      <h2>{{guides.voice_title}}</h2>
+      <p class="sub">{{guides.voice_sub}}</p>
+      <ol class="gsteps">
+        <li><b>{{guides.voice_1}}</b><p>{{guides.voice_1_text}}</p></li>
+        <li><b>{{guides.voice_2}}</b><p>{{guides.voice_2_text}}</p></li>
+        <li><b>{{guides.voice_3}}</b><p>{{guides.voice_3_text}}</p></li>
+        <li><b>{{guides.voice_4}}</b><p>{{guides.voice_4_text}}</p></li>
+      </ol>
+      <div class="keys">
+        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd><span>{{guides.key_voice}}</span></p>
+        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd><span>{{guides.key_dictate}}</span></p>
+        <p><kbd>Alt</kbd>+<kbd>P</kbd><span>{{guides.key_open}}</span></p>
+        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd><span>{{guides.key_hide}}</span></p>
+      </div>
+    </article>
+
+    <article class="guide" id="podoo" role="tabpanel">
+      <h2>{{guides.podoo_title}}</h2>
+      <p class="sub">{{guides.podoo_sub}}</p>
+      <ol class="gsteps">
+        <li><b>{{guides.podoo_1}}</b><p>{{guides.podoo_1_text}} <a href="podoo.html">{{guides.podoo_1_link}}</a></p></li>
+        <li><b>{{guides.podoo_2}}</b><p>{{guides.podoo_2_text}}</p></li>
+        <li><b>{{guides.podoo_3}}</b><p>{{guides.podoo_3_text}}</p></li>
+      </ol>
+    </article>
+
+    <p class="note">{{guides.stuck}} <a href="report.html">{{guides.stuck_link}}</a></p>
+  </section>
+</main>

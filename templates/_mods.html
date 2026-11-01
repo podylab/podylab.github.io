@@ -1,0 +1,22 @@
+<div class="mods-pick" role="group" aria-label="{{mods.label}}">
+      <button type="button" id="mod-island" data-mod="island" aria-pressed="true"><i></i>{{mods.island}}</button>
+      <button type="button" id="mod-dock" data-mod="dock" aria-pressed="true"><i></i>{{mods.dock}}</button>
+      <button type="button" id="mod-widgets" data-mod="widgets" aria-pressed="true"><i></i>{{mods.widgets}}</button>
+    </div>
+    <div class="desk tall mods" id="mods" aria-hidden="true">
+      <div class="screen">
+        <div data-part="widgets" class="d-widgets">
+          <div><div class="temp">+12°</div><div class="mut">{{mods.weather}}</div></div>
+          <div><b>{{mods.tasks}}</b><ul><li class="done">{{mods.task_1}}</li><li>{{mods.task_2}}</li><li>{{mods.task_3}}</li></ul></div>
+        </div>
+        <div data-part="island">
+          <div class="isl-cloud"><i></i><i></i><i></i><i></i><b data-clock>14:32</b></div>
+          <i class="d-pody char" data-c="auto"></i>
+        </div>
+        <div data-part="dock" class="d-dock">
+          {{>dock}}
+        </div>
+        <div class="d-taskbar"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+    <p class="mods-note" id="mods-note" data-n111="{{mods.n111}}" data-n110="{{mods.n110}}" data-n101="{{mods.n101}}" data-n011="{{mods.n011}}" data-n100="{{mods.n100}}" data-n010="{{mods.n010}}" data-n001="{{mods.n001}}" data-n000="{{mods.n000}}">{{mods.n111}}</p>

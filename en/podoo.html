@@ -3,35 +3,55 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../" />
+<script>try{var t=localStorage.getItem("podylab.theme")}catch(e){}document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")</script>
 <title>PoDoo · Pody Lab</title>
 <meta name="description" content="PoDoo: a phone or tablet becomes a remote for your PC, like a Stream Deck. Apps, shortcuts, music and a touchpad, one tap each." />
 <link rel="icon" href="../media/podoo-icon.svg?v=9a46ef14" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../style.css?v=5fc1172e" />
-<link rel="stylesheet" href="../podoo.css?v=322a232b" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=5db024f3" />
+<link rel="stylesheet" href="../podoo.css?v=06b4abad" />
+<link rel="alternate" hreflang="ru" href="https://podylab.github.io/podoo.html" />
+<link rel="alternate" hreflang="en" href="https://podylab.github.io/en/podoo.html" />
+<link rel="alternate" hreflang="es" href="https://podylab.github.io/es/podoo.html" />
+<link rel="alternate" hreflang="pt-BR" href="https://podylab.github.io/pt-br/podoo.html" />
+<link rel="alternate" hreflang="de" href="https://podylab.github.io/de/podoo.html" />
+<link rel="alternate" hreflang="fr" href="https://podylab.github.io/fr/podoo.html" />
+<link rel="alternate" hreflang="it" href="https://podylab.github.io/it/podoo.html" />
+<link rel="alternate" hreflang="tr" href="https://podylab.github.io/tr/podoo.html" />
+<link rel="alternate" hreflang="pl" href="https://podylab.github.io/pl/podoo.html" />
+<link rel="alternate" hreflang="uk" href="https://podylab.github.io/uk/podoo.html" />
+<link rel="alternate" hreflang="id" href="https://podylab.github.io/id/podoo.html" />
+<link rel="alternate" hreflang="vi" href="https://podylab.github.io/vi/podoo.html" />
+<link rel="alternate" hreflang="ja" href="https://podylab.github.io/ja/podoo.html" />
+<link rel="alternate" hreflang="ko" href="https://podylab.github.io/ko/podoo.html" />
+<link rel="alternate" hreflang="zh-CN" href="https://podylab.github.io/zh/podoo.html" />
+<link rel="alternate" hreflang="hi" href="https://podylab.github.io/hi/podoo.html" />
+<link rel="alternate" hreflang="x-default" href="https://podylab.github.io/en/podoo.html" />
 </head>
 <body>
 <main class="land">
     <section class="lhero wrap" id="top" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="status"><i class="led"></i><span data-en="Windows + Android · free">Windows + Android · free</span></p>
+        <p class="status"><i class="led"></i><span>Windows + Android · free</span></p>
         <h1 id="hero-title">
-          <span class="line"><span data-en="Your PC's remote,">Your PC's remote,</span></span>
-          <span class="line"><span data-en="right on your phone.">right on your phone.</span></span>
+          <span class="line"><span>Your PC's remote,</span></span>
+          <span class="line"><span>right on your phone.</span></span>
         </h1>
-        <p class="lede" data-en="Put a phone or tablet by the monitor and get your own Stream Deck: apps, shortcuts, music and a touchpad, one tap each. Any Android works, and an old phone from a drawer gets a second life.">Put a phone or tablet by the monitor and get your own Stream Deck: apps, shortcuts, music and a touchpad, one tap each. Any Android works, and an old phone from a drawer gets a second life.</p>
+        <p class="lede">Put a phone or tablet by the monitor and get your own Stream Deck: apps, shortcuts, music and a touchpad, one tap each. Any Android works, and an old phone from a drawer gets a second life.</p>
 
         <div class="cta">
           <a class="lbtn lbtn-lit magnet" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10.5 4.5v6.9H3zM11.6 4.3 21 3v8.4h-9.4zM3 12.6h7.5v6.9L3 18.5zM11.6 12.6H21V21l-9.4-1.3z"/></svg>
-            <span data-en="Download for Windows">Download for Windows</span>
+            <span>Download for Windows</span>
           </a>
-          <a class="lbtn" href="#try" data-en="Try it right here">Try it right here</a>
+          <a class="lbtn" href="#try">Try it right here</a>
         </div>
         <p class="stores">
-          <a class="chip" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk"><span class="chip-dot"></span><span data-en="Android app">Android app</span></a>
-          <a class="chip" href="support.html"><span class="chip-dot"></span><span data-en="Support">Support</span></a>
+          <a class="chip" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk"><span class="chip-dot"></span><span>Android app</span></a>
+          <a class="chip" data-gplay hidden><span class="chip-dot"></span><span>Google Play</span></a>
+          <a class="chip" href="support.html"><span class="chip-dot"></span><span>Support</span></a>
         </p>
         <p class="dl-count" data-downloads="PoDoo-releases" hidden></p>
       </div>
@@ -42,18 +62,18 @@
           <div class="mon-screen">
             <div class="mon-wall"></div>
             <div class="win win-editor">
-              <div class="win-top"><i></i><i></i><i></i><span data-en="Photo editor">Photo editor</span></div>
+              <div class="win-top"><i></i><i></i><i></i><span>Photo editor</span></div>
               <div class="win-body"><span class="shape s1"></span><span class="shape s2"></span><span class="shape s3"></span></div>
             </div>
             <div class="win win-player">
-              <div class="win-top"><i></i><i></i><i></i><span data-en="Player">Player</span></div>
+              <div class="win-top"><i></i><i></i><i></i><span>Player</span></div>
               <div class="win-body">
                 <div class="cover"></div>
-                <div class="track"><b data-en="Night drive">Night drive</b><span class="eq"><i></i><i></i><i></i><i></i><i></i></span><span class="prog"><i></i></span></div>
+                <div class="track"><b>Night drive</b><span class="eq"><i></i><i></i><i></i><i></i><i></i></span><span class="prog"><i></i></span></div>
               </div>
             </div>
             <div class="hud"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7"/></svg><span class="hud-bar"><i></i></span></div>
-            <div class="pc-toast"><kbd>Ctrl</kbd>+<kbd>S</kbd><span data-en="Saved">Saved</span></div>
+            <div class="pc-toast"><kbd>Ctrl</kbd>+<kbd>S</kbd><span>Saved</span></div>
             <div class="rec"><i></i>REC</div>
             <div class="cursor"><svg viewBox="0 0 24 24"><path d="M5 3l14 8-6 2-3 6z" fill="#fff" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
             <div class="taskbar"><i></i><i></i><i></i><i></i><i></i></div>
@@ -64,22 +84,21 @@
         <div class="phone">
           <div class="phone-screen">
             <div class="pkeys" id="pkeys">
-              <button class="pk" type="button" data-act="editor" aria-label="Открыть фоторедактор" data-en-aria="Open the photo editor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><small data-en="Editor">Editor</small></button>
-              <button class="pk" type="button" data-act="music" aria-label="Включить музыку" data-en-aria="Play music"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><small data-en="Music">Music</small></button>
-              <button class="pk" type="button" data-act="vol" aria-label="Громче" data-en-aria="Volume up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><small data-en="Louder">Louder</small></button>
-              <button class="pk" type="button" data-act="save" aria-label="Сохранить, Ctrl+S" data-en-aria="Save, Ctrl+S"><b class="pk-combo">Ctrl+S</b><small data-en="Save">Save</small></button>
-              <button class="pk" type="button" data-act="touch" aria-label="Тачпад" data-en-aria="Touchpad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V5a2 2 0 0 1 4 0v6l3 .5a2 2 0 0 1 1.7 2L17 19a2 2 0 0 1-2 2h-4a2 2 0 0 1-1.6-.8L5 15.5a1.7 1.7 0 0 1 2.4-2.4L9 14.5"/></svg><small data-en="Touchpad">Touchpad</small></button>
-              <button class="pk" type="button" data-act="rec" aria-label="Запись экрана" data-en-aria="Screen recording"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/></svg><small data-en="Record">Record</small></button>
+              <button class="pk" type="button" data-act="editor" aria-label="Open the photo editor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><small>Editor</small></button>
+              <button class="pk" type="button" data-act="music" aria-label="Play music"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><small>Music</small></button>
+              <button class="pk" type="button" data-act="vol" aria-label="Volume up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><small>Louder</small></button>
+              <button class="pk" type="button" data-act="save" aria-label="Save, Ctrl+S"><b class="pk-combo">Ctrl+S</b><small>Save</small></button>
+              <button class="pk" type="button" data-act="touch" aria-label="Touchpad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V5a2 2 0 0 1 4 0v6l3 .5a2 2 0 0 1 1.7 2L17 19a2 2 0 0 1-2 2h-4a2 2 0 0 1-1.6-.8L5 15.5a1.7 1.7 0 0 1 2.4-2.4L9 14.5"/></svg><small>Touchpad</small></button>
+              <button class="pk" type="button" data-act="rec" aria-label="Screen recording"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/></svg><small>Record</small></button>
             </div>
-            <div class="ptouch" aria-hidden="true"><span class="ptouch-hint" data-en="Touchpad">Touchpad</span><span class="trail"></span></div>
+            <div class="ptouch" aria-hidden="true"><span class="ptouch-hint">Touchpad</span><span class="trail"></span></div>
           </div>
         </div>
 
         <span class="packet" aria-hidden="true"></span>
         <span class="finger" aria-hidden="true"></span>
-        <p class="scene-hint" data-en="Tap the keys on the phone.">Tap the keys on the phone.</p>
+        <p class="scene-hint">Tap the keys on the phone.</p>
       </div>
-    </section>
     </section>
 
     <div class="ticker" aria-hidden="true">
@@ -93,12 +112,12 @@
       <div class="story-pin">
         <div class="wrap story-in">
           <div class="story-copy">
-            <h2 id="story-title" data-split data-en="One screen. Four tools.">One screen. Four tools.</h2>
+            <h2 id="story-title" data-split>One screen. Four tools.</h2>
             <ol class="story-steps">
-              <li class="on"><h3 data-en="Apps and folders">Apps and folders</h3><p data-en="Your apps, folders and websites with their real icons. One tap opens them on the PC.">Your apps, folders and websites with their real icons. One tap opens them on the PC.</p></li>
-              <li><h3 data-en="Shortcuts for every app">Shortcuts for every app</h3><p data-en="Switch to Photoshop or OBS on the PC and the remote shows the buttons made for it.">Switch to Photoshop or OBS on the PC and the remote shows the buttons made for it.</p></li>
-              <li><h3 data-en="Music and volume">Music and volume</h3><p data-en="Pause, skip, seek and volume. The track and its cover come from the PC.">Pause, skip, seek and volume. The track and its cover come from the PC.</p></li>
-              <li><h3 data-en="Touchpad and keyboard">Touchpad and keyboard</h3><p data-en="The whole screen turns into a touchpad. Type on the phone and the text lands on the PC.">The whole screen turns into a touchpad. Type on the phone and the text lands on the PC.</p></li>
+              <li class="on"><h3>Apps and folders</h3><p>Your apps, folders and websites with their real icons. One tap opens them on the PC.</p></li>
+              <li><h3>Shortcuts for every app</h3><p>Switch to Photoshop or OBS on the PC and the remote shows the buttons made for it.</p></li>
+              <li><h3>Music and volume</h3><p>Pause, skip, seek and volume. The track and its cover come from the PC.</p></li>
+              <li><h3>Touchpad and keyboard</h3><p>The whole screen turns into a touchpad. Type on the phone and the text lands on the PC.</p></li>
             </ol>
             <div class="story-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
           </div>
@@ -109,30 +128,30 @@
                 <div class="sstrip" id="sstrip">
                   <!-- 1. программы -->
                   <div class="spage spage-apps">
-                    <span class="sk" style="--c:#e9a23b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><small data-en="Files">Files</small></span>
-                    <span class="sk" style="--c:#4a7bf2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><small data-en="Browser">Browser</small></span>
-                    <span class="sk" style="--c:#2fb37a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><small data-en="Chat">Chat</small></span>
-                    <span class="sk" style="--c:#9b6bf2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><small data-en="Code">Code</small></span>
-                    <span class="sk" style="--c:#ee6a2e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><small data-en="Photos">Photos</small></span>
-                    <span class="sk" style="--c:#e2506a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg><small data-en="Video">Video</small></span>
-                    <span class="sk" style="--c:#38b6d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><small data-en="Music">Music</small></span>
-                    <span class="sk" style="--c:#8d8a80"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.8 1.2V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-2.8-1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0-1.2-2.8H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.2-2.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 2.8-1.2V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 2.8 1.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0 1.2 2.8H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg><small data-en="Settings">Settings</small></span>
+                    <span class="sk" style="--c:#e9a23b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><small>Files</small></span>
+                    <span class="sk" style="--c:#4a7bf2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><small>Browser</small></span>
+                    <span class="sk" style="--c:#2fb37a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><small>Chat</small></span>
+                    <span class="sk" style="--c:#9b6bf2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><small>Code</small></span>
+                    <span class="sk" style="--c:#ee6a2e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><small>Photos</small></span>
+                    <span class="sk" style="--c:#e2506a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg><small>Video</small></span>
+                    <span class="sk" style="--c:#38b6d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><small>Music</small></span>
+                    <span class="sk" style="--c:#8d8a80"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.8 1.2V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-2.8-1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0-1.2-2.8H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.2-2.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 2.8-1.2V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 2.8 1.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0 1.2 2.8H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg><small>Settings</small></span>
                   </div>
                   <!-- 2. горячие клавиши -->
                   <div class="spage spage-keys">
                     <span class="sapp"><i></i>Photoshop</span>
-                    <span class="hk"><b>B</b><small data-en="Brush">Brush</small></span>
-                    <span class="hk"><b>E</b><small data-en="Eraser">Eraser</small></span>
-                    <span class="hk hk-lit"><b>Ctrl Z</b><small data-en="Undo">Undo</small></span>
-                    <span class="hk"><b>[ ]</b><small data-en="Size">Size</small></span>
-                    <span class="hk"><b>Ctrl J</b><small data-en="Duplicate">Duplicate</small></span>
-                    <span class="hk"><b>Ctrl S</b><small data-en="Save">Save</small></span>
+                    <span class="hk"><b>B</b><small>Brush</small></span>
+                    <span class="hk"><b>E</b><small>Eraser</small></span>
+                    <span class="hk hk-lit"><b>Ctrl Z</b><small>Undo</small></span>
+                    <span class="hk"><b>[ ]</b><small>Size</small></span>
+                    <span class="hk"><b>Ctrl J</b><small>Duplicate</small></span>
+                    <span class="hk"><b>Ctrl S</b><small>Save</small></span>
                   </div>
                   <!-- 3. музыка -->
                   <div class="spage spage-media">
                     <div class="scover"><span class="eq"><i></i><i></i><i></i><i></i><i></i></span></div>
                     <div class="smeta">
-                      <b data-en="Night drive">Night drive</b><small data-en="Synthwave mix">Synthwave mix</small>
+                      <b>Night drive</b><small>Synthwave mix</small>
                       <span class="sprog"><i></i></span>
                       <span class="sctrl"><i class="prev"></i><i class="play"></i><i class="next"></i></span>
                       <span class="svol"><i></i></span>
@@ -141,7 +160,7 @@
                   <!-- 4. тачпад -->
                   <div class="spage spage-pad">
                     <span class="pad-glow"></span>
-                    <span class="pad-hint" data-en="Touchpad">Touchpad</span>
+                    <span class="pad-hint">Touchpad</span>
                     <span class="pad-kb"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
                   </div>
                 </div>
@@ -155,46 +174,46 @@
 
     <section class="try wrap" id="try" aria-labelledby="try-title">
       <div class="section-head">
-        <h2 id="try-title" data-split data-en="Try it right here.">Try it right here.</h2>
-        <p data-en="A simplified remote in your browser. Tap the keys, swipe between pages, open the bottom panel for sound, touchpad and keyboard. Nothing is sent to a PC.">A simplified remote in your browser. Tap the keys, swipe between pages, open the bottom panel for sound, touchpad and keyboard. Nothing is sent to a PC.</p>
+        <h2 id="try-title" data-split>Try it right here.</h2>
+        <p>A simplified remote in your browser. Tap the keys, swipe between pages, open the bottom panel for sound, touchpad and keyboard. Nothing is sent to a PC.</p>
       </div>
 
       <div class="stage" id="stage" data-orient="land">
         <div class="stage-light" aria-hidden="true"></div>
         <div class="device" id="device">
           <div class="device-body">
-            <div class="mock" id="mock" aria-label="Упрощённый пульт PoDoo" data-en-aria="Simplified PoDoo remote">
+            <div class="mock" id="mock" aria-label="Simplified PoDoo remote">
               <div class="m-strip"><span class="m-pc"><i class="led"></i>DESKTOP</span><b id="m-name">Главная</b></div>
 
               <div class="m-viewport" id="m-viewport">
                 <div class="m-pages" id="m-pages">
-                  <div class="m-page m-apps" data-name="Главная" data-name-en="Home">
-                    <button class="mk" type="button" data-say="Открыт Проводник" data-say-en="File Explorer opened" style="--c:#e9a23b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><small data-en="Files">Files</small></button>
-                    <button class="mk" type="button" data-say="Открыт браузер" data-say-en="Browser opened" style="--c:#4a7bf2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><small data-en="Browser">Browser</small></button>
-                    <button class="mk" type="button" data-say="Открыт мессенджер" data-say-en="Chat opened" style="--c:#2fb37a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><small data-en="Chat">Chat</small></button>
-                    <button class="mk" type="button" data-say="Открыт редактор кода" data-say-en="Code editor opened" style="--c:#9b6bf2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><small data-en="Code">Code</small></button>
-                    <button class="mk" type="button" data-say="Открыт Photoshop" data-say-en="Photoshop opened" style="--c:#ee6a2e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><small data-en="Photos">Photos</small></button>
-                    <button class="mk" type="button" data-say="Открыт OBS" data-say-en="OBS opened" style="--c:#e2506a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg><small data-en="Stream">Stream</small></button>
-                    <button class="mk" type="button" data-say="Открыта музыка" data-say-en="Music opened" style="--c:#38b6d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><small data-en="Music">Music</small></button>
-                    <button class="mk" type="button" data-say="Свёрнуты все окна" data-say-en="All windows minimized" style="--c:#8d8a80"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><small data-en="Desktop">Desktop</small></button>
+                  <div class="m-page m-apps" data-name="Home">
+                    <button class="mk" type="button" data-say="File Explorer opened" style="--c:#e9a23b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><small>Files</small></button>
+                    <button class="mk" type="button" data-say="Browser opened" style="--c:#4a7bf2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><small>Browser</small></button>
+                    <button class="mk" type="button" data-say="Chat opened" style="--c:#2fb37a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><small>Chat</small></button>
+                    <button class="mk" type="button" data-say="Code editor opened" style="--c:#9b6bf2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><small>Code</small></button>
+                    <button class="mk" type="button" data-say="Photoshop opened" style="--c:#ee6a2e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><small>Photos</small></button>
+                    <button class="mk" type="button" data-say="OBS opened" style="--c:#e2506a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg><small>Stream</small></button>
+                    <button class="mk" type="button" data-say="Music opened" style="--c:#38b6d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><small>Music</small></button>
+                    <button class="mk" type="button" data-say="All windows minimized" style="--c:#8d8a80"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><small>Desktop</small></button>
                   </div>
-                  <div class="m-page m-keys" data-name="Photoshop" data-name-en="Photoshop">
-                    <button class="mk mk-key" type="button" data-say="Кисть · B" data-say-en="Brush · B"><b>B</b><small data-en="Brush">Brush</small></button>
-                    <button class="mk mk-key" type="button" data-say="Ластик · E" data-say-en="Eraser · E"><b>E</b><small data-en="Eraser">Eraser</small></button>
-                    <button class="mk mk-key" type="button" data-say="Отменено · Ctrl+Z" data-say-en="Undone · Ctrl+Z"><b>Ctrl Z</b><small data-en="Undo">Undo</small></button>
-                    <button class="mk mk-key" type="button" data-say="Слой скопирован · Ctrl+J" data-say-en="Layer duplicated · Ctrl+J"><b>Ctrl J</b><small data-en="Duplicate">Duplicate</small></button>
-                    <button class="mk mk-key" type="button" data-say="Снимок области · Win+Shift+S" data-say-en="Screen snip · Win+Shift+S"><b>Win ⇧ S</b><small data-en="Snip">Snip</small></button>
-                    <button class="mk mk-key" type="button" data-say="Сохранено · Ctrl+S" data-say-en="Saved · Ctrl+S"><b>Ctrl S</b><small data-en="Save">Save</small></button>
+                  <div class="m-page m-keys" data-name="Photoshop">
+                    <button class="mk mk-key" type="button" data-say="Brush · B"><b>B</b><small>Brush</small></button>
+                    <button class="mk mk-key" type="button" data-say="Eraser · E"><b>E</b><small>Eraser</small></button>
+                    <button class="mk mk-key" type="button" data-say="Undone · Ctrl+Z"><b>Ctrl Z</b><small>Undo</small></button>
+                    <button class="mk mk-key" type="button" data-say="Layer duplicated · Ctrl+J"><b>Ctrl J</b><small>Duplicate</small></button>
+                    <button class="mk mk-key" type="button" data-say="Screen snip · Win+Shift+S"><b>Win ⇧ S</b><small>Snip</small></button>
+                    <button class="mk mk-key" type="button" data-say="Saved · Ctrl+S"><b>Ctrl S</b><small>Save</small></button>
                   </div>
-                  <div class="m-page m-media" data-name="Плеер" data-name-en="Player">
+                  <div class="m-page m-media" data-name="Player">
                     <div class="m-cover"><span class="eq"><i></i><i></i><i></i><i></i><i></i></span></div>
                     <div class="m-meta">
-                      <b data-en="Night drive">Night drive</b><small data-en="Synthwave mix">Synthwave mix</small>
+                      <b>Night drive</b><small>Synthwave mix</small>
                       <span class="m-prog"><i id="m-prog"></i></span>
                       <span class="m-ctrl">
-                        <button type="button" class="m-round" data-media="prev" aria-label="Предыдущий трек" data-en-aria="Previous track"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
-                        <button type="button" class="m-round m-play" data-media="play" aria-label="Пауза" data-en-aria="Pause"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path class="i-pause" d="M7 5h4v14H7zM13 5h4v14h-4z"/><path class="i-play" d="M8 5v14l11-7z"/></svg></button>
-                        <button type="button" class="m-round" data-media="next" aria-label="Следующий трек" data-en-aria="Next track"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
+                        <button type="button" class="m-round" data-media="prev" aria-label="Previous track"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+                        <button type="button" class="m-round m-play" data-media="play" aria-label="Pause"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path class="i-pause" d="M7 5h4v14H7zM13 5h4v14h-4z"/><path class="i-play" d="M8 5v14l11-7z"/></svg></button>
+                        <button type="button" class="m-round" data-media="next" aria-label="Next track"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
                       </span>
                     </div>
                   </div>
@@ -202,30 +221,30 @@
               </div>
 
               <div class="m-dots" id="m-dots"><i class="on"></i><i></i><i></i></div>
-              <button class="m-handle" id="m-handle" type="button" aria-label="Открыть панель: звук, тачпад, клавиатура" data-en-aria="Open panel: sound, touchpad, keyboard"><i></i></button>
+              <button class="m-handle" id="m-handle" type="button" aria-label="Open panel: sound, touchpad, keyboard"><i></i></button>
 
               <div class="m-sheet" id="m-sheet" aria-hidden="true">
                 <div class="m-sheet-row">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7"/></svg>
-                  <input id="m-vol" type="range" min="0" max="100" value="60" aria-label="Громкость" data-en-aria="Volume">
+                  <input id="m-vol" type="range" min="0" max="100" value="60" aria-label="Volume">
                   <output id="m-vol-out">60</output>
                 </div>
                 <div class="m-sheet-btns">
-                  <button type="button" class="m-tool" data-tool="pad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V5a2 2 0 0 1 4 0v6l3 .5a2 2 0 0 1 1.7 2L17 19a2 2 0 0 1-2 2h-4a2 2 0 0 1-1.6-.8L5 15.5a1.7 1.7 0 0 1 2.4-2.4L9 14.5"/></svg><span data-en="Touchpad">Touchpad</span></button>
-                  <button type="button" class="m-tool" data-tool="kb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg><span data-en="Keyboard">Keyboard</span></button>
-                  <button type="button" class="m-tool" data-tool="mute"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM22 9l-6 6M16 9l6 6"/></svg><span data-en="Mute">Mute</span></button>
-                  <button type="button" class="m-tool" data-tool="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg><span data-en="Close">Close</span></button>
+                  <button type="button" class="m-tool" data-tool="pad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V5a2 2 0 0 1 4 0v6l3 .5a2 2 0 0 1 1.7 2L17 19a2 2 0 0 1-2 2h-4a2 2 0 0 1-1.6-.8L5 15.5a1.7 1.7 0 0 1 2.4-2.4L9 14.5"/></svg><span>Touchpad</span></button>
+                  <button type="button" class="m-tool" data-tool="kb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg><span>Keyboard</span></button>
+                  <button type="button" class="m-tool" data-tool="mute"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM22 9l-6 6M16 9l6 6"/></svg><span>Mute</span></button>
+                  <button type="button" class="m-tool" data-tool="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg><span>Close</span></button>
                 </div>
                 <form class="m-kb" id="m-kb" hidden>
-                  <input id="m-kb-in" type="text" autocomplete="off" placeholder="Текст для ПК" data-en-placeholder="Text for the PC">
-                  <button type="submit" data-en="Send">Send</button>
+                  <input id="m-kb-in" type="text" autocomplete="off" placeholder="Text for the PC">
+                  <button type="submit">Send</button>
                 </form>
               </div>
 
               <div class="m-pad" id="m-pad" hidden>
-                <span class="m-pad-hint" data-en="Move your finger or mouse">Move your finger or mouse</span>
+                <span class="m-pad-hint">Move your finger or mouse</span>
                 <span class="m-pad-dot" id="m-pad-dot"></span>
-                <button type="button" class="m-pad-done" id="m-pad-done" data-en="Done">Done</button>
+                <button type="button" class="m-pad-done" id="m-pad-done">Done</button>
               </div>
 
               <div class="m-toast" id="m-toast" role="status" aria-live="polite"></div>
@@ -239,64 +258,90 @@
       <div class="stage-tools">
         <button class="lbtn lbtn-sm" type="button" id="rotate">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3L4 15"/><path d="M4 20v-5h5"/></svg>
-          <span data-en="Rotate the phone">Rotate the phone</span>
+          <span>Rotate the phone</span>
         </button>
       </div>
 
       <ul class="gestures">
-        <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span data-en="Swipe sideways: pages">Swipe sideways: pages</span></li>
-        <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span data-en="Bottom bar: sound, touchpad, keyboard">Bottom bar: sound, touchpad, keyboard</span></li>
+        <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Swipe sideways: pages</span></li>
+        <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span>Bottom bar: sound, touchpad, keyboard</span></li>
       </ul>
     </section>
 
     <section class="features wrap" id="features" aria-labelledby="feat-title">
       <div class="section-head">
-        <h2 id="feat-title" data-split data-en="One tap instead of five clicks.">One tap instead of five clicks.</h2>
-        <p data-en="Everything is set up on the PC with a mouse. The phone updates the moment you drop an icon in place.">Everything is set up on the PC with a mouse. The phone updates the moment you drop an icon in place.</p>
+        <h2 id="feat-title" data-split>One tap instead of five clicks.</h2>
+        <p>Everything is set up on the PC with a mouse. The phone updates the moment you drop an icon in place.</p>
       </div>
 
       <div class="board">
         <article class="cap cap-w2 cap-lit" data-drop="0">
           <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><circle cx="12" cy="12" r="2"/></svg>
-          <h3 data-en="Follows the active app">Follows the active app</h3>
-          <p data-en="Switch apps on the PC and the remote flips to the page made for that app. Photoshop, Figma, Premiere, OBS and music have ready pages.">Switch apps on the PC and the remote flips to the page made for that app. Photoshop, Figma, Premiere, OBS and music have ready pages.</p>
+          <h3>Follows the active app</h3>
+          <p>Switch apps on the PC and the remote flips to the page made for that app. Photoshop, Figma, Premiere, OBS and music have ready pages.</p>
         </article>
         <article class="cap" data-drop="1">
           <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>
-          <h3 data-en="Set up with a mouse">Set up with a mouse</h3>
-          <p data-en="Drag apps, files and shortcuts on the PC. The phone changes at once.">Drag apps, files and shortcuts on the PC. The phone changes at once.</p>
+          <h3>Set up with a mouse</h3>
+          <p>Drag apps, files and shortcuts on the PC. The phone changes at once.</p>
         </article>
         <article class="cap" data-drop="2">
           <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2 0-1.5-1-1.7-1-3a2 2 0 0 1 2-2h2a4 4 0 0 0 4-4c0-3.9-4-7-9-7z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7" r="1"/></svg>
-          <h3 data-en="Ten themes">Ten themes</h3>
-          <p data-en="Sky, glass with clouds, sketchbook, clay and more. Pick the one that suits your desk.">Sky, glass with clouds, sketchbook, clay and more. Pick the one that suits your desk.</p>
+          <h3>Ten themes</h3>
+          <p>Sky, glass with clouds, sketchbook, clay and more. Pick the one that suits your desk.</p>
         </article>
         <article class="cap cap-w2" data-drop="3">
           <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
-          <h3 data-en="Action sets">Action sets</h3>
-          <p data-en="Chain several steps into one button: open a project, start the music, mute the notifications.">Chain several steps into one button: open a project, start the music, mute the notifications.</p>
+          <h3>Action sets</h3>
+          <p>Chain several steps into one button: open a project, start the music, mute the notifications.</p>
         </article>
         <article class="cap" data-drop="4">
           <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.5 1.5A3.75 3.75 0 0 0 6.5 19z"/></svg>
-          <h3 data-en="PoDee on the phone">PoDee on the phone</h3>
-          <p data-en="With PoDee on the PC, the phone gets its page: the island, timers, tasks and a chat with PoDy.">With PoDee on the PC, the phone gets its page: the island, timers, tasks and a chat with PoDy.</p>
+          <h3>PoDee on the phone</h3>
+          <p>With PoDee on the PC, the phone gets its page: the island, timers, tasks and a chat with PoDy.</p>
         </article>
         <article class="cap" data-drop="5">
           <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-          <h3 data-en="Stays at home">Stays at home</h3>
-          <p data-en="Only your PC and your phone, in your own network. No account, no cloud.">Only your PC and your phone, in your own network. No account, no cloud.</p>
+          <h3>Stays at home</h3>
+          <p>Only your PC and your phone, in your own network. No account, no cloud.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="pairing wrap" id="podee" aria-labelledby="pair-title">
+      <div class="section-head">
+        <h2 id="pair-title" data-split>PoDoo + PoDee</h2>
+        <p>With PoDee on the PC, PoDoo gets a PoDee page. From it you control the PoDee island right from your phone.</p>
+      </div>
+      <div class="pp">
+        <div class="pp-scene">
+          <div class="pp-screen" aria-hidden="true" style="--wp-d:url(../media/wallpapers/night-small.jpg);--wp-l:url(../media/wallpapers/mint-small.jpg)">
+            <div class="pp-isl" data-pp-isl><span class="pp-clock">14:32</span><span class="pp-st" data-st="open">Island open</span><span class="pp-st" data-st="t5">Timer 5:00</span><span class="pp-st" data-st="t25">Timer 25:00</span><span class="pp-st" data-st="todo">+ Buy cat food</span><span class="pp-st" data-st="ask">PoDy is thinking…</span></div>
+            <i class="char pp-char" data-c="auto"></i>
+          </div>
+          <div class="pp-phone">
+            <p class="pp-ph-title"><img src="../media/podee-icon.svg?v=41ecf9f3" alt="" />PoDee</p>
+            <div class="pp-keys"><button class="pp-key" type="button" data-pp="open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 9.5 4.3 4.3 0 0 0 7 18z"/></svg><small>Open island</small></button><button class="pp-key" type="button" data-pp="away"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18M10.6 6.1A9.8 9.8 0 0 1 12 6c5 0 9 6 9 6a17 17 0 0 1-2.6 3.2M6.2 7.6C4 9.2 3 12 3 12s4 6 9 6a8.7 8.7 0 0 0 3.6-.8"/></svg><small>Hide island</small></button><button class="pp-key" type="button" data-pp="t5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg><small>Timer 5 min</small></button><button class="pp-key" type="button" data-pp="t25"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg><small>Timer 25 min</small></button><button class="pp-key" type="button" data-pp="todo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><small>Task</small></button><button class="pp-key" type="button" data-pp="ask"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><small>Ask PoDy</small></button></div>
+            <p class="pp-reply" data-pp-reply aria-live="polite"><b>PoDy</b>Your call is at 3 pm, 28 minutes from now.</p>
+          </div>
+          <p class="pp-hint">Tap the buttons on the phone.</p>
+        </div>
+        <ol class="pp-steps">
+          <li><span class="step-no" aria-hidden="true">1</span><h3>Install PoDee</h3><p>You need PoDee 1.3.5 and PoDoo 1.0.1 or newer. <a class="textlink" href="podee.html">Get PoDee</a></p></li>
+          <li><span class="step-no" aria-hidden="true">2</span><h3>Turn on the link in PoDee</h3><p>Settings → Modules → “Link with PoDoo”. Nothing to turn on in PoDoo itself.</p></li>
+          <li><span class="step-no" aria-hidden="true">3</span><h3>Open the PoDee page</h3><p>It shows up in the dock on the phone by itself. Open or hide the island, start a timer, add a task, ask PoDy. The answer from PoDy comes to the phone, and the chat is kept.</p></li>
+        </ol>
       </div>
     </section>
 
     <section class="connect" id="connect" aria-labelledby="conn-title">
       <div class="wrap connect-in">
         <div class="connect-copy">
-          <h2 id="conn-title" data-split data-en="Your desk. Your network. Nothing in between.">Your desk. Your network. Nothing in between.</h2>
-          <p data-en="The phone talks to your PC directly: over Wi-Fi, a USB cable or Bluetooth. Pair once with a QR code or a six-digit code. No account, no ads, no data collection.">The phone talks to your PC directly: over Wi-Fi, a USB cable or Bluetooth. Pair once with a QR code or a six-digit code. No account, no ads, no data collection.</p>
+          <h2 id="conn-title" data-split>Your desk. Your network. Nothing in between.</h2>
+          <p>The phone talks to your PC directly: over Wi-Fi, a USB cable or Bluetooth. Pair once with a QR code or a six-digit code. No account, no ads, no data collection.</p>
         </div>
 
-        <figure class="link-art" aria-label="Схема: ПК и телефон соединены напрямую" data-en-aria="Diagram: the PC and the phone are linked directly">
+        <figure class="link-art" aria-label="Diagram: the PC and the phone are linked directly">
           <svg viewBox="0 0 520 220" role="img" aria-hidden="true">
             <defs>
               <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="var(--signal)" stop-opacity="0"/><stop offset=".5" stop-color="var(--signal)"/><stop offset="1" stop-color="var(--signal)" stop-opacity="0"/></linearGradient>
@@ -328,8 +373,8 @@
               <rect x="400" y="96" width="26" height="26" rx="6" class="art-key k5"/>
               <rect x="432" y="96" width="26" height="26" rx="6" class="art-key k6"/>
             </g>
-            <text x="260" y="76" text-anchor="middle" class="art-label" data-en="Wi-Fi">Wi-Fi</text>
-            <text x="260" y="124" text-anchor="middle" class="art-label art-label-dim" data-en="no cloud">no cloud</text>
+            <text x="260" y="76" text-anchor="middle" class="art-label art-label-ways">Wi-Fi · USB · Bluetooth</text>
+            <text x="260" y="124" text-anchor="middle" class="art-label art-label-dim">no cloud</text>
           </svg>
         </figure>
       </div>
@@ -337,27 +382,27 @@
 
     <section class="setup wrap" id="setup" aria-labelledby="setup-title">
       <div class="section-head">
-        <h2 id="setup-title" data-split data-en="Ready in three steps.">Ready in three steps.</h2>
-        <p data-en="A Windows PC, a phone and one Wi-Fi network.">A Windows PC, a phone and one Wi-Fi network.</p>
+        <h2 id="setup-title" data-split>Ready in three steps.</h2>
+        <p>A Windows PC and an Android phone or tablet. They connect over Wi-Fi, a USB cable or Bluetooth.</p>
       </div>
       <ol class="steps">
         <li>
           <span class="step-no" aria-hidden="true">1</span>
-          <h3 data-en="Install PoDoo on the PC">Install PoDoo on the PC</h3>
-          <p data-en="Run the setup. PoDoo sits in the tray and waits for the phone.">Run the setup. PoDoo sits in the tray and waits for the phone.</p>
-          <a class="textlink" href="#download" data-en="Download for Windows">Download for Windows</a>
+          <h3>Install PoDoo on the PC</h3>
+          <p>Run the setup. PoDoo sits in the tray and waits for the phone.</p>
+          <a class="textlink" href="#download">Download for Windows</a>
         </li>
         <li>
           <span class="step-no" aria-hidden="true">2</span>
-          <h3 data-en="Install the app on the phone">Install the app on the phone</h3>
-          <p data-en="Download PoDoo.apk on the phone itself and open it. Android asks to allow installs from the browser: allow it.">Download PoDoo.apk on the phone itself and open it. Android asks to allow installs from the browser: allow it.</p>
-          <a class="textlink" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk" data-en="Get the Android app">Get the Android app</a>
+          <h3>Install the app on the phone</h3>
+          <p>Download PoDoo.apk on the phone itself and open it. Android asks to allow installs from the browser: allow it.</p>
+          <a class="textlink" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk">Get the Android app</a>
         </li>
         <li>
           <span class="step-no" aria-hidden="true">3</span>
-          <h3 data-en="Connect">Connect</h3>
-          <p data-en="On the same Wi-Fi the app finds your PC by itself. Tap it and enter the code from the PoDoo window.">On the same Wi-Fi the app finds your PC by itself. Tap it and enter the code from the PoDoo window.</p>
-          <a class="textlink" href="#faq" data-en="Need help?">Need help?</a>
+          <h3>Connect</h3>
+          <p>The app finds your PC by itself over Wi-Fi, a USB cable or Bluetooth. Tap it and confirm the code from the PoDoo window.</p>
+          <a class="textlink" href="podoo-guides.html#connect">Need help?</a>
         </li>
       </ol>
     </section>
@@ -365,61 +410,35 @@
     <section class="download" id="download" aria-labelledby="dl-title">
       <div class="wrap">
         <div class="section-head">
-          <h2 id="dl-title" data-split data-en="Get PoDoo for free.">Get PoDoo for free.</h2>
-          <p data-en="You need two parts: the program for your Windows PC and the app for your phone.">You need two parts: the program for your Windows PC and the app for your phone.</p>
-          <p><span class="pill"><i class="led"></i><span data-en="Version">Version</span> 1.0.1</span></p>
+          <h2 id="dl-title" data-split>Get PoDoo for free.</h2>
+          <p>You need two parts: the program for your Windows PC and the app for your phone.</p>
+          <p><span class="pill"><i class="led"></i><span>Version</span> 1.0.1</span></p>
         </div>
 
         <div class="dl-grid">
           <article class="dl dl-main">
             <svg class="dl-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10.5 4.5v6.9H3zM11.6 4.3 21 3v8.4h-9.4zM3 12.6h7.5v6.9L3 18.5zM11.6 12.6H21V21l-9.4-1.3z"/></svg>
             <h3>Windows</h3>
-            <p data-en="The PoDoo program for your PC, Windows 10 and 11. It's required: the phone talks to it.">The PoDoo program for your PC, Windows 10 and 11. It's required: the phone talks to it.</p>
-            <a class="lbtn lbtn-lit magnet" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe" data-en="Download .exe">Download .exe</a>
-            <a class="textlink" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x86-setup.exe" data-en="For 32-bit Windows">For 32-bit Windows</a>
+            <p>The PoDoo program for your PC, Windows 10 and 11. It's required: the phone talks to it.</p>
+            <a class="lbtn lbtn-lit magnet" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe">Download .exe</a>
+            <a class="textlink" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x86-setup.exe">For 32-bit Windows</a>
           </article>
           <article class="dl">
             <svg class="dl-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 18a1 1 0 0 0 1 1h1v3.5a1.5 1.5 0 0 0 3 0V19h2v3.5a1.5 1.5 0 0 0 3 0V19h1a1 1 0 0 0 1-1V8H6zM3.5 8A1.5 1.5 0 0 0 2 9.5v6a1.5 1.5 0 0 0 3 0v-6A1.5 1.5 0 0 0 3.5 8zm17 0A1.5 1.5 0 0 0 19 9.5v6a1.5 1.5 0 0 0 3 0v-6A1.5 1.5 0 0 0 20.5 8zM15.5 2.7l1.2-1.2-.7-.7-1.4 1.4A5.8 5.8 0 0 0 12 1.6c-.9 0-1.7.2-2.6.6L8 .8l-.7.7 1.2 1.2A5.9 5.9 0 0 0 6 7h12a5.9 5.9 0 0 0-2.5-4.3zM10 5H9V4h1zm5 0h-1V4h1z"/></svg>
             <h3>Android</h3>
-            <p data-en="Phones and tablets with Android 5.0 and newer.">Phones and tablets with Android 5.0 and newer.</p>
-            <a class="lbtn" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk" data-en="Download .apk">Download .apk</a>
+            <p>Phones and tablets with Android 5.0 and newer.</p>
+            <a class="lbtn" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk">Download .apk</a>
+            <a class="textlink" data-gplay data-soon="Coming to Google Play">Google Play</a>
           </article>
         </div>
-        <p class="fineprint"><a class="textlink" href="https://github.com/podylab/PoDoo-releases/releases/latest" data-en="All files and release notes">All files and release notes</a></p>
+        <p class="fineprint"><a class="textlink" href="https://github.com/podylab/PoDoo-releases/releases/latest">All files and release notes</a></p>
       </div>
     </section>
 
-    <section class="faq wrap" id="faq" aria-labelledby="faq-title">
-      <div class="section-head">
-        <h2 id="faq-title" data-split data-en="Good to know">Good to know</h2>
-      </div>
-      <div class="faq-list">
-        <details>
-          <summary data-en="Do I need an account or the internet?">Do I need an account or the internet?</summary>
-          <p data-en="No account. The phone and the PC only need to be on one local network or linked by a cable or Bluetooth. PoDoo itself works without the internet.">No account. The phone and the PC only need to be on one local network or linked by a cable or Bluetooth. PoDoo itself works without the internet.</p>
-        </details>
-        <details>
-          <summary data-en="Does it work without the PC program?">Does it work without the PC program?</summary>
-          <p data-en="No. The app on the phone is only the screen; the program on the PC runs the actions. That's why the PC program is required.">No. The app on the phone is only the screen; the program on the PC runs the actions. That's why the PC program is required.</p>
-        </details>
-        <details>
-          <summary data-en="Which phones will do?">Which phones will do?</summary>
-          <p data-en="Any phone or tablet with Android 5.0 or newer. An old phone from a drawer works too, and gets a new job. PoDoo has no iPhone app yet.">Any phone or tablet with Android 5.0 or newer. An old phone from a drawer works too, and gets a new job. PoDoo has no iPhone app yet.</p>
-        </details>
-        <details>
-          <summary data-en="What does the app see?">What does the app see?</summary>
-          <p data-en="Only the network and the camera, and the camera is used just to scan the QR code. Nothing is sent to us or to anyone else.">Only the network and the camera, and the camera is used just to scan the QR code. Nothing is sent to us or to anyone else.</p>
-        </details>
-        <details>
-          <summary data-en="Can I connect without Wi-Fi?">Can I connect without Wi-Fi?</summary>
-          <p data-en="Yes. Plug the phone into the PC with a USB cable or pair them over Bluetooth, and pick that way on the app's first screen.">Yes. Plug the phone into the PC with a USB cable or pair them over Bluetooth, and pick that way on the app's first screen.</p>
-        </details>
-      </div>
-    </section>
   </main>
-
-<script src="../site.js?v=c8ed7629"></script>
-<script src="../pody.js?v=c86dcd51"></script>
-<script src="../podoo.js?v=f2a45c47"></script>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "A message for PoDy", "js.about_podoo": "About PoDoo", "js.all_podee_versions": "All PoDee versions", "js.back_to_top": "Back to top", "js.click": "Click", "js.close": "Close", "js.copied": "Copied", "js.copy_address": "Copy address", "js.couldn_t_copy_select": "Couldn't copy, select the address", "js.download_podee_and_i": "Download PoDee and I'll move into the top of your screen", "js.downloads.few": "downloads", "js.downloads.many": "downloads", "js.downloads.one": "download", "js.downloads.other": "downloads", "js.good_even_better_when": "Good. Even better when someone pets me", "js.hi_glad_you_came": "Hi! Glad you came by", "js.hi_i_m_pody": "Hi, I'm PoDy. You can pet me", "js.i_like_you_too": "I like you too", "js.i_live_at_the": "I live at the top of your screen and show the music and the time. You can talk to me, too", "js.i_m_dizzy": "I'm dizzy…", "js.i_only_know_a": "I only know a few words so far. Ask me what I can do", "js.if_podee_helps_you": "If PoDee helps you, you can support the project", "js.improve_together": "Improve together", "js.language": "Site language", "js.learn_more": "Learn more", "js.made_with_pody_the": "Made with PoDy the cloud", "js.message": "message", "js.mute_pody": "Mute PoDy", "js.net_bnb": "BNB Smart Chain (BEP-20): BNB, or USDT on it.", "js.net_btc": "Bitcoin network.", "js.net_doge": "Dogecoin network.", "js.net_eth": "Ethereum network (ERC-20): ETH, or USDT on it.", "js.net_ton": "TON network: Toncoin or USDT. The comment can carry a wish.", "js.net_usdt": "TRC-20 (Tron) network only.", "js.next_track": "Next track", "js.paused": "Paused", "js.playing": "Playing", "js.podoo_is_out": "PoDoo is out: an old phone or tablet becomes a remote for your PC", "js.pody_the_cloud_pet": "PoDy the cloud: pet him and talk", "js.previous_track": "Previous track", "js.privacy": "Privacy", "js.soon": "Soon", "js.sound_off": "Sound off", "js.sound_on": "Sound on", "js.support": "Support", "js.thank_you_here_s": "Thank you! Here's the support page", "js.thanks_for_stopping_by": "Thanks for stopping by. Any amount helps", "js.that_tickles": "That tickles!", "js.the_address_is_coming": "The address is coming soon", "js.the_download_podee_button": "The «Download PoDee» button is on the home page and on PoDee's page", "js.the_form_will_work": "The form will work very soon", "js.track_1": "Night drive", "js.track_2": "City lights", "js.track_3": "Sunrise", "js.typed_text": "Typed: {text}", "js.unmute_pody": "Unmute PoDy", "js.version_line": "Version {v} for {bits}-bit Windows · <a href=\"{link}\">need {other}-bit?<\/a>", "js.volume_n": "Volume {n}%", "js.write_to_pody": "Write to PoDy…", "js.guides": "Guides", "js.fixes": "Fixes", "js.report": "Report a problem", "js.download": "Download", "js.menu": "Menu", "js.notch": "PoDee: an island at the top of your screen", "js.theme": "Light or dark theme"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=1285ef66"></script>
+<script src="../pody.js?v=16e5b0c0"></script>
+<script src="../podoo.js?v=64be506d"></script>
 </body>
 </html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../" />
+<script>try{var t=localStorage.getItem("podylab.theme")}catch(e){}document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")</script>
+<title>후원하기 · Pody Lab</title>
+<meta name="description" content="카드, Kaspi QR, 암호화폐로 원하는 만큼 Pody Lab을 후원하고 PoDee나 PoDoo에 바라는 점을 보내세요." />
+<link rel="icon" href="../media/podee-icon.svg?v=41ecf9f3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=5db024f3" />
+<link rel="alternate" hreflang="ru" href="https://podylab.github.io/support.html" />
+<link rel="alternate" hreflang="en" href="https://podylab.github.io/en/support.html" />
+<link rel="alternate" hreflang="es" href="https://podylab.github.io/es/support.html" />
+<link rel="alternate" hreflang="pt-BR" href="https://podylab.github.io/pt-br/support.html" />
+<link rel="alternate" hreflang="de" href="https://podylab.github.io/de/support.html" />
+<link rel="alternate" hreflang="fr" href="https://podylab.github.io/fr/support.html" />
+<link rel="alternate" hreflang="it" href="https://podylab.github.io/it/support.html" />
+<link rel="alternate" hreflang="tr" href="https://podylab.github.io/tr/support.html" />
+<link rel="alternate" hreflang="pl" href="https://podylab.github.io/pl/support.html" />
+<link rel="alternate" hreflang="uk" href="https://podylab.github.io/uk/support.html" />
+<link rel="alternate" hreflang="id" href="https://podylab.github.io/id/support.html" />
+<link rel="alternate" hreflang="vi" href="https://podylab.github.io/vi/support.html" />
+<link rel="alternate" hreflang="ja" href="https://podylab.github.io/ja/support.html" />
+<link rel="alternate" hreflang="ko" href="https://podylab.github.io/ko/support.html" />
+<link rel="alternate" hreflang="zh-CN" href="https://podylab.github.io/zh/support.html" />
+<link rel="alternate" hreflang="hi" href="https://podylab.github.io/hi/support.html" />
+<link rel="alternate" hreflang="x-default" href="https://podylab.github.io/en/support.html" />
+</head>
+<body>
+<main class="wrap">
+  <div class="hero" style="padding-bottom:0">
+    <img class="cloud" src="../media/podee-icon.svg?v=41ecf9f3" alt="구름 PoDy" />
+    <h1>후원하기 <em>Pody Lab</em></h1>
+    <p class="lead">Pody Lab의 앱은 무료입니다. 도움이 됐다면 원하는 만큼 보내 주세요. 새 기능과 다음 앱에 쓰입니다.</p>
+  </div>
+
+  <section id="donate">
+    <div class="card pay pay-bar">
+      <div class="pay-head"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M3 10h18"/><path d="M7 14.6h3.5"/></svg></div><div><h3>카드로</h3><p>어떤 카드든, 얼마든</p></div></div>
+      <p class="pay-text">결제 페이지가 열립니다(러시아어). 금액을 입력하고, 원하면 결제 메시지에 바라는 점을 적어 주세요.</p>
+      <a class="btn main" id="card" href="#" target="_blank" rel="noopener">카드로 결제</a>
+    </div>
+    <div class="grid g2 pay-pair">
+      <div class="card pay" id="kaspi">
+        <div class="pay-head"><div class="ic kaspi"><img src="../media/kaspi-logo.png" width="34" height="35" alt=""></div><div><h3>Kaspi QR</h3><p>카자흐스탄용</p></div></div>
+        <div class="wallet">
+          <div class="qr"><img src="../kaspi-qr.png" width="132" height="132" alt="결제용 Kaspi QR" loading="lazy"></div>
+          <ol class="pay-steps"><li>Kaspi.kz 앱을 여세요.</li><li>«Kaspi QR»을 누르고 카메라로 코드를 비추세요.</li><li>원하는 금액을 입력하고 확인하세요.</li></ol>
+        </div>
+      </div>
+      <div class="card pay">
+        <div class="pay-head"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M14.6 9.4a2.9 2.9 0 0 0-2.6-1.4c-1.6 0-2.7.8-2.7 1.9s.9 1.6 2.7 1.9 2.7.9 2.7 2-1.1 2-2.7 2a3 3 0 0 1-2.7-1.5"/><path d="M12 6.3v1.7M12 16v1.7"/></svg></div><div><h3>암호화폐로</h3><p>USDT, TON, BTC, ETH, BNB, DOGE</p></div></div>
+        <div class="coins" id="coins"></div>
+        <div class="wallet">
+          <div class="qr" id="qr"></div>
+          <div>
+            <div class="addr" id="addr"></div>
+            <div class="net" id="net"></div>
+            <button class="btn ghost copy" id="copy" type="button">주소 복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wish">
+    <h2>함께 앱을 더 좋게</h2>
+    <p class="sub">이건 돈이 들지 않아요. PoDee나 PoDoo에 무엇이 부족한지, 다음에 어떤 앱을 만들지 알려 주세요. 모든 의견을 읽습니다.</p>
+    <div class="card">
+      <form data-send="고마워요, 받았어요. 꼭 읽을게요.">
+        <input type="hidden" name="about" value="바라는 점" />
+        <div class="row2">
+          <label>앱 <select name="app"><option>PoDee</option><option>PoDoo</option><option>새 앱</option></select></label>
+          <label>답장을 원하면 이메일 <input name="email" type="email" autocomplete="email" placeholder="you@mail.com" /></label>
+        </div>
+        <label>개선할 점 <textarea name="message" required placeholder="예: 아일랜드에 날씨 보여 주기"></textarea></label>
+        <div class="btns" style="align-items:center"><button class="btn main" type="submit">보내기</button><span class="sent"></span></div>
+      </form>
+      <p class="wish-also">후원과 함께 바라는 점을 보낼 수도 있어요: 카드 결제 메시지나 TON 송금 메모에.</p>
+    </div>
+  </section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "PoDy에게 보내는 메시지", "js.about_podoo": "PoDoo 소개", "js.all_podee_versions": "PoDee 전체 버전", "js.back_to_top": "맨 위로", "js.click": "클릭", "js.close": "닫기", "js.copied": "복사됨", "js.copy_address": "주소 복사", "js.couldn_t_copy_select": "복사하지 못했어요. 주소를 선택해 주세요", "js.download_podee_and_i": "PoDee를 받으면 내가 화면 위로 이사 갈게", "js.downloads.few": "다운로드", "js.downloads.many": "다운로드", "js.downloads.one": "다운로드", "js.downloads.other": "다운로드", "js.good_even_better_when": "좋아. 쓰다듬어 주면 더 좋아", "js.hi_glad_you_came": "안녕! 와 줘서 기뻐", "js.hi_i_m_pody": "안녕, 나는 PoDy야. 쓰다듬어도 돼", "js.i_like_you_too": "나도 네가 좋아", "js.i_live_at_the": "나는 화면 위에 살면서 음악과 시간을 보여 줘. 나랑 이야기할 수도 있어", "js.i_m_dizzy": "어지러워…", "js.i_only_know_a": "아직 아는 말이 별로 없어. 내가 뭘 할 수 있는지 물어봐", "js.if_podee_helps_you": "PoDee가 도움이 됐다면 프로젝트를 후원할 수 있어요", "js.improve_together": "함께 개선하기", "js.language": "사이트 언어", "js.learn_more": "자세히 보기", "js.made_with_pody_the": "구름 PoDy와 함께 만들었어요", "js.message": "메시지", "js.mute_pody": "PoDy 음소거", "js.net_bnb": "BNB Smart Chain(BEP-20): 이 네트워크의 BNB 또는 USDT.", "js.net_btc": "Bitcoin 네트워크.", "js.net_doge": "Dogecoin 네트워크.", "js.net_eth": "Ethereum 네트워크(ERC-20): 이 네트워크의 ETH 또는 USDT.", "js.net_ton": "TON 네트워크: Toncoin 또는 USDT. 메모에 바라는 점을 적을 수 있어요.", "js.net_usdt": "TRC-20(Tron) 네트워크만 됩니다. 다른 네트워크는 안 돼요.", "js.next_track": "다음 곡", "js.paused": "일시 정지됨", "js.playing": "재생 중", "js.podoo_is_out": "PoDoo 출시: 휴대폰이나 오래된 태블릿이 PC 리모컨이 됩니다", "js.pody_the_cloud_pet": "구름 PoDy: 쓰다듬고 이야기해 보세요", "js.previous_track": "이전 곡", "js.privacy": "개인정보", "js.soon": "곧 출시", "js.sound_off": "소리 끔", "js.sound_on": "소리 켬", "js.support": "후원하기", "js.thank_you_here_s": "고마워요! 후원 페이지는 여기예요", "js.thanks_for_stopping_by": "들러 줘서 고마워요. 얼마든 도움이 돼요", "js.that_tickles": "간지러워!", "js.the_address_is_coming": "주소는 곧 올라와요", "js.the_download_podee_button": "«PoDee 다운로드» 버튼은 홈과 PoDee 페이지에 있어요", "js.the_form_will_work": "양식은 곧 작동합니다", "js.track_1": "밤 드라이브", "js.track_2": "도시의 불빛", "js.track_3": "새벽", "js.typed_text": "입력함: {text}", "js.unmute_pody": "PoDy 음소거 해제", "js.version_line": "{bits}비트 Windows용 버전 {v} · <a href=\"{link}\">{other}비트가 필요하세요?<\/a>", "js.volume_n": "볼륨 {n}%", "js.write_to_pody": "PoDy에게 쓰기…", "js.guides": "Guides", "js.fixes": "Fixes", "js.report": "Report a problem", "js.download": "Download", "js.menu": "Menu", "js.notch": "PoDee: an island at the top of your screen", "js.theme": "Light or dark theme"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=1285ef66"></script>
+<script src="../pody.js?v=16e5b0c0"></script>
+</body>
+</html>

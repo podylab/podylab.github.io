@@ -1,15 +1,15 @@
-﻿:root {
+:root {
     --bg: #0d1113; --bg2: #121a1c; --card: rgb(255 255 255 / .05); --line: rgb(255 255 255 / .09);
     --text: #eef4f2; --muted: #9db0ab; --accent: #7ed6be; --accent2: #23806c; --on-accent: #08231d;
     --shadow: 0 30px 80px rgb(0 0 0 / .45);
   }
-  @media (prefers-color-scheme: light) {
-    :root:not([data-theme="dark"]) {
+  
+    :root[data-theme="light"] {
       --bg: #f4f8f6; --bg2: #e8f1ee; --card: rgb(255 255 255 / .75); --line: rgb(10 40 32 / .1);
       --text: #12221e; --muted: #5a6f69; --accent: #23806c; --accent2: #7ed6be; --on-accent: #fff;
       --shadow: 0 30px 70px rgb(20 60 50 / .15);
     }
-  }
+  
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
@@ -21,7 +21,7 @@
   a { color: inherit; }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 
-  header { position: sticky; top: 0; z-index: 5; backdrop-filter: blur(14px); background: color-mix(in srgb, var(--bg) 70%, transparent); border-bottom: 1px solid var(--line); }
+  header { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 94%, transparent); border-bottom: 1px solid var(--line); }
   header .wrap { display: flex; align-items: center; gap: 12px; height: 64px; }
   .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 20px; text-decoration: none; white-space: nowrap; }
   .brand img { width: 34px; height: 34px; }
@@ -41,7 +41,7 @@
   h1 em { font-style: normal; color: var(--accent); }
   .lead { color: var(--muted); font-size: 19px; max-width: 36em; margin: 0 0 28px; }
   .btns { display: flex; flex-wrap: wrap; gap: 12px; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 999px; font-weight: 800; text-decoration: none; border: 0; font: inherit; font-weight: 800; cursor: pointer; transition: transform .15s, box-shadow .15s; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 999px; font-weight: 800; text-decoration: none; border: 0; font: inherit; font-weight: 800; cursor: pointer; transition: transform .15s; }
   .btn:hover { transform: translateY(-2px); }
   .btn.main { background: linear-gradient(180deg, #8fe3cc, var(--accent2)); color: #06201a; box-shadow: 0 10px 30px rgb(35 128 108 / .4); }
   .btn.ghost { background: var(--card); border: 1px solid var(--line); color: var(--text); }
@@ -102,7 +102,7 @@
 
   /* apps on the home page */
   .apps { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-  .app { display: grid; gap: 14px; text-decoration: none; padding: 28px; transition: transform .15s, border-color .15s; }
+  .app { display: grid; gap: 14px; text-decoration: none; padding: 28px; transition: transform .15s; }
   .app:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
   .app img { width: 72px; height: 72px; }
   .app h3 { font-size: 26px; font-weight: 900; margin: 0; }
@@ -137,21 +137,26 @@ nav a.lang { border: 1px solid var(--line, rgb(255 255 255 / .18)); border-radiu
 
 /* ---------- richer cards: a soft light follows the mouse, buttons catch a shine ---------- */
 @property --g { syntax: "<number>"; inherits: false; initial-value: 0; }
+/* the light is its own layer that only moves and fades: the card's background is never repainted */
 .card {
-  --mx: 50%; --my: 0%;
-  background:
-    radial-gradient(420px circle at var(--mx) var(--my), rgb(126 214 190 / calc(var(--g) * .16)), transparent 60%),
-    linear-gradient(160deg, rgb(255 255 255 / .075), rgb(255 255 255 / .02)), var(--card);
-  transition: --g .35s, transform .25s, border-color .25s, box-shadow .25s;
+  position: relative; overflow: hidden; isolation: isolate;
+  background: linear-gradient(160deg, rgb(255 255 255 / .075), rgb(255 255 255 / .02)), var(--card);
+  transition: transform .25s;
 }
-.card:hover { --g: 1; border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); box-shadow: 0 24px 60px rgb(0 0 0 / .28); }
+.card::before {
+  content: ""; position: absolute; z-index: -1; left: -420px; top: -420px; width: 840px; height: 840px; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(closest-side, rgb(126 214 190 / .16), transparent);
+  transform: translate(var(--mx, 0px), var(--my, 0px)); opacity: 0; transition: opacity .35s;
+}
+.card:hover::before { opacity: 1; }
+.card:hover { border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); box-shadow: 0 24px 60px rgb(0 0 0 / .28); }
 .pay:hover, .app:hover { transform: translateY(-4px); }
 .ic { width: 52px; height: 52px; border-radius: 16px; font-size: 26px; background: linear-gradient(160deg, rgb(126 214 190 / .28), rgb(35 128 108 / .14)); box-shadow: inset 0 1px 0 rgb(255 255 255 / .12); transition: transform .3s; }
 .card:hover .ic { transform: translateY(-3px) rotate(-6deg); }
 .btn { position: relative; overflow: hidden; }
 .btn.main::after { content: ""; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 35%, rgb(255 255 255 / .45) 50%, transparent 65%); translate: -120% 0; transition: translate .7s; pointer-events: none; }
 .btn.main:hover::after { translate: 120% 0; }
-.coin { transition: background .2s, color .2s, border-color .2s, transform .15s; }
+.coin { transition: transform .15s; }
 .coin:hover { color: var(--text); border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); transform: translateY(-1px); }
 /* the address keeps room for two lines and the note for two, so switching coins doesn't make the card jump */
 .addr { min-height: calc(2 * 1.45em + 22px); display: flex; align-items: center; }
@@ -193,12 +198,12 @@ html.fx .rise.in { opacity: 1; translate: none; }
 .pody[data-mood="petted"] .blush, .pody:hover .blush { opacity: .9; }
 .pody[data-mood="talking"] .mouth { display: none; }
 .pody[data-mood="talking"] .o-mouth { display: inline; }
-.pody-sound { position: absolute; left: -10px; top: -6px; z-index: 1; width: 28px; height: 28px; display: grid; place-items: center; padding: 0; border-radius: 50%; border: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 80%, transparent); backdrop-filter: blur(8px); color: var(--muted); cursor: pointer; opacity: 0; transition: opacity .2s; }
+.pody-sound { position: absolute; left: -10px; top: -6px; z-index: 1; width: 28px; height: 28px; display: grid; place-items: center; padding: 0; border-radius: 50%; border: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 80%, transparent); color: var(--muted); cursor: pointer; opacity: 0; transition: opacity .2s; }
 .pody-wrap:hover .pody-sound, .pody-sound:focus-visible { opacity: 1; }
 @media (hover: none) { .pody-sound { opacity: .8; } }
 .pody-sound svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .pody-sound svg path:first-child { fill: currentColor; stroke: none; }
-.pody-talk { position: relative; width: min(290px, calc(100vw - 40px)); padding: 14px 16px; border-radius: 18px; border: 1px solid var(--line); background: color-mix(in srgb, var(--bg2) 88%, transparent); backdrop-filter: blur(14px); box-shadow: var(--shadow); font-size: 15px; line-height: 1.5; transform-origin: 85% 100%; }
+.pody-talk { position: relative; width: min(290px, calc(100vw - 40px)); padding: 14px 16px; border-radius: 18px; border: 1px solid var(--line); background: color-mix(in srgb, var(--bg2) 88%, transparent); box-shadow: var(--shadow); font-size: 15px; line-height: 1.5; transform-origin: 85% 100%; }
 .pody-talk::after { content: ""; position: absolute; right: 38px; bottom: -7px; width: 14px; height: 14px; rotate: 45deg; background: inherit; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .pody-talk p { margin: 0 22px 0 0; }
 .pody-talk:not(.chat) form { display: none; }
@@ -207,7 +212,7 @@ html.fx .rise.in { opacity: 1; translate: none; }
 .pody-close { position: absolute; top: 4px; right: 8px; border: 0; background: none; color: var(--muted); font-size: 22px; line-height: 1; cursor: pointer; padding: 4px; }
 .pody-link { display: inline-block; margin-top: 4px; font-weight: 800; color: var(--accent); }
 .pody-heart { position: fixed; z-index: 30; color: #ff7b98; font-size: 20px; pointer-events: none; text-shadow: 0 2px 8px rgb(255 123 152 / .5); }
-.to-top { width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border-radius: 50%; border: 1px solid var(--line); background: color-mix(in srgb, var(--bg2) 85%, transparent); backdrop-filter: blur(10px); color: var(--text); cursor: pointer; box-shadow: 0 10px 26px rgb(0 0 0 / .3); opacity: 0; translate: 0 10px; pointer-events: none; transition: opacity .25s, translate .25s, border-color .2s; margin-right: 26px; }
+.to-top { width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border-radius: 50%; border: 1px solid var(--line); background: color-mix(in srgb, var(--bg2) 85%, transparent); color: var(--text); cursor: pointer; box-shadow: 0 10px 26px rgb(0 0 0 / .3); opacity: 0; translate: 0 10px; pointer-events: none; transition: opacity .25s, translate .25s; margin-right: 26px; }
 .to-top.show { opacity: 1; translate: none; pointer-events: auto; }
 .to-top:hover { border-color: var(--accent); }
 .to-top svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
@@ -250,14 +255,14 @@ html.fx .rise.in { opacity: 1; translate: none; }
 .ic.kaspi img { width: 34px; height: auto; }
 /* lists and fields follow the theme, the open list of a select too */
 :root { color-scheme: dark; }
-@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { color-scheme: light; } }
+ :root[data-theme="light"] { color-scheme: light; } 
 :root[data-theme="light"] { color-scheme: light; }
 select option { background: var(--bg2); color: var(--text); }
 /* the light theme: fields and the address on white, not grey */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) :is(input, textarea, select, .addr) { background: #fff; border-color: rgb(10 40 32 / .14); }
-  :root:not([data-theme="dark"]) .ic.kaspi { box-shadow: inset 0 0 0 1px rgb(10 40 32 / .1); }
-}
+
+  :root[data-theme="light"] :is(input, textarea, select, .addr) { background: #fff; border-color: rgb(10 40 32 / .14); }
+  :root[data-theme="light"] .ic.kaspi { box-shadow: inset 0 0 0 1px rgb(10 40 32 / .1); }
+
 
 /* ---------- phones ---------- */
 /* Android stretches the whole page, PoDy included, when you pull past the top or bottom: the page simply stops there */
@@ -296,7 +301,547 @@ h1, h2, h3 { overflow-wrap: break-word; -webkit-hyphens: auto; hyphens: auto; }
 .dl-count { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; margin: 8px 0 0; position: relative; z-index: 1; }
 .hero .dl-count, .page-hero .dl-count { justify-content: center; }
 .dl-count b { color: var(--text, inherit); font-weight: 800; }
-.live-dot { width: 8px; height: 8px; border-radius: 50%; background: #34c77b; box-shadow: 0 0 0 0 rgba(52, 199, 123, .5); animation: live 2.4s ease-out infinite; }
-@keyframes live { 70% { box-shadow: 0 0 0 7px rgba(52, 199, 123, 0); } 100% { box-shadow: 0 0 0 0 rgba(52, 199, 123, 0); } }
-@media (prefers-reduced-motion: reduce) { .live-dot { animation: none; } }
+.live-dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: #34c77b; }
+.live-dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: #34c77b; animation: live 2.4s ease-out infinite; }
+@keyframes live { 0% { transform: scale(1); opacity: .5; } 70%, 100% { transform: scale(2.75); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .live-dot::after { animation: none; opacity: 0; } }
 .stores + .dl-count { margin-top: 14px; padding-left: 6px; }
+
+/* ---------- PoDee drawn in code: the desktop, the island with its tabs, the dock, the widgets ---------- */
+/* everything is sized in em of the screen, so the picture scales as one; nothing here moves:
+   a card under the mouse shows its tab at once, a switch shows or hides its part */
+.desk { container-type: inline-size; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); text-align: left; }
+.desk .screen { position: relative; aspect-ratio: 16 / 5.2; min-height: 15em; max-width: 100%; font-size: clamp(9.5px, 1.55cqi, 15px); line-height: 1.45; color: #eef4f2;
+  background: radial-gradient(60% 80% at 15% 115%, rgb(255 255 255 / .22), transparent 70%),
+              radial-gradient(40% 60% at 92% 110%, rgb(255 255 255 / .18), transparent 70%),
+              linear-gradient(180deg, #6e9894, #557c78); }
+/* the widgets on top and the dock below always keep a gap between them */
+.desk.tall .screen { aspect-ratio: 16 / 7.6; min-height: 22em; }
+.d-taskbar { position: absolute; inset: auto 0 0; height: 2.6em; background: rgb(18 28 28 / .6); display: flex; justify-content: center; align-items: center; gap: .55em; }
+.d-taskbar i { width: 1.5em; height: 1.5em; border-radius: .35em; background: rgb(255 255 255 / .28); }
+.d-taskbar i:first-child { background: rgb(255 255 255 / .5); }
+
+/* PoDy beside the island */
+.d-pody { position: absolute; top: .7em; left: calc(50% + 16em); width: 3.6em; height: 2.4em; }
+
+/* the island, open, like the app */
+.isl { position: absolute; top: .7em; left: 50%; width: 30em; margin-left: -15em; height: 10.5em; border-radius: 1.6em; background: var(--ib); color: var(--ink); box-shadow: 0 .8em 2.4em rgb(0 0 0 / .35); }
+.isl-tabs { display: flex; align-items: center; gap: .25em; height: 2.6em; padding: 0 .8em; }
+.isl-tabs span { width: 2.2em; height: 1.8em; border-radius: .9em; display: grid; place-items: center; color: var(--mut); }
+.isl-tabs svg { width: 1.05em; height: 1.05em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.isl-tabs .heart { margin-left: auto; color: #ff7b98; }
+.isl-scene { display: none; height: 7.9em; padding: .4em 1.3em 1em; overflow: hidden; }
+.isl-scene .row { display: flex; align-items: center; gap: 1em; min-width: 0; }
+.isl-scene .t { min-width: 0; }
+.isl-scene .t b { display: block; font-weight: 800; font-size: 1.15em; line-height: 1.25; }
+.isl-scene .t span, .isl-scene .mut { color: var(--mut); font-size: .9em; }
+.isl-scene .ctl { display: flex; gap: .45em; margin-left: auto; flex: none; }
+.isl-scene .ctl i { width: 2.1em; height: 2.1em; border-radius: 50%; background: var(--chip); display: grid; place-items: center; }
+.isl-scene .ctl svg { width: .9em; height: .9em; fill: currentColor; }
+/* which tab is open: the picture's data-tab names it */
+.desk[data-tab="home"] .isl-scene.home, .desk[data-tab="music"] .isl-scene.music, .desk[data-tab="cal"] .isl-scene.cal,
+.desk[data-tab="chat"] .isl-scene.chat, .desk[data-tab="code"] .isl-scene.code, .desk[data-tab="water"] .isl-scene.water,
+.desk[data-tab="timer"] .isl-scene.timer { display: block; }
+.desk[data-tab="home"] .isl-tabs [data-t="home"], .desk[data-tab="music"] .isl-tabs [data-t="music"], .desk[data-tab="cal"] .isl-tabs [data-t="cal"],
+.desk[data-tab="chat"] .isl-tabs [data-t="chat"], .desk[data-tab="code"] .isl-tabs [data-t="code"], .desk[data-tab="water"] .isl-tabs [data-t="water"],
+.desk[data-tab="timer"] .isl-tabs [data-t="timer"] { background: var(--chip); color: var(--ink); }
+
+.isl-scene .big { font-size: 2.8em; font-weight: 900; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.isl-scene .soon { color: var(--warm); font-weight: 800; font-size: .9em; margin-top: .35em; }
+.isl-art { width: 5.2em; height: 5.2em; flex: none; border-radius: .8em; background: radial-gradient(circle at 30% 30%, #ffd6a3, transparent 55%), linear-gradient(135deg, #e0735f, #6a4fa8); }
+.isl-lyric { display: block; margin-top: .35em; color: var(--ok); font-weight: 800; font-size: .95em; }
+.isl-bar { height: .3em; border-radius: .15em; margin-top: .8em; background: linear-gradient(90deg, var(--ok) 40%, var(--line2) 40%); }
+.isl-week { display: grid; grid-template-columns: repeat(7, 1fr); gap: .35em; }
+.isl-week span { text-align: center; padding: .3em 0; border-radius: .6em; background: var(--chip); font-size: .9em; text-transform: capitalize; }
+.isl-week span b { display: block; font-size: 1.15em; }
+.isl-week span.today { background: #23806c; color: #fff; }
+.isl-meet { display: flex; align-items: center; gap: .6em; margin-top: .9em; font-weight: 700; }
+.isl-meet::before { content: ""; width: .6em; height: .6em; flex: none; border-radius: 50%; background: var(--warm); }
+.isl-meet em { font-style: normal; color: var(--warm); }
+.isl-say { display: flex; flex-direction: column; gap: .4em; }
+.isl-say p { margin: 0; padding: .3em .8em; border-radius: .9em; max-width: 80%; font-size: .95em; line-height: 1.35; }
+.isl-say .me { align-self: flex-end; background: #23806c; color: #fff; }
+.isl-say .ai { background: var(--chip); }
+.isl-input { margin-top: .5em; padding: .3em .8em; border-radius: 1em; border: 1px solid var(--line2); color: var(--mut); font-size: .9em; }
+.isl-term { font: 600 .92em/1.55 ui-monospace, Consolas, monospace; margin: .2em 0 0; }
+.isl-term p { margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.isl-term .ok { color: var(--ok); } .isl-term .q { color: var(--warm); }
+.isl-ask { display: flex; gap: .5em; margin-top: .45em; }
+.isl-ask span { padding: .2em .9em; border-radius: 1em; font-weight: 800; font-size: .9em; background: var(--chip); }
+.isl-ask span:first-child { background: var(--ok); color: #08231d; }
+.isl-drops { display: flex; gap: .55em; margin: .6em 0 .5em; }
+.isl-drops svg { width: 1.6em; height: 2.1em; }
+.isl-drops path { fill: none; stroke: var(--line2); stroke-width: 1.6; }
+.isl-drops .full path { fill: #5fb9e8; stroke: #5fb9e8; }
+.isl-pill { margin-left: auto; padding: .25em .9em; border-radius: 1em; background: #23806c; color: #fff; font-weight: 800; font-size: .9em; flex: none; }
+.isl-ring { position: relative; width: 6.2em; height: 6.2em; flex: none; }
+.isl-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.isl-ring circle { fill: none; stroke-width: 7; }
+.isl-ring .trk { stroke: var(--chip); }
+.isl-ring .arc { stroke: #f08a6c; stroke-linecap: round; stroke-dasharray: 165 264; }
+.isl-ring b { position: absolute; inset: 0; display: grid; place-items: center; font-size: 1.25em; font-weight: 900; font-variant-numeric: tabular-nums; }
+
+/* the cards that open the island's tabs */
+.feats { margin-top: 18px; }
+.feats .card { cursor: pointer; }
+.feats .card.on { border-color: color-mix(in srgb, var(--accent) 60%, var(--line)); }
+.feats .card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* on a phone the picture stays under the header while the cards scroll past it */
+@media (max-width: 860px) {
+  .desk.stick:has(+ .feats) { position: sticky; top: 72px; z-index: 3; }
+}
+
+/* the closed island: PoDee's thought cloud with the time */
+.isl-cloud { position: absolute; top: .9em; left: 50%; width: 9.2em; height: 3em; margin-left: -4.6em; }
+.isl-cloud i { position: absolute; border-radius: 50%; background: #b8ccc8; }
+.isl-cloud i:nth-child(1) { width: 3.2em; height: 3.2em; left: .3em; top: -.2em; }
+.isl-cloud i:nth-child(2) { width: 3.8em; height: 3.8em; left: 2.6em; top: -.9em; }
+.isl-cloud i:nth-child(3) { width: 3.1em; height: 3.1em; left: 5.6em; top: -.3em; }
+.isl-cloud i:nth-child(4) { width: 8.6em; height: 2em; left: .3em; top: .8em; border-radius: 1em; }
+.isl-cloud b { position: absolute; inset: .55em 0 auto; text-align: center; font-weight: 800; color: #24312e; font-variant-numeric: tabular-nums; }
+.mods .d-pody { left: calc(50% + 5.4em); top: .9em; }
+
+/* the dock, like PoDee's: a light pill, the apps you keep, a line, a dot under the running ones */
+.d-dock { position: absolute; left: 50%; bottom: 3.3em; display: flex; align-items: center; gap: .5em; padding: .5em .75em .75em; transform: translateX(-50%);
+  border-radius: 1.25em; background: rgb(238 243 240 / .82); border: 1px solid rgb(255 255 255 / .7);
+  box-shadow: 0 .6em 1.6em rgb(20 40 40 / .22), inset 0 1px 0 rgb(255 255 255 / .8); }
+.d-dock span { position: relative; width: 2.4em; height: 2.4em; flex: none; border-radius: .6em; transform-origin: 50% 100%; transition: transform .18s ease-out; }
+.d-dock span.round { border-radius: 50%; }
+.d-dock span svg { display: block; width: 100%; height: 100%; }
+.d-dock span.run::after { content: ""; position: absolute; left: 50%; bottom: -.5em; width: .28em; height: .28em; margin-left: -.14em; border-radius: 50%; background: #2f9e6a; }
+.d-dock .sep { width: 1px; height: 2em; margin: 0 .15em; background: rgb(30 50 50 / .18); }
+/* under the mouse an icon grows and its neighbours a little, and its name shows above, as in PoDee */
+.d-dock span:hover { transform: translateY(-.35em) scale(1.35); z-index: 1; }
+.d-dock span:has(+ span:hover), .d-dock span:hover + span { transform: translateY(-.12em) scale(1.12); }
+.d-dock span::before { content: attr(data-name); position: absolute; bottom: calc(100% + .45em); left: 50%; translate: -50% 0; padding: .1em .55em; border-radius: .55em;
+  background: rgb(20 24 26 / .88); color: #fff; font-size: .55em; font-weight: 700; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .15s; }
+.d-dock span:hover::before { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .d-dock span, .d-dock span::before { transition: none; } }
+
+/* the widgets on the desktop: the weather and today's tasks */
+.d-widgets { position: absolute; left: 1.2em; top: 1.2em; width: 12.5em; display: grid; gap: .7em; }
+.d-widgets > div { padding: .7em 1em; border-radius: 1em; background: rgb(14 22 22 / .55); border: 1px solid rgb(255 255 255 / .14); }
+.d-widgets .temp { font-size: 2em; font-weight: 900; line-height: 1.1; }
+.d-widgets .mut { color: #c9d8d4; font-size: .9em; }
+.d-widgets ul { list-style: none; margin: .3em 0 0; padding: 0; display: grid; gap: .25em; font-size: .9em; }
+.d-widgets li { display: flex; align-items: center; gap: .5em; min-width: 0; }
+.d-widgets li::before { content: ""; width: .8em; height: .8em; flex: none; border-radius: .25em; border: 1.5px solid #c9d8d4; }
+.d-widgets li.done { color: #c9d8d4; text-decoration: line-through; }
+.d-widgets li.done::before { background: #7ed6be; border-color: #7ed6be; }
+
+/* the switches above the picture */
+.mods-pick { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+.mods-pick button { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--text); font: inherit; font-weight: 800; cursor: pointer; }
+.mods-pick button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.mods-pick button i { position: relative; width: 34px; height: 20px; border-radius: 10px; background: rgb(127 127 127 / .35); flex: none; }
+.mods-pick button i::after { content: ""; position: absolute; left: 3px; top: 3px; width: 14px; height: 14px; border-radius: 50%; background: #fff; transition: transform .2s; }
+.mods-pick button[aria-pressed="true"] i { background: var(--accent2); }
+.mods-pick button[aria-pressed="true"] i::after { transform: translateX(14px); }
+.mods-note { color: var(--muted); font-size: 15px; margin: 12px 0 0; }
+@media (prefers-reduced-motion: reduce) { .mods-pick button i::after { transition: none; } }
+
+[hidden] { display: none !important; }
+.isl-term .top { display: flex; justify-content: space-between; gap: 1em; }
+.isl-term .top .mut { font-family: var(--font, Nunito, sans-serif); flex: none; }
+/* a narrow picture: PoDy steps aside where the island leaves no room, the closed island moves right of the widgets */
+@container (max-width: 560px) {
+  .desk.stick .d-pody { display: none; }
+  .mods .d-widgets { width: 11em; }
+  .mods .isl-cloud { left: auto; right: 4.8em; margin: 0; }
+  .mods .d-pody { left: auto; right: .8em; }
+  .desk.tall .screen { min-height: 25em; }
+}
+
+/* ---------- before / after: the same desktop without PoDee and with it ---------- */
+.ba { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.ba figure { margin: 0; min-width: 0; }
+.ba figcaption { margin-top: 12px; color: var(--muted); }
+.ba figcaption b { color: var(--text); margin-right: 4px; }
+.ba .desk .screen { min-height: 0; aspect-ratio: 16 / 10; font-size: clamp(7px, 1.9cqi, 12px); }
+/* the icons scattered on the desktop, in two columns */
+.d-icons { position: absolute; left: 1.2em; top: 1.2em; display: grid; grid-template-columns: repeat(2, 2.6em); gap: 1.1em .9em; }
+.d-icons i { width: 2.6em; height: 2.6em; border-radius: .5em; background: rgb(255 255 255 / .55); box-shadow: inset 0 -.8em 0 rgb(0 0 0 / .12); }
+.d-icons i:nth-child(3n) { background: #ffd166; } .d-icons i:nth-child(4n) { background: #6cb6ff; } .d-icons i:nth-child(5n) { background: #ff8a7a; }
+/* a crowded taskbar with the tray clock */
+.d-taskbar.full { justify-content: flex-start; padding: 0 1em; gap: .5em; }
+.d-taskbar.full i:first-child { margin-right: .5em; }
+.d-taskbar .tray { margin-left: auto; font-weight: 700; font-size: .9em; font-variant-numeric: tabular-nums; }
+/* after: the taskbar hides itself and the dock sits low */
+.d-dock.low { bottom: 1em; }
+.d-pody.near { left: calc(50% + 5.4em); top: .9em; }
+@media (max-width: 860px) { .ba { grid-template-columns: 1fr; } }
+
+/* ---------- install in three steps ---------- */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.steps h3 { display: flex; align-items: center; gap: 10px; }
+.steps .n { width: 30px; height: 30px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-size: 16px; font-weight: 900; }
+.mini { container-type: inline-size; margin: -6px -6px 16px; border-radius: 14px; overflow: hidden; overflow: clip; aspect-ratio: 4 / 3; max-width: calc(100% + 12px); display: grid; place-items: center;
+  background: linear-gradient(180deg, #6e9894, #557c78); font-size: clamp(8px, 4.4cqi, 13px); line-height: 1.4; color: #1b1b1b; }
+/* 1: the file in the browser's downloads */
+.m-dl { width: 88%; padding: .9em 1em; border-radius: .8em; background: #fbfbfb; box-shadow: 0 .6em 1.6em rgb(0 0 0 / .25); display: grid; gap: .6em; }
+.m-file { display: flex; align-items: center; gap: .6em; font-weight: 700; overflow-wrap: anywhere; min-width: 0; }
+.m-file i { width: 1.8em; height: 2.2em; flex: none; border-radius: .25em; background: linear-gradient(160deg, #8fe3cc, #23806c); }
+.m-open { justify-self: start; color: #0b63c4; font-weight: 700; }
+/* 2: SmartScreen, the blue window that comes before the installer */
+.m-ss { width: 92%; padding: .9em 1em; background: #0067b8; color: #fff; box-shadow: 0 .6em 1.6em rgb(0 0 0 / .3); font-size: .86em; }
+.m-ss b { display: block; font-size: 1.25em; line-height: 1.2; margin-bottom: .4em; font-weight: 600; }
+.m-ss p { margin: 0 0 .45em; }
+.m-ss .m-more { display: flex; align-items: center; gap: .4em; }
+.m-ss-btns { display: flex; justify-content: flex-end; gap: .5em; margin-top: .3em; }
+.m-ss-btns span { position: relative; padding: .35em .8em; border: 1px solid rgb(255 255 255 / .8); }
+.m-ss-btns .hot { background: #fff; color: #0067b8; font-weight: 700; }
+.tap { width: 1.5em; height: 1.5em; flex: none; display: inline-grid; place-items: center; border-radius: 50%; background: #f3c77a; color: #2a1d02; font-style: normal; font-weight: 900; font-size: .85em; }
+.m-ss-btns .tap { position: absolute; right: -.7em; top: -.7em; }
+/* 3: PoDee at the top of the desktop */
+.m-desk { position: relative; width: 100%; height: 100%; font-size: 1.1em; }
+.m-desk .isl-cloud { top: 1.4em; margin-left: -6.4em; }
+.m-desk .d-pody.near { left: calc(50% + 3.4em); top: 1.4em; }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
+.steps h3 { align-items: flex-start; }
+.steps .n { margin-top: 1px; }
+/* the island in a hero spans the column; its tab icons can be clicked too */
+.hero .desk { width: 100%; margin-top: 8px; }
+.isl-tabs span[data-t] { cursor: pointer; }
+
+/* ---------- more on the island: one small drawn scene in each card instead of a screenshot ---------- */
+.mini.pic { aspect-ratio: 16 / 10; color: #eef4f2; font-size: clamp(8px, 3.9cqi, 12.5px); }
+.m-isl { width: 90%; padding: .9em 1em; border-radius: 1.3em; background: #0a0e0f; box-shadow: 0 .6em 1.6em rgb(0 0 0 / .3); display: grid; gap: .55em; min-width: 0; }
+.m-isl span, .m-isl em { color: #8fa29d; font-style: normal; font-size: .9em; }
+.m-head { display: flex; justify-content: space-between; align-items: baseline; gap: .6em; }
+.m-head b { font-size: 1.15em; }
+/* screen time: an app, its bar, its minutes */
+.m-bars { display: grid; gap: .45em; }
+.m-bars p { margin: 0; display: grid; grid-template-columns: 5em 1fr auto; align-items: center; gap: .6em; }
+.m-bars span { color: #eef4f2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.m-bars i { height: .35em; border-radius: .2em; background: rgb(255 255 255 / .1); position: relative; overflow: hidden; }
+.m-bars i::after { content: ""; position: absolute; inset: 0; background: #7ed6be; transform-origin: left; transform: scaleX(var(--w)); }
+/* control: two sliders and four tiles */
+.m-slide { display: grid; grid-template-columns: 1.2em 1fr 1.6em; align-items: center; gap: .6em; }
+.m-slide svg { width: 1.2em; height: 1.2em; fill: none; stroke: #8fa29d; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.m-slide i { height: .35em; border-radius: .2em; background: rgb(255 255 255 / .12); position: relative; }
+.m-slide i::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: #7ed6be; transform-origin: left; transform: scaleX(var(--w)); }
+.m-slide b { font-size: .9em; text-align: right; font-variant-numeric: tabular-nums; }
+.m-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: .4em; }
+.m-tiles span { padding: .3em .6em; border-radius: .6em; background: rgb(255 255 255 / .07); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.m-tiles .on { background: #23806c; color: #fff; }
+/* eyes and breathing side by side */
+.m-two { grid-template-columns: 1fr 1fr; }
+.m-two > div { display: grid; gap: .3em; align-content: start; padding: .6em; border-radius: .8em; background: rgb(255 255 255 / .05); min-width: 0; }
+.m-two u { justify-self: start; text-decoration: none; padding: .2em .7em; border-radius: 1em; background: #23806c; color: #fff; font-size: .85em; font-weight: 700; }
+.m-breath i { width: 1.4em; height: 1.4em; border-radius: 50%; background: #7ed6be; }
+/* tasks */
+.m-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .3em; }
+.m-list li { display: flex; align-items: center; gap: .5em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.m-list li::before { content: ""; width: .85em; height: .85em; flex: none; border-radius: .25em; border: 1.5px solid #8fa29d; }
+.m-list .done { color: #8fa29d; text-decoration: line-through; }
+.m-list .done::before { background: #7ed6be; border-color: #7ed6be; }
+/* clipboard */
+.m-clips { display: grid; gap: .35em; }
+.m-clips p { margin: 0; padding: .3em .6em; border-radius: .6em; background: rgb(255 255 255 / .06); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.m-clips .img { display: flex; align-items: center; gap: .5em; }
+.m-clips .img i { width: 1.6em; height: 1.1em; flex: none; border-radius: .25em; background: linear-gradient(135deg, #e0735f, #6a4fa8); }
+/* notifications */
+.m-note { display: grid; grid-template-columns: 1.7em 1fr auto; align-items: center; gap: .6em; }
+.m-note > i { width: 1.7em; height: 1.7em; border-radius: .5em; display: grid; place-items: center; font-style: normal; font-weight: 900; font-size: .85em; color: #fff; }
+.m-note p { margin: 0; min-width: 0; display: grid; line-height: 1.25; }
+.m-note p span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.more-grid h3 { margin-top: 2px; }
+/* the widgets read at the size of the small pictures */
+@container (min-width: 440px) { .ba .d-widgets { font-size: 1.25em; } }
+
+
+/* ---------- the header: pages, «Download», the language with its flag; on a phone the pages fold into a menu ---------- */
+header .wrap { position: relative; gap: 14px; }
+nav { gap: 20px; }
+.hdr-dl { flex: none; padding: 8px 16px; font-size: 15px; box-shadow: none; }
+.hdr-dl .bi { fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.flag { width: 20px; height: 14px; flex: none; border-radius: 3px; box-shadow: 0 0 0 1px rgb(0 0 0 / .14); }
+.langs, .menu { position: relative; flex: none; }
+.langs summary, .menu summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 7px; border: 1px solid var(--line); border-radius: 999px; padding: 5px 10px; font-size: 13px; font-weight: 800; color: var(--muted); }
+.langs summary::-webkit-details-marker, .menu summary::-webkit-details-marker { display: none; }
+.langs summary:hover, .langs[open] summary, .menu summary:hover, .menu[open] summary { color: var(--text); }
+.langs summary:focus-visible, .menu summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.langs-list, .menu-list { position: absolute; right: 0; top: calc(100% + 8px); z-index: 10; width: max-content; max-width: calc(100vw - 32px); max-height: min(70vh, 540px); overflow-y: auto;
+  display: grid; gap: 2px; padding: 8px; border-radius: 16px; border: 1px solid var(--line); background: var(--bg2); box-shadow: var(--shadow); }
+.langs-list { grid-template-columns: 1fr 1fr; }
+.langs-list a, .menu-list a { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 10px; color: var(--text); font-weight: 700; font-size: 15px; white-space: nowrap; text-decoration: none; }
+.langs-list a:hover, .langs-list a:focus-visible, .menu-list a:hover, .menu-list a:focus-visible { background: color-mix(in srgb, var(--accent) 16%, transparent); }
+.langs-list a[aria-current], .menu-list a[aria-current] { color: var(--accent); }
+.menu { display: none; }
+.menu summary { padding: 6px; }
+.menu summary svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
+.menu-list { min-width: 220px; }
+
+@media (max-width: 480px) {
+  header .wrap { gap: 8px; }
+  .hdr-dl { padding: 7px 12px; font-size: 14px; gap: 6px; }
+  .langs summary span { display: none; }
+  .langs summary { padding: 6px 8px; }
+  .langs-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 370px) { .hdr-dl span { display: none; } }
+
+/* the notch over the site: PoDee's closed island hangs from the header, with PoDy beside it */
+
+/* ---------- PoDee's first screen: the words on the left, a monitor on the right where the notch opens ---------- */
+.hero2 { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 44px; align-items: center; justify-items: stretch; text-align: left; padding-top: 76px; }
+.hero2 h1 { font-size: clamp(32px, 4.2vw, 50px); }
+.hero2 .lead { margin-inline: 0; }
+.hero2 .btns, .hero2 .dl-count { justify-content: flex-start; }
+.cloud.sm { width: 64px; }
+.facts { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 10px; color: var(--muted); font-size: 15px; }
+.facts li { display: flex; gap: 10px; align-items: flex-start; }
+.facts svg { width: 18px; height: 18px; flex: none; margin-top: 3px; color: var(--accent); fill: currentColor; }
+.facts a { color: var(--accent); font-weight: 700; }
+@media (max-width: 960px) { .hero2 { grid-template-columns: minmax(0, 1fr); gap: 36px; } }
+
+.monitor { position: relative; padding-bottom: 30px; min-width: 0; }
+.monitor .desk { margin: 0; border: 10px solid #20282a; border-radius: 18px; box-shadow: 0 0 0 1px rgb(255 255 255 / .08), var(--shadow); }
+.monitor .stand { position: absolute; left: 50%; bottom: 0; width: 28%; height: 30px; translate: -50% 0; background: linear-gradient(#2a3335, #161c1e);
+  clip-path: polygon(32% 0, 68% 0, 78% 70%, 100% 70%, 100% 100%, 0 100%, 0 70%, 22% 70%); }
+.demo .screen { aspect-ratio: 16 / 10; min-height: 0; background-size: cover; background-position: center; font-size: clamp(6.5px, 1.95cqi, 14px); }
+.demo .d-dock { bottom: 1em; }
+/* closed: a small black notch with the time; open: the island with its tabs. Only transform and opacity move */
+.dn { position: absolute; top: 0; left: 50%; width: 0; }
+.dn-closed { position: absolute; top: 0; left: -5em; width: 10em; height: 2.4em; display: grid; place-items: center; border-radius: 0 0 1.2em 1.2em; background: #050708;
+  font-weight: 800; font-size: 1.05em; font-variant-numeric: tabular-nums; transform-origin: 50% 0; transition: opacity .2s .35s, transform .45s ease-in; }
+.dn-open { position: absolute; top: 0; left: -14em; width: 28em; transform-origin: 50% 0; transform: scale(.36, .23); opacity: 0; transition: transform .45s ease-in, opacity .2s .28s; }
+.dn-open .isl { position: static; width: auto; margin: 0; border-radius: 0 0 1.6em 1.6em; }
+.demo.open .dn-open { transform: none; opacity: 1; transition: transform .6s cubic-bezier(.3, 1.25, .5, 1), opacity .15s; }
+.demo.open .dn-closed { transform: scale(2.8, 4.4); opacity: 0; transition: opacity .15s, transform .6s cubic-bezier(.3, 1.25, .5, 1); }
+.demo .d-pody { left: calc(50% + 5.8em); top: .25em; transition: transform .6s cubic-bezier(.3, 1.25, .5, 1); }
+.demo.open .d-pody { transform: translateX(9em); }
+@media (prefers-reduced-motion: reduce) { .dn-open, .dn-closed, .demo .d-pody { transition: none !important; } }
+
+/* ---------- island shapes and PoDee's companions, drawn for the small pictures ---------- */
+.sh { --isl: #050708; --ink: #f2f6f5; position: absolute; top: 0; left: 50%; width: 6.6em; height: 2em; margin-left: -3.3em; display: grid; place-items: center;
+  background: var(--isl); color: var(--ink); font-weight: 800; font-variant-numeric: tabular-nums; border-radius: 0 0 1em 1em; }
+.sh.light { --isl: #f6f9f8; --ink: #1d2a27; }
+.sh b { position: relative; z-index: 1; }
+/* «Flare»: the edges flow out of the top of the screen */
+.sh.flare::before, .sh.flare::after { content: ""; position: absolute; top: 0; width: .9em; height: .9em; }
+.sh.flare::before { right: 100%; background: radial-gradient(circle at 0 100%, transparent .9em, var(--isl) calc(.9em + .5px)); }
+.sh.flare::after { left: 100%; background: radial-gradient(circle at 100% 100%, transparent .9em, var(--isl) calc(.9em + .5px)); }
+.sh.capsule { top: .5em; border-radius: 1em; }
+.sh.cloud { top: .7em; border-radius: 1em; }
+.sh.cloud::before, .sh.cloud::after { content: ""; position: absolute; border-radius: 50%; background: var(--isl); }
+.sh.cloud::before { width: 2.6em; height: 2.6em; left: .9em; top: -.8em; }
+.sh.cloud::after { width: 2em; height: 2em; left: 3.1em; top: -.5em; }
+.wp-pic > .ch, .mini > .ch { position: absolute; top: .1em; left: calc(50% + 4.3em); }
+.sh.capsule ~ .ch, .sh.cloud ~ .ch { top: .55em; }
+
+/* ---------- make it cleaner: three tips with a small picture each ---------- */
+.clean .card { display: block; }
+.card.link { text-decoration: none; color: inherit; }
+.card.link:hover h3 { color: var(--accent); }
+.mini.wall { position: relative; background-size: cover; background-position: center; }
+.mini .d-dock { font-size: .62em; bottom: 3.8em; }
+.m-gone { position: absolute; inset: auto 0 0; height: 2em; border-top: 1.5px dashed rgb(255 255 255 / .8); background: rgb(255 255 255 / .1); }
+.m-set { width: 86%; padding: .9em 1em; border-radius: 1em; background: #1b2224; color: #eef4f2; box-shadow: 0 .6em 1.6em rgb(0 0 0 / .3); display: grid; gap: .55em; min-width: 0; }
+.m-set b { font-size: 1.1em; }
+.m-set p { margin: 0; display: flex; align-items: center; gap: .6em; min-width: 0; }
+.m-set p span { min-width: 0; }
+.m-set p > i { position: relative; width: 2.2em; height: 1.2em; flex: none; border-radius: .6em; background: #23806c; }
+.m-set p > i::after { content: ""; position: absolute; top: .15em; right: .15em; width: .9em; height: .9em; border-radius: 50%; background: #fff; }
+.m-set .hot { padding: .35em .5em; margin: 0 -.5em; border-radius: .6em; background: rgb(126 214 190 / .14); }
+.m-set .tap { margin-left: auto; }
+
+/* ---------- what's new ---------- */
+.more-link { margin: 22px 0 0; }
+
+/* ---------- free wallpapers: each with its island shape and companion ---------- */
+.walls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.wp { margin: 0; min-width: 0; }
+.wp-pic { container-type: inline-size; position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 16px; border: 1px solid var(--line); background-size: cover; background-position: center;
+  font-size: clamp(7px, 3.4cqi, 13px); color: #eef4f2; }
+.wp figcaption { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; color: var(--muted); font-size: 14px; }
+.wp figcaption b { display: block; color: var(--text); font-size: 17px; }
+.wp .btn { flex: none; padding: 8px 14px; font-size: 14px; }
+#walls .note { margin: 18px 0 0; }
+@media (max-width: 860px) { .walls { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 540px) { .walls { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- the end: the companions in a row and one more button ---------- */
+.end-card { display: grid; justify-items: center; text-align: center; padding: 44px 24px; border-radius: 28px; border: 1px solid var(--line);
+  background: radial-gradient(80% 120% at 50% 0%, rgb(126 214 190 / .18), transparent 70%), var(--card); }
+.end-card .sub { margin: 0 auto 24px; }
+.end-card .btns { justify-content: center; }
+.end-chars { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 22px; margin-bottom: 18px; }
+.end-chars figure { margin: 0; display: grid; justify-items: center; gap: 6px; color: var(--muted); font-weight: 800; font-size: 14px; }
+
+/* ---------- guides ---------- */
+.guides { padding-top: 24px; }
+.gtabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.gtabs a { padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--muted); font-weight: 800; text-decoration: none; }
+.gtabs a:hover { color: var(--text); }
+.gtabs a[aria-selected="true"] { background: var(--accent); border-color: transparent; color: var(--on-accent); }
+.gopen { margin: 0 0 28px; }
+.gsteps { list-style: none; counter-reset: step; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.gsteps li { counter-increment: step; position: relative; padding: 20px 20px 20px 64px; border-radius: 20px; border: 1px solid var(--line); background: var(--card); }
+.gsteps li::before { content: counter(step); position: absolute; left: 20px; top: 19px; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-weight: 900; }
+.gsteps b { display: block; font-size: 18px; margin-bottom: 4px; }
+.gsteps p { margin: 0; color: var(--muted); overflow-wrap: anywhere; }
+.gsteps a, .guides .note a, .fixes .note a, .report .note a { color: var(--accent); font-weight: 700; }
+.keys { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 16px; }
+.keys p { margin: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; padding: 12px 16px; border-radius: 16px; border: 1px solid var(--line); }
+.keys span { margin-left: 6px; color: var(--muted); }
+kbd { padding: 4px 8px; border-radius: 8px; border: 1px solid var(--line); border-bottom-width: 2px; background: var(--card); font: 800 13px/1.2 Nunito, "Segoe UI", sans-serif; }
+.guides > .note:last-child { margin-top: 28px; }
+@media (max-width: 860px) { .gsteps, .keys { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- fixes: one card per version ---------- */
+.fixes { padding-top: 24px; display: grid; gap: 18px; }
+.rel { padding: 24px 28px; border-radius: 22px; border: 1px solid var(--line); background: var(--card); }
+.rel-head { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 10px; }
+.rel-head h2 { margin: 0; font-size: 28px; }
+.rel-head time { margin-left: auto; color: var(--muted); font-size: 15px; }
+.rel ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; color: var(--muted); }
+.rel li::marker { color: var(--accent); }
+@media (max-width: 480px) { .rel { padding: 18px; } }
+
+/* ---------- report a problem ---------- */
+.report { padding-top: 24px; max-width: 760px; }
+.kinds { display: flex; flex-wrap: wrap; gap: 8px; }
+.kinds label { position: relative; display: block; cursor: pointer; }
+.kinds input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.kinds span { display: inline-block; padding: 9px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--muted); font-weight: 800; }
+.kinds input:checked + span { background: var(--accent); border-color: transparent; color: var(--on-accent); }
+.kinds input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+.count { margin: -6px 0 0; text-align: right; }
+.report .card > .note { margin: 14px 0 0; }
+
+/* ---------- the theme, as in PoDee: a black island and the cat on the dark one, a glass island and PoDy on the light one ---------- */
+:is(.isl, .dn-closed, .hdr-isl) { --ib: #050708; --ink: #eef4f2; --mut: #8fa29d; --chip: rgb(255 255 255 / .09); --line2: rgb(255 255 255 / .14); --ok: #7ed6be; --warm: #f3c77a; }
+:root[data-theme="light"] :is(.isl, .dn-closed, .hdr-isl) { --ib: #f6f8f7; --ink: #16211f; --mut: #5d6f6a; --chip: rgb(10 40 32 / .07); --line2: rgb(10 40 32 / .16); --ok: #1f7a64; --warm: #a8650c; }
+:root[data-theme="light"] .isl { box-shadow: 0 .8em 2.4em rgb(20 50 45 / .22), inset 0 0 0 1px rgb(255 255 255 / .7); }
+.dn-closed { background: var(--ib); color: var(--ink); }
+:root[data-theme="dark"] .d-dock { background: rgb(24 30 32 / .82); border-color: rgb(255 255 255 / .12); box-shadow: 0 .6em 1.6em rgb(0 0 0 / .35); }
+:root[data-theme="dark"] .d-dock .sep { background: rgb(255 255 255 / .2); }
+
+/* the companions: one drawing each, sized by its kind */
+.char { display: block; }
+.char > span { display: contents; }
+.char svg { display: block; width: 100%; height: 100%; overflow: visible; }
+:root[data-theme="light"] .char .c-dark, :root[data-theme="dark"] .char .c-light { display: none; }
+/* the black cat on a dark page keeps a faint edge */
+.hdr-char .c-dark svg { filter: drop-shadow(0 0 1px rgb(255 255 255 / .45)); }
+.char.cloud { width: 3.2em; height: 2.3em; }
+.char.cat { width: 2.4em; height: 2.25em; }
+.char.blob { width: 2.6em; height: 2.3em; }
+.char.dot { width: .8em; height: .8em; }
+.char.shade { width: 1.9em; height: 1.9em; }
+.char.ghast { width: 1.8em; height: 2.6em; }
+.wp-pic > .ch.dot { top: 1.1em; left: calc(50% + 3.8em); }
+.wp-pic > .ch.blob { top: .45em; left: calc(50% + 2.7em); }
+.wp-pic > .ch.shade { top: .15em; }
+
+/* the end: each companion beside a small island */
+.seat { position: relative; width: 124px; height: 64px; border-radius: 16px; overflow: hidden; font-size: 13px; background: linear-gradient(180deg, #d8ebe8, #9fc6c1); }
+.seat.dark { background: linear-gradient(180deg, #8fb7b1, #557c78); }
+.seat .sh { top: 1em; left: 1em; width: 4.2em; height: 1.7em; margin: 0; }
+.seat .char { position: absolute; left: 5.9em; top: .8em; animation: bob 3.2s ease-in-out infinite; }
+.seat .char.dot { top: 1.45em; left: 5.7em; }
+.seat .char.blob { left: 4.7em; top: .65em; animation: none; }
+.seat .char.cat { animation-delay: -.8s; } .seat .char.shade { animation-delay: -1.6s; } .seat .char.ghast { top: .5em; animation-delay: -2.4s; }
+@keyframes bob { 50% { transform: translateY(-.2em); } }
+@media (prefers-reduced-motion: reduce) { .seat .char { animation: none; } }
+
+/* the corner companion: the cat on the dark theme */
+:root[data-theme="dark"] .pb-cloud, :root[data-theme="light"] .pb-cat { display: none; }
+.pb-cat .cat-head { fill: #050708; stroke: rgb(255 255 255 / .28); stroke-width: .6; }
+.cat-face .ring { fill: #f6f3ea; }
+.cat-face .core { fill: #050708; }
+.cat-face .glint { fill: #f6f3ea; }
+.pody-face.cat-face :is(.happy, .cross, .dizzy, .mouth) { stroke: #f6f3ea; }
+.pody-face.cat-face .o-mouth { fill: #f6f3ea; }
+
+/* ---------- the header: the pages sit in one island hanging from the top, like PoDee's ---------- */
+header .wrap { gap: 10px; }
+.brand { flex: none; }
+.hdr-mid { display: flex; align-items: flex-start; align-self: flex-start; gap: 8px; margin: 0 auto; min-width: 0; }
+nav.hdr-isl { margin: 0; display: flex; align-items: center; gap: 2px; height: 46px; padding: 0 8px; border-radius: 0 0 22px 22px; background: var(--ib); color: var(--ink); font-size: 15px; }
+:root[data-theme="dark"] .hdr-isl { box-shadow: 0 0 0 1px rgb(255 255 255 / .08), 0 10px 26px rgb(0 0 0 / .35); }
+:root[data-theme="light"] .hdr-isl { box-shadow: 0 0 0 1px rgb(10 40 32 / .08), 0 10px 26px rgb(20 60 50 / .14); }
+.hdr-isl a { padding: 6px 11px; border-radius: 999px; color: var(--mut); font-weight: 800; text-decoration: none; white-space: nowrap; }
+.hdr-isl a:hover { color: var(--ink); }
+.hdr-isl a[aria-current] { color: var(--ink); background: var(--chip); }
+.hdr-char { width: 34px; height: 25px; margin-top: 9px; flex: none; }
+.theme-btn { flex: none; width: 36px; height: 36px; display: grid; place-items: center; padding: 0; border-radius: 50%; border: 1px solid var(--line); background: none; color: var(--muted); cursor: pointer; }
+.theme-btn:hover { color: var(--text); }
+.theme-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+[data-theme-toggle] svg { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+:root[data-theme="light"] [data-theme-toggle] .sun, :root[data-theme="dark"] [data-theme-toggle] .moon { display: none; }
+.menu-list button { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border: 0; border-top: 1px solid var(--line); border-radius: 0 0 10px 10px; background: none; color: var(--text); font: inherit; font-weight: 700; font-size: 15px; text-align: left; cursor: pointer; }
+.menu-list button:hover { background: color-mix(in srgb, var(--accent) 16%, transparent); }
+/* on a phone the island's pages go to the menu; PoDy (or the cat) stays */
+@media (max-width: 760px) {
+  nav.hdr-isl { display: none; }
+  .menu { display: block; }
+}
+@media (max-width: 640px) {
+  .brand span, .hdr-dl span { display: none; }
+  .hdr-dl { padding: 9px; }
+  header .wrap { gap: 6px; }
+}
+@media (max-width: 480px) { .theme-btn { display: none; } }
+
+/* ---------- PoDee's first screen, compact: a small line with the icon, the title, two buttons, the facts as chips ---------- */
+.hero2 { padding-top: 56px; }
+.eyebrow { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.eyebrow img { width: 40px; height: 40px; }
+.eyebrow b { font-size: 19px; font-weight: 900; }
+.hero2 .eyebrow .dl-count { margin: 0 0 0 4px; padding: 3px 11px; border-radius: 999px; border: 1px solid var(--line); }
+.hero2 h1 { margin: 14px 0 12px; font-size: clamp(30px, 3.8vw, 46px); }
+.hero2 .lead { font-size: 17px; margin-bottom: 22px; }
+.hero2 .btns { gap: 10px; }
+.hero2 .btn { padding: 12px 18px; font-size: 16px; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; font-size: 13.5px; }
+.facts li { align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); }
+.facts li a { display: flex; align-items: center; gap: 7px; color: inherit; font-weight: 600; text-decoration: none; }
+.facts li:has(a):hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); color: var(--text); }
+.facts svg { width: 15px; height: 15px; margin: 0; }
+.hdr-char .c-light svg { filter: drop-shadow(0 1px 2px rgb(20 60 50 / .4)); }
+.facts { gap: 6px; font-size: 13px; }
+.facts li { padding: 5px 10px; }
+/* the header's island floats like PoDee's «Капсула»: fully rounded, a little below the edge */
+.hdr-mid { align-self: center; align-items: center; }
+nav.hdr-isl { height: 42px; padding: 0 6px; border-radius: 999px; }
+.hdr-char { margin-top: 0; }
+
+/* the «Пиксели» theme's island, as in PoDee: a block of stone, square corners, a bevel and a black edge;
+   the light variant washes the block light, like the inventory window */
+.sh.pixel { border-radius: 0; color: #f4f4f4; font-family: "Press Start 2P", monospace; font-size: .62em; height: 3.2em; width: 10.6em; margin-left: -5.3em;
+  background: linear-gradient(rgb(0 0 0 / .32), rgb(0 0 0 / .4)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='1' height='1' fill='%23777777'/%3E%3Crect x='1' y='0' width='1' height='1' fill='%23939393'/%3E%3Crect x='2' y='0' width='1' height='1' fill='%23939393'/%3E%3Crect x='3' y='0' width='1' height='1' fill='%23777777'/%3E%3Crect x='4' y='0' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='5' y='0' width='1' height='1' fill='%23939393'/%3E%3Crect x='6' y='0' width='1' height='1' fill='%23888888'/%3E%3Crect x='7' y='0' width='1' height='1' fill='%23939393'/%3E%3Crect x='8' y='0' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='9' y='0' width='1' height='1' fill='%23939393'/%3E%3Crect x='10' y='0' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='11' y='0' width='1' height='1' fill='%23888888'/%3E%3Crect x='12' y='0' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='13' y='0' width='1' height='1' fill='%23939393'/%3E%3Crect x='14' y='0' width='1' height='1' fill='%23777777'/%3E%3Crect x='15' y='0' width='1' height='1' fill='%23777777'/%3E%3Crect x='0' y='1' width='1' height='1' fill='%23888888'/%3E%3Crect x='1' y='1' width='1' height='1' fill='%23939393'/%3E%3Crect x='2' y='1' width='1' height='1' fill='%23939393'/%3E%3Crect x='3' y='1' width='1' height='1' fill='%23888888'/%3E%3Crect x='4' y='1' width='1' height='1' fill='%23888888'/%3E%3Crect x='5' y='1' width='1' height='1' fill='%23777777'/%3E%3Crect x='6' y='1' width='1' height='1' fill='%23777777'/%3E%3Crect x='7' y='1' width='1' height='1' fill='%23777777'/%3E%3Crect x='8' y='1' width='1' height='1' fill='%23939393'/%3E%3Crect x='9' y='1' width='1' height='1' fill='%23888888'/%3E%3Crect x='10' y='1' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='11' y='1' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='12' y='1' width='1' height='1' fill='%23777777'/%3E%3Crect x='13' y='1' width='1' height='1' fill='%23939393'/%3E%3Crect x='14' y='1' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='15' y='1' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='0' y='2' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='1' y='2' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='2' y='2' width='1' height='1' fill='%23888888'/%3E%3Crect x='3' y='2' width='1' height='1' fill='%23939393'/%3E%3Crect x='4' y='2' width='1' height='1' fill='%23888888'/%3E%3Crect x='5' y='2' width='1' height='1' fill='%23888888'/%3E%3Crect x='6' y='2' width='1' height='1' fill='%23888888'/%3E%3Crect x='7' y='2' width='1' height='1' fill='%23939393'/%3E%3Crect x='8' y='2' width='1' height='1' fill='%23888888'/%3E%3Crect x='9' y='2' width='1' height='1' fill='%23777777'/%3E%3Crect x='10' y='2' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='11' y='2' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='12' y='2' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='13' y='2' width='1' height='1' fill='%23777777'/%3E%3Crect x='14' y='2' width='1' height='1' fill='%23888888'/%3E%3Crect x='15' y='2' width='1' height='1' fill='%23777777'/%3E%3Crect x='0' y='3' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='1' y='3' width='1' height='1' fill='%23888888'/%3E%3Crect x='2' y='3' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='3' y='3' width='1' height='1' fill='%23888888'/%3E%3Crect x='4' y='3' width='1' height='1' fill='%23939393'/%3E%3Crect x='5' y='3' width='1' height='1' fill='%23888888'/%3E%3Crect x='6' y='3' width='1' height='1' fill='%23939393'/%3E%3Crect x='7' y='3' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='8' y='3' width='1' height='1' fill='%23939393'/%3E%3Crect x='9' y='3' width='1' height='1' fill='%23939393'/%3E%3Crect x='10' y='3' width='1' height='1' fill='%23888888'/%3E%3Crect x='11' y='3' width='1' height='1' fill='%23939393'/%3E%3Crect x='12' y='3' width='1' height='1' fill='%23777777'/%3E%3Crect x='13' y='3' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='14' y='3' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='15' y='3' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='0' y='4' width='1' height='1' fill='%23939393'/%3E%3Crect x='1' y='4' width='1' height='1' fill='%23777777'/%3E%3Crect x='2' y='4' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='3' y='4' width='1' height='1' fill='%23939393'/%3E%3Crect x='4' y='4' width='1' height='1' fill='%23939393'/%3E%3Crect x='5' y='4' width='1' height='1' fill='%23939393'/%3E%3Crect x='6' y='4' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='7' y='4' width='1' height='1' fill='%23777777'/%3E%3Crect x='8' y='4' width='1' height='1' fill='%23939393'/%3E%3Crect x='9' y='4' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='10' y='4' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='11' y='4' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='12' y='4' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='13' y='4' width='1' height='1' fill='%23888888'/%3E%3Crect x='14' y='4' width='1' height='1' fill='%23888888'/%3E%3Crect x='15' y='4' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='0' y='5' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='1' y='5' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='2' y='5' width='1' height='1' fill='%23888888'/%3E%3Crect x='3' y='5' width='1' height='1' fill='%23777777'/%3E%3Crect x='4' y='5' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='5' y='5' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='6' y='5' width='1' height='1' fill='%23888888'/%3E%3Crect x='7' y='5' width='1' height='1' fill='%23888888'/%3E%3Crect x='8' y='5' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='9' y='5' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='10' y='5' width='1' height='1' fill='%23939393'/%3E%3Crect x='11' y='5' width='1' height='1' fill='%23939393'/%3E%3Crect x='12' y='5' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='13' y='5' width='1' height='1' fill='%23888888'/%3E%3Crect x='14' y='5' width='1' height='1' fill='%23939393'/%3E%3Crect x='15' y='5' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='0' y='6' width='1' height='1' fill='%23939393'/%3E%3Crect x='1' y='6' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='2' y='6' width='1' height='1' fill='%23939393'/%3E%3Crect x='3' y='6' width='1' height='1' fill='%23777777'/%3E%3Crect x='4' y='6' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='5' y='6' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='6' y='6' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='7' y='6' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='8' y='6' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='9' y='6' width='1' height='1' fill='%23939393'/%3E%3Crect x='10' y='6' width='1' height='1' fill='%23939393'/%3E%3Crect x='11' y='6' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='12' y='6' width='1' height='1' fill='%23777777'/%3E%3Crect x='13' y='6' width='1' height='1' fill='%23888888'/%3E%3Crect x='14' y='6' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='15' y='6' width='1' height='1' fill='%23939393'/%3E%3Crect x='0' y='7' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='1' y='7' width='1' height='1' fill='%23777777'/%3E%3Crect x='2' y='7' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='3' y='7' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='4' y='7' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='5' y='7' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='6' y='7' width='1' height='1' fill='%23777777'/%3E%3Crect x='7' y='7' width='1' height='1' fill='%23888888'/%3E%3Crect x='8' y='7' width='1' height='1' fill='%23888888'/%3E%3Crect x='9' y='7' width='1' height='1' fill='%23888888'/%3E%3Crect x='10' y='7' width='1' height='1' fill='%23939393'/%3E%3Crect x='11' y='7' width='1' height='1' fill='%23888888'/%3E%3Crect x='12' y='7' width='1' height='1' fill='%23939393'/%3E%3Crect x='13' y='7' width='1' height='1' fill='%23939393'/%3E%3Crect x='14' y='7' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='15' y='7' width='1' height='1' fill='%23939393'/%3E%3Crect x='0' y='8' width='1' height='1' fill='%23939393'/%3E%3Crect x='1' y='8' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='2' y='8' width='1' height='1' fill='%23888888'/%3E%3Crect x='3' y='8' width='1' height='1' fill='%23777777'/%3E%3Crect x='4' y='8' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='5' y='8' width='1' height='1' fill='%23888888'/%3E%3Crect x='6' y='8' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='7' y='8' width='1' height='1' fill='%23939393'/%3E%3Crect x='8' y='8' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='9' y='8' width='1' height='1' fill='%23939393'/%3E%3Crect x='10' y='8' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='11' y='8' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='12' y='8' width='1' height='1' fill='%23888888'/%3E%3Crect x='13' y='8' width='1' height='1' fill='%23939393'/%3E%3Crect x='14' y='8' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='15' y='8' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='0' y='9' width='1' height='1' fill='%23888888'/%3E%3Crect x='1' y='9' width='1' height='1' fill='%23939393'/%3E%3Crect x='2' y='9' width='1' height='1' fill='%23939393'/%3E%3Crect x='3' y='9' width='1' height='1' fill='%23777777'/%3E%3Crect x='4' y='9' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='5' y='9' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='6' y='9' width='1' height='1' fill='%23888888'/%3E%3Crect x='7' y='9' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='8' y='9' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='9' y='9' width='1' height='1' fill='%23939393'/%3E%3Crect x='10' y='9' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='11' y='9' width='1' height='1' fill='%23888888'/%3E%3Crect x='12' y='9' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='13' y='9' width='1' height='1' fill='%23939393'/%3E%3Crect x='14' y='9' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='15' y='9' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='0' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='1' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='2' y='10' width='1' height='1' fill='%23888888'/%3E%3Crect x='3' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='4' y='10' width='1' height='1' fill='%23939393'/%3E%3Crect x='5' y='10' width='1' height='1' fill='%23939393'/%3E%3Crect x='6' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='7' y='10' width='1' height='1' fill='%23777777'/%3E%3Crect x='8' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='9' y='10' width='1' height='1' fill='%23777777'/%3E%3Crect x='10' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='11' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='12' y='10' width='1' height='1' fill='%23939393'/%3E%3Crect x='13' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='14' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='15' y='10' width='1' height='1' fill='%23888888'/%3E%3Crect x='0' y='11' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='1' y='11' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='2' y='11' width='1' height='1' fill='%23939393'/%3E%3Crect x='3' y='11' width='1' height='1' fill='%23777777'/%3E%3Crect x='4' y='11' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='5' y='11' width='1' height='1' fill='%23939393'/%3E%3Crect x='6' y='11' width='1' height='1' fill='%23777777'/%3E%3Crect x='7' y='11' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='8' y='11' width='1' height='1' fill='%23777777'/%3E%3Crect x='9' y='11' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='10' y='11' width='1' height='1' fill='%23777777'/%3E%3Crect x='11' y='11' width='1' height='1' fill='%23888888'/%3E%3Crect x='12' y='11' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='13' y='11' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='14' y='11' width='1' height='1' fill='%23939393'/%3E%3Crect x='15' y='11' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='0' y='12' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='1' y='12' width='1' height='1' fill='%23777777'/%3E%3Crect x='2' y='12' width='1' height='1' fill='%23888888'/%3E%3Crect x='3' y='12' width='1' height='1' fill='%23777777'/%3E%3Crect x='4' y='12' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='5' y='12' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='6' y='12' width='1' height='1' fill='%23777777'/%3E%3Crect x='7' y='12' width='1' height='1' fill='%23939393'/%3E%3Crect x='8' y='12' width='1' height='1' fill='%23888888'/%3E%3Crect x='9' y='12' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='10' y='12' width='1' height='1' fill='%23777777'/%3E%3Crect x='11' y='12' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='12' y='12' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='13' y='12' width='1' height='1' fill='%23939393'/%3E%3Crect x='14' y='12' width='1' height='1' fill='%23777777'/%3E%3Crect x='15' y='12' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='0' y='13' width='1' height='1' fill='%23939393'/%3E%3Crect x='1' y='13' width='1' height='1' fill='%23777777'/%3E%3Crect x='2' y='13' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='3' y='13' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='4' y='13' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='5' y='13' width='1' height='1' fill='%23939393'/%3E%3Crect x='6' y='13' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='7' y='13' width='1' height='1' fill='%23939393'/%3E%3Crect x='8' y='13' width='1' height='1' fill='%23777777'/%3E%3Crect x='9' y='13' width='1' height='1' fill='%23888888'/%3E%3Crect x='10' y='13' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='11' y='13' width='1' height='1' fill='%23939393'/%3E%3Crect x='12' y='13' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='13' y='13' width='1' height='1' fill='%23888888'/%3E%3Crect x='14' y='13' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='15' y='13' width='1' height='1' fill='%23888888'/%3E%3Crect x='0' y='14' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='1' y='14' width='1' height='1' fill='%23888888'/%3E%3Crect x='2' y='14' width='1' height='1' fill='%23939393'/%3E%3Crect x='3' y='14' width='1' height='1' fill='%23888888'/%3E%3Crect x='4' y='14' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='5' y='14' width='1' height='1' fill='%23888888'/%3E%3Crect x='6' y='14' width='1' height='1' fill='%23777777'/%3E%3Crect x='7' y='14' width='1' height='1' fill='%23777777'/%3E%3Crect x='8' y='14' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='9' y='14' width='1' height='1' fill='%23888888'/%3E%3Crect x='10' y='14' width='1' height='1' fill='%23939393'/%3E%3Crect x='11' y='14' width='1' height='1' fill='%23939393'/%3E%3Crect x='12' y='14' width='1' height='1' fill='%23888888'/%3E%3Crect x='13' y='14' width='1' height='1' fill='%23939393'/%3E%3Crect x='14' y='14' width='1' height='1' fill='%23777777'/%3E%3Crect x='15' y='14' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='0' y='15' width='1' height='1' fill='%23888888'/%3E%3Crect x='1' y='15' width='1' height='1' fill='%23939393'/%3E%3Crect x='2' y='15' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='3' y='15' width='1' height='1' fill='%23939393'/%3E%3Crect x='4' y='15' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='5' y='15' width='1' height='1' fill='%23777777'/%3E%3Crect x='6' y='15' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='7' y='15' width='1' height='1' fill='%23939393'/%3E%3Crect x='8' y='15' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='9' y='15' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='10' y='15' width='1' height='1' fill='%23777777'/%3E%3Crect x='11' y='15' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='12' y='15' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='13' y='15' width='1' height='1' fill='%23939393'/%3E%3Crect x='14' y='15' width='1' height='1' fill='%23777777'/%3E%3Crect x='15' y='15' width='1' height='1' fill='%23888888'/%3E%3C/svg%3E") 0 0 / 2.4em 2.4em; image-rendering: pixelated; text-shadow: .16em .16em 0 #3f3f3f;
+  box-shadow: inset .25em .25em 0 rgb(255 255 255 / .2), inset -.25em -.25em 0 rgb(0 0 0 / .5), 0 0 0 .16em #0b0b0b; }
+.sh.pixel.light { color: #2a2a2a; text-shadow: none; background: linear-gradient(rgb(255 255 255 / .42), rgb(235 235 235 / .5)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='1' height='1' fill='%23777777'/%3E%3Crect x='1' y='0' width='1' height='1' fill='%23939393'/%3E%3Crect x='2' y='0' width='1' height='1' fill='%23939393'/%3E%3Crect x='3' y='0' width='1' height='1' fill='%23777777'/%3E%3Crect x='4' y='0' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='5' y='0' width='1' height='1' fill='%23939393'/%3E%3Crect x='6' y='0' width='1' height='1' fill='%23888888'/%3E%3Crect x='7' y='0' width='1' height='1' fill='%23939393'/%3E%3Crect x='8' y='0' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='9' y='0' width='1' height='1' fill='%23939393'/%3E%3Crect x='10' y='0' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='11' y='0' width='1' height='1' fill='%23888888'/%3E%3Crect x='12' y='0' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='13' y='0' width='1' height='1' fill='%23939393'/%3E%3Crect x='14' y='0' width='1' height='1' fill='%23777777'/%3E%3Crect x='15' y='0' width='1' height='1' fill='%23777777'/%3E%3Crect x='0' y='1' width='1' height='1' fill='%23888888'/%3E%3Crect x='1' y='1' width='1' height='1' fill='%23939393'/%3E%3Crect x='2' y='1' width='1' height='1' fill='%23939393'/%3E%3Crect x='3' y='1' width='1' height='1' fill='%23888888'/%3E%3Crect x='4' y='1' width='1' height='1' fill='%23888888'/%3E%3Crect x='5' y='1' width='1' height='1' fill='%23777777'/%3E%3Crect x='6' y='1' width='1' height='1' fill='%23777777'/%3E%3Crect x='7' y='1' width='1' height='1' fill='%23777777'/%3E%3Crect x='8' y='1' width='1' height='1' fill='%23939393'/%3E%3Crect x='9' y='1' width='1' height='1' fill='%23888888'/%3E%3Crect x='10' y='1' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='11' y='1' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='12' y='1' width='1' height='1' fill='%23777777'/%3E%3Crect x='13' y='1' width='1' height='1' fill='%23939393'/%3E%3Crect x='14' y='1' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='15' y='1' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='0' y='2' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='1' y='2' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='2' y='2' width='1' height='1' fill='%23888888'/%3E%3Crect x='3' y='2' width='1' height='1' fill='%23939393'/%3E%3Crect x='4' y='2' width='1' height='1' fill='%23888888'/%3E%3Crect x='5' y='2' width='1' height='1' fill='%23888888'/%3E%3Crect x='6' y='2' width='1' height='1' fill='%23888888'/%3E%3Crect x='7' y='2' width='1' height='1' fill='%23939393'/%3E%3Crect x='8' y='2' width='1' height='1' fill='%23888888'/%3E%3Crect x='9' y='2' width='1' height='1' fill='%23777777'/%3E%3Crect x='10' y='2' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='11' y='2' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='12' y='2' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='13' y='2' width='1' height='1' fill='%23777777'/%3E%3Crect x='14' y='2' width='1' height='1' fill='%23888888'/%3E%3Crect x='15' y='2' width='1' height='1' fill='%23777777'/%3E%3Crect x='0' y='3' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='1' y='3' width='1' height='1' fill='%23888888'/%3E%3Crect x='2' y='3' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='3' y='3' width='1' height='1' fill='%23888888'/%3E%3Crect x='4' y='3' width='1' height='1' fill='%23939393'/%3E%3Crect x='5' y='3' width='1' height='1' fill='%23888888'/%3E%3Crect x='6' y='3' width='1' height='1' fill='%23939393'/%3E%3Crect x='7' y='3' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='8' y='3' width='1' height='1' fill='%23939393'/%3E%3Crect x='9' y='3' width='1' height='1' fill='%23939393'/%3E%3Crect x='10' y='3' width='1' height='1' fill='%23888888'/%3E%3Crect x='11' y='3' width='1' height='1' fill='%23939393'/%3E%3Crect x='12' y='3' width='1' height='1' fill='%23777777'/%3E%3Crect x='13' y='3' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='14' y='3' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='15' y='3' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='0' y='4' width='1' height='1' fill='%23939393'/%3E%3Crect x='1' y='4' width='1' height='1' fill='%23777777'/%3E%3Crect x='2' y='4' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='3' y='4' width='1' height='1' fill='%23939393'/%3E%3Crect x='4' y='4' width='1' height='1' fill='%23939393'/%3E%3Crect x='5' y='4' width='1' height='1' fill='%23939393'/%3E%3Crect x='6' y='4' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='7' y='4' width='1' height='1' fill='%23777777'/%3E%3Crect x='8' y='4' width='1' height='1' fill='%23939393'/%3E%3Crect x='9' y='4' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='10' y='4' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='11' y='4' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='12' y='4' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='13' y='4' width='1' height='1' fill='%23888888'/%3E%3Crect x='14' y='4' width='1' height='1' fill='%23888888'/%3E%3Crect x='15' y='4' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='0' y='5' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='1' y='5' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='2' y='5' width='1' height='1' fill='%23888888'/%3E%3Crect x='3' y='5' width='1' height='1' fill='%23777777'/%3E%3Crect x='4' y='5' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='5' y='5' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='6' y='5' width='1' height='1' fill='%23888888'/%3E%3Crect x='7' y='5' width='1' height='1' fill='%23888888'/%3E%3Crect x='8' y='5' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='9' y='5' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='10' y='5' width='1' height='1' fill='%23939393'/%3E%3Crect x='11' y='5' width='1' height='1' fill='%23939393'/%3E%3Crect x='12' y='5' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='13' y='5' width='1' height='1' fill='%23888888'/%3E%3Crect x='14' y='5' width='1' height='1' fill='%23939393'/%3E%3Crect x='15' y='5' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='0' y='6' width='1' height='1' fill='%23939393'/%3E%3Crect x='1' y='6' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='2' y='6' width='1' height='1' fill='%23939393'/%3E%3Crect x='3' y='6' width='1' height='1' fill='%23777777'/%3E%3Crect x='4' y='6' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='5' y='6' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='6' y='6' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='7' y='6' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='8' y='6' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='9' y='6' width='1' height='1' fill='%23939393'/%3E%3Crect x='10' y='6' width='1' height='1' fill='%23939393'/%3E%3Crect x='11' y='6' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='12' y='6' width='1' height='1' fill='%23777777'/%3E%3Crect x='13' y='6' width='1' height='1' fill='%23888888'/%3E%3Crect x='14' y='6' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='15' y='6' width='1' height='1' fill='%23939393'/%3E%3Crect x='0' y='7' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='1' y='7' width='1' height='1' fill='%23777777'/%3E%3Crect x='2' y='7' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='3' y='7' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='4' y='7' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='5' y='7' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='6' y='7' width='1' height='1' fill='%23777777'/%3E%3Crect x='7' y='7' width='1' height='1' fill='%23888888'/%3E%3Crect x='8' y='7' width='1' height='1' fill='%23888888'/%3E%3Crect x='9' y='7' width='1' height='1' fill='%23888888'/%3E%3Crect x='10' y='7' width='1' height='1' fill='%23939393'/%3E%3Crect x='11' y='7' width='1' height='1' fill='%23888888'/%3E%3Crect x='12' y='7' width='1' height='1' fill='%23939393'/%3E%3Crect x='13' y='7' width='1' height='1' fill='%23939393'/%3E%3Crect x='14' y='7' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='15' y='7' width='1' height='1' fill='%23939393'/%3E%3Crect x='0' y='8' width='1' height='1' fill='%23939393'/%3E%3Crect x='1' y='8' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='2' y='8' width='1' height='1' fill='%23888888'/%3E%3Crect x='3' y='8' width='1' height='1' fill='%23777777'/%3E%3Crect x='4' y='8' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='5' y='8' width='1' height='1' fill='%23888888'/%3E%3Crect x='6' y='8' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='7' y='8' width='1' height='1' fill='%23939393'/%3E%3Crect x='8' y='8' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='9' y='8' width='1' height='1' fill='%23939393'/%3E%3Crect x='10' y='8' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='11' y='8' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='12' y='8' width='1' height='1' fill='%23888888'/%3E%3Crect x='13' y='8' width='1' height='1' fill='%23939393'/%3E%3Crect x='14' y='8' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='15' y='8' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='0' y='9' width='1' height='1' fill='%23888888'/%3E%3Crect x='1' y='9' width='1' height='1' fill='%23939393'/%3E%3Crect x='2' y='9' width='1' height='1' fill='%23939393'/%3E%3Crect x='3' y='9' width='1' height='1' fill='%23777777'/%3E%3Crect x='4' y='9' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='5' y='9' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='6' y='9' width='1' height='1' fill='%23888888'/%3E%3Crect x='7' y='9' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='8' y='9' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='9' y='9' width='1' height='1' fill='%23939393'/%3E%3Crect x='10' y='9' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='11' y='9' width='1' height='1' fill='%23888888'/%3E%3Crect x='12' y='9' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='13' y='9' width='1' height='1' fill='%23939393'/%3E%3Crect x='14' y='9' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='15' y='9' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='0' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='1' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='2' y='10' width='1' height='1' fill='%23888888'/%3E%3Crect x='3' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='4' y='10' width='1' height='1' fill='%23939393'/%3E%3Crect x='5' y='10' width='1' height='1' fill='%23939393'/%3E%3Crect x='6' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='7' y='10' width='1' height='1' fill='%23777777'/%3E%3Crect x='8' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='9' y='10' width='1' height='1' fill='%23777777'/%3E%3Crect x='10' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='11' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='12' y='10' width='1' height='1' fill='%23939393'/%3E%3Crect x='13' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='14' y='10' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='15' y='10' width='1' height='1' fill='%23888888'/%3E%3Crect x='0' y='11' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='1' y='11' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='2' y='11' width='1' height='1' fill='%23939393'/%3E%3Crect x='3' y='11' width='1' height='1' fill='%23777777'/%3E%3Crect x='4' y='11' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='5' y='11' width='1' height='1' fill='%23939393'/%3E%3Crect x='6' y='11' width='1' height='1' fill='%23777777'/%3E%3Crect x='7' y='11' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='8' y='11' width='1' height='1' fill='%23777777'/%3E%3Crect x='9' y='11' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='10' y='11' width='1' height='1' fill='%23777777'/%3E%3Crect x='11' y='11' width='1' height='1' fill='%23888888'/%3E%3Crect x='12' y='11' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='13' y='11' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='14' y='11' width='1' height='1' fill='%23939393'/%3E%3Crect x='15' y='11' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='0' y='12' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='1' y='12' width='1' height='1' fill='%23777777'/%3E%3Crect x='2' y='12' width='1' height='1' fill='%23888888'/%3E%3Crect x='3' y='12' width='1' height='1' fill='%23777777'/%3E%3Crect x='4' y='12' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='5' y='12' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='6' y='12' width='1' height='1' fill='%23777777'/%3E%3Crect x='7' y='12' width='1' height='1' fill='%23939393'/%3E%3Crect x='8' y='12' width='1' height='1' fill='%23888888'/%3E%3Crect x='9' y='12' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='10' y='12' width='1' height='1' fill='%23777777'/%3E%3Crect x='11' y='12' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='12' y='12' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='13' y='12' width='1' height='1' fill='%23939393'/%3E%3Crect x='14' y='12' width='1' height='1' fill='%23777777'/%3E%3Crect x='15' y='12' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='0' y='13' width='1' height='1' fill='%23939393'/%3E%3Crect x='1' y='13' width='1' height='1' fill='%23777777'/%3E%3Crect x='2' y='13' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='3' y='13' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='4' y='13' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='5' y='13' width='1' height='1' fill='%23939393'/%3E%3Crect x='6' y='13' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='7' y='13' width='1' height='1' fill='%23939393'/%3E%3Crect x='8' y='13' width='1' height='1' fill='%23777777'/%3E%3Crect x='9' y='13' width='1' height='1' fill='%23888888'/%3E%3Crect x='10' y='13' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='11' y='13' width='1' height='1' fill='%23939393'/%3E%3Crect x='12' y='13' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='13' y='13' width='1' height='1' fill='%23888888'/%3E%3Crect x='14' y='13' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='15' y='13' width='1' height='1' fill='%23888888'/%3E%3Crect x='0' y='14' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='1' y='14' width='1' height='1' fill='%23888888'/%3E%3Crect x='2' y='14' width='1' height='1' fill='%23939393'/%3E%3Crect x='3' y='14' width='1' height='1' fill='%23888888'/%3E%3Crect x='4' y='14' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='5' y='14' width='1' height='1' fill='%23888888'/%3E%3Crect x='6' y='14' width='1' height='1' fill='%23777777'/%3E%3Crect x='7' y='14' width='1' height='1' fill='%23777777'/%3E%3Crect x='8' y='14' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='9' y='14' width='1' height='1' fill='%23888888'/%3E%3Crect x='10' y='14' width='1' height='1' fill='%23939393'/%3E%3Crect x='11' y='14' width='1' height='1' fill='%23939393'/%3E%3Crect x='12' y='14' width='1' height='1' fill='%23888888'/%3E%3Crect x='13' y='14' width='1' height='1' fill='%23939393'/%3E%3Crect x='14' y='14' width='1' height='1' fill='%23777777'/%3E%3Crect x='15' y='14' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='0' y='15' width='1' height='1' fill='%23888888'/%3E%3Crect x='1' y='15' width='1' height='1' fill='%23939393'/%3E%3Crect x='2' y='15' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='3' y='15' width='1' height='1' fill='%23939393'/%3E%3Crect x='4' y='15' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='5' y='15' width='1' height='1' fill='%23777777'/%3E%3Crect x='6' y='15' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='7' y='15' width='1' height='1' fill='%23939393'/%3E%3Crect x='8' y='15' width='1' height='1' fill='%237f7f7f'/%3E%3Crect x='9' y='15' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='10' y='15' width='1' height='1' fill='%23777777'/%3E%3Crect x='11' y='15' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='12' y='15' width='1' height='1' fill='%236f6f6f'/%3E%3Crect x='13' y='15' width='1' height='1' fill='%23939393'/%3E%3Crect x='14' y='15' width='1' height='1' fill='%23777777'/%3E%3Crect x='15' y='15' width='1' height='1' fill='%23888888'/%3E%3C/svg%3E") 0 0 / 2.4em 2.4em; }
+.seat .sh.pixel { font-size: 1em; width: 4.2em; height: 1.7em; margin: 0; }
+
+/* ---------- the wallpapers' combinations, as people set PoDee up ---------- */
+/* the Enderman's obsidian and the Ghast's snow, from PoDee's pixel.ts */
+.sh.pixel.obsidian { color: #efe6ff; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='1' height='1' fill='%23170f24'/%3E%3Crect x='1' y='0' width='1' height='1' fill='%23170f24'/%3E%3Crect x='2' y='0' width='1' height='1' fill='%23221836'/%3E%3Crect x='3' y='0' width='1' height='1' fill='%2333264d'/%3E%3Crect x='4' y='0' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='5' y='0' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='6' y='0' width='1' height='1' fill='%2333264d'/%3E%3Crect x='7' y='0' width='1' height='1' fill='%23221836'/%3E%3Crect x='8' y='0' width='1' height='1' fill='%23170f24'/%3E%3Crect x='9' y='0' width='1' height='1' fill='%23170f24'/%3E%3Crect x='10' y='0' width='1' height='1' fill='%2333264d'/%3E%3Crect x='11' y='0' width='1' height='1' fill='%2333264d'/%3E%3Crect x='12' y='0' width='1' height='1' fill='%2333264d'/%3E%3Crect x='13' y='0' width='1' height='1' fill='%23170f24'/%3E%3Crect x='14' y='0' width='1' height='1' fill='%23170f24'/%3E%3Crect x='15' y='0' width='1' height='1' fill='%23170f24'/%3E%3Crect x='0' y='1' width='1' height='1' fill='%2333264d'/%3E%3Crect x='1' y='1' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='2' y='1' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='3' y='1' width='1' height='1' fill='%23170f24'/%3E%3Crect x='4' y='1' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='5' y='1' width='1' height='1' fill='%23221836'/%3E%3Crect x='6' y='1' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='7' y='1' width='1' height='1' fill='%23221836'/%3E%3Crect x='8' y='1' width='1' height='1' fill='%2333264d'/%3E%3Crect x='9' y='1' width='1' height='1' fill='%2333264d'/%3E%3Crect x='10' y='1' width='1' height='1' fill='%2333264d'/%3E%3Crect x='11' y='1' width='1' height='1' fill='%2333264d'/%3E%3Crect x='12' y='1' width='1' height='1' fill='%2333264d'/%3E%3Crect x='13' y='1' width='1' height='1' fill='%23170f24'/%3E%3Crect x='14' y='1' width='1' height='1' fill='%23221836'/%3E%3Crect x='15' y='1' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='0' y='2' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='1' y='2' width='1' height='1' fill='%23170f24'/%3E%3Crect x='2' y='2' width='1' height='1' fill='%2333264d'/%3E%3Crect x='3' y='2' width='1' height='1' fill='%23170f24'/%3E%3Crect x='4' y='2' width='1' height='1' fill='%23221836'/%3E%3Crect x='5' y='2' width='1' height='1' fill='%2333264d'/%3E%3Crect x='6' y='2' width='1' height='1' fill='%23221836'/%3E%3Crect x='7' y='2' width='1' height='1' fill='%2333264d'/%3E%3Crect x='8' y='2' width='1' height='1' fill='%2333264d'/%3E%3Crect x='9' y='2' width='1' height='1' fill='%23221836'/%3E%3Crect x='10' y='2' width='1' height='1' fill='%2333264d'/%3E%3Crect x='11' y='2' width='1' height='1' fill='%23170f24'/%3E%3Crect x='12' y='2' width='1' height='1' fill='%23221836'/%3E%3Crect x='13' y='2' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='14' y='2' width='1' height='1' fill='%23221836'/%3E%3Crect x='15' y='2' width='1' height='1' fill='%23170f24'/%3E%3Crect x='0' y='3' width='1' height='1' fill='%23221836'/%3E%3Crect x='1' y='3' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='2' y='3' width='1' height='1' fill='%23170f24'/%3E%3Crect x='3' y='3' width='1' height='1' fill='%23221836'/%3E%3Crect x='4' y='3' width='1' height='1' fill='%23221836'/%3E%3Crect x='5' y='3' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='6' y='3' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='7' y='3' width='1' height='1' fill='%2333264d'/%3E%3Crect x='8' y='3' width='1' height='1' fill='%2333264d'/%3E%3Crect x='9' y='3' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='10' y='3' width='1' height='1' fill='%23221836'/%3E%3Crect x='11' y='3' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='12' y='3' width='1' height='1' fill='%2333264d'/%3E%3Crect x='13' y='3' width='1' height='1' fill='%23170f24'/%3E%3Crect x='14' y='3' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='15' y='3' width='1' height='1' fill='%23221836'/%3E%3Crect x='0' y='4' width='1' height='1' fill='%2333264d'/%3E%3Crect x='1' y='4' width='1' height='1' fill='%2333264d'/%3E%3Crect x='2' y='4' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='3' y='4' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='4' y='4' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='5' y='4' width='1' height='1' fill='%2333264d'/%3E%3Crect x='6' y='4' width='1' height='1' fill='%23221836'/%3E%3Crect x='7' y='4' width='1' height='1' fill='%23221836'/%3E%3Crect x='8' y='4' width='1' height='1' fill='%23170f24'/%3E%3Crect x='9' y='4' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='10' y='4' width='1' height='1' fill='%23221836'/%3E%3Crect x='11' y='4' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='12' y='4' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='13' y='4' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='14' y='4' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='15' y='4' width='1' height='1' fill='%23170f24'/%3E%3Crect x='0' y='5' width='1' height='1' fill='%2333264d'/%3E%3Crect x='1' y='5' width='1' height='1' fill='%23221836'/%3E%3Crect x='2' y='5' width='1' height='1' fill='%23221836'/%3E%3Crect x='3' y='5' width='1' height='1' fill='%23170f24'/%3E%3Crect x='4' y='5' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='5' y='5' width='1' height='1' fill='%23221836'/%3E%3Crect x='6' y='5' width='1' height='1' fill='%23221836'/%3E%3Crect x='7' y='5' width='1' height='1' fill='%23221836'/%3E%3Crect x='8' y='5' width='1' height='1' fill='%23170f24'/%3E%3Crect x='9' y='5' width='1' height='1' fill='%2333264d'/%3E%3Crect x='10' y='5' width='1' height='1' fill='%2333264d'/%3E%3Crect x='11' y='5' width='1' height='1' fill='%2333264d'/%3E%3Crect x='12' y='5' width='1' height='1' fill='%2333264d'/%3E%3Crect x='13' y='5' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='14' y='5' width='1' height='1' fill='%23221836'/%3E%3Crect x='15' y='5' width='1' height='1' fill='%2333264d'/%3E%3Crect x='0' y='6' width='1' height='1' fill='%23170f24'/%3E%3Crect x='1' y='6' width='1' height='1' fill='%23221836'/%3E%3Crect x='2' y='6' width='1' height='1' fill='%2333264d'/%3E%3Crect x='3' y='6' width='1' height='1' fill='%23221836'/%3E%3Crect x='4' y='6' width='1' height='1' fill='%23221836'/%3E%3Crect x='5' y='6' width='1' height='1' fill='%23221836'/%3E%3Crect x='6' y='6' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='7' y='6' width='1' height='1' fill='%2333264d'/%3E%3Crect x='8' y='6' width='1' height='1' fill='%23221836'/%3E%3Crect x='9' y='6' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='10' y='6' width='1' height='1' fill='%2333264d'/%3E%3Crect x='11' y='6' width='1' height='1' fill='%23170f24'/%3E%3Crect x='12' y='6' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='13' y='6' width='1' height='1' fill='%23221836'/%3E%3Crect x='14' y='6' width='1' height='1' fill='%2333264d'/%3E%3Crect x='15' y='6' width='1' height='1' fill='%23221836'/%3E%3Crect x='0' y='7' width='1' height='1' fill='%23221836'/%3E%3Crect x='1' y='7' width='1' height='1' fill='%23221836'/%3E%3Crect x='2' y='7' width='1' height='1' fill='%2333264d'/%3E%3Crect x='3' y='7' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='4' y='7' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='5' y='7' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='6' y='7' width='1' height='1' fill='%23221836'/%3E%3Crect x='7' y='7' width='1' height='1' fill='%23221836'/%3E%3Crect x='8' y='7' width='1' height='1' fill='%2333264d'/%3E%3Crect x='9' y='7' width='1' height='1' fill='%23221836'/%3E%3Crect x='10' y='7' width='1' height='1' fill='%23221836'/%3E%3Crect x='11' y='7' width='1' height='1' fill='%23170f24'/%3E%3Crect x='12' y='7' width='1' height='1' fill='%23221836'/%3E%3Crect x='13' y='7' width='1' height='1' fill='%23170f24'/%3E%3Crect x='14' y='7' width='1' height='1' fill='%23221836'/%3E%3Crect x='15' y='7' width='1' height='1' fill='%23221836'/%3E%3Crect x='0' y='8' width='1' height='1' fill='%23221836'/%3E%3Crect x='1' y='8' width='1' height='1' fill='%23221836'/%3E%3Crect x='2' y='8' width='1' height='1' fill='%2333264d'/%3E%3Crect x='3' y='8' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='4' y='8' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='5' y='8' width='1' height='1' fill='%23170f24'/%3E%3Crect x='6' y='8' width='1' height='1' fill='%23221836'/%3E%3Crect x='7' y='8' width='1' height='1' fill='%23170f24'/%3E%3Crect x='8' y='8' width='1' height='1' fill='%23221836'/%3E%3Crect x='9' y='8' width='1' height='1' fill='%23170f24'/%3E%3Crect x='10' y='8' width='1' height='1' fill='%23221836'/%3E%3Crect x='11' y='8' width='1' height='1' fill='%23170f24'/%3E%3Crect x='12' y='8' width='1' height='1' fill='%2333264d'/%3E%3Crect x='13' y='8' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='14' y='8' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='15' y='8' width='1' height='1' fill='%23221836'/%3E%3Crect x='0' y='9' width='1' height='1' fill='%23221836'/%3E%3Crect x='1' y='9' width='1' height='1' fill='%23170f24'/%3E%3Crect x='2' y='9' width='1' height='1' fill='%2333264d'/%3E%3Crect x='3' y='9' width='1' height='1' fill='%23170f24'/%3E%3Crect x='4' y='9' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='5' y='9' width='1' height='1' fill='%23221836'/%3E%3Crect x='6' y='9' width='1' height='1' fill='%23170f24'/%3E%3Crect x='7' y='9' width='1' height='1' fill='%2333264d'/%3E%3Crect x='8' y='9' width='1' height='1' fill='%23221836'/%3E%3Crect x='9' y='9' width='1' height='1' fill='%23170f24'/%3E%3Crect x='10' y='9' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='11' y='9' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='12' y='9' width='1' height='1' fill='%23170f24'/%3E%3Crect x='13' y='9' width='1' height='1' fill='%23221836'/%3E%3Crect x='14' y='9' width='1' height='1' fill='%23170f24'/%3E%3Crect x='15' y='9' width='1' height='1' fill='%23221836'/%3E%3Crect x='0' y='10' width='1' height='1' fill='%23221836'/%3E%3Crect x='1' y='10' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='2' y='10' width='1' height='1' fill='%23221836'/%3E%3Crect x='3' y='10' width='1' height='1' fill='%23170f24'/%3E%3Crect x='4' y='10' width='1' height='1' fill='%2333264d'/%3E%3Crect x='5' y='10' width='1' height='1' fill='%23221836'/%3E%3Crect x='6' y='10' width='1' height='1' fill='%23221836'/%3E%3Crect x='7' y='10' width='1' height='1' fill='%2333264d'/%3E%3Crect x='8' y='10' width='1' height='1' fill='%23221836'/%3E%3Crect x='9' y='10' width='1' height='1' fill='%2333264d'/%3E%3Crect x='10' y='10' width='1' height='1' fill='%23221836'/%3E%3Crect x='11' y='10' width='1' height='1' fill='%2333264d'/%3E%3Crect x='12' y='10' width='1' height='1' fill='%2333264d'/%3E%3Crect x='13' y='10' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='14' y='10' width='1' height='1' fill='%2333264d'/%3E%3Crect x='15' y='10' width='1' height='1' fill='%23170f24'/%3E%3Crect x='0' y='11' width='1' height='1' fill='%23170f24'/%3E%3Crect x='1' y='11' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='2' y='11' width='1' height='1' fill='%2333264d'/%3E%3Crect x='3' y='11' width='1' height='1' fill='%2333264d'/%3E%3Crect x='4' y='11' width='1' height='1' fill='%23170f24'/%3E%3Crect x='5' y='11' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='6' y='11' width='1' height='1' fill='%2333264d'/%3E%3Crect x='7' y='11' width='1' height='1' fill='%23221836'/%3E%3Crect x='8' y='11' width='1' height='1' fill='%23221836'/%3E%3Crect x='9' y='11' width='1' height='1' fill='%23170f24'/%3E%3Crect x='10' y='11' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='11' y='11' width='1' height='1' fill='%23221836'/%3E%3Crect x='12' y='11' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='13' y='11' width='1' height='1' fill='%23170f24'/%3E%3Crect x='14' y='11' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='15' y='11' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='0' y='12' width='1' height='1' fill='%23170f24'/%3E%3Crect x='1' y='12' width='1' height='1' fill='%2333264d'/%3E%3Crect x='2' y='12' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='3' y='12' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='4' y='12' width='1' height='1' fill='%2333264d'/%3E%3Crect x='5' y='12' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='6' y='12' width='1' height='1' fill='%23170f24'/%3E%3Crect x='7' y='12' width='1' height='1' fill='%23221836'/%3E%3Crect x='8' y='12' width='1' height='1' fill='%23170f24'/%3E%3Crect x='9' y='12' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='10' y='12' width='1' height='1' fill='%2333264d'/%3E%3Crect x='11' y='12' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='12' y='12' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='13' y='12' width='1' height='1' fill='%23221836'/%3E%3Crect x='14' y='12' width='1' height='1' fill='%23170f24'/%3E%3Crect x='15' y='12' width='1' height='1' fill='%23221836'/%3E%3Crect x='0' y='13' width='1' height='1' fill='%2333264d'/%3E%3Crect x='1' y='13' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='2' y='13' width='1' height='1' fill='%23221836'/%3E%3Crect x='3' y='13' width='1' height='1' fill='%23170f24'/%3E%3Crect x='4' y='13' width='1' height='1' fill='%23170f24'/%3E%3Crect x='5' y='13' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='6' y='13' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='7' y='13' width='1' height='1' fill='%23170f24'/%3E%3Crect x='8' y='13' width='1' height='1' fill='%23170f24'/%3E%3Crect x='9' y='13' width='1' height='1' fill='%23221836'/%3E%3Crect x='10' y='13' width='1' height='1' fill='%23170f24'/%3E%3Crect x='11' y='13' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='12' y='13' width='1' height='1' fill='%2333264d'/%3E%3Crect x='13' y='13' width='1' height='1' fill='%2333264d'/%3E%3Crect x='14' y='13' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='15' y='13' width='1' height='1' fill='%23221836'/%3E%3Crect x='0' y='14' width='1' height='1' fill='%23170f24'/%3E%3Crect x='1' y='14' width='1' height='1' fill='%23221836'/%3E%3Crect x='2' y='14' width='1' height='1' fill='%2333264d'/%3E%3Crect x='3' y='14' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='4' y='14' width='1' height='1' fill='%2333264d'/%3E%3Crect x='5' y='14' width='1' height='1' fill='%23221836'/%3E%3Crect x='6' y='14' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='7' y='14' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='8' y='14' width='1' height='1' fill='%23170f24'/%3E%3Crect x='9' y='14' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='10' y='14' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='11' y='14' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='12' y='14' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='13' y='14' width='1' height='1' fill='%2333264d'/%3E%3Crect x='14' y='14' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='15' y='14' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='0' y='15' width='1' height='1' fill='%2333264d'/%3E%3Crect x='1' y='15' width='1' height='1' fill='%23221836'/%3E%3Crect x='2' y='15' width='1' height='1' fill='%23170f24'/%3E%3Crect x='3' y='15' width='1' height='1' fill='%23221836'/%3E%3Crect x='4' y='15' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='5' y='15' width='1' height='1' fill='%23221836'/%3E%3Crect x='6' y='15' width='1' height='1' fill='%2333264d'/%3E%3Crect x='7' y='15' width='1' height='1' fill='%2333264d'/%3E%3Crect x='8' y='15' width='1' height='1' fill='%23221836'/%3E%3Crect x='9' y='15' width='1' height='1' fill='%23221836'/%3E%3Crect x='10' y='15' width='1' height='1' fill='%23221836'/%3E%3Crect x='11' y='15' width='1' height='1' fill='%23170f24'/%3E%3Crect x='12' y='15' width='1' height='1' fill='%23221836'/%3E%3Crect x='13' y='15' width='1' height='1' fill='%2333264d'/%3E%3Crect x='14' y='15' width='1' height='1' fill='%230e0a16'/%3E%3Crect x='15' y='15' width='1' height='1' fill='%23170f24'/%3E%3C/svg%3E") 0 0 / 2.4em 2.4em; box-shadow: inset .25em .25em 0 rgb(170 130 255 / .16), inset -.25em -.25em 0 rgb(0 0 0 / .55), 0 0 0 .16em #050308; }
+.sh.pixel.snow { color: #2a3236; text-shadow: none; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='1' y='0' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='2' y='0' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='3' y='0' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='4' y='0' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='5' y='0' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='6' y='0' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='7' y='0' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='8' y='0' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='9' y='0' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='10' y='0' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='11' y='0' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='12' y='0' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='13' y='0' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='14' y='0' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='15' y='0' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='0' y='1' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='1' y='1' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='2' y='1' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='3' y='1' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='4' y='1' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='5' y='1' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='6' y='1' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='7' y='1' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='8' y='1' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='9' y='1' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='10' y='1' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='11' y='1' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='12' y='1' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='13' y='1' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='14' y='1' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='15' y='1' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='0' y='2' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='1' y='2' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='2' y='2' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='3' y='2' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='4' y='2' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='5' y='2' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='6' y='2' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='7' y='2' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='8' y='2' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='9' y='2' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='10' y='2' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='11' y='2' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='12' y='2' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='13' y='2' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='14' y='2' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='15' y='2' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='0' y='3' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='1' y='3' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='2' y='3' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='3' y='3' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='4' y='3' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='5' y='3' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='6' y='3' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='7' y='3' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='8' y='3' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='9' y='3' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='10' y='3' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='11' y='3' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='12' y='3' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='13' y='3' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='14' y='3' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='15' y='3' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='0' y='4' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='1' y='4' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='2' y='4' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='3' y='4' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='4' y='4' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='5' y='4' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='6' y='4' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='7' y='4' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='8' y='4' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='9' y='4' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='10' y='4' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='11' y='4' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='12' y='4' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='13' y='4' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='14' y='4' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='15' y='4' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='0' y='5' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='1' y='5' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='2' y='5' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='3' y='5' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='4' y='5' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='5' y='5' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='6' y='5' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='7' y='5' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='8' y='5' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='9' y='5' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='10' y='5' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='11' y='5' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='12' y='5' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='13' y='5' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='14' y='5' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='15' y='5' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='0' y='6' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='1' y='6' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='2' y='6' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='3' y='6' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='4' y='6' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='5' y='6' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='6' y='6' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='7' y='6' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='8' y='6' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='9' y='6' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='10' y='6' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='11' y='6' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='12' y='6' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='13' y='6' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='14' y='6' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='15' y='6' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='0' y='7' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='1' y='7' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='2' y='7' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='3' y='7' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='4' y='7' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='5' y='7' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='6' y='7' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='7' y='7' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='8' y='7' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='9' y='7' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='10' y='7' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='11' y='7' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='12' y='7' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='13' y='7' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='14' y='7' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='15' y='7' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='0' y='8' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='1' y='8' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='2' y='8' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='3' y='8' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='4' y='8' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='5' y='8' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='6' y='8' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='7' y='8' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='8' y='8' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='9' y='8' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='10' y='8' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='11' y='8' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='12' y='8' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='13' y='8' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='14' y='8' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='15' y='8' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='0' y='9' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='1' y='9' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='2' y='9' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='3' y='9' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='4' y='9' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='5' y='9' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='6' y='9' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='7' y='9' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='8' y='9' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='9' y='9' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='10' y='9' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='11' y='9' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='12' y='9' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='13' y='9' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='14' y='9' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='15' y='9' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='0' y='10' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='1' y='10' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='2' y='10' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='3' y='10' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='4' y='10' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='5' y='10' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='6' y='10' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='7' y='10' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='8' y='10' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='9' y='10' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='10' y='10' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='11' y='10' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='12' y='10' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='13' y='10' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='14' y='10' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='15' y='10' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='0' y='11' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='1' y='11' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='2' y='11' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='3' y='11' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='4' y='11' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='5' y='11' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='6' y='11' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='7' y='11' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='8' y='11' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='9' y='11' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='10' y='11' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='11' y='11' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='12' y='11' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='13' y='11' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='14' y='11' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='15' y='11' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='0' y='12' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='1' y='12' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='2' y='12' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='3' y='12' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='4' y='12' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='5' y='12' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='6' y='12' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='7' y='12' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='8' y='12' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='9' y='12' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='10' y='12' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='11' y='12' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='12' y='12' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='13' y='12' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='14' y='12' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='15' y='12' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='0' y='13' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='1' y='13' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='2' y='13' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='3' y='13' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='4' y='13' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='5' y='13' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='6' y='13' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='7' y='13' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='8' y='13' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='9' y='13' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='10' y='13' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='11' y='13' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='12' y='13' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='13' y='13' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='14' y='13' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='15' y='13' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='0' y='14' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='1' y='14' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='2' y='14' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='3' y='14' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='4' y='14' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='5' y='14' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='6' y='14' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='7' y='14' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='8' y='14' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='9' y='14' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='10' y='14' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='11' y='14' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='12' y='14' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='13' y='14' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='14' y='14' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='15' y='14' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='0' y='15' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='1' y='15' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='2' y='15' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='3' y='15' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='4' y='15' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='5' y='15' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='6' y='15' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='7' y='15' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='8' y='15' width='1' height='1' fill='%23f4f9fb'/%3E%3Crect x='9' y='15' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='10' y='15' width='1' height='1' fill='%23edf4f7'/%3E%3Crect x='11' y='15' width='1' height='1' fill='%23e6eff3'/%3E%3Crect x='12' y='15' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='13' y='15' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='14' y='15' width='1' height='1' fill='%23fbfdfe'/%3E%3Crect x='15' y='15' width='1' height='1' fill='%23edf4f7'/%3E%3C/svg%3E") 0 0 / 2.4em 2.4em; box-shadow: inset .25em .25em 0 rgb(255 255 255 / .8), inset -.25em -.25em 0 rgb(120 150 165 / .35), 0 0 0 .16em #3b4a52; }
+.char.dotb { width: 1.25em; height: 1.25em; }
+.char.square { width: 1.3em; height: 1.3em; }
+.wp-pic > .ch.dotb { top: .4em; left: calc(50% + 3.75em); }
+.wp-pic > .ch.square { top: .25em; left: calc(50% + 3.75em); }
+/* «Внутри острова, рядом с часами»: a wider pill, the companion at its right end, a bit smaller */
+.sh.wide { width: 8.4em; margin-left: -4.2em; justify-items: start; padding-left: 1.1em; box-sizing: border-box; }
+.sh .char.in { position: absolute; right: .55em; top: 50%; width: 1.9em; height: 1.8em; margin-top: -.95em; }
+
+/* the questions inside a guide */
+.gfaq { display: grid; border-top: 1px solid var(--line); }
+.gfaq details { border-bottom: 1px solid var(--line); }
+.gfaq summary { padding: 16px 4px; font-weight: 800; cursor: pointer; }
+.gfaq details p { margin: 0 4px 16px; color: var(--muted); }
+
+/* cards in a row share their rows: titles, texts and links start at the same height in every card */
+@media (min-width: 861px) {
+  .steps > li, .clean > .card { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; }
+}
+@media (min-width: 861px) {
+  .news > .card, .why > .card { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+  /* the app cards: every part has its own row, so a hidden download counter keeps its place */
+  .apps > .app { grid-row: span 6; grid-template-rows: subgrid; row-gap: 14px; }
+  .app > img { grid-row: 1; } .app > .btns { grid-row: 2; } .app > :is(.dl-count, .dl-alt) { grid-row: 3; }
+  .app > h3 { grid-row: 4; } .app > h3 + p { grid-row: 5; } .app > .more { grid-row: 6; align-self: end; }
+}

@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../" />
+<script>try{var t=localStorage.getItem("podylab.theme")}catch(e){}document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")</script>
+<title>PoDoo · Pody Lab</title>
+<meta name="description" content="PoDoo: 휴대폰이나 태블릿이 Stream Deck처럼 PC 리모컨이 됩니다. 앱, 단축키, 음악, 터치패드를 각각 한 번의 탭으로." />
+<link rel="icon" href="../media/podoo-icon.svg?v=9a46ef14" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=5db024f3" />
+<link rel="stylesheet" href="../podoo.css?v=06b4abad" />
+<link rel="alternate" hreflang="ru" href="https://podylab.github.io/podoo.html" />
+<link rel="alternate" hreflang="en" href="https://podylab.github.io/en/podoo.html" />
+<link rel="alternate" hreflang="es" href="https://podylab.github.io/es/podoo.html" />
+<link rel="alternate" hreflang="pt-BR" href="https://podylab.github.io/pt-br/podoo.html" />
+<link rel="alternate" hreflang="de" href="https://podylab.github.io/de/podoo.html" />
+<link rel="alternate" hreflang="fr" href="https://podylab.github.io/fr/podoo.html" />
+<link rel="alternate" hreflang="it" href="https://podylab.github.io/it/podoo.html" />
+<link rel="alternate" hreflang="tr" href="https://podylab.github.io/tr/podoo.html" />
+<link rel="alternate" hreflang="pl" href="https://podylab.github.io/pl/podoo.html" />
+<link rel="alternate" hreflang="uk" href="https://podylab.github.io/uk/podoo.html" />
+<link rel="alternate" hreflang="id" href="https://podylab.github.io/id/podoo.html" />
+<link rel="alternate" hreflang="vi" href="https://podylab.github.io/vi/podoo.html" />
+<link rel="alternate" hreflang="ja" href="https://podylab.github.io/ja/podoo.html" />
+<link rel="alternate" hreflang="ko" href="https://podylab.github.io/ko/podoo.html" />
+<link rel="alternate" hreflang="zh-CN" href="https://podylab.github.io/zh/podoo.html" />
+<link rel="alternate" hreflang="hi" href="https://podylab.github.io/hi/podoo.html" />
+<link rel="alternate" hreflang="x-default" href="https://podylab.github.io/en/podoo.html" />
+</head>
+<body>
+<main class="land">
+    <section class="lhero wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="status"><i class="led"></i><span>Windows + Android · 무료</span></p>
+        <h1 id="hero-title">
+          <span class="line"><span>PC 리모컨을,</span></span>
+          <span class="line"><span>바로 내 휴대폰에서.</span></span>
+        </h1>
+        <p class="lede">모니터 옆에 휴대폰이나 태블릿을 두면 나만의 Stream Deck이 됩니다. 앱, 단축키, 음악, 터치패드를 각각 한 번의 탭으로. 어떤 Android든 괜찮고, 서랍 속 오래된 휴대폰도 두 번째 삶을 얻어요.</p>
+
+        <div class="cta">
+          <a class="lbtn lbtn-lit magnet" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10.5 4.5v6.9H3zM11.6 4.3 21 3v8.4h-9.4zM3 12.6h7.5v6.9L3 18.5zM11.6 12.6H21V21l-9.4-1.3z"/></svg>
+            <span>Windows용 다운로드</span>
+          </a>
+          <a class="lbtn" href="#try">여기서 바로 써 보기</a>
+        </div>
+        <p class="stores">
+          <a class="chip" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk"><span class="chip-dot"></span><span>Android 앱</span></a>
+          <a class="chip" data-gplay hidden><span class="chip-dot"></span><span>Google Play</span></a>
+          <a class="chip" href="support.html"><span class="chip-dot"></span><span>후원하기</span></a>
+        </p>
+        <p class="dl-count" data-downloads="PoDoo-releases" hidden></p>
+      </div>
+
+      <!-- Сцена: касание на телефоне, результат на мониторе. Клавиши можно нажимать самому. -->
+      <div class="scene" id="scene">
+        <div class="monitor" aria-hidden="true">
+          <div class="mon-screen">
+            <div class="mon-wall"></div>
+            <div class="win win-editor">
+              <div class="win-top"><i></i><i></i><i></i><span>사진 편집기</span></div>
+              <div class="win-body"><span class="shape s1"></span><span class="shape s2"></span><span class="shape s3"></span></div>
+            </div>
+            <div class="win win-player">
+              <div class="win-top"><i></i><i></i><i></i><span>플레이어</span></div>
+              <div class="win-body">
+                <div class="cover"></div>
+                <div class="track"><b>밤 드라이브</b><span class="eq"><i></i><i></i><i></i><i></i><i></i></span><span class="prog"><i></i></span></div>
+              </div>
+            </div>
+            <div class="hud"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7"/></svg><span class="hud-bar"><i></i></span></div>
+            <div class="pc-toast"><kbd>Ctrl</kbd>+<kbd>S</kbd><span>저장됨</span></div>
+            <div class="rec"><i></i>REC</div>
+            <div class="cursor"><svg viewBox="0 0 24 24"><path d="M5 3l14 8-6 2-3 6z" fill="#fff" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <div class="taskbar"><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="mon-neck"></div><div class="mon-foot"></div>
+        </div>
+
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="pkeys" id="pkeys">
+              <button class="pk" type="button" data-act="editor" aria-label="사진 편집기 열기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><small>편집기</small></button>
+              <button class="pk" type="button" data-act="music" aria-label="음악 재생"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><small>음악</small></button>
+              <button class="pk" type="button" data-act="vol" aria-label="볼륨 높이기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><small>크게</small></button>
+              <button class="pk" type="button" data-act="save" aria-label="저장, Ctrl+S"><b class="pk-combo">Ctrl+S</b><small>저장</small></button>
+              <button class="pk" type="button" data-act="touch" aria-label="터치패드"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V5a2 2 0 0 1 4 0v6l3 .5a2 2 0 0 1 1.7 2L17 19a2 2 0 0 1-2 2h-4a2 2 0 0 1-1.6-.8L5 15.5a1.7 1.7 0 0 1 2.4-2.4L9 14.5"/></svg><small>터치패드</small></button>
+              <button class="pk" type="button" data-act="rec" aria-label="화면 녹화"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/></svg><small>녹화</small></button>
+            </div>
+            <div class="ptouch" aria-hidden="true"><span class="ptouch-hint">터치패드</span><span class="trail"></span></div>
+          </div>
+        </div>
+
+        <span class="packet" aria-hidden="true"></span>
+        <span class="finger" aria-hidden="true"></span>
+        <p class="scene-hint">휴대폰의 키를 눌러 보세요.</p>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Ctrl + S</span><span>Win + D</span><span>Alt + Tab</span><span>Ctrl + Shift + M</span><span>F5</span><span>Ctrl + Z</span><span>Win + Shift + S</span><span>Ctrl + Alt + Del</span><span>Mute</span><span>Next track</span>
+        <span>Ctrl + S</span><span>Win + D</span><span>Alt + Tab</span><span>Ctrl + Shift + M</span><span>F5</span><span>Ctrl + Z</span><span>Win + Shift + S</span><span>Ctrl + Alt + Del</span><span>Mute</span><span>Next track</span>
+      </div>
+    </div>
+
+    <section class="story" id="story" aria-labelledby="story-title">
+      <div class="story-pin">
+        <div class="wrap story-in">
+          <div class="story-copy">
+            <h2 id="story-title" data-split>화면 하나. 도구 넷.</h2>
+            <ol class="story-steps">
+              <li class="on"><h3>앱과 폴더</h3><p>내 앱, 폴더, 사이트를 진짜 아이콘 그대로. 탭하면 PC에서 열립니다.</p></li>
+              <li><h3>앱마다 단축키</h3><p>PC에서 Photoshop이나 OBS로 바꾸면 리모컨에 그 앱용 버튼이 나옵니다.</p></li>
+              <li><h3>음악과 볼륨</h3><p>일시 정지, 건너뛰기, 탐색, 볼륨. 곡과 커버는 PC에서 가져옵니다.</p></li>
+              <li><h3>터치패드와 키보드</h3><p>화면 전체가 터치패드가 됩니다. 휴대폰에서 입력하면 글자가 PC에 나타나요.</p></li>
+            </ol>
+            <div class="story-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+          </div>
+
+          <div class="story-device" aria-hidden="true">
+            <div class="sphone">
+              <div class="sphone-screen">
+                <div class="sstrip" id="sstrip">
+                  <!-- 1. программы -->
+                  <div class="spage spage-apps">
+                    <span class="sk" style="--c:#e9a23b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><small>파일</small></span>
+                    <span class="sk" style="--c:#4a7bf2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><small>브라우저</small></span>
+                    <span class="sk" style="--c:#2fb37a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><small>채팅</small></span>
+                    <span class="sk" style="--c:#9b6bf2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><small>코드</small></span>
+                    <span class="sk" style="--c:#ee6a2e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><small>사진</small></span>
+                    <span class="sk" style="--c:#e2506a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg><small>동영상</small></span>
+                    <span class="sk" style="--c:#38b6d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><small>음악</small></span>
+                    <span class="sk" style="--c:#8d8a80"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.8 1.2V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-2.8-1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0-1.2-2.8H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.2-2.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 2.8-1.2V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 2.8 1.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0 1.2 2.8H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg><small>설정</small></span>
+                  </div>
+                  <!-- 2. горячие клавиши -->
+                  <div class="spage spage-keys">
+                    <span class="sapp"><i></i>Photoshop</span>
+                    <span class="hk"><b>B</b><small>브러시</small></span>
+                    <span class="hk"><b>E</b><small>지우개</small></span>
+                    <span class="hk hk-lit"><b>Ctrl Z</b><small>실행 취소</small></span>
+                    <span class="hk"><b>[ ]</b><small>크기</small></span>
+                    <span class="hk"><b>Ctrl J</b><small>복제</small></span>
+                    <span class="hk"><b>Ctrl S</b><small>저장</small></span>
+                  </div>
+                  <!-- 3. музыка -->
+                  <div class="spage spage-media">
+                    <div class="scover"><span class="eq"><i></i><i></i><i></i><i></i><i></i></span></div>
+                    <div class="smeta">
+                      <b>밤 드라이브</b><small>신스웨이브 믹스</small>
+                      <span class="sprog"><i></i></span>
+                      <span class="sctrl"><i class="prev"></i><i class="play"></i><i class="next"></i></span>
+                      <span class="svol"><i></i></span>
+                    </div>
+                  </div>
+                  <!-- 4. тачпад -->
+                  <div class="spage spage-pad">
+                    <span class="pad-glow"></span>
+                    <span class="pad-hint">터치패드</span>
+                    <span class="pad-kb"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="story-glow"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="try wrap" id="try" aria-labelledby="try-title">
+      <div class="section-head">
+        <h2 id="try-title" data-split>여기서 바로 써 보세요.</h2>
+        <p>브라우저 속 간단한 리모컨. 키를 누르고, 페이지를 넘기고, 아래 패널에서 소리, 터치패드, 키보드를 여세요. 어떤 PC에도 아무것도 보내지 않습니다.</p>
+      </div>
+
+      <div class="stage" id="stage" data-orient="land">
+        <div class="stage-light" aria-hidden="true"></div>
+        <div class="device" id="device">
+          <div class="device-body">
+            <div class="mock" id="mock" aria-label="간단한 PoDoo 리모컨">
+              <div class="m-strip"><span class="m-pc"><i class="led"></i>DESKTOP</span><b id="m-name">Главная</b></div>
+
+              <div class="m-viewport" id="m-viewport">
+                <div class="m-pages" id="m-pages">
+                  <div class="m-page m-apps" data-name="홈">
+                    <button class="mk" type="button" data-say="파일 탐색기를 열었습니다" style="--c:#e9a23b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><small>파일</small></button>
+                    <button class="mk" type="button" data-say="브라우저를 열었습니다" style="--c:#4a7bf2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><small>브라우저</small></button>
+                    <button class="mk" type="button" data-say="채팅을 열었습니다" style="--c:#2fb37a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><small>채팅</small></button>
+                    <button class="mk" type="button" data-say="코드 편집기를 열었습니다" style="--c:#9b6bf2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><small>코드</small></button>
+                    <button class="mk" type="button" data-say="Photoshop을 열었습니다" style="--c:#ee6a2e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><small>사진</small></button>
+                    <button class="mk" type="button" data-say="OBS를 열었습니다" style="--c:#e2506a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg><small>방송</small></button>
+                    <button class="mk" type="button" data-say="음악을 열었습니다" style="--c:#38b6d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg><small>음악</small></button>
+                    <button class="mk" type="button" data-say="모든 창을 최소화했습니다" style="--c:#8d8a80"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><small>바탕 화면</small></button>
+                  </div>
+                  <div class="m-page m-keys" data-name="Photoshop">
+                    <button class="mk mk-key" type="button" data-say="브러시 · B"><b>B</b><small>브러시</small></button>
+                    <button class="mk mk-key" type="button" data-say="지우개 · E"><b>E</b><small>지우개</small></button>
+                    <button class="mk mk-key" type="button" data-say="실행 취소됨 · Ctrl+Z"><b>Ctrl Z</b><small>실행 취소</small></button>
+                    <button class="mk mk-key" type="button" data-say="레이어 복제됨 · Ctrl+J"><b>Ctrl J</b><small>복제</small></button>
+                    <button class="mk mk-key" type="button" data-say="화면 캡처 · Win+Shift+S"><b>Win ⇧ S</b><small>캡처</small></button>
+                    <button class="mk mk-key" type="button" data-say="저장됨 · Ctrl+S"><b>Ctrl S</b><small>저장</small></button>
+                  </div>
+                  <div class="m-page m-media" data-name="플레이어">
+                    <div class="m-cover"><span class="eq"><i></i><i></i><i></i><i></i><i></i></span></div>
+                    <div class="m-meta">
+                      <b>밤 드라이브</b><small>신스웨이브 믹스</small>
+                      <span class="m-prog"><i id="m-prog"></i></span>
+                      <span class="m-ctrl">
+                        <button type="button" class="m-round" data-media="prev" aria-label="이전 곡"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+                        <button type="button" class="m-round m-play" data-media="play" aria-label="일시 정지"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path class="i-pause" d="M7 5h4v14H7zM13 5h4v14h-4z"/><path class="i-play" d="M8 5v14l11-7z"/></svg></button>
+                        <button type="button" class="m-round" data-media="next" aria-label="다음 곡"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="m-dots" id="m-dots"><i class="on"></i><i></i><i></i></div>
+              <button class="m-handle" id="m-handle" type="button" aria-label="패널 열기: 소리, 터치패드, 키보드"><i></i></button>
+
+              <div class="m-sheet" id="m-sheet" aria-hidden="true">
+                <div class="m-sheet-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7"/></svg>
+                  <input id="m-vol" type="range" min="0" max="100" value="60" aria-label="볼륨">
+                  <output id="m-vol-out">60</output>
+                </div>
+                <div class="m-sheet-btns">
+                  <button type="button" class="m-tool" data-tool="pad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V5a2 2 0 0 1 4 0v6l3 .5a2 2 0 0 1 1.7 2L17 19a2 2 0 0 1-2 2h-4a2 2 0 0 1-1.6-.8L5 15.5a1.7 1.7 0 0 1 2.4-2.4L9 14.5"/></svg><span>터치패드</span></button>
+                  <button type="button" class="m-tool" data-tool="kb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg><span>키보드</span></button>
+                  <button type="button" class="m-tool" data-tool="mute"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4zM22 9l-6 6M16 9l6 6"/></svg><span>음소거</span></button>
+                  <button type="button" class="m-tool" data-tool="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg><span>닫기</span></button>
+                </div>
+                <form class="m-kb" id="m-kb" hidden>
+                  <input id="m-kb-in" type="text" autocomplete="off" placeholder="PC로 보낼 텍스트">
+                  <button type="submit">보내기</button>
+                </form>
+              </div>
+
+              <div class="m-pad" id="m-pad" hidden>
+                <span class="m-pad-hint">손가락이나 마우스를 움직이세요</span>
+                <span class="m-pad-dot" id="m-pad-dot"></span>
+                <button type="button" class="m-pad-done" id="m-pad-done">완료</button>
+              </div>
+
+              <div class="m-toast" id="m-toast" role="status" aria-live="polite"></div>
+            </div>
+            <span class="device-cam" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="stage-shadow" aria-hidden="true"></div>
+      </div>
+
+      <div class="stage-tools">
+        <button class="lbtn lbtn-sm" type="button" id="rotate">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3L4 15"/><path d="M4 20v-5h5"/></svg>
+          <span>휴대폰을 돌려 주세요</span>
+        </button>
+      </div>
+
+      <ul class="gestures">
+        <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>옆으로 넘기기: 페이지</span></li>
+        <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span>아래 막대: 소리, 터치패드, 키보드</span></li>
+      </ul>
+    </section>
+
+    <section class="features wrap" id="features" aria-labelledby="feat-title">
+      <div class="section-head">
+        <h2 id="feat-title" data-split>다섯 번의 클릭 대신 한 번의 탭.</h2>
+        <p>모든 설정은 PC에서 마우스로. 아이콘을 놓는 순간 휴대폰이 업데이트됩니다.</p>
+      </div>
+
+      <div class="board">
+        <article class="cap cap-w2 cap-lit" data-drop="0">
+          <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><circle cx="12" cy="12" r="2"/></svg>
+          <h3>사용 중인 앱을 따라감</h3>
+          <p>PC에서 앱을 바꾸면 리모컨도 그 앱의 페이지로 바뀝니다. Photoshop, Figma, Premiere, OBS, 음악용 페이지가 준비되어 있어요.</p>
+        </article>
+        <article class="cap" data-drop="1">
+          <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>
+          <h3>마우스로 설정</h3>
+          <p>PC에서 앱, 파일, 단축키를 끌어다 놓으세요. 휴대폰이 바로 바뀝니다.</p>
+        </article>
+        <article class="cap" data-drop="2">
+          <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2 0-1.5-1-1.7-1-3a2 2 0 0 1 2-2h2a4 4 0 0 0 4-4c0-3.9-4-7-9-7z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7" r="1"/></svg>
+          <h3>테마 10종</h3>
+          <p>하늘, 구름 낀 유리, 스케치북, 점토 등. 책상에 어울리는 것을 고르세요.</p>
+        </article>
+        <article class="cap cap-w2" data-drop="3">
+          <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+          <h3>동작 묶음</h3>
+          <p>여러 단계를 버튼 하나에: 프로젝트 열기, 음악 켜기, 알림 끄기.</p>
+        </article>
+        <article class="cap" data-drop="4">
+          <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.5 1.5A3.75 3.75 0 0 0 6.5 19z"/></svg>
+          <h3>휴대폰 속 PoDee</h3>
+          <p>PC에 PoDee가 있으면 휴대폰에 전용 페이지가 생깁니다: 아일랜드, 타이머, 할 일, PoDy와의 채팅.</p>
+        </article>
+        <article class="cap" data-drop="5">
+          <svg class="cap-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          <h3>집 안에서만</h3>
+          <p>내 PC와 내 휴대폰뿐, 내 네트워크 안에서. 계정도 클라우드도 없습니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="pairing wrap" id="podee" aria-labelledby="pair-title">
+      <div class="section-head">
+        <h2 id="pair-title" data-split>PoDoo + PoDee</h2>
+        <p>With PoDee on the PC, PoDoo gets a PoDee page. From it you control the PoDee island right from your phone.</p>
+      </div>
+      <div class="pp">
+        <div class="pp-scene">
+          <div class="pp-screen" aria-hidden="true" style="--wp-d:url(../media/wallpapers/night-small.jpg);--wp-l:url(../media/wallpapers/mint-small.jpg)">
+            <div class="pp-isl" data-pp-isl><span class="pp-clock">14:32</span><span class="pp-st" data-st="open">Island open</span><span class="pp-st" data-st="t5">Timer 5:00</span><span class="pp-st" data-st="t25">Timer 25:00</span><span class="pp-st" data-st="todo">+ Buy cat food</span><span class="pp-st" data-st="ask">PoDy is thinking…</span></div>
+            <i class="char pp-char" data-c="auto"></i>
+          </div>
+          <div class="pp-phone">
+            <p class="pp-ph-title"><img src="../media/podee-icon.svg?v=41ecf9f3" alt="" />PoDee</p>
+            <div class="pp-keys"><button class="pp-key" type="button" data-pp="open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 9.5 4.3 4.3 0 0 0 7 18z"/></svg><small>Open island</small></button><button class="pp-key" type="button" data-pp="away"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18M10.6 6.1A9.8 9.8 0 0 1 12 6c5 0 9 6 9 6a17 17 0 0 1-2.6 3.2M6.2 7.6C4 9.2 3 12 3 12s4 6 9 6a8.7 8.7 0 0 0 3.6-.8"/></svg><small>Hide island</small></button><button class="pp-key" type="button" data-pp="t5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg><small>Timer 5 min</small></button><button class="pp-key" type="button" data-pp="t25"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg><small>Timer 25 min</small></button><button class="pp-key" type="button" data-pp="todo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><small>Task</small></button><button class="pp-key" type="button" data-pp="ask"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><small>Ask PoDy</small></button></div>
+            <p class="pp-reply" data-pp-reply aria-live="polite"><b>PoDy</b>Your call is at 3 pm, 28 minutes from now.</p>
+          </div>
+          <p class="pp-hint">Tap the buttons on the phone.</p>
+        </div>
+        <ol class="pp-steps">
+          <li><span class="step-no" aria-hidden="true">1</span><h3>Install PoDee</h3><p>You need PoDee 1.3.5 and PoDoo 1.0.1 or newer. <a class="textlink" href="podee.html">Get PoDee</a></p></li>
+          <li><span class="step-no" aria-hidden="true">2</span><h3>Turn on the link in PoDee</h3><p>Settings → Modules → “Link with PoDoo”. Nothing to turn on in PoDoo itself.</p></li>
+          <li><span class="step-no" aria-hidden="true">3</span><h3>Open the PoDee page</h3><p>It shows up in the dock on the phone by itself. Open or hide the island, start a timer, add a task, ask PoDy. The answer from PoDy comes to the phone, and the chat is kept.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="connect" id="connect" aria-labelledby="conn-title">
+      <div class="wrap connect-in">
+        <div class="connect-copy">
+          <h2 id="conn-title" data-split>내 책상. 내 네트워크. 그 사이엔 아무것도 없습니다.</h2>
+          <p>휴대폰은 PC와 직접 대화합니다. Wi-Fi, USB 케이블, Bluetooth 중 하나로. QR 코드나 6자리 코드로 한 번만 연결하면 됩니다. 계정 없음, 광고 없음, 데이터 수집 없음.</p>
+        </div>
+
+        <figure class="link-art" aria-label="그림: PC와 휴대폰이 직접 연결됨">
+          <svg viewBox="0 0 520 220" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="var(--signal)" stop-opacity="0"/><stop offset=".5" stop-color="var(--signal)"/><stop offset="1" stop-color="var(--signal)" stop-opacity="0"/></linearGradient>
+            </defs>
+            <!-- ПК -->
+            <g class="art-pc">
+              <rect x="20" y="40" width="150" height="104" rx="10" class="art-fill"/>
+              <rect x="30" y="50" width="130" height="80" rx="4" class="art-screen"/>
+              <rect x="82" y="150" width="26" height="22" class="art-fill"/>
+              <rect x="62" y="170" width="66" height="8" rx="4" class="art-fill"/>
+              <rect x="42" y="64" width="26" height="26" rx="6" class="art-app a1"/>
+              <rect x="76" y="64" width="26" height="26" rx="6" class="art-app a2"/>
+              <rect x="110" y="64" width="26" height="26" rx="6" class="art-app a3"/>
+            </g>
+            <!-- линия -->
+            <path d="M178 92 H342" class="art-line"/>
+            <path d="M178 92 H342" class="art-beam"/>
+            <circle r="5" class="art-dot d1" cx="178" cy="92"/>
+            <circle r="5" class="art-dot d2" cx="178" cy="92"/>
+            <circle r="5" class="art-dot d3" cx="178" cy="92"/>
+            <!-- телефон -->
+            <g class="art-phone">
+              <rect x="350" y="46" width="150" height="92" rx="14" class="art-fill"/>
+              <rect x="358" y="54" width="134" height="76" rx="8" class="art-screen"/>
+              <rect x="368" y="64" width="26" height="26" rx="6" class="art-key k1"/>
+              <rect x="400" y="64" width="26" height="26" rx="6" class="art-key k2"/>
+              <rect x="432" y="64" width="26" height="26" rx="6" class="art-key k3"/>
+              <rect x="368" y="96" width="26" height="26" rx="6" class="art-key k4"/>
+              <rect x="400" y="96" width="26" height="26" rx="6" class="art-key k5"/>
+              <rect x="432" y="96" width="26" height="26" rx="6" class="art-key k6"/>
+            </g>
+            <text x="260" y="76" text-anchor="middle" class="art-label art-label-ways">Wi-Fi · USB · Bluetooth</text>
+            <text x="260" y="124" text-anchor="middle" class="art-label art-label-dim">클라우드 없음</text>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <section class="setup wrap" id="setup" aria-labelledby="setup-title">
+      <div class="section-head">
+        <h2 id="setup-title" data-split>세 단계면 준비 끝.</h2>
+        <p>A Windows PC and an Android phone or tablet. They connect over Wi-Fi, a USB cable or Bluetooth.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="step-no" aria-hidden="true">1</span>
+          <h3>PC에 PoDoo 설치</h3>
+          <p>설치 프로그램을 실행하세요. PoDoo가 알림 영역에서 휴대폰을 기다립니다.</p>
+          <a class="textlink" href="#download">Windows용 다운로드</a>
+        </li>
+        <li>
+          <span class="step-no" aria-hidden="true">2</span>
+          <h3>휴대폰에 앱 설치</h3>
+          <p>휴대폰에서 PoDoo.apk를 받아 여세요. Android가 브라우저에서 설치하도록 허용할지 물으면 허용하세요.</p>
+          <a class="textlink" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk">Android 앱 받기</a>
+        </li>
+        <li>
+          <span class="step-no" aria-hidden="true">3</span>
+          <h3>연결</h3>
+          <p>The app finds your PC by itself over Wi-Fi, a USB cable or Bluetooth. Tap it and confirm the code from the PoDoo window.</p>
+          <a class="textlink" href="podoo-guides.html#connect">도움이 필요하세요?</a>
+        </li>
+      </ol>
+    </section>
+
+    <section class="download" id="download" aria-labelledby="dl-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="dl-title" data-split>PoDoo를 무료로 받으세요.</h2>
+          <p>두 가지가 필요합니다: Windows PC용 프로그램과 휴대폰용 앱.</p>
+          <p><span class="pill"><i class="led"></i><span>버전</span> 1.0.1</span></p>
+        </div>
+
+        <div class="dl-grid">
+          <article class="dl dl-main">
+            <svg class="dl-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10.5 4.5v6.9H3zM11.6 4.3 21 3v8.4h-9.4zM3 12.6h7.5v6.9L3 18.5zM11.6 12.6H21V21l-9.4-1.3z"/></svg>
+            <h3>Windows</h3>
+            <p>PC용 PoDoo 프로그램, Windows 10, 11. 휴대폰이 이것과 통신하므로 꼭 필요합니다.</p>
+            <a class="lbtn lbtn-lit magnet" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe">.exe 다운로드</a>
+            <a class="textlink" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x86-setup.exe">32비트 Windows용</a>
+          </article>
+          <article class="dl">
+            <svg class="dl-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 18a1 1 0 0 0 1 1h1v3.5a1.5 1.5 0 0 0 3 0V19h2v3.5a1.5 1.5 0 0 0 3 0V19h1a1 1 0 0 0 1-1V8H6zM3.5 8A1.5 1.5 0 0 0 2 9.5v6a1.5 1.5 0 0 0 3 0v-6A1.5 1.5 0 0 0 3.5 8zm17 0A1.5 1.5 0 0 0 19 9.5v6a1.5 1.5 0 0 0 3 0v-6A1.5 1.5 0 0 0 20.5 8zM15.5 2.7l1.2-1.2-.7-.7-1.4 1.4A5.8 5.8 0 0 0 12 1.6c-.9 0-1.7.2-2.6.6L8 .8l-.7.7 1.2 1.2A5.9 5.9 0 0 0 6 7h12a5.9 5.9 0 0 0-2.5-4.3zM10 5H9V4h1zm5 0h-1V4h1z"/></svg>
+            <h3>Android</h3>
+            <p>Android 5.0 이상의 휴대폰과 태블릿.</p>
+            <a class="lbtn" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk">.apk 다운로드</a>
+            <a class="textlink" data-gplay data-soon="Coming to Google Play">Google Play</a>
+          </article>
+        </div>
+        <p class="fineprint"><a class="textlink" href="https://github.com/podylab/PoDoo-releases/releases/latest">모든 파일과 릴리스 노트</a></p>
+      </div>
+    </section>
+
+  </main>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "PoDy에게 보내는 메시지", "js.about_podoo": "PoDoo 소개", "js.all_podee_versions": "PoDee 전체 버전", "js.back_to_top": "맨 위로", "js.click": "클릭", "js.close": "닫기", "js.copied": "복사됨", "js.copy_address": "주소 복사", "js.couldn_t_copy_select": "복사하지 못했어요. 주소를 선택해 주세요", "js.download_podee_and_i": "PoDee를 받으면 내가 화면 위로 이사 갈게", "js.downloads.few": "다운로드", "js.downloads.many": "다운로드", "js.downloads.one": "다운로드", "js.downloads.other": "다운로드", "js.good_even_better_when": "좋아. 쓰다듬어 주면 더 좋아", "js.hi_glad_you_came": "안녕! 와 줘서 기뻐", "js.hi_i_m_pody": "안녕, 나는 PoDy야. 쓰다듬어도 돼", "js.i_like_you_too": "나도 네가 좋아", "js.i_live_at_the": "나는 화면 위에 살면서 음악과 시간을 보여 줘. 나랑 이야기할 수도 있어", "js.i_m_dizzy": "어지러워…", "js.i_only_know_a": "아직 아는 말이 별로 없어. 내가 뭘 할 수 있는지 물어봐", "js.if_podee_helps_you": "PoDee가 도움이 됐다면 프로젝트를 후원할 수 있어요", "js.improve_together": "함께 개선하기", "js.language": "사이트 언어", "js.learn_more": "자세히 보기", "js.made_with_pody_the": "구름 PoDy와 함께 만들었어요", "js.message": "메시지", "js.mute_pody": "PoDy 음소거", "js.net_bnb": "BNB Smart Chain(BEP-20): 이 네트워크의 BNB 또는 USDT.", "js.net_btc": "Bitcoin 네트워크.", "js.net_doge": "Dogecoin 네트워크.", "js.net_eth": "Ethereum 네트워크(ERC-20): 이 네트워크의 ETH 또는 USDT.", "js.net_ton": "TON 네트워크: Toncoin 또는 USDT. 메모에 바라는 점을 적을 수 있어요.", "js.net_usdt": "TRC-20(Tron) 네트워크만 됩니다. 다른 네트워크는 안 돼요.", "js.next_track": "다음 곡", "js.paused": "일시 정지됨", "js.playing": "재생 중", "js.podoo_is_out": "PoDoo 출시: 휴대폰이나 오래된 태블릿이 PC 리모컨이 됩니다", "js.pody_the_cloud_pet": "구름 PoDy: 쓰다듬고 이야기해 보세요", "js.previous_track": "이전 곡", "js.privacy": "개인정보", "js.soon": "곧 출시", "js.sound_off": "소리 끔", "js.sound_on": "소리 켬", "js.support": "후원하기", "js.thank_you_here_s": "고마워요! 후원 페이지는 여기예요", "js.thanks_for_stopping_by": "들러 줘서 고마워요. 얼마든 도움이 돼요", "js.that_tickles": "간지러워!", "js.the_address_is_coming": "주소는 곧 올라와요", "js.the_download_podee_button": "«PoDee 다운로드» 버튼은 홈과 PoDee 페이지에 있어요", "js.the_form_will_work": "양식은 곧 작동합니다", "js.track_1": "밤 드라이브", "js.track_2": "도시의 불빛", "js.track_3": "새벽", "js.typed_text": "입력함: {text}", "js.unmute_pody": "PoDy 음소거 해제", "js.version_line": "{bits}비트 Windows용 버전 {v} · <a href=\"{link}\">{other}비트가 필요하세요?<\/a>", "js.volume_n": "볼륨 {n}%", "js.write_to_pody": "PoDy에게 쓰기…", "js.guides": "Guides", "js.fixes": "Fixes", "js.report": "Report a problem", "js.download": "Download", "js.menu": "Menu", "js.notch": "PoDee: an island at the top of your screen", "js.theme": "Light or dark theme"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=1285ef66"></script>
+<script src="../pody.js?v=16e5b0c0"></script>
+<script src="../podoo.js?v=64be506d"></script>
+</body>
+</html>

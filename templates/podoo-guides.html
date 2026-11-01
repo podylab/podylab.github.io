@@ -1,0 +1,61 @@
+<main class="wrap">
+  <div class="page-head">
+    <img src="{{up}}media/podoo-icon.svg" alt="" />
+    <div><h1>{{pg.title}}</h1><p class="lead">{{pg.lead}}</p></div>
+  </div>
+
+  <section class="guides">
+    <div class="gtabs" role="tablist" aria-label="{{pg.title}}">
+      <a role="tab" href="#connect" data-g="connect">{{pg.connect}}</a>
+      <a role="tab" href="#buttons" data-g="buttons">{{pg.buttons}}</a>
+      <a role="tab" href="#podee" data-g="podee">PoDoo + PoDee</a>
+      <a role="tab" href="#faq" data-g="faq">{{pg.faq}}</a>
+    </div>
+
+    <article class="guide" id="connect" role="tabpanel">
+      <h2>{{pg.connect_title}}</h2>
+      <p class="sub">{{pg.connect_sub}}</p>
+      <ol class="gsteps">
+        <li><b>{{pg.wifi}}</b><p>{{pg.wifi_text}}</p></li>
+        <li><b>{{pg.nofind}}</b><p>{{pg.nofind_text}}</p></li>
+        <li><b>{{pg.usb}}</b><p>{{pg.usb_text}}</p></li>
+        <li><b>{{pg.bt}}</b><p>{{pg.bt_text}}</p></li>
+      </ol>
+    </article>
+
+    <article class="guide" id="buttons" role="tabpanel">
+      <h2>{{pg.buttons_title}}</h2>
+      <p class="sub">{{pg.buttons_sub}}</p>
+      <ol class="gsteps">
+        <li><b>{{pg.b1}}</b><p>{{pg.b1_text}}</p></li>
+        <li><b>{{pg.b2}}</b><p>{{pg.b2_text}}</p></li>
+        <li><b>{{pg.b3}}</b><p>{{pg.b3_text}}</p></li>
+        <li><b>{{pg.b4}}</b><p>{{pg.b4_text}}</p></li>
+      </ol>
+    </article>
+
+    <article class="guide" id="podee" role="tabpanel">
+      <h2>PoDoo + PoDee</h2>
+      <p class="sub">{{pp.sub}}</p>
+      <ol class="gsteps">
+        <li><b>{{pp.s1}}</b><p>{{pp.s1_text}} <a href="podee.html">{{pp.s1_link}}</a></p></li>
+        <li><b>{{pp.s2}}</b><p>{{pp.s2_text}}</p></li>
+        <li><b>{{pp.s3}}</b><p>{{pp.s3_text}}</p></li>
+      </ol>
+      <p class="note">{{pp.safe}}</p>
+    </article>
+
+    <article class="guide" id="faq" role="tabpanel">
+      <h2>{{pg.faq}}</h2>
+      <div class="gfaq">
+        <details><summary>{{podoo.do_i_need_an}}</summary><p>{{podoo.no_account_the_phone}}</p></details>
+        <details><summary>{{podoo.does_it_work_without}}</summary><p>{{podoo.no_the_app_on}}</p></details>
+        <details><summary>{{podoo.which_phones_will_do}}</summary><p>{{podoo.any_phone_or_tablet}}</p></details>
+        <details><summary>{{podoo.what_does_the_app}}</summary><p>{{podoo.only_the_network_and}}</p></details>
+        <details><summary>{{podoo.can_i_connect_without}}</summary><p>{{podoo.yes_plug_the_phone}}</p></details>
+      </div>
+    </article>
+
+    <p class="note">{{guides.stuck}} <a href="report.html">{{guides.stuck_link}}</a></p>
+  </section>
+</main>

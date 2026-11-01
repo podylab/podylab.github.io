@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../" />
+<script>try{var t=localStorage.getItem("podylab.theme")}catch(e){}document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")</script>
+<title>PoDee プライバシーポリシー · Pody Lab</title>
+<meta name="description" content="PoDeeが何を保存し、どこへ送るか。" />
+<link rel="icon" href="../media/podee-icon.svg?v=41ecf9f3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=5db024f3" />
+<link rel="alternate" hreflang="ru" href="https://podylab.github.io/privacy.html" />
+<link rel="alternate" hreflang="en" href="https://podylab.github.io/en/privacy.html" />
+<link rel="alternate" hreflang="es" href="https://podylab.github.io/es/privacy.html" />
+<link rel="alternate" hreflang="pt-BR" href="https://podylab.github.io/pt-br/privacy.html" />
+<link rel="alternate" hreflang="de" href="https://podylab.github.io/de/privacy.html" />
+<link rel="alternate" hreflang="fr" href="https://podylab.github.io/fr/privacy.html" />
+<link rel="alternate" hreflang="it" href="https://podylab.github.io/it/privacy.html" />
+<link rel="alternate" hreflang="tr" href="https://podylab.github.io/tr/privacy.html" />
+<link rel="alternate" hreflang="pl" href="https://podylab.github.io/pl/privacy.html" />
+<link rel="alternate" hreflang="uk" href="https://podylab.github.io/uk/privacy.html" />
+<link rel="alternate" hreflang="id" href="https://podylab.github.io/id/privacy.html" />
+<link rel="alternate" hreflang="vi" href="https://podylab.github.io/vi/privacy.html" />
+<link rel="alternate" hreflang="ja" href="https://podylab.github.io/ja/privacy.html" />
+<link rel="alternate" hreflang="ko" href="https://podylab.github.io/ko/privacy.html" />
+<link rel="alternate" hreflang="zh-CN" href="https://podylab.github.io/zh/privacy.html" />
+<link rel="alternate" hreflang="hi" href="https://podylab.github.io/hi/privacy.html" />
+<link rel="alternate" hreflang="x-default" href="https://podylab.github.io/en/privacy.html" />
+</head>
+<body>
+<main class="wrap legal">
+  <section>
+    <h1 class="legal-title">PoDee プライバシーポリシー</h1>
+    <p class="sub">2026年10月30日発効。Pody Lab、podylab@gmail.com</p>
+
+    <h2>要点</h2>
+    <p>PoDeeはあなたのPCで動きます。Pody Labは独自のサーバーを持っていません。統計は取らず、アプリの使い方を追跡せず、あなたに関する情報も受け取りません。データがインターネットに出るのは、あなたが設定でつないだサービスに対してだけです。</p>
+
+    <h2>PCに残るもの</h2>
+    <ul>
+      <li>設定、タスク、メモ、クリップボード履歴、スクリーンタイム、通知履歴：Windowsプロファイル内のPoDeeフォルダーに保存。</li>
+      <li>AIのAPIキー、取引所のキー、非公開のカレンダーリンク：Windows資格情報マネージャーに保存。</li>
+      <li>これらはすべてあなたの手元に残ります。Microsoft Store版はアンインストール時にデータを削除します。</li>
+    </ul>
+
+    <h2>マイク</h2>
+    <p>PoDeeが聞くのは、音声ボタンを押している間と、あなた自身が始めた通話録音の間だけです。音声はPC上（Whisper）で、または選んだ場合はクラウドサービスで認識されます。音声は保存されず、テキストだけが残ります。</p>
+
+    <h2>PoDeeの接続先</h2>
+    <ul>
+      <li>AIチャットと音声認識：質問はあなたが選んだサービス（Anthropic、OpenAI、Google Gemini、Groq、OpenRouter、または独自のアドレス）に、そのサービスの規約のもとで送られます。</li>
+      <li>カレンダー：追加したGoogle、Outlook、iCalのリンク。</li>
+      <li>歌詞：曲名とアーティスト名がLRCLIB（lrclib.net）に送られます。</li>
+      <li>天気：都市名がwttr.inに送られます。都市を指定しない場合、wttr.inがIPアドレスから推定します。</li>
+      <li>ポートフォリオ：読み取り専用キーでBinance、Bybit、OKX。追加したウォレットアドレス用に公開ブロックチェーンノード。</li>
+      <li>Claudeの上限：Claude Codeアカウントの代わりにapi.anthropic.comへ送るリクエスト。</li>
+      <li>音声モデルは「ダウンロード」を押したときにhuggingface.coから取得されます。</li>
+    </ul>
+    <p>インターネット上のあらゆるリクエストと同じく、これらのサービスにはあなたのIPアドレスが見えます。Claude CodeのエージェントはPoDeeへのイベントをPCの中（127.0.0.1）だけで送り、インターネットには何も出ません。</p>
+
+    <h2>お子さま</h2>
+    <p>PoDeeは13歳未満のお子さま向けではなく、お子さまに関するデータは収集しません。</p>
+
+    <h2>変更とお問い合わせ</h2>
+    <p>このポリシーが変わった場合は、新しい版をこのページに掲載します。お問い合わせ： <a href="mailto:podylab@gmail.com">podylab@gmail.com</a>.</p>
+  </section>
+
+</main>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "PoDyへのメッセージ", "js.about_podoo": "PoDooについて", "js.all_podee_versions": "PoDeeの全バージョン", "js.back_to_top": "ページの先頭へ", "js.click": "クリック", "js.close": "閉じる", "js.copied": "コピーしました", "js.copy_address": "アドレスをコピー", "js.couldn_t_copy_select": "コピーできませんでした。アドレスを選択してください", "js.download_podee_and_i": "PoDeeをダウンロードしたら、画面の上に引っ越すよ", "js.downloads.few": "ダウンロード", "js.downloads.many": "ダウンロード", "js.downloads.one": "ダウンロード", "js.downloads.other": "ダウンロード", "js.good_even_better_when": "元気だよ。なでてもらえるともっと元気", "js.hi_glad_you_came": "こんにちは！来てくれてうれしい", "js.hi_i_m_pody": "こんにちは、PoDyだよ。なでてもいいよ", "js.i_like_you_too": "ぼくもきみが好き", "js.i_live_at_the": "画面の上に住んでいて、音楽と時刻を見せているよ。おしゃべりもできるよ", "js.i_m_dizzy": "目が回る…", "js.i_only_know_a": "まだ少しの言葉しか知らないんだ。できることを聞いてみて", "js.if_podee_helps_you": "PoDeeが役に立ったら、プロジェクトを応援できます", "js.improve_together": "一緒に良くする", "js.language": "サイトの言語", "js.learn_more": "詳しく見る", "js.made_with_pody_the": "雲のPoDyと一緒に作りました", "js.message": "メッセージ", "js.mute_pody": "PoDyをミュート", "js.net_bnb": "BNB Smart Chain（BEP-20）：このネットワークのBNBまたはUSDT。", "js.net_btc": "Bitcoinネットワーク。", "js.net_doge": "Dogecoinネットワーク。", "js.net_eth": "Ethereumネットワーク（ERC-20）：このネットワークのETHまたはUSDT。", "js.net_ton": "TONネットワーク：ToncoinまたはUSDT。コメントに要望を書けます。", "js.net_usdt": "TRC-20（Tron）ネットワークのみ。ほかのネットワークは使えません。", "js.next_track": "次の曲", "js.paused": "一時停止中", "js.playing": "再生中", "js.podoo_is_out": "PoDooが出ました：スマホや古いタブレットがPCのリモコンに", "js.pody_the_cloud_pet": "雲のPoDy：なでたり話しかけたりできます", "js.previous_track": "前の曲", "js.privacy": "プライバシー", "js.soon": "近日公開", "js.sound_off": "サウンドオフ", "js.sound_on": "サウンドオン", "js.support": "応援する", "js.thank_you_here_s": "ありがとう！応援ページはこちら", "js.thanks_for_stopping_by": "来てくれてありがとう。どんな金額でも助かります", "js.that_tickles": "くすぐったい！", "js.the_address_is_coming": "アドレスはもうすぐ掲載します", "js.the_download_podee_button": "「PoDeeをダウンロード」ボタンはトップページとPoDeeのページにあります", "js.the_form_will_work": "フォームはもうすぐ使えるようになります", "js.track_1": "夜のドライブ", "js.track_2": "街の灯り", "js.track_3": "夜明け", "js.typed_text": "入力：{text}", "js.unmute_pody": "PoDyのミュートを解除", "js.version_line": "{bits}ビットWindows版 バージョン{v} · <a href=\"{link}\">{other}ビット版が必要ですか？<\/a>", "js.volume_n": "音量 {n}%", "js.write_to_pody": "PoDyに書く…", "js.guides": "Guides", "js.fixes": "Fixes", "js.report": "Report a problem", "js.download": "Download", "js.menu": "Menu", "js.notch": "PoDee: an island at the top of your screen", "js.theme": "Light or dark theme"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=1285ef66"></script>
+<script src="../pody.js?v=16e5b0c0"></script>
+</body>
+</html>

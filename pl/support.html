@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../" />
+<script>try{var t=localStorage.getItem("podylab.theme")}catch(e){}document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")</script>
+<title>Wesprzyj · Pody Lab</title>
+<meta name="description" content="Wesprzyj Pody Lab dowolną kwotą kartą, przez Kaspi QR albo w kryptowalucie i wyślij życzenie dla PoDee lub PoDoo." />
+<link rel="icon" href="../media/podee-icon.svg?v=41ecf9f3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=5db024f3" />
+<link rel="alternate" hreflang="ru" href="https://podylab.github.io/support.html" />
+<link rel="alternate" hreflang="en" href="https://podylab.github.io/en/support.html" />
+<link rel="alternate" hreflang="es" href="https://podylab.github.io/es/support.html" />
+<link rel="alternate" hreflang="pt-BR" href="https://podylab.github.io/pt-br/support.html" />
+<link rel="alternate" hreflang="de" href="https://podylab.github.io/de/support.html" />
+<link rel="alternate" hreflang="fr" href="https://podylab.github.io/fr/support.html" />
+<link rel="alternate" hreflang="it" href="https://podylab.github.io/it/support.html" />
+<link rel="alternate" hreflang="tr" href="https://podylab.github.io/tr/support.html" />
+<link rel="alternate" hreflang="pl" href="https://podylab.github.io/pl/support.html" />
+<link rel="alternate" hreflang="uk" href="https://podylab.github.io/uk/support.html" />
+<link rel="alternate" hreflang="id" href="https://podylab.github.io/id/support.html" />
+<link rel="alternate" hreflang="vi" href="https://podylab.github.io/vi/support.html" />
+<link rel="alternate" hreflang="ja" href="https://podylab.github.io/ja/support.html" />
+<link rel="alternate" hreflang="ko" href="https://podylab.github.io/ko/support.html" />
+<link rel="alternate" hreflang="zh-CN" href="https://podylab.github.io/zh/support.html" />
+<link rel="alternate" hreflang="hi" href="https://podylab.github.io/hi/support.html" />
+<link rel="alternate" hreflang="x-default" href="https://podylab.github.io/en/support.html" />
+</head>
+<body>
+<main class="wrap">
+  <div class="hero" style="padding-bottom:0">
+    <img class="cloud" src="../media/podee-icon.svg?v=41ecf9f3" alt="Chmurka PoDy" />
+    <h1>Wesprzyj <em>Pody Lab</em></h1>
+    <p class="lead">Aplikacje Pody Lab są darmowe. Jeśli ci pomagają, wyślij dowolną kwotę. Pieniądze idą na nowe funkcje i kolejne aplikacje.</p>
+  </div>
+
+  <section id="donate">
+    <div class="card pay pay-bar">
+      <div class="pay-head"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M3 10h18"/><path d="M7 14.6h3.5"/></svg></div><div><h3>Kartą</h3><p>Dowolna karta, dowolna kwota</p></div></div>
+      <p class="pay-text">Otworzy się strona płatności (po rosyjsku). Wpisz kwotę i, jeśli chcesz, życzenie w wiadomości do płatności.</p>
+      <a class="btn main" id="card" href="#" target="_blank" rel="noopener">Zapłać kartą</a>
+    </div>
+    <div class="grid g2 pay-pair">
+      <div class="card pay" id="kaspi">
+        <div class="pay-head"><div class="ic kaspi"><img src="../media/kaspi-logo.png" width="34" height="35" alt=""></div><div><h3>Kaspi QR</h3><p>Dla Kazachstanu</p></div></div>
+        <div class="wallet">
+          <div class="qr"><img src="../kaspi-qr.png" width="132" height="132" alt="Kaspi QR do płatności" loading="lazy"></div>
+          <ol class="pay-steps"><li>Otwórz aplikację Kaspi.kz.</li><li>Stuknij „Kaspi QR” i skieruj aparat na kod.</li><li>Wpisz dowolną kwotę i potwierdź.</li></ol>
+        </div>
+      </div>
+      <div class="card pay">
+        <div class="pay-head"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M14.6 9.4a2.9 2.9 0 0 0-2.6-1.4c-1.6 0-2.7.8-2.7 1.9s.9 1.6 2.7 1.9 2.7.9 2.7 2-1.1 2-2.7 2a3 3 0 0 1-2.7-1.5"/><path d="M12 6.3v1.7M12 16v1.7"/></svg></div><div><h3>W kryptowalucie</h3><p>USDT, TON, BTC, ETH, BNB, DOGE</p></div></div>
+        <div class="coins" id="coins"></div>
+        <div class="wallet">
+          <div class="qr" id="qr"></div>
+          <div>
+            <div class="addr" id="addr"></div>
+            <div class="net" id="net"></div>
+            <button class="btn ghost copy" id="copy" type="button">Kopiuj adres</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wish">
+    <h2>Ulepszajmy aplikacje razem</h2>
+    <p class="sub">Do tego nie trzeba płacić. Napisz, czego brakuje PoDee albo PoDoo, albo jaką aplikację zrobić następną. Czytamy każde życzenie.</p>
+    <div class="card">
+      <form data-send="Dzięki, dotarło. Przeczytamy.">
+        <input type="hidden" name="about" value="Życzenie" />
+        <div class="row2">
+          <label>Aplikacja <select name="app"><option>PoDee</option><option>PoDoo</option><option>Nowa aplikacja</option></select></label>
+          <label>E-mail, jeśli chcesz odpowiedź <input name="email" type="email" autocomplete="email" placeholder="you@mail.com" /></label>
+        </div>
+        <label>Co ulepszyć <textarea name="message" required placeholder="Na przykład: pokazywać pogodę na wyspie"></textarea></label>
+        <div class="btns" style="align-items:center"><button class="btn main" type="submit">Wyślij życzenie</button><span class="sent"></span></div>
+      </form>
+      <p class="wish-also">Życzenie możesz też wysłać razem z wpłatą: w wiadomości do płatności kartą albo w komentarzu do przelewu TON.</p>
+    </div>
+  </section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "Wiadomość dla PoDy", "js.about_podoo": "O PoDoo", "js.all_podee_versions": "Wszystkie wersje PoDee", "js.back_to_top": "Na górę", "js.click": "Klik", "js.close": "Zamknij", "js.copied": "Skopiowano", "js.copy_address": "Kopiuj adres", "js.couldn_t_copy_select": "Nie udało się skopiować, zaznacz adres", "js.download_podee_and_i": "Pobierz PoDee, a przeprowadzę się na górę twojego ekranu", "js.downloads.few": "pobrania", "js.downloads.many": "pobrań", "js.downloads.one": "pobranie", "js.downloads.other": "pobrania", "js.good_even_better_when": "Dobrze. A jeszcze lepiej, gdy ktoś mnie głaszcze", "js.hi_glad_you_came": "Cześć! Fajnie, że wpadłeś", "js.hi_i_m_pody": "Cześć, jestem PoDy. Możesz mnie pogłaskać", "js.i_like_you_too": "Ja też cię lubię", "js.i_live_at_the": "Mieszkam u góry twojego ekranu i pokazuję muzykę i godzinę. Możesz też ze mną pogadać", "js.i_m_dizzy": "Kręci mi się w głowie…", "js.i_only_know_a": "Znam dopiero kilka słów. Zapytaj, co umiem", "js.if_podee_helps_you": "Jeśli PoDee ci pomaga, możesz wesprzeć projekt", "js.improve_together": "Ulepszajmy razem", "js.language": "Język strony", "js.learn_more": "Więcej", "js.made_with_pody_the": "Zrobione z chmurką PoDy", "js.message": "wiadomość", "js.mute_pody": "Wycisz PoDy", "js.net_bnb": "BNB Smart Chain (BEP-20): BNB lub USDT w tej sieci.", "js.net_btc": "Sieć Bitcoin.", "js.net_doge": "Sieć Dogecoin.", "js.net_eth": "Sieć Ethereum (ERC-20): ETH lub USDT w tej sieci.", "js.net_ton": "Sieć TON: Toncoin lub USDT. W komentarzu możesz wpisać życzenie.", "js.net_usdt": "Tylko sieć TRC-20 (Tron). Inne sieci nie zadziałają.", "js.next_track": "Następny utwór", "js.paused": "Pauza", "js.playing": "Gra", "js.podoo_is_out": "PoDoo już jest: telefon albo stary tablet staje się pilotem do komputera", "js.pody_the_cloud_pet": "Chmurka PoDy: pogłaszcz ją i porozmawiaj", "js.previous_track": "Poprzedni utwór", "js.privacy": "Prywatność", "js.soon": "Wkrótce", "js.sound_off": "Dźwięk wyłączony", "js.sound_on": "Dźwięk włączony", "js.support": "Wesprzyj", "js.thank_you_here_s": "Dzięki! Oto strona wsparcia", "js.thanks_for_stopping_by": "Dzięki, że zajrzałeś. Każda kwota pomaga", "js.that_tickles": "Łaskocze!", "js.the_address_is_coming": "Adres pojawi się wkrótce", "js.the_download_podee_button": "Przycisk „Pobierz PoDee” jest na stronie głównej i na stronie PoDee", "js.the_form_will_work": "Formularz zacznie działać już niedługo", "js.track_1": "Nocna trasa", "js.track_2": "Światła miasta", "js.track_3": "Świt", "js.typed_text": "Wpisano: {text}", "js.unmute_pody": "Włącz dźwięk PoDy", "js.version_line": "Wersja {v} dla Windows {bits}-bit · <a href=\"{link}\">potrzebujesz {other}-bit?<\/a>", "js.volume_n": "Głośność {n}%", "js.write_to_pody": "Napisz do PoDy…", "js.guides": "Guides", "js.fixes": "Fixes", "js.report": "Report a problem", "js.download": "Download", "js.menu": "Menu", "js.notch": "PoDee: an island at the top of your screen", "js.theme": "Light or dark theme"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=1285ef66"></script>
+<script src="../pody.js?v=16e5b0c0"></script>
+</body>
+</html>

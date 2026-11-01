@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../" />
+<script>try{var t=localStorage.getItem("podylab.theme")}catch(e){}document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")</script>
+<title>Destek ol · Pody Lab</title>
+<meta name="description" content="Pody Lab’e kartla, Kaspi QR ile ya da kriptoyla istediğin tutarda destek ol, PoDee veya PoDoo için bir dilek gönder." />
+<link rel="icon" href="../media/podee-icon.svg?v=41ecf9f3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=5db024f3" />
+<link rel="alternate" hreflang="ru" href="https://podylab.github.io/support.html" />
+<link rel="alternate" hreflang="en" href="https://podylab.github.io/en/support.html" />
+<link rel="alternate" hreflang="es" href="https://podylab.github.io/es/support.html" />
+<link rel="alternate" hreflang="pt-BR" href="https://podylab.github.io/pt-br/support.html" />
+<link rel="alternate" hreflang="de" href="https://podylab.github.io/de/support.html" />
+<link rel="alternate" hreflang="fr" href="https://podylab.github.io/fr/support.html" />
+<link rel="alternate" hreflang="it" href="https://podylab.github.io/it/support.html" />
+<link rel="alternate" hreflang="tr" href="https://podylab.github.io/tr/support.html" />
+<link rel="alternate" hreflang="pl" href="https://podylab.github.io/pl/support.html" />
+<link rel="alternate" hreflang="uk" href="https://podylab.github.io/uk/support.html" />
+<link rel="alternate" hreflang="id" href="https://podylab.github.io/id/support.html" />
+<link rel="alternate" hreflang="vi" href="https://podylab.github.io/vi/support.html" />
+<link rel="alternate" hreflang="ja" href="https://podylab.github.io/ja/support.html" />
+<link rel="alternate" hreflang="ko" href="https://podylab.github.io/ko/support.html" />
+<link rel="alternate" hreflang="zh-CN" href="https://podylab.github.io/zh/support.html" />
+<link rel="alternate" hreflang="hi" href="https://podylab.github.io/hi/support.html" />
+<link rel="alternate" hreflang="x-default" href="https://podylab.github.io/en/support.html" />
+</head>
+<body>
+<main class="wrap">
+  <div class="hero" style="padding-bottom:0">
+    <img class="cloud" src="../media/podee-icon.svg?v=41ecf9f3" alt="Bulut PoDy" />
+    <h1>Destek ol <em>Pody Lab</em></h1>
+    <p class="lead">Pody Lab uygulamaları ücretsiz. İşine yararsa istediğin tutarı gönder. Para yeni özelliklere ve sonraki uygulamalara gider.</p>
+  </div>
+
+  <section id="donate">
+    <div class="card pay pay-bar">
+      <div class="pay-head"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M3 10h18"/><path d="M7 14.6h3.5"/></svg></div><div><h3>Kartla</h3><p>Her kart, her tutar</p></div></div>
+      <p class="pay-text">Bir ödeme sayfası açılır (Rusça). Tutarı ve istersen ödeme mesajına bir dilek yaz.</p>
+      <a class="btn main" id="card" href="#" target="_blank" rel="noopener">Kartla öde</a>
+    </div>
+    <div class="grid g2 pay-pair">
+      <div class="card pay" id="kaspi">
+        <div class="pay-head"><div class="ic kaspi"><img src="../media/kaspi-logo.png" width="34" height="35" alt=""></div><div><h3>Kaspi QR</h3><p>Kazakistan için</p></div></div>
+        <div class="wallet">
+          <div class="qr"><img src="../kaspi-qr.png" width="132" height="132" alt="Ödeme için Kaspi QR" loading="lazy"></div>
+          <ol class="pay-steps"><li>Kaspi.kz uygulamasını aç.</li><li>«Kaspi QR»a dokun ve kamerayı koda tut.</li><li>Bir tutar yaz ve onayla.</li></ol>
+        </div>
+      </div>
+      <div class="card pay">
+        <div class="pay-head"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M14.6 9.4a2.9 2.9 0 0 0-2.6-1.4c-1.6 0-2.7.8-2.7 1.9s.9 1.6 2.7 1.9 2.7.9 2.7 2-1.1 2-2.7 2a3 3 0 0 1-2.7-1.5"/><path d="M12 6.3v1.7M12 16v1.7"/></svg></div><div><h3>Kriptoyla</h3><p>USDT, TON, BTC, ETH, BNB, DOGE</p></div></div>
+        <div class="coins" id="coins"></div>
+        <div class="wallet">
+          <div class="qr" id="qr"></div>
+          <div>
+            <div class="addr" id="addr"></div>
+            <div class="net" id="net"></div>
+            <button class="btn ghost copy" id="copy" type="button">Adresi kopyala</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wish">
+    <h2>Uygulamaları birlikte geliştirelim</h2>
+    <p class="sub">Bunun için ödeme gerekmez. PoDee ya da PoDoo’da neyin eksik olduğunu veya sıradaki uygulamanın ne olması gerektiğini anlat. Her dileği okuyoruz.</p>
+    <div class="card">
+      <form data-send="Teşekkürler, aldık. Okuyacağız.">
+        <input type="hidden" name="about" value="Dilek" />
+        <div class="row2">
+          <label>Uygulama <select name="app"><option>PoDee</option><option>PoDoo</option><option>Yeni bir uygulama</option></select></label>
+          <label>Yanıt istersen e-posta <input name="email" type="email" autocomplete="email" placeholder="you@mail.com" /></label>
+        </div>
+        <label>Ne geliştirilsin <textarea name="message" required placeholder="Örneğin: adada hava durumunu göster"></textarea></label>
+        <div class="btns" style="align-items:center"><button class="btn main" type="submit">Dileği gönder</button><span class="sent"></span></div>
+      </form>
+      <p class="wish-also">Bağışla birlikte bir dilek de gönderebilirsin: kart ödemesinin mesajında ya da TON transferinin açıklamasında.</p>
+    </div>
+  </section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "PoDy’ye bir mesaj", "js.about_podoo": "PoDoo hakkında", "js.all_podee_versions": "Tüm PoDee sürümleri", "js.back_to_top": "Başa dön", "js.click": "Tık", "js.close": "Kapat", "js.copied": "Kopyalandı", "js.copy_address": "Adresi kopyala", "js.couldn_t_copy_select": "Kopyalanamadı, adresi seç", "js.download_podee_and_i": "PoDee’yi indir, ekranının üstüne taşınayım", "js.downloads.few": "indirme", "js.downloads.many": "indirme", "js.downloads.one": "indirme", "js.downloads.other": "indirme", "js.good_even_better_when": "İyiyim. Okşanınca daha da iyi", "js.hi_glad_you_came": "Merhaba! Gelmene sevindim", "js.hi_i_m_pody": "Merhaba, ben PoDy. Beni okşayabilirsin", "js.i_like_you_too": "Ben de seni sevdim", "js.i_live_at_the": "Ekranının üstünde yaşıyorum, müziği ve saati gösteriyorum. Benimle konuşabilirsin de", "js.i_m_dizzy": "Başım döndü…", "js.i_only_know_a": "Henüz az kelime biliyorum. Neler yapabildiğimi sor", "js.if_podee_helps_you": "PoDee işine yarıyorsa projeye destek olabilirsin", "js.improve_together": "Birlikte geliştirelim", "js.language": "Site dili", "js.learn_more": "Daha fazla", "js.made_with_pody_the": "Bulut PoDy ile yapıldı", "js.message": "mesaj", "js.mute_pody": "PoDy’nin sesini kapat", "js.net_bnb": "BNB Smart Chain (BEP-20): bu ağda BNB veya USDT.", "js.net_btc": "Bitcoin ağı.", "js.net_doge": "Dogecoin ağı.", "js.net_eth": "Ethereum ağı (ERC-20): bu ağda ETH veya USDT.", "js.net_ton": "TON ağı: Toncoin veya USDT. Açıklamaya bir dilek yazabilirsin.", "js.net_usdt": "Yalnızca TRC-20 ağı (Tron). Diğer ağlar olmaz.", "js.next_track": "Sonraki parça", "js.paused": "Duraklatıldı", "js.playing": "Çalıyor", "js.podoo_is_out": "PoDoo çıktı: bir telefon ya da eski tablet bilgisayarının kumandası olur", "js.pody_the_cloud_pet": "Bulut PoDy: okşa ve onunla konuş", "js.previous_track": "Önceki parça", "js.privacy": "Gizlilik", "js.soon": "Yakında", "js.sound_off": "Ses kapalı", "js.sound_on": "Ses açık", "js.support": "Destek ol", "js.thank_you_here_s": "Teşekkürler! İşte destek sayfası", "js.thanks_for_stopping_by": "Uğradığın için teşekkürler. Her tutar işe yarar", "js.that_tickles": "Gıdıklanıyorum!", "js.the_address_is_coming": "Adres yakında burada", "js.the_download_podee_button": "«PoDee’yi indir» düğmesi ana sayfada ve PoDee sayfasında", "js.the_form_will_work": "Form çok yakında çalışacak", "js.track_1": "Gece yolu", "js.track_2": "Şehir ışıkları", "js.track_3": "Şafak", "js.typed_text": "Yazılan: {text}", "js.unmute_pody": "PoDy’nin sesini aç", "js.version_line": "{bits} bit Windows için sürüm {v} · <a href=\"{link}\">{other} bit mi lazım?<\/a>", "js.volume_n": "Ses %{n}", "js.write_to_pody": "PoDy’ye yaz…", "js.guides": "Guides", "js.fixes": "Fixes", "js.report": "Report a problem", "js.download": "Download", "js.menu": "Menu", "js.notch": "PoDee: an island at the top of your screen", "js.theme": "Light or dark theme"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=1285ef66"></script>
+<script src="../pody.js?v=16e5b0c0"></script>
+</body>
+</html>

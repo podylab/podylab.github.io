@@ -1,0 +1,35 @@
+<section id="clean">
+    <h2>{{clean.title}}</h2>
+    <p class="sub">{{clean.sub}}</p>
+    <div class="grid g3 clean">
+      <div class="card">
+        <div class="mini pic" aria-hidden="true">
+          <div class="m-set">
+            <b>{{clean.set_title}}</b>
+            <p><i class="on"></i><span>{{clean.set_running}}</span></p>
+            <p class="hot"><i class="on"></i><span>{{clean.set_icons}}</span><em class="tap">1</em></p>
+          </div>
+        </div>
+        <h3>{{clean.icons}}</h3>
+        <p>{{clean.icons_text}}</p>
+      </div>
+      <div class="card">
+        <div class="mini pic wall" aria-hidden="true" style="background-image:url({{up}}media/wallpapers/sky-small.jpg)">
+          <div class="m-gone"></div>
+          <div class="d-dock low">
+          {{>dock}}
+          </div>
+        </div>
+        <h3>{{clean.bar}}</h3>
+        <p>{{clean.bar_text}}</p>
+      </div>
+      <a class="card link" href="#walls">
+        <div class="mini pic wall" aria-hidden="true" style="background-image:url({{up}}media/wallpapers/peach-small.jpg)">
+          <div class="sh notch"><b data-clock>14:32</b></div>
+          <i class="ch char cloud" data-c="cloud" data-t="dark"></i>
+        </div>
+        <h3>{{clean.wall}}</h3>
+        <p>{{clean.wall_text}}</p>
+      </a>
+    </div>
+  </section>

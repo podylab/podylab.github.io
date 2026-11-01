@@ -1,0 +1,27 @@
+<div class="ba">
+      <figure>
+        <div class="desk tall" aria-hidden="true">
+          <div class="screen">
+            <div class="d-icons"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="d-taskbar full"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b class="tray" data-clock>14:32</b></div>
+          </div>
+        </div>
+        <figcaption><b>{{ba.before}}</b> {{ba.before_text}}</figcaption>
+      </figure>
+      <figure>
+        <div class="desk tall" aria-hidden="true">
+          <div class="screen">
+            <div class="d-widgets">
+              <div><div class="temp">+12°</div><div class="mut">{{mods.weather}}</div></div>
+              <div><b>{{mods.tasks}}</b><ul><li class="done">{{mods.task_1}}</li><li>{{mods.task_2}}</li><li>{{mods.task_3}}</li></ul></div>
+            </div>
+            <div class="isl-cloud"><i></i><i></i><i></i><i></i><b data-clock>14:32</b></div>
+            <i class="d-pody near char" data-c="auto"></i>
+            <div class="d-dock low">
+          {{>dock}}
+            </div>
+          </div>
+        </div>
+        <figcaption><b>{{ba.after}}</b> {{ba.after_text}}</figcaption>
+      </figure>
+    </div>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../" />
+<script>try{var t=localStorage.getItem("podylab.theme")}catch(e){}document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")</script>
+<title>Fixes and what's new</title>
+<meta name="description" content="What changed in each version of PoDee." />
+<link rel="icon" href="../media/podee-icon.svg?v=41ecf9f3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=5db024f3" />
+<link rel="alternate" hreflang="ru" href="https://podylab.github.io/fixes.html" />
+<link rel="alternate" hreflang="en" href="https://podylab.github.io/en/fixes.html" />
+<link rel="alternate" hreflang="es" href="https://podylab.github.io/es/fixes.html" />
+<link rel="alternate" hreflang="pt-BR" href="https://podylab.github.io/pt-br/fixes.html" />
+<link rel="alternate" hreflang="de" href="https://podylab.github.io/de/fixes.html" />
+<link rel="alternate" hreflang="fr" href="https://podylab.github.io/fr/fixes.html" />
+<link rel="alternate" hreflang="it" href="https://podylab.github.io/it/fixes.html" />
+<link rel="alternate" hreflang="tr" href="https://podylab.github.io/tr/fixes.html" />
+<link rel="alternate" hreflang="pl" href="https://podylab.github.io/pl/fixes.html" />
+<link rel="alternate" hreflang="uk" href="https://podylab.github.io/uk/fixes.html" />
+<link rel="alternate" hreflang="id" href="https://podylab.github.io/id/fixes.html" />
+<link rel="alternate" hreflang="vi" href="https://podylab.github.io/vi/fixes.html" />
+<link rel="alternate" hreflang="ja" href="https://podylab.github.io/ja/fixes.html" />
+<link rel="alternate" hreflang="ko" href="https://podylab.github.io/ko/fixes.html" />
+<link rel="alternate" hreflang="zh-CN" href="https://podylab.github.io/zh/fixes.html" />
+<link rel="alternate" hreflang="hi" href="https://podylab.github.io/hi/fixes.html" />
+<link rel="alternate" hreflang="x-default" href="https://podylab.github.io/en/fixes.html" />
+</head>
+<body>
+<main class="wrap">
+  <div class="page-head">
+    <img src="../media/podee-icon.svg?v=41ecf9f3" alt="" />
+    <div><h1>Fixes and what's new</h1><p class="lead">What changed in each version of PoDee. Updates arrive on their own.</p></div>
+  </div>
+
+  <section class="fixes">
+    <article class="rel">
+      <div class="rel-head"><h2>1.3.5</h2><span class="tag">Latest</span><time datetime="2026-10-31" data-date>2026-10-31</time></div>
+      <ul>
+        <li>PoDoo link (Settings → Modules). From your phone you can open and hide the island, start a timer, add a task and ask PoDy, and the answer comes straight to the phone.</li>
+        <li>The shelf converts files: images to JPG, PNG and other formats, resizing, PDF from pictures, text from images, background removal (a 170 MB model downloads on request). Video and audio through FFmpeg. Documents to PDF if Office is installed.</li>
+        <li>When an app in the dock has several windows, hovering shows their previews. Clicking an app that's already in front minimizes it.</li>
+        <li>The island no longer freezes when the Windows media service stops responding.</li>
+        <li>Ctrl+Alt+P tucks the island away at the top and brings it back.</li>
+        <li>The installer closes PoDee before updating and starts it again afterwards.</li>
+        <li>The tray menu has a new “Support the project” item.</li>
+      </ul>
+    </article>
+    <article class="rel">
+      <div class="rel-head"><h2>1.3.4</h2><time datetime="2026-10-30" data-date>2026-10-30</time></div>
+      <ul>
+        <li>Whisper recognizes speech again. After the move to a new folder in 1.3.3, chat said Whisper wasn't installed. Autostart, lost in the same move, comes back on its own.</li>
+        <li>In the English interface, weather, hints and voice errors are in English too, and the AI answers in the language of your question. Switching language no longer resets the timer and pomodoro.</li>
+        <li>A version for 32-bit Windows.</li>
+      </ul>
+    </article>
+    <article class="rel">
+      <div class="rel-head"><h2>1.3.3</h2><time datetime="2026-10-30" data-date>2026-10-30</time></div>
+      <ul>
+        <li>PoDe is now called PoDee, and the little cloud is PoDy. Settings, keys, autostart and the Claude Code connection move over on their own.</li>
+        <li>The heart on the island opens the Pody Lab support page, with a QR code to open it on your phone.</li>
+        <li>Starting PoDee a second time opens its settings instead of a second island.</li>
+      </ul>
+    </article>
+    <article class="rel">
+      <div class="rel-head"><h2>1.3.1</h2><time datetime="2026-10-30" data-date>2026-10-30</time></div>
+      <ul>
+        <li>File Explorer and other apps started from the dock open on top of other windows, not behind them.</li>
+        <li>The island can hide completely, leaving only the indicator. Point at the indicator and the panel opens. Turn it on in General → When hidden.</li>
+        <li>The Drop, Spring, Smooth and Fast animations now feel clearly different, and the chosen one plays in Settings right away.</li>
+        <li>The island shapes got names: Notch, Flare, Capsule and Cloud.</li>
+        <li>Claude Code agents can be turned off one account at a time.</li>
+        <li>A crypto prices widget, and transparency for each widget and the dock.</li>
+        <li>Settings open without flicker, sliders reach the very edge, and the cat hangs on next to the open island too.</li>
+      </ul>
+    </article>
+    <p class="note">Every version and installer is on <a href="https://github.com/podylab/PoDee-releases/releases">GitHub</a>. Found a bug? <a href="report.html">Tell us</a></p>
+  </section>
+</main>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "Un messaggio per PoDy", "js.about_podoo": "Info su PoDoo", "js.all_podee_versions": "Tutte le versioni di PoDee", "js.back_to_top": "Torna su", "js.click": "Clic", "js.close": "Chiudi", "js.copied": "Copiato", "js.copy_address": "Copia indirizzo", "js.couldn_t_copy_select": "Copia non riuscita, seleziona l’indirizzo", "js.download_podee_and_i": "Scarica PoDee e mi trasferisco in cima al tuo schermo", "js.downloads.few": "download", "js.downloads.many": "di download", "js.downloads.one": "download", "js.downloads.other": "download", "js.good_even_better_when": "Bene. Ancora meglio quando mi accarezzano", "js.hi_glad_you_came": "Ciao! Che bello vederti", "js.hi_i_m_pody": "Ciao, sono PoDy. Puoi accarezzarmi", "js.i_like_you_too": "Anche tu mi stai simpatico", "js.i_live_at_the": "Vivo in cima al tuo schermo e mostro la musica e l’ora. Puoi anche parlarmi", "js.i_m_dizzy": "Mi gira la testa…", "js.i_only_know_a": "Conosco ancora poche parole. Chiedimi cosa so fare", "js.if_podee_helps_you": "Se PoDee ti è utile, puoi sostenere il progetto", "js.improve_together": "Migliorare insieme", "js.language": "Lingua del sito", "js.learn_more": "Scopri di più", "js.made_with_pody_the": "Fatto con la nuvola PoDy", "js.message": "messaggio", "js.mute_pody": "Silenzia PoDy", "js.net_bnb": "BNB Smart Chain (BEP-20): BNB o USDT su questa rete.", "js.net_btc": "Rete Bitcoin.", "js.net_doge": "Rete Dogecoin.", "js.net_eth": "Rete Ethereum (ERC-20): ETH o USDT su questa rete.", "js.net_ton": "Rete TON: Toncoin o USDT. Nel commento puoi scrivere un desiderio.", "js.net_usdt": "Solo rete TRC-20 (Tron). Le altre reti non vanno.", "js.next_track": "Brano successivo", "js.paused": "In pausa", "js.playing": "In riproduzione", "js.podoo_is_out": "PoDoo è uscito: un telefono o un vecchio tablet diventa il telecomando del tuo PC", "js.pody_the_cloud_pet": "La nuvola PoDy: accarezzala e parlale", "js.previous_track": "Brano precedente", "js.privacy": "Privacy", "js.soon": "Presto", "js.sound_off": "Audio disattivato", "js.sound_on": "Audio attivato", "js.support": "Sostieni", "js.thank_you_here_s": "Grazie! Ecco la pagina per sostenerci", "js.thanks_for_stopping_by": "Grazie della visita. Ogni importo aiuta", "js.that_tickles": "Mi fai il solletico!", "js.the_address_is_coming": "L’indirizzo arriva presto", "js.the_download_podee_button": "Il pulsante «Scarica PoDee» è nella pagina iniziale e in quella di PoDee", "js.the_form_will_work": "Il modulo funzionerà a breve", "js.track_1": "Strada di notte", "js.track_2": "Luci della città", "js.track_3": "Alba", "js.typed_text": "Digitato: {text}", "js.unmute_pody": "Riattiva l’audio di PoDy", "js.version_line": "Versione {v} per Windows a {bits} bit · <a href=\"{link}\">ti serve quella a {other} bit?<\/a>", "js.volume_n": "Volume {n}%", "js.write_to_pody": "Scrivi a PoDy…", "js.guides": "Guides", "js.fixes": "Fixes", "js.report": "Report a problem", "js.download": "Download", "js.menu": "Menu", "js.notch": "PoDee: an island at the top of your screen", "js.theme": "Light or dark theme"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=1285ef66"></script>
+<script src="../pody.js?v=16e5b0c0"></script>
+</body>
+</html>

@@ -6,11 +6,7 @@ root.classList.add('js');
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-// the English page is built with English words already; the script only swaps labels it fills in itself
-const lang = root.lang === 'en' ? 'en' : 'ru';
-for (const [attr, target] of [['data-en-aria', 'aria-label'], ['data-en-title', 'title'], ['data-en-placeholder', 'placeholder']]) {
-  if (lang === 'en') for (const el of $$(`[${attr}]`)) el.setAttribute(target, el.getAttribute(attr));
-}
+// every page is built in its own language already; the words this script fills in come from W() in site.js
 
 // ---------- Hero: появление ----------
 $$('h1 .line > span').forEach((s, i) => s.style.setProperty('--n', i));
@@ -88,7 +84,7 @@ if (scene) {
       }
       if (name === 'vol') {
         vol = vol >= 85 ? 25 : vol + 15;
-        scene.style.setProperty('--vol', vol + '%');
+        scene.style.setProperty('--vol', vol / 100);
         flag('hud', true); clearTimeout(hudTimer); hudTimer = setTimeout(() => flag('hud', false), 1500);
       }
       if (name === 'save') { flag('toast', true); clearTimeout(toastTimer2); toastTimer2 = setTimeout(() => flag('toast', false), 1700); }
@@ -216,8 +212,8 @@ if (mock) {
   const name = $('#m-name'), toastEl = $('#m-toast'), sheet = $('#m-sheet'), pad = $('#m-pad'), padDot = $('#m-pad-dot');
   const kb = $('#m-kb'), kbIn = $('#m-kb-in'), vol = $('#m-vol'), volOut = $('#m-vol-out'), prog = $('#m-prog');
   let page = 0, toastT;
-  const say = (ru, en) => {
-    toastEl.textContent = lang === 'en' ? (en || ru) : ru;
+  const say = (text) => {
+    toastEl.textContent = text;
     toastEl.classList.add('show');
     clearTimeout(toastT); toastT = setTimeout(() => toastEl.classList.remove('show'), 1600);
   };
@@ -226,7 +222,7 @@ if (mock) {
     pagesEl.style.setProperty('--page', page);
     dots.forEach((d, i) => d.classList.toggle('on', i === page));
     const el = pageEls[page];
-    name.textContent = lang === 'en' ? el.dataset.nameEn : el.dataset.name;
+    name.textContent = el.dataset.name;
   };
   mock.addEventListener('mock-lang', () => goPage(page));
 
@@ -264,27 +260,26 @@ if (mock) {
     k.addEventListener('click', e => {
       if (moved) { e.preventDefault(); return; }
       k.classList.add('hit'); setTimeout(() => k.classList.remove('hit'), 160);
-      say(k.dataset.say, k.dataset.sayEn);
+      say(k.dataset.say);
     });
   }
 
   // плеер
   let playing = true, pos = 0.32;
-  const tracks = [['Ночная трасса', 'Night drive'], ['Огни города', 'City lights'], ['Рассвет', 'Sunrise']];
+  const tracks = ["js.track_1", "js.track_2", "js.track_3"];
   let track = 0;
   const setTrack = () => {
     const b = $('.m-meta b', mock);
-    b.dataset.en = tracks[track][1];
-    b.textContent = lang === 'en' ? tracks[track][1] : tracks[track][0];
+    b.textContent = W(tracks[track]);
   };
   for (const b of $$('[data-media]', mock)) {
     b.addEventListener('click', () => {
       const a = b.dataset.media;
-      if (a === 'play') { playing = !playing; mock.classList.toggle('paused', !playing); say(playing ? 'Воспроизведение' : 'Пауза', playing ? 'Playing' : 'Paused'); }
-      else { track = (track + (a === 'next' ? 1 : tracks.length - 1)) % tracks.length; pos = 0; setTrack(); say(a === 'next' ? 'Следующий трек' : 'Предыдущий трек', a === 'next' ? 'Next track' : 'Previous track'); }
+      if (a === 'play') { playing = !playing; mock.classList.toggle('paused', !playing); say(W(playing ? "js.playing" : "js.paused")); }
+      else { track = (track + (a === 'next' ? 1 : tracks.length - 1)) % tracks.length; pos = 0; setTrack(); say(W(a === "next" ? "js.next_track" : "js.previous_track")); }
     });
   }
-  setInterval(() => { if (playing && !document.hidden) { pos = (pos + .004) % 1; prog.style.width = pos * 100 + '%'; } }, 100);
+  setInterval(() => { if (playing && !document.hidden) { pos = (pos + .004) % 1; prog.style.transform = `scaleX(${pos})`; } }, 100);
 
   // нижняя панель
   const openSheet = on => { mock.classList.toggle('sheet-open', on); sheet.setAttribute('aria-hidden', String(!on)); if (!on) { kb.hidden = true; $('[data-tool="kb"]', mock).classList.remove('on'); } };
@@ -295,14 +290,14 @@ if (mock) {
   let volT;
   vol.addEventListener('input', () => {
     volOut.textContent = vol.value;
-    clearTimeout(volT); volT = setTimeout(() => say(`Громкость ${vol.value}%`, `Volume ${vol.value}%`), 120);
+    clearTimeout(volT); volT = setTimeout(() => say(W("js.volume_n", { n: vol.value })), 120);
   });
   let muted = false;
   for (const t of $$('.m-tool', mock)) {
     t.addEventListener('click', () => {
       const a = t.dataset.tool;
       if (a === 'close') openSheet(false);
-      if (a === 'mute') { muted = !muted; t.classList.toggle('on', muted); say(muted ? 'Звук выключен' : 'Звук включён', muted ? 'Sound off' : 'Sound on'); }
+      if (a === 'mute') { muted = !muted; t.classList.toggle('on', muted); say(W(muted ? "js.sound_off" : "js.sound_on")); }
       if (a === 'kb') { kb.hidden = !kb.hidden; t.classList.toggle('on', !kb.hidden); if (!kb.hidden) kbIn.focus({ preventScroll: true }); }
       if (a === 'pad') { pad.hidden = false; openSheet(false); }
     });
@@ -311,7 +306,7 @@ if (mock) {
     e.preventDefault();
     const v = kbIn.value.trim();
     if (!v) return;
-    say(`Напечатано: ${v}`, `Typed: ${v}`);
+    say(W("js.typed_text", { text: v }));
     kbIn.value = '';
   });
 
@@ -323,7 +318,7 @@ if (mock) {
   pad.addEventListener('pointerdown', e => { pad.classList.add('active'); padMove(e); });
   pad.addEventListener('pointermove', e => { if (e.pointerType === 'mouse' || e.buttons) { pad.classList.add('active'); padMove(e); } });
   pad.addEventListener('pointerleave', () => pad.classList.remove('active'));
-  pad.addEventListener('pointerup', e => { if (e.pointerType !== 'mouse') pad.classList.remove('active'); say('Клик', 'Click'); });
+  pad.addEventListener('pointerup', e => { if (e.pointerType !== 'mouse') pad.classList.remove('active'); say(W("js.click")); });
   $('#m-pad-done').addEventListener('pointerup', e => e.stopPropagation());
   $('#m-pad-done').addEventListener('click', e => { e.stopPropagation(); pad.hidden = true; pad.classList.remove('active'); });
 
@@ -395,6 +390,21 @@ if (finePointer && !reduced) {
     });
     d.addEventListener('pointerleave', () => { d.style.transform = ''; });
   }
+}
+
+// ---- PoDoo + PoDee: a tap on the phone's PoDee page changes the island on the screen ----
+const pp = $('.pp');
+if (pp) {
+  const reply = pp.querySelector('[data-pp-reply]');
+  let wait;
+  pp.querySelectorAll('[data-pp]').forEach((b) => b.addEventListener('click', () => {
+    const k = b.dataset.pp;
+    clearTimeout(wait);
+    reply.classList.remove('on');
+    // "open" and "away" toggle, like the real buttons
+    pp.dataset.state = (k === 'open' || k === 'away') && pp.dataset.state === k ? '' : k;
+    if (k === 'ask') wait = setTimeout(() => { pp.dataset.state = 'open'; reply.classList.add('on'); }, reduced ? 0 : 1400);
+  }));
 }
 
 splitWords();
