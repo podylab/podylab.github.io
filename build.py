@@ -12,7 +12,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 # A key missing from a language falls back to English and is reported.
 # i18n/langs.json lists every language: its code, its folder, its name in itself.
 LANGS = [l for l in json.load(open("i18n/langs.json", encoding="utf-8")) if os.path.exists(f"i18n/{l[0]}.json")]
-PAGES = ["index", "podee", "podoo", "support", "privacy", "guides", "fixes", "report", "podoo-guides", "podoo-fixes"]
+PAGES = ["index", "podee", "podoo", "support", "privacy", "guides", "fixes", "report", "podoo-guides", "podoo-fixes", "podoo-privacy"]
 SITE = "https://podylab.github.io/"
 
 
