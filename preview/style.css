@@ -827,3 +827,9 @@ nav.hdr-isl { height: 42px; padding: 0 6px; border-radius: 999px; }
 /* «Внутри острова, рядом с часами»: a wider pill, the companion at its right end, a bit smaller */
 .sh.wide { width: 8.4em; margin-left: -4.2em; justify-items: start; padding-left: 1.1em; box-sizing: border-box; }
 .sh .char.in { position: absolute; right: .55em; top: 50%; width: 1.9em; height: 1.8em; margin-top: -.95em; }
+
+/* the questions inside a guide */
+.gfaq { display: grid; border-top: 1px solid var(--line); }
+.gfaq details { border-bottom: 1px solid var(--line); }
+.gfaq summary { padding: 16px 4px; font-weight: 800; cursor: pointer; }
+.gfaq details p { margin: 0 4px 16px; color: var(--muted); }

@@ -118,7 +118,7 @@ const flag = (code) => `<svg class="flag" viewBox="0 0 30 20" aria-hidden="true"
 // report) have only the common links and no download; the apps themselves are listed on the home page
 const APPS = [
   { pages: ["podee.html", "guides.html", "fixes.html", "privacy.html"], links: [["guides.html", W("js.guides")], ["fixes.html", W("js.fixes")]], dl: `data-podee href="${CONFIG.podee}PoDee_x64-setup.exe"` },
-  { pages: ["podoo.html"], links: [], dl: 'href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe"' },
+  { pages: ["podoo.html", "podoo-guides.html", "podoo-fixes.html"], links: [["podoo-guides.html", W("js.guides")], ["podoo-fixes.html", W("js.fixes")]], dl: 'href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe"' },
 ];
 const pageApp = APPS.find((a) => a.pages.includes(page));
 const links = [...(pageApp?.links || []), ["support.html", W("js.support")], ...(pageApp ? [] : [["report.html", W("js.report")]])];

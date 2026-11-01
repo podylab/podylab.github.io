@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../../" />
+<script>try{var t=localStorage.getItem("podylab.theme")}catch(e){}document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")</script>
+<title>PoDoo guides</title>
+<meta name="description" content="PoDoo step by step: connecting the phone, buttons and pages, the PoDee link, common questions." />
+<link rel="icon" href="../../media/podoo-icon.svg?v=9a46ef14" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=cc8f8467" />
+</head>
+<body>
+<main class="wrap">
+  <div class="page-head">
+    <img src="../../media/podoo-icon.svg?v=9a46ef14" alt="" />
+    <div><h1>PoDoo guides</h1><p class="lead">Step by step: connect the phone, set up buttons and link PoDoo with PoDee.</p></div>
+  </div>
+
+  <section class="guides">
+    <div class="gtabs" role="tablist" aria-label="PoDoo guides">
+      <a role="tab" href="#connect" data-g="connect">Connecting</a>
+      <a role="tab" href="#buttons" data-g="buttons">Buttons and pages</a>
+      <a role="tab" href="#podee" data-g="podee">PoDoo + PoDee</a>
+      <a role="tab" href="#faq" data-g="faq">Questions</a>
+    </div>
+
+    <article class="guide" id="connect" role="tabpanel">
+      <h2>Connecting the phone</h2>
+      <p class="sub">PoDoo waits in the tray on the PC. The phone finds it by itself on the same network.</p>
+      <ol class="gsteps">
+        <li><b>Over Wi-Fi</b><p>Open the app on the phone. The PC with PoDoo shows up in the list: tap it, check that the code matches on both screens, and allow the connection on the PC.</p></li>
+        <li><b>If the PC is not found</b><p>Tap “Can’t find your PC?”. Scan the QR code in the PoDoo window, type the six digits from the PC screen, or enter the address by hand.</p></li>
+        <li><b>Over a USB cable</b><p>Plug in the cable and turn on “USB tethering” on the phone. Android turns it off every time the cable is unplugged, so turn it on each time. The app then finds the PC by itself.</p></li>
+        <li><b>Over Bluetooth</b><p>First pair the phone with the PC in Windows settings. Then pick Bluetooth on the first screen of the app. The first load takes a few seconds.</p></li>
+      </ol>
+    </article>
+
+    <article class="guide" id="buttons" role="tabpanel">
+      <h2>Buttons and pages</h2>
+      <p class="sub">Everything is set up on the PC with the mouse. The phone updates right away.</p>
+      <ol class="gsteps">
+        <li><b>Add a button</b><p>A button can be an app, a website, a folder or file, a key combination, a script or a set of actions. Apps can simply be dragged onto the page.</p></li>
+        <li><b>Build a set of actions</b><p>Several steps in one button: open a project, start music, mute notifications.</p></li>
+        <li><b>Tie a page to an app</b><p>Pick apps for a page. When one of them is active on the PC, the dock switches to that page by itself. With none picked, you swipe to it.</p></li>
+        <li><b>Pick a theme</b><p>Sketchbook, Clay, Console, Poster, Glass and more. You can set your own background.</p></li>
+      </ol>
+    </article>
+
+    <article class="guide" id="podee" role="tabpanel">
+      <h2>PoDoo + PoDee</h2>
+      <p class="sub">With PoDee on the PC, PoDoo gets a PoDee page. From it you control the PoDee island right from your phone.</p>
+      <ol class="gsteps">
+        <li><b>Install PoDee</b><p>You need PoDee 1.3.5 and PoDoo 1.0.1 or newer. <a href="podee.html">Get PoDee</a></p></li>
+        <li><b>Turn on the link in PoDee</b><p>Settings → Modules → “Link with PoDoo”. Nothing to turn on in PoDoo itself.</p></li>
+        <li><b>Open the PoDee page</b><p>It shows up in the dock on the phone by itself. Open or hide the island, start a timer, add a task, ask PoDy. The answer from PoDy comes to the phone, and the chat is kept.</p></li>
+      </ol>
+      <p class="note">PoDee takes commands only from PoDoo on the same PC.</p>
+    </article>
+
+    <article class="guide" id="faq" role="tabpanel">
+      <h2>Questions</h2>
+      <div class="gfaq">
+        <details><summary>Có cần tài khoản hay internet không?</summary><p>Không cần tài khoản. Điện thoại và PC chỉ cần cùng mạng nội bộ hoặc nối bằng cáp hay Bluetooth. PoDoo chạy không cần internet.</p></details>
+        <details><summary>Không có chương trình trên PC thì có chạy không?</summary><p>Không. Ứng dụng trên điện thoại chỉ là màn hình; mọi thao tác do chương trình trên PC làm. Vì vậy cần có chương trình trên PC.</p></details>
+        <details><summary>Điện thoại nào dùng được?</summary><p>Bất kỳ điện thoại hay máy tính bảng nào chạy Android 5.0 trở lên. Chiếc điện thoại cũ trong ngăn kéo cũng được, và có việc mới để làm. PoDoo chưa có ứng dụng iPhone.</p></details>
+        <details><summary>Ứng dụng thấy được gì?</summary><p>Chỉ mạng và camera, mà camera chỉ để quét mã QR. Không gửi gì cho chúng tôi hay bất kỳ ai.</p></details>
+        <details><summary>Kết nối không cần Wi-Fi được không?</summary><p>Có. Cắm điện thoại vào PC bằng cáp USB hoặc ghép đôi qua Bluetooth, rồi chọn cách đó ở màn hình đầu tiên của ứng dụng.</p></details>
+      </div>
+    </article>
+
+    <p class="note">Something didn't work? <a href="report.html">Write to us</a></p>
+  </section>
+</main>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "Lời nhắn cho PoDy", "js.about_podoo": "Về PoDoo", "js.all_podee_versions": "Mọi phiên bản PoDee", "js.back_to_top": "Lên đầu trang", "js.click": "Nhấp", "js.close": "Đóng", "js.copied": "Đã sao chép", "js.copy_address": "Sao chép địa chỉ", "js.couldn_t_copy_select": "Không sao chép được, hãy chọn địa chỉ", "js.download_podee_and_i": "Tải PoDee và mình sẽ dọn lên đầu màn hình của bạn", "js.downloads.few": "lượt tải", "js.downloads.many": "lượt tải", "js.downloads.one": "lượt tải", "js.downloads.other": "lượt tải", "js.good_even_better_when": "Ổn lắm. Được vuốt ve thì còn vui hơn", "js.hi_glad_you_came": "Chào bạn! Vui vì bạn ghé", "js.hi_i_m_pody": "Chào, mình là PoDy. Bạn có thể vuốt mình", "js.i_like_you_too": "Mình cũng quý bạn", "js.i_live_at_the": "Mình sống trên đầu màn hình của bạn, hiện nhạc và giờ. Bạn cũng có thể trò chuyện với mình", "js.i_m_dizzy": "Mình chóng mặt quá…", "js.i_only_know_a": "Mình mới biết ít từ thôi. Hỏi xem mình làm được gì nhé", "js.if_podee_helps_you": "Nếu PoDee giúp ích cho bạn, bạn có thể ủng hộ dự án", "js.improve_together": "Cùng làm tốt hơn", "js.language": "Ngôn ngữ trang", "js.learn_more": "Tìm hiểu thêm", "js.made_with_pody_the": "Làm cùng mây PoDy", "js.message": "lời nhắn", "js.mute_pody": "Tắt tiếng PoDy", "js.net_bnb": "BNB Smart Chain (BEP-20): BNB hoặc USDT trên mạng này.", "js.net_btc": "Mạng Bitcoin.", "js.net_doge": "Mạng Dogecoin.", "js.net_eth": "Mạng Ethereum (ERC-20): ETH hoặc USDT trên mạng này.", "js.net_ton": "Mạng TON: Toncoin hoặc USDT. Bạn có thể ghi mong muốn vào phần bình luận.", "js.net_usdt": "Chỉ mạng TRC-20 (Tron). Mạng khác không dùng được.", "js.next_track": "Bài tiếp", "js.paused": "Đã tạm dừng", "js.playing": "Đang phát", "js.podoo_is_out": "PoDoo đã ra mắt: điện thoại hay máy tính bảng cũ thành điều khiển cho PC", "js.pody_the_cloud_pet": "Mây PoDy: vuốt ve và trò chuyện cùng nó", "js.previous_track": "Bài trước", "js.privacy": "Quyền riêng tư", "js.soon": "Sắp có", "js.sound_off": "Đã tắt tiếng", "js.sound_on": "Đã bật tiếng", "js.support": "Ủng hộ", "js.thank_you_here_s": "Cảm ơn! Đây là trang ủng hộ", "js.thanks_for_stopping_by": "Cảm ơn bạn đã ghé. Bao nhiêu cũng quý", "js.that_tickles": "Nhột quá!", "js.the_address_is_coming": "Địa chỉ sẽ có sớm", "js.the_download_podee_button": "Nút «Tải PoDee» có ở trang chủ và trang PoDee", "js.the_form_will_work": "Biểu mẫu sắp hoạt động", "js.track_1": "Đường đêm", "js.track_2": "Đèn phố", "js.track_3": "Bình minh", "js.typed_text": "Đã gõ: {text}", "js.unmute_pody": "Bật tiếng PoDy", "js.version_line": "Phiên bản {v} cho Windows {bits}-bit · <a href=\"{link}\">cần bản {other}-bit?<\/a>", "js.volume_n": "Âm lượng {n}%", "js.write_to_pody": "Viết cho PoDy…", "js.guides": "Guides", "js.fixes": "Fixes", "js.report": "Report a problem", "js.download": "Download", "js.menu": "Menu", "js.notch": "PoDee: an island at the top of your screen", "js.theme": "Light or dark theme"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=28e63c16"></script>
+<script src="../pody.js?v=16e5b0c0"></script>
+</body>
+</html>

@@ -392,6 +392,21 @@ if (finePointer && !reduced) {
   }
 }
 
+// ---- PoDoo + PoDee: a tap on the phone's PoDee page changes the island on the screen ----
+const pp = $('.pp');
+if (pp) {
+  const reply = pp.querySelector('[data-pp-reply]');
+  let wait;
+  pp.querySelectorAll('[data-pp]').forEach((b) => b.addEventListener('click', () => {
+    const k = b.dataset.pp;
+    clearTimeout(wait);
+    reply.classList.remove('on');
+    // "open" and "away" toggle, like the real buttons
+    pp.dataset.state = (k === 'open' || k === 'away') && pp.dataset.state === k ? '' : k;
+    if (k === 'ask') wait = setTimeout(() => { pp.dataset.state = 'open'; reply.classList.add('on'); }, reduced ? 0 : 1400);
+  }));
+}
+
 splitWords();
 $('#mock')?.dispatchEvent(new Event('mock-lang'));
 })();

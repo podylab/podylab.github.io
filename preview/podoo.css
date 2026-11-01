@@ -429,3 +429,39 @@ html[lang="ru"] .land h1 { font-size: clamp(38px, 5.6vw, 76px); }
 .land .ticker-track { animation: none; }
 .js .land .cap, .js .land h1 .line > span, .js .land .status, .js .land .lede, .js .land .cta, .js .land .stores, .js .land .scene-hint, .js .land .scene, .land .split-w > span { opacity: 1 !important; transform: none !important; }
 }
+
+/* ---------- PoDoo + PoDee: the phone's PoDee page drives the island on the screen ---------- */
+.land .pp { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: center; }
+.land .pp-scene { position: relative; padding-bottom: 72px; }
+.land .pp-screen { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 18px; border: 8px solid var(--plastic); background: var(--wp-d) center / cover; box-shadow: 0 24px 50px var(--shadow); font-size: clamp(11px, 1.25vw, 15px); }
+:root[data-theme="light"] .land .pp-screen { background-image: var(--wp-l); }
+.land .pp-isl { --ib: #050708; --in: #eef4f2; position: absolute; top: 0; left: 50%; width: 16em; margin-left: -8em; height: 2.7em; display: flex; align-items: center; padding: 0 1.1em; border-radius: 0 0 1.35em 1.35em; background: var(--ib); color: var(--in); font-weight: 800; transition: transform .45s var(--ease), opacity .3s; }
+:root[data-theme="light"] .land .pp-isl { --ib: #f6f8f7; --in: #16211f; box-shadow: 0 6px 18px rgb(20 50 45 / .2); }
+.land .pp-clock { font-variant-numeric: tabular-nums; transition: transform .45s var(--ease); transform: translateX(5.2em); }
+.land .pp-st { position: absolute; right: 1.1em; opacity: 0; transform: translateY(.4em); transition: opacity .25s, transform .35s var(--ease); white-space: nowrap; font-size: .9em; }
+.land .pp[data-state]:not([data-state="away"]):not([data-state=""]) .pp-clock { transform: none; }
+.land .pp[data-state="open"] [data-st="open"], .land .pp[data-state="t5"] [data-st="t5"], .land .pp[data-state="t25"] [data-st="t25"],
+.land .pp[data-state="todo"] [data-st="todo"], .land .pp[data-state="ask"] [data-st="ask"] { opacity: 1; transform: none; }
+.land .pp[data-state="open"] .pp-isl { transform: scale(1.06); }
+.land .pp-char { position: absolute; top: .35em; left: calc(50% + 8.6em); width: 2.6em; height: 2em; transition: transform .45s var(--ease), opacity .3s; }
+.land .pp[data-state="away"] :is(.pp-isl, .pp-char) { transform: translateY(-130%); opacity: 0; }
+.land .pp-phone { position: absolute; right: -10px; bottom: 0; width: min(56%, 300px); padding: 12px; border-radius: 24px; background: var(--plastic); border: 1px solid var(--line); box-shadow: 0 18px 40px var(--shadow); }
+.land .pp-ph-title { display: flex; align-items: center; gap: 7px; margin: 0 2px 10px; font-weight: 900; font-size: 14px; }
+.land .pp-ph-title img { width: 20px; height: 20px; }
+.land .pp-keys { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.land .pp-key { display: grid; justify-items: center; gap: 4px; padding: 9px 4px 8px; border-radius: 12px; background: linear-gradient(180deg, var(--key-top), var(--key-bot)); color: var(--key-ink); box-shadow: 0 3px 0 var(--key-edge); transition: transform .12s; }
+.land .pp-key:active { transform: translateY(2px); }
+.land .pp-key svg { width: 20px; height: 20px; }
+.land .pp-key small { font-size: 10.5px; font-weight: 800; line-height: 1.15; text-align: center; }
+.land .pp-reply { margin-top: 10px; padding: 8px 10px; border-radius: 12px; background: var(--plastic-2); font-size: 12.5px; line-height: 1.35; opacity: 0; transform: translateY(6px); transition: opacity .3s, transform .35s var(--ease); }
+.land .pp-reply b { display: block; color: var(--signal); font-size: 11px; }
+.land .pp-reply.on { opacity: 1; transform: none; }
+.land .pp-hint { margin-top: 14px; color: var(--ink-2); font-family: var(--mono); font-size: 12.5px; }
+.land .pp-steps { display: grid; gap: 26px; }
+.land .pp-steps p { color: var(--ink-2); margin-top: 6px; }
+@media (max-width: 860px) {
+  .land .pp { grid-template-columns: 1fr; }
+  .land .pp-scene { padding-bottom: 0; }
+  .land .pp-phone { position: relative; right: auto; width: auto; max-width: 340px; margin: -28px auto 0; }
+}
+@media (prefers-reduced-motion: reduce) { .land :is(.pp-isl, .pp-clock, .pp-st, .pp-char, .pp-reply) { transition: none; } }
