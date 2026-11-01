@@ -476,3 +476,7 @@ html[lang="ru"] .land h1 { font-size: clamp(38px, 5.6vw, 76px); }
   .land .steps li { display: grid; grid-row: span 4; grid-template-rows: subgrid; align-items: start; }
   .land .steps li > .textlink { align-self: end; margin-top: 0; }
 }
+@media (min-width: 721px) {
+  .land .board .cap { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+}
+.land .pp-key { align-content: start; }
