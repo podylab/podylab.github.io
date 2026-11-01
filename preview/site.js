@@ -6,6 +6,7 @@ const CONFIG = {
   releases: "https://github.com/podylab/PoDee-releases/releases",
   card: "https://www.donationalerts.com/r/polab", // the DonationAlerts page, e.g. https://www.donationalerts.com/r/name
   form: "https://formspree.io/f/xwllnbpp", // Formspree endpoint, e.g. https://formspree.io/f/xxxxxxx
+  gplay: "", // PoDoo on Google Play, e.g. https://play.google.com/store/apps/details?id=…; empty: «coming soon»
   mail: "podylab@gmail.com", // without Formspree, the form opens a letter to this address
   wallets: [
     { coin: "USDT", net: "js.net_usdt", address: "TWoqgVrM1kEFTNZnZzkmJYT2uTYx5Yh58E" },
@@ -425,4 +426,16 @@ document.querySelectorAll("textarea[data-count]").forEach((t) => {
 // ---- the dates of releases, in the page's language ----
 document.querySelectorAll("time[data-date]").forEach((el) => {
   el.textContent = new Date(el.dateTime + "T12:00:00").toLocaleDateString(LANG, { day: "numeric", month: "long", year: "numeric" });
+});
+
+// ---- Google Play: links appear once CONFIG.gplay is filled; until then the card says «coming soon» ----
+document.querySelectorAll("[data-gplay]").forEach((el) => {
+  if (CONFIG.gplay) {
+    el.href = CONFIG.gplay;
+    el.hidden = false;
+  } else if (el.dataset.soon) {
+    el.textContent = el.dataset.soon;
+    el.removeAttribute("href");
+    el.classList.add("soon");
+  }
 });

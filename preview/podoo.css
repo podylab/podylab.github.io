@@ -465,3 +465,14 @@ html[lang="ru"] .land h1 { font-size: clamp(38px, 5.6vw, 76px); }
   .land .pp-phone { position: relative; right: auto; width: auto; max-width: 340px; margin: -28px auto 0; }
 }
 @media (prefers-reduced-motion: reduce) { .land :is(.pp-isl, .pp-clock, .pp-st, .pp-char, .pp-reply) { transition: none; } }
+
+/* every card in a row keeps its link at the bottom, so the links line up across the row */
+.land .steps li, .land .dl { display: flex; flex-direction: column; align-items: flex-start; }
+.land .steps li > .textlink, .land .dl > .lbtn { margin-top: auto; }
+.land .dl > .lbtn + .textlink { margin-top: 0; }
+.land .textlink.soon { color: var(--ink-2); border-bottom-style: dashed; border-bottom-color: var(--line); cursor: default; }
+.land .art-label-ways { font-size: 11px; }
+@media (min-width: 721px) {
+  .land .steps li { display: grid; grid-row: span 4; grid-template-rows: subgrid; align-items: start; }
+  .land .steps li > .textlink { align-self: end; margin-top: 0; }
+}

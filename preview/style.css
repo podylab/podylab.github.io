@@ -833,3 +833,8 @@ nav.hdr-isl { height: 42px; padding: 0 6px; border-radius: 999px; }
 .gfaq details { border-bottom: 1px solid var(--line); }
 .gfaq summary { padding: 16px 4px; font-weight: 800; cursor: pointer; }
 .gfaq details p { margin: 0 4px 16px; color: var(--muted); }
+
+/* cards in a row share their rows: titles, texts and links start at the same height in every card */
+@media (min-width: 861px) {
+  .steps > li, .clean > .card { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; }
+}

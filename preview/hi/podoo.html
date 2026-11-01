@@ -10,8 +10,8 @@
 <link rel="icon" href="../../media/podoo-icon.svg?v=9a46ef14" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../style.css?v=cc8f8467" />
-<link rel="stylesheet" href="../podoo.css?v=4e6dfbc3" />
+<link rel="stylesheet" href="../style.css?v=741aac58" />
+<link rel="stylesheet" href="../podoo.css?v=eb6043ca" />
 </head>
 <body>
 <main class="land">
@@ -33,6 +33,7 @@
         </div>
         <p class="stores">
           <a class="chip" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk"><span class="chip-dot"></span><span>Android ऐप</span></a>
+          <a class="chip" data-gplay hidden><span class="chip-dot"></span><span>Google Play</span></a>
           <a class="chip" href="support.html"><span class="chip-dot"></span><span>सहयोग करें</span></a>
         </p>
         <p class="dl-count" data-downloads="PoDoo-releases" hidden></p>
@@ -355,7 +356,7 @@
               <rect x="400" y="96" width="26" height="26" rx="6" class="art-key k5"/>
               <rect x="432" y="96" width="26" height="26" rx="6" class="art-key k6"/>
             </g>
-            <text x="260" y="76" text-anchor="middle" class="art-label">Wi-Fi</text>
+            <text x="260" y="76" text-anchor="middle" class="art-label art-label-ways">Wi-Fi · USB · Bluetooth</text>
             <text x="260" y="124" text-anchor="middle" class="art-label art-label-dim">क्लाउड नहीं</text>
           </svg>
         </figure>
@@ -365,7 +366,7 @@
     <section class="setup wrap" id="setup" aria-labelledby="setup-title">
       <div class="section-head">
         <h2 id="setup-title" data-split>तीन कदम में तैयार।</h2>
-        <p>एक Windows PC, एक फ़ोन और एक ही Wi-Fi।</p>
+        <p>A Windows PC and an Android phone or tablet. They connect over Wi-Fi, a USB cable or Bluetooth.</p>
       </div>
       <ol class="steps">
         <li>
@@ -383,7 +384,7 @@
         <li>
           <span class="step-no" aria-hidden="true">3</span>
           <h3>जोड़ें</h3>
-          <p>एक ही Wi-Fi पर ऐप आपका PC खुद ढूँढ लेता है। उस पर टैप करें और PoDoo की खिड़की वाला कोड डालें।</p>
+          <p>The app finds your PC by itself over Wi-Fi, a USB cable or Bluetooth. Tap it and confirm the code from the PoDoo window.</p>
           <a class="textlink" href="podoo-guides.html#connect">मदद चाहिए?</a>
         </li>
       </ol>
@@ -410,6 +411,7 @@
             <h3>Android</h3>
             <p>Android 5.0 या नए वाले फ़ोन और टैबलेट।</p>
             <a class="lbtn" href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo.apk">.apk डाउनलोड करें</a>
+            <a class="textlink" data-gplay data-soon="Coming to Google Play">Google Play</a>
           </article>
         </div>
         <p class="fineprint"><a class="textlink" href="https://github.com/podylab/PoDoo-releases/releases/latest">सभी फ़ाइलें और रिलीज़ नोट्स</a></p>
@@ -418,7 +420,7 @@
 
   </main>
 <script>window.PODY = {"words": {"js.a_message_for_pody": "PoDy के लिए संदेश", "js.about_podoo": "PoDoo के बारे में", "js.all_podee_versions": "PoDee के सभी संस्करण", "js.back_to_top": "ऊपर जाएँ", "js.click": "क्लिक", "js.close": "बंद करें", "js.copied": "कॉपी हो गया", "js.copy_address": "पता कॉपी करें", "js.couldn_t_copy_select": "कॉपी नहीं हुआ, पता चुनें", "js.download_podee_and_i": "PoDee डाउनलोड करें और मैं आपकी स्क्रीन के ऊपर आ जाऊँगा", "js.downloads.few": "डाउनलोड", "js.downloads.many": "डाउनलोड", "js.downloads.one": "डाउनलोड", "js.downloads.other": "डाउनलोड", "js.good_even_better_when": "अच्छा हूँ। सहलाओ तो और भी अच्छा", "js.hi_glad_you_came": "नमस्ते! अच्छा लगा कि आप आए", "js.hi_i_m_pody": "नमस्ते, मैं PoDy हूँ। मुझे सहला सकते हैं", "js.i_like_you_too": "आप भी मुझे अच्छे लगते हैं", "js.i_live_at_the": "मैं आपकी स्क्रीन के ऊपर रहता हूँ और संगीत व समय दिखाता हूँ। मुझसे बात भी कर सकते हैं", "js.i_m_dizzy": "चक्कर आ रहा है…", "js.i_only_know_a": "मुझे अभी कम शब्द आते हैं। पूछिए मैं क्या कर सकता हूँ", "js.if_podee_helps_you": "अगर PoDee काम आता है, तो प्रोजेक्ट का साथ दे सकते हैं", "js.improve_together": "साथ मिलकर बेहतर बनाएँ", "js.language": "साइट की भाषा", "js.learn_more": "और जानें", "js.made_with_pody_the": "बादल PoDy के साथ बनाया गया", "js.message": "संदेश", "js.mute_pody": "PoDy को म्यूट करें", "js.net_bnb": "BNB Smart Chain (BEP-20): इस नेटवर्क पर BNB या USDT।", "js.net_btc": "Bitcoin नेटवर्क।", "js.net_doge": "Dogecoin नेटवर्क।", "js.net_eth": "Ethereum नेटवर्क (ERC-20): इस नेटवर्क पर ETH या USDT।", "js.net_ton": "TON नेटवर्क: Toncoin या USDT। टिप्पणी में अपनी इच्छा लिख सकते हैं।", "js.net_usdt": "सिर्फ़ TRC-20 (Tron) नेटवर्क। दूसरे नेटवर्क नहीं चलेंगे।", "js.next_track": "अगला गाना", "js.paused": "रुका हुआ", "js.playing": "चल रहा है", "js.podoo_is_out": "PoDoo आ गया: फ़ोन या पुराना टैबलेट आपके PC का रिमोट बन जाता है", "js.pody_the_cloud_pet": "बादल PoDy: सहलाइए और बात कीजिए", "js.previous_track": "पिछला गाना", "js.privacy": "गोपनीयता", "js.soon": "जल्द", "js.sound_off": "आवाज़ बंद", "js.sound_on": "आवाज़ चालू", "js.support": "सहयोग करें", "js.thank_you_here_s": "धन्यवाद! यह रहा सहयोग पेज", "js.thanks_for_stopping_by": "आने के लिए धन्यवाद। हर रकम मदद करती है", "js.that_tickles": "गुदगुदी हो रही है!", "js.the_address_is_coming": "पता जल्द आएगा", "js.the_download_podee_button": "«PoDee डाउनलोड करें» बटन होम पेज और PoDee पेज पर है", "js.the_form_will_work": "फ़ॉर्म जल्द ही काम करेगा", "js.track_1": "रात का सफ़र", "js.track_2": "शहर की रोशनी", "js.track_3": "भोर", "js.typed_text": "टाइप किया: {text}", "js.unmute_pody": "PoDy की आवाज़ चालू करें", "js.version_line": "{bits}-बिट Windows के लिए संस्करण {v} · <a href=\"{link}\">{other}-बिट चाहिए?<\/a>", "js.volume_n": "आवाज़ {n}%", "js.write_to_pody": "PoDy को लिखें…", "js.guides": "Guides", "js.fixes": "Fixes", "js.report": "Report a problem", "js.download": "Download", "js.menu": "Menu", "js.notch": "PoDee: an island at the top of your screen", "js.theme": "Light or dark theme"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
-<script src="../site.js?v=28e63c16"></script>
+<script src="../site.js?v=1285ef66"></script>
 <script src="../pody.js?v=16e5b0c0"></script>
 <script src="../podoo.js?v=64be506d"></script>
 </body>
