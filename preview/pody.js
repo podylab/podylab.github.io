@@ -85,6 +85,15 @@
     <ellipse class="blush" cx="25" cy="15.6" rx="2.3" ry="1.3"/>
     <path class="mouth" d="M14.4 15.8q0.8 1 1.6 0q0.8 1 1.6 0"/>
     <ellipse class="o-mouth" cx="16" cy="16.3" rx="1.3" ry="1.5"/>`;
+  // the cat for the dark theme: the island-black head from PoDee, eyes as light rings with a shine
+  const catEye = (cx, cy) => `<g class="eye"><g class="lid"><circle class="ring" cx="${cx}" cy="${cy}" r="3.5"/><g class="pupil"><circle class="core" cx="${cx}" cy="${cy}" r="2.6"/><circle class="glint" cx="${cx - 0.9}" cy="${cy - 0.9}" r="0.8"/></g></g></g>`;
+  const catFace = `
+    ${catEye(12.6, 11.4)}${catEye(20.2, 11.8)}
+    <path class="happy" d="M9.6 12.4q3-3.6 6 0M17.2 12.8q3-3.6 6 0"/>
+    <path class="cross" d="M10.6 9.8l3 1.9-3 1.9M22.2 10.2l-3 1.9 3 1.9"/>
+    <path class="dizzy" d="M12.6 11.4a0.4 0.4 0 0 1 0.8 0a0.8 0.8 0 0 1-1.6 0a1.2 1.2 0 0 1 2.4 0a1.6 1.6 0 0 1-3.2 0a2 2 0 0 1 4 0M20.2 11.8a0.4 0.4 0 0 1 0.8 0a0.8 0.8 0 0 1-1.6 0a1.2 1.2 0 0 1 2.4 0a1.6 1.6 0 0 1-3.2 0a2 2 0 0 1 4 0"/>
+    <path class="mouth" d="M14.8 17q.8 1 1.6 0q.8 1 1.6 0"/>
+    <ellipse class="o-mouth" cx="16.4" cy="17.6" rx="1.3" ry="1.4"/>`;
   document.body.insertAdjacentHTML(
     "beforeend",
     `<div class="pody-dock">
@@ -106,7 +115,11 @@
               <clipPath id="pody-clip"><circle cx="372" cy="520" r="138"/><circle cx="530" cy="430" r="182"/><circle cx="690" cy="530" r="132"/><rect x="238" y="500" width="590" height="228" rx="114"/></clipPath>
             </defs>
             <ellipse cx="532" cy="742" rx="290" ry="34" fill="url(#pody-shadow)"/>
-            <g class="pody-body">
+            <g class="pody-body pb-cat">
+              <path transform="translate(274 262) scale(16)" class="cat-head" d="M10.2 1.6L13.4 6.4Q17 5.8 20.6 6.2L23.6 3.2Q24.4 7.6 24.6 10.4C26.6 13.6 27.6 18.6 26.8 22.4C26 27 21.4 29.2 16 29.2C9.6 29.2 4.4 26.6 4.4 21.4C4.4 16.8 6.4 13.4 8.4 11.4C8.2 8 8.8 4.4 10.2 1.6ZM26.2 23.4C28.4 22.6 29.2 20.4 29 18.6C28.9 17.4 30.5 17 30.8 18.4C31.3 21.4 29.7 24.8 26.6 25.6Z"/>
+              <g class="pody-face cat-face" transform="translate(274 262) scale(16)">${catFace}</g>
+            </g>
+            <g class="pody-body pb-cloud">
               <g clip-path="url(#pody-clip)"><rect x="200" y="230" width="660" height="520" fill="url(#pody-body)"/><ellipse cx="532" cy="770" rx="300" ry="70" fill="#8fd0c2" opacity="0.35"/></g>
               <g class="pody-face" transform="translate(338 400) scale(12)">${face}</g>
             </g>

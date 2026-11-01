@@ -50,6 +50,39 @@ if (LANG === "ru" && !HOME && page === "index.html" && !chosen) {
   if (to && to[1]) location.replace(to[1] + page);
 }
 
+// ---- PoDee's companions, drawn as in the app: <i class="char" data-c="cat" data-t="dark"> ----
+// the body is the island's colour; data-t="light" is the glass variant (light body, dark eyes).
+// data-c="auto" follows the site's theme: PoDy on the light one, the cat on the dark one, as in PoDee
+const TONES = { dark: { body: "#050708", eye: "#f6f3ea", pupil: "#0b0d0e" }, light: { body: "#f6f8f7", eye: "#172024", pupil: "#172024" } };
+const shinyEye = (cx, cy, rx, ry, t) =>
+  `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${t.eye}"/><ellipse cx="${cx}" cy="${cy + 0.3}" rx="${rx * 0.6}" ry="${ry * 0.65}" fill="${t.pupil}"/><circle cx="${cx + rx * 0.3}" cy="${cy - ry * 0.05}" r="${rx * 0.25}" fill="#fff"/><circle cx="${cx - rx * 0.2}" cy="${cy + ry * 0.4}" r="${rx * 0.11}" fill="#fff"/>`;
+const pixels = (rows, pal) =>
+  rows.map((row, y) => [...row].map((ch, x) => (pal[ch] ? `<rect x="${x}" y="${y}" width="1.02" height="1.02" fill="${pal[ch]}"/>` : "")).join("")).join("");
+const CHARS = {
+  cloud: (t) => `<svg viewBox="0 0 38 27"><g fill="${t.body}"><circle cx="10.06" cy="15.3" r="7.76"/><circle cx="18.95" cy="10.24" r="10.24"/><circle cx="27.95" cy="15.86" r="7.43"/><rect x="2.53" y="14.18" width="33.19" height="12.83" rx="6.41"/></g>
+    <path d="M4.23 13.18a6.2 6.2 0 0 1 3.21-3.5M11.5 5.94a8.6 8.6 0 0 1 4.51-3.78" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1.3" stroke-linecap="round"/>
+    <g transform="translate(3 4)">${shinyEye(11.2, 11.4, 2.9, 3.3, t)}${shinyEye(20.8, 11.4, 2.9, 3.3, t)}<ellipse cx="7" cy="15.6" rx="2.3" ry="1.3" fill="#ff9fb2" opacity=".55"/><ellipse cx="25" cy="15.6" rx="2.3" ry="1.3" fill="#ff9fb2" opacity=".55"/><path d="M14.4 15.8q.8 1 1.6 0q.8 1 1.6 0" fill="none" stroke="${t.eye}" stroke-width="1.1" stroke-linecap="round"/></g></svg>`,
+  cat: (t) => `<svg viewBox="0 0 32 30"><path fill="${t.body}" d="M10.2 1.6L13.4 6.4Q17 5.8 20.6 6.2L23.6 3.2Q24.4 7.6 24.6 10.4C26.6 13.6 27.6 18.6 26.8 22.4C26 27 21.4 29.2 16 29.2C9.6 29.2 4.4 26.6 4.4 21.4C4.4 16.8 6.4 13.4 8.4 11.4C8.2 8 8.8 4.4 10.2 1.6ZM26.2 23.4C28.4 22.6 29.2 20.4 29 18.6C28.9 17.4 30.5 17 30.8 18.4C31.3 21.4 29.7 24.8 26.6 25.6Z"/>
+    ${[[12.6, 11.4], [20.2, 11.8]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="3.5" fill="${t.eye}"/><circle cx="${x}" cy="${y}" r="2.6" fill="${t.body}"/><circle cx="${x - 0.9}" cy="${y - 0.9}" r=".8" fill="${t.eye}"/>`).join("")}</svg>`,
+  blob: (t) => `<svg viewBox="0 0 34 30"><path fill="${t.body}" d="M3 17C3 11 7 7.4 12.6 7.8C14.6 5.6 18.4 5.2 20.6 7.2C25.8 6.4 31 9.6 31.2 14.6C33.4 16.4 33.2 20.2 31 21.6C30.6 26.2 25.6 28.6 20.4 27.4C17.6 29.4 13 29.2 11 27.2C6.4 27.6 2.6 25 3.4 21.4C2 20.2 2.2 18 3 17Z"/>
+    <ellipse cx="8.4" cy="21.4" rx="1.8" ry="1" fill="#ff9fb2" opacity=".55"/><ellipse cx="25.6" cy="21.4" rx="1.8" ry="1" fill="#ff9fb2" opacity=".55"/>${shinyEye(12.8, 16.8, 2.5, 2.9, t)}${shinyEye(21.2, 16.8, 2.5, 2.9, t)}<path d="M16 21.2q1 .9 2 0" fill="none" stroke="${t.eye}" stroke-width="1.1" stroke-linecap="round"/></svg>`,
+  // «Кружок»: a small dot by the island; it lights up with the music
+  dot: () => `<svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="3.6" fill="#7ed6be"/></svg>`,
+  // the «Пиксели» theme: the Enderman's block head with violet eyes, and the Ghast with closed, crying eyes
+  shade: () => `<svg viewBox="-.5 -.5 9 9" shape-rendering="crispEdges"><rect x="-.5" y="-.5" width="9" height="9" fill="#050505"/>${pixels(
+      ["abcadbca", "cadbcabd", "bdacbdac", "acbdacbd", "aGEbdEGc", "dbcadbca", "cadbcabd", "bdacdbac"],
+      { a: "#141317", b: "#19181d", c: "#1e1c23", d: "#111014", G: "#b77cff", E: "#ecdcff" },
+    )}</svg>`,
+  ghast: () => `<svg viewBox="-.5 -.5 17 23" shape-rendering="crispEdges"><rect x="-.5" y="-.5" width="17" height="17" fill="#9a9a9a"/>${pixels(
+      ["abacabcaabcabaca", "cabacaabcabacabc", "bacabcacabcacaba", "acbacabcacbacbac", "cabcacabcabcacab", "abacabcaabcabaca",
+       "aaKKKKacabKKKKbc", "caaLabcacabcLacb", "bacLcabcacabLcab", "acbLacbacabcLbac", "cabcacKKKKbcacab", "abacabKKKKcabaca",
+       "cabacaabcabacabc", "bacabcacabcacaba", "acbacabcacbacbac", "cabcacabcabcacab"],
+      { a: "#f2f2f2", b: "#ececec", c: "#e4e4e4", K: "#3b3b3b", L: "#a9a9a9" },
+    )}${[2, 7, 12].map((x, i) => `<rect x="${x - 0.5}" y="15.5" width="3" height="${i === 1 ? 7 : 5.5}" fill="#9a9a9a"/><rect x="${x}" y="16" width="2" height="${i === 1 ? 6 : 4.5}" fill="#e9e9e9"/>`).join("")}</svg>`,
+};
+const drawChar = (c, tone = "dark") => (c === "auto" ? `<span class="c-light">${CHARS.cloud(TONES.light)}</span><span class="c-dark">${CHARS.cat(TONES.dark)}</span>` : CHARS[c]?.(TONES[tone] || TONES.dark) || "");
+const fillChars = (root = document) => root.querySelectorAll("i.char[data-c]").forEach((el) => (el.innerHTML = drawChar(el.dataset.c, el.dataset.t)));
+
 // ---- header and footer ----
 // a country's flag beside each language, drawn here: Windows shows emoji flags as two letters
 const star = (cx, cy, r, turn = 0) =>
@@ -90,21 +123,25 @@ const navLink = ([href, name]) => `<a href="${href}"${href === page ? ' aria-cur
 const here = LANGS.find(([code]) => code === LANG);
 // «Download» in the header takes the app of the page: PoDoo on its page, PoDee everywhere else
 const dl = page === "podoo.html" ? "https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe" : "";
+const THEME_KEY = "podylab.theme";
+const themeIcon = `<svg viewBox="0 0 24 24" aria-hidden="true"><g class="sun"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g><path class="moon" d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z"/></svg>`;
 document.body.insertAdjacentHTML(
   "afterbegin",
   `<header><div class="wrap">
-    <a class="brand" href="index.html"><img src="${up}media/podee-icon.svg" alt="" /> Pody Lab</a>
-    <nav>${links.map(navLink).join("")}</nav>
+    <a class="brand" href="index.html"><img src="${up}media/podee-icon.svg" alt="" /> <span>Pody Lab</span></a>
+    <div class="hdr-mid">
+      <nav class="hdr-isl" aria-label="Pody Lab"><a class="hdr-clock" href="podee.html" aria-label="${W("js.notch")}"><b data-now></b></a>${links.map(navLink).join("")}</nav>
+      <i class="char hdr-char" data-c="auto" aria-hidden="true"></i>
+    </div>
     <a class="btn main hdr-dl" ${dl ? `href="${dl}"` : `data-podee href="${CONFIG.podee}PoDee_x64-setup.exe"`}><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 19.5h14"/></svg><span>${W("js.download")}</span></a>
+    <button class="theme-btn" type="button" data-theme-toggle aria-label="${W("js.theme")}" title="${W("js.theme")}">${themeIcon}</button>
     <details class="langs" id="langs"><summary aria-label="${W("js.language")}">${flag(here?.[0] || LANG)}<span>${(here?.[0] || LANG).split("-")[0].toUpperCase()}</span></summary>
       <div class="langs-list">${LANGS.map(([code, folder, name]) => `<a href="${HOME}${folder}${page}${location.hash}" lang="${code}" hreflang="${code}" data-lang="${code}"${code === LANG ? ' aria-current="true"' : ""}>${flag(code)}${name}</a>`).join("")}</div>
     </details>
     <details class="menu" id="menu"><summary aria-label="${W("js.menu")}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
-      <div class="menu-list">${all.map(navLink).join("")}</div>
+      <div class="menu-list">${all.map(navLink).join("")}<button type="button" data-theme-toggle>${themeIcon}${W("js.theme")}</button></div>
     </details>
-  </div>
-  <a class="site-notch" href="podee.html" aria-label="${W("js.notch")}"><b data-now></b><span class="notch-pody" aria-hidden="true"><b></b><i></i><i></i></span></a>
-  </header>`,
+  </div></header>`,
 );
 document.body.insertAdjacentHTML(
   "beforeend",
@@ -118,7 +155,22 @@ document.body.insertAdjacentHTML(
     <span>${W("js.made_with_pody_the")}</span>
   </div></footer>`,
 );
-// the notch over the site keeps the time, like PoDee's closed island
+fillChars();
+// the theme: a choice in the header is remembered; without one the site follows Windows
+const setTheme = (t) => (document.documentElement.dataset.theme = t);
+document.querySelectorAll("[data-theme-toggle]").forEach((b) =>
+  b.addEventListener("click", () => {
+    const t = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+    setTheme(t);
+    try { localStorage.setItem(THEME_KEY, t); } catch {}
+  }),
+);
+matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e) => {
+  let saved = null;
+  try { saved = localStorage.getItem(THEME_KEY); } catch {}
+  if (!saved) setTheme(e.matches ? "light" : "dark");
+});
+// the island in the header keeps the time, like PoDee's closed island
 const tick = () => document.querySelectorAll("[data-now]").forEach((el) => (el.textContent = new Date().toLocaleTimeString(LANG, { hour: "2-digit", minute: "2-digit" })));
 tick();
 setInterval(tick, 15e3);
