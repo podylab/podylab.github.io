@@ -53,7 +53,7 @@ if (LANG === "ru" && !HOME && page === "index.html" && !chosen) {
 // ---- PoDee's companions, drawn as in the app: <i class="char" data-c="cat" data-t="dark"> ----
 // the body is the island's colour; data-t="light" is the glass variant (light body, dark eyes).
 // data-c="auto" follows the site's theme: PoDy on the light one, the cat on the dark one, as in PoDee
-const TONES = { dark: { body: "#050708", eye: "#f6f3ea", pupil: "#0b0d0e" }, light: { body: "#f6f8f7", eye: "#172024", pupil: "#172024" } };
+const TONES = { dark: { body: "#050708", eye: "#f6f3ea", pupil: "#0b0d0e" }, inside: { body: "#23272b", eye: "#f6f3ea", pupil: "#0b0d0e" }, light: { body: "#f6f8f7", eye: "#172024", pupil: "#172024" } };
 const shinyEye = (cx, cy, rx, ry, t) =>
   `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${t.eye}"/><ellipse cx="${cx}" cy="${cy + 0.3}" rx="${rx * 0.6}" ry="${ry * 0.65}" fill="${t.pupil}"/><circle cx="${cx + rx * 0.3}" cy="${cy - ry * 0.05}" r="${rx * 0.25}" fill="#fff"/><circle cx="${cx - rx * 0.2}" cy="${cy + ry * 0.4}" r="${rx * 0.11}" fill="#fff"/>`;
 const pixels = (rows, pal) =>
@@ -68,6 +68,10 @@ const CHARS = {
     <ellipse cx="8.4" cy="21.4" rx="1.8" ry="1" fill="#ff9fb2" opacity=".55"/><ellipse cx="25.6" cy="21.4" rx="1.8" ry="1" fill="#ff9fb2" opacity=".55"/>${shinyEye(12.8, 16.8, 2.5, 2.9, t)}${shinyEye(21.2, 16.8, 2.5, 2.9, t)}<path d="M16 21.2q1 .9 2 0" fill="none" stroke="${t.eye}" stroke-width="1.1" stroke-linecap="round"/></svg>`,
   // «Кружок»: a small dot by the island; it lights up with the music
   dot: () => `<svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="3.6" fill="#7ed6be"/></svg>`,
+  // «Кружок» with its highlight: the dot sits in a round body of the island's colour
+  dotb: (t) => `<svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="7" fill="${t.body}"/><circle cx="7" cy="7" r="2.6" fill="#7ed6be"/></svg>`,
+  // the «Пиксели» dot, «квадратик»: a square in a stone frame with a black edge
+  square: () => `<svg viewBox="0 0 28 29" shape-rendering="crispEdges"><rect x="3" y="4" width="25" height="25" fill="#000" opacity=".25"/><rect width="25" height="25" fill="#000"/><rect x="2" y="2" width="21" height="21" fill="#7d7d7d"/><rect x="7" y="7" width="11" height="11" fill="#2a2a2a"/><rect x="9" y="9" width="7" height="7" fill="#7ed6be"/></svg>`,
   // the «Пиксели» theme: the Enderman's block head with violet eyes, and the Ghast with closed, crying eyes
   shade: () => `<svg viewBox="-.5 -.5 9 9" shape-rendering="crispEdges"><rect x="-.5" y="-.5" width="9" height="9" fill="#050505"/>${pixels(
       ["abcadbca", "cadbcabd", "bdacbdac", "acbdacbd", "aGEbdEGc", "dbcadbca", "cadbcabd", "bdacdbac"],

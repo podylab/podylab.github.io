@@ -14,6 +14,9 @@ WALLS = {
     "lavender": ("#ece6fa", "#7f72bd", ["#ffffff", "#d6ccf3", "#a99be0"]),
     "night": ("#0a1216", "#1b3438", ["#5c9f92", "#1f4f52", "#27445e"]),
     "sand": ("#f6ecd8", "#bfa47a", ["#fffaf0", "#eedcb8", "#d9c095"]),
+    "end": ("#0d0916", "#2a1d40", ["#4b3a6e", "#2e2246", "#5a4a85"]),
+    "snow": ("#eef5f8", "#a9c4d1", ["#ffffff", "#f4f9fb", "#d6e6ee"]),
+    "moss": ("#0f1a14", "#2c4a36", ["#4f7a5a", "#2f5a3d", "#6a8f5f"]),
 }
 
 
@@ -55,7 +58,7 @@ def sky(top, bottom, clouds, seed, stars=False):
 
 
 for i, (name, (top, bottom, clouds)) in enumerate(WALLS.items()):
-    im = sky(top, bottom, clouds, 7 + i * 13, stars=name == "night")
+    im = sky(top, bottom, clouds, 7 + i * 13, stars=name in ("night", "end"))
     im.save(f"{name}.jpg", quality=90, optimize=True, progressive=True)
     im.resize((960, 540), Image.LANCZOS).save(f"{name}-small.jpg", quality=84, optimize=True, progressive=True)
     print(name, os.path.getsize(f"{name}.jpg") // 1024, "KB")
