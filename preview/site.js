@@ -51,39 +51,86 @@ if (LANG === "ru" && !HOME && page === "index.html" && !chosen) {
 }
 
 // ---- header and footer ----
+// a country's flag beside each language, drawn here: Windows shows emoji flags as two letters
+const star = (cx, cy, r, turn = 0) =>
+  Array.from({ length: 10 }, (_, i) => {
+    const a = (i * Math.PI) / 5 - Math.PI / 2 + turn, k = i % 2 ? r * 0.4 : r;
+    return `${(cx + k * Math.cos(a)).toFixed(2)},${(cy + k * Math.sin(a)).toFixed(2)}`;
+  }).join(" ");
+const bands = (cs, v) => cs.map((c, i) => (v ? `<rect x="${(i * 30) / cs.length}" width="${30 / cs.length + 0.1}" height="20" fill="${c}"/>` : `<rect y="${(i * 20) / cs.length}" width="30" height="${20 / cs.length + 0.1}" fill="${c}"/>`)).join("");
+const FLAGS = {
+  ru: bands(["#fff", "#1c57a7", "#d52b1e"]),
+  en: `<rect width="30" height="20" fill="#012169"/><path d="M0 0l30 20M30 0L0 20" stroke="#fff" stroke-width="4"/><path d="M0 0l30 20M30 0L0 20" stroke="#c8102e" stroke-width="1.6"/><path d="M15 0v20M0 10h30" stroke="#fff" stroke-width="6"/><path d="M15 0v20M0 10h30" stroke="#c8102e" stroke-width="3.4"/>`,
+  es: `<rect width="30" height="20" fill="#c60b1e"/><rect y="5" width="30" height="10" fill="#ffc400"/>`,
+  "pt-BR": `<rect width="30" height="20" fill="#229e45"/><path d="M15 2.5L27 10 15 17.5 3 10z" fill="#f8e509"/><circle cx="15" cy="10" r="4.6" fill="#2b49a3"/>`,
+  de: bands(["#000", "#dd0000", "#ffce00"]),
+  fr: bands(["#0055a4", "#fff", "#ef4135"], 1),
+  it: bands(["#009246", "#fff", "#ce2b37"], 1),
+  tr: `<rect width="30" height="20" fill="#e30a17"/><circle cx="11" cy="10" r="5" fill="#fff"/><circle cx="12.3" cy="10" r="4" fill="#e30a17"/><polygon points="${star(17.6, 10, 2.4, -Math.PI / 2)}" fill="#fff"/>`,
+  pl: bands(["#fff", "#dc143c"]),
+  uk: bands(["#0057b7", "#ffd700"]),
+  id: bands(["#ce1126", "#fff"]),
+  vi: `<rect width="30" height="20" fill="#da251d"/><polygon points="${star(15, 10.4, 6)}" fill="#ff0"/>`,
+  ja: `<rect width="30" height="20" fill="#fff"/><circle cx="15" cy="10" r="6" fill="#bc002d"/>`,
+  ko: `<rect width="30" height="20" fill="#fff"/><circle cx="15" cy="10" r="5" fill="#0047a0"/><path d="M10 10a5 5 0 0 1 10 0 2.5 2.5 0 0 1-5 0 2.5 2.5 0 0 0-5 0z" fill="#cd2e3a"/><path d="M5 4.5l2.6-1.7M5.8 5.7l2.6-1.7M22.4 2.8l2.6 1.7M21.6 4l2.6 1.7M5 15.5l2.6 1.7M5.8 14.3l2.6 1.7M22.4 17.2l2.6-1.7M21.6 16l2.6-1.7" stroke="#000" stroke-width=".9"/>`,
+  "zh-CN": `<rect width="30" height="20" fill="#de2910"/><polygon points="${star(6, 6, 3.4)}" fill="#ffde00"/>${[[11, 2.2], [13, 4.4], [13, 7.4], [11, 9.6]].map(([x, y]) => `<polygon points="${star(x, y, 1.1)}" fill="#ffde00"/>`).join("")}`,
+  hi: `${bands(["#ff9933", "#fff", "#138808"])}<circle cx="15" cy="10" r="2.6" fill="none" stroke="#000080" stroke-width=".8"/>`,
+};
+const flag = (code) => `<svg class="flag" viewBox="0 0 30 20" aria-hidden="true">${FLAGS[code] || ""}</svg>`;
 const links = [
   ["podee.html", "PoDee"],
   ["podoo.html", "PoDoo"],
+  ["guides.html", W("js.guides")],
+  ["fixes.html", W("js.fixes")],
   ["support.html", W("js.support")],
 ];
+// the phone's menu has the pages the footer keeps on a wide screen too
+const all = [...links, ["report.html", W("js.report")], ["privacy.html", W("js.privacy")]];
+const navLink = ([href, name]) => `<a href="${href}"${href === page ? ' aria-current="page"' : ""}>${name}</a>`;
 const here = LANGS.find(([code]) => code === LANG);
+// «Download» in the header takes the app of the page: PoDoo on its page, PoDee everywhere else
+const dl = page === "podoo.html" ? "https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe" : "";
 document.body.insertAdjacentHTML(
   "afterbegin",
   `<header><div class="wrap">
     <a class="brand" href="index.html"><img src="${up}media/podee-icon.svg" alt="" /> Pody Lab</a>
-    <nav>${links.map(([href, name]) => `<a href="${href}"${href === page ? ' aria-current="page"' : ""}>${name}</a>`).join("")}
-      <details class="langs" id="langs"><summary aria-label="${W("js.language")}">${(here?.[0] || LANG).split("-")[0].toUpperCase()}</summary>
-        <div class="langs-list">${LANGS.map(([code, folder, name]) => `<a href="${HOME}${folder}${page}${location.hash}" lang="${code}" hreflang="${code}" data-lang="${code}"${code === LANG ? ' aria-current="true"' : ""}>${name}</a>`).join("")}</div>
-      </details></nav>
-  </div></header>`,
+    <nav>${links.map(navLink).join("")}</nav>
+    <a class="btn main hdr-dl" ${dl ? `href="${dl}"` : `data-podee href="${CONFIG.podee}PoDee_x64-setup.exe"`}><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 19.5h14"/></svg><span>${W("js.download")}</span></a>
+    <details class="langs" id="langs"><summary aria-label="${W("js.language")}">${flag(here?.[0] || LANG)}<span>${(here?.[0] || LANG).split("-")[0].toUpperCase()}</span></summary>
+      <div class="langs-list">${LANGS.map(([code, folder, name]) => `<a href="${HOME}${folder}${page}${location.hash}" lang="${code}" hreflang="${code}" data-lang="${code}"${code === LANG ? ' aria-current="true"' : ""}>${flag(code)}${name}</a>`).join("")}</div>
+    </details>
+    <details class="menu" id="menu"><summary aria-label="${W("js.menu")}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+      <div class="menu-list">${all.map(navLink).join("")}</div>
+    </details>
+  </div>
+  <a class="site-notch" href="podee.html" aria-label="${W("js.notch")}"><b data-now></b><span class="notch-pody" aria-hidden="true"><b></b><i></i><i></i></span></a>
+  </header>`,
 );
 document.body.insertAdjacentHTML(
   "beforeend",
   `<footer><div class="wrap">
     <span>© 2026 Pody Lab</span>
-    <a href="${CONFIG.releases}">${W("js.all_podee_versions")}</a>
+    <a href="guides.html">${W("js.guides")}</a>
+    <a href="fixes.html">${W("js.fixes")}</a>
+    <a href="report.html">${W("js.report")}</a>
     <a href="support.html#wish">${W("js.improve_together")}</a>
     <a href="privacy.html">${W("js.privacy")}</a>
     <span>${W("js.made_with_pody_the")}</span>
   </div></footer>`,
 );
+// the notch over the site keeps the time, like PoDee's closed island
+const tick = () => document.querySelectorAll("[data-now]").forEach((el) => (el.textContent = new Date().toLocaleTimeString(LANG, { hour: "2-digit", minute: "2-digit" })));
+tick();
+setInterval(tick, 15e3);
 document.querySelectorAll("#langs a").forEach((a) =>
   a.addEventListener("click", () => {
     try { localStorage.setItem(LANG_KEY, a.dataset.lang); } catch {}
   }),
 );
-// the menu closes on a click anywhere else
-document.addEventListener("click", (e) => { if (!e.target.closest("#langs")) $("langs")?.removeAttribute("open"); });
+// the menus close on a click anywhere else, and one closes the other
+document.addEventListener("click", (e) => {
+  for (const id of ["langs", "menu"]) if (!e.target.closest("#" + id)) $(id)?.removeAttribute("open");
+});
 // ---- download: the setup itself, for this Windows (64- or 32-bit) ----
 // Chrome and Edge always say «Win64» in the user agent, so the real bitness is asked separately
 async function windowsBits() {
@@ -273,4 +320,59 @@ document.querySelectorAll(".isl-tabs span[data-t]").forEach((t) => {
     desk.dataset.tab = t.dataset.t;
     document.querySelectorAll("#feats [data-tab]").forEach((c) => c.classList.toggle("on", c.dataset.tab === t.dataset.t));
   });
+});
+
+// ---- the hero's monitor: the notch opens into the island, shows a tab, closes, and opens the next ----
+// only a class changes; the styles move it with transform and opacity
+const demo = $("demo");
+if (demo) {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) demo.classList.add("open");
+  else {
+    const tabs = ["home", "music", "cal", "chat", "code"];
+    let n = 0;
+    const cycle = () => {
+      demo.classList.add("open");
+      setTimeout(() => {
+        demo.classList.remove("open");
+        setTimeout(() => {
+          demo.dataset.tab = tabs[++n % tabs.length];
+          cycle();
+        }, 1800);
+      }, 4200);
+    };
+    setTimeout(cycle, 900);
+  }
+}
+
+// ---- guides: one topic at a time, picked by its tab or the address (#calendar) ----
+const guides = [...document.querySelectorAll(".guide")];
+if (guides.length) {
+  const show = (id) => {
+    const want = guides.some((g) => g.id === id) ? id : guides[0].id;
+    guides.forEach((g) => (g.hidden = g.id !== want));
+    document.querySelectorAll(".gtabs a").forEach((t) => t.setAttribute("aria-selected", String(t.dataset.g === want)));
+  };
+  document.querySelectorAll(".gtabs a").forEach((t) =>
+    t.addEventListener("click", (e) => {
+      e.preventDefault();
+      history.replaceState(null, "", "#" + t.dataset.g);
+      show(t.dataset.g);
+    }),
+  );
+  addEventListener("hashchange", () => show(location.hash.slice(1)));
+  show(location.hash.slice(1));
+}
+
+// ---- report: how many characters are left ----
+document.querySelectorAll("textarea[data-count]").forEach((t) => {
+  const left = t.form.querySelector("[data-left]");
+  const count = () => (left.textContent = (t.maxLength - t.value.length).toLocaleString(LANG));
+  t.addEventListener("input", count);
+  t.form.addEventListener("reset", () => setTimeout(count));
+  count();
+});
+
+// ---- the dates of releases, in the page's language ----
+document.querySelectorAll("time[data-date]").forEach((el) => {
+  el.textContent = new Date(el.dateTime + "T12:00:00").toLocaleDateString(LANG, { day: "numeric", month: "long", year: "numeric" });
 });

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../../" />
+<title>Report a problem</title>
+<meta name="description" content="Found a bug in PoDee or PoDoo, or have an idea? Write to us, we read every message." />
+<link rel="icon" href="../../media/podee-icon.svg?v=41ecf9f3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=b3ba3dbb" />
+</head>
+<body>
+<main class="wrap">
+  <div class="page-head">
+    <img src="../../media/podee-icon.svg?v=41ecf9f3" alt="" />
+    <div><h1>Report a problem</h1><p class="lead">A bug, an idea or a question. We read every message.</p></div>
+  </div>
+
+  <section class="report">
+    <div class="card">
+      <form data-send="Thanks, got it!">
+        <input type="hidden" name="about" value="Report" />
+        <div class="kinds" role="radiogroup" aria-label="What happened">
+          <label><input type="radio" name="kind" value="bug" checked /><span>Bug</span></label>
+          <label><input type="radio" name="kind" value="idea" /><span>Idea</span></label>
+          <label><input type="radio" name="kind" value="other" /><span>Other</span></label>
+        </div>
+        <div class="row2">
+          <label>アプリ <select name="app"><option>PoDee</option><option>PoDoo</option><option>Website</option></select></label>
+          <label>Version and Windows, if you know <input name="version" placeholder="1.3.5, Windows 11" maxlength="80" /></label>
+        </div>
+        <label>What happened <textarea name="message" required maxlength="2000" placeholder="For example: after the PC wakes up, the island is gone until I restart PoDee." data-count></textarea></label>
+        <p class="note count" aria-live="polite"><span data-left>2000</span> characters left</p>
+        <label>Email for a reply, if you like <input name="email" type="email" autocomplete="email" placeholder="you@mail.com" /></label>
+        <div class="btns" style="align-items:center"><button class="btn main" type="submit">Send</button><span class="sent"></span></div>
+      </form>
+      <p class="note">We see only what you write in the form. <a href="privacy.html">Privacy</a></p>
+    </div>
+  </section>
+</main>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "PoDyへのメッセージ", "js.about_podoo": "PoDooについて", "js.all_podee_versions": "PoDeeの全バージョン", "js.back_to_top": "ページの先頭へ", "js.click": "クリック", "js.close": "閉じる", "js.copied": "コピーしました", "js.copy_address": "アドレスをコピー", "js.couldn_t_copy_select": "コピーできませんでした。アドレスを選択してください", "js.download_podee_and_i": "PoDeeをダウンロードしたら、画面の上に引っ越すよ", "js.downloads.few": "ダウンロード", "js.downloads.many": "ダウンロード", "js.downloads.one": "ダウンロード", "js.downloads.other": "ダウンロード", "js.good_even_better_when": "元気だよ。なでてもらえるともっと元気", "js.hi_glad_you_came": "こんにちは！来てくれてうれしい", "js.hi_i_m_pody": "こんにちは、PoDyだよ。なでてもいいよ", "js.i_like_you_too": "ぼくもきみが好き", "js.i_live_at_the": "画面の上に住んでいて、音楽と時刻を見せているよ。おしゃべりもできるよ", "js.i_m_dizzy": "目が回る…", "js.i_only_know_a": "まだ少しの言葉しか知らないんだ。できることを聞いてみて", "js.if_podee_helps_you": "PoDeeが役に立ったら、プロジェクトを応援できます", "js.improve_together": "一緒に良くする", "js.language": "サイトの言語", "js.learn_more": "詳しく見る", "js.made_with_pody_the": "雲のPoDyと一緒に作りました", "js.message": "メッセージ", "js.mute_pody": "PoDyをミュート", "js.net_bnb": "BNB Smart Chain（BEP-20）：このネットワークのBNBまたはUSDT。", "js.net_btc": "Bitcoinネットワーク。", "js.net_doge": "Dogecoinネットワーク。", "js.net_eth": "Ethereumネットワーク（ERC-20）：このネットワークのETHまたはUSDT。", "js.net_ton": "TONネットワーク：ToncoinまたはUSDT。コメントに要望を書けます。", "js.net_usdt": "TRC-20（Tron）ネットワークのみ。ほかのネットワークは使えません。", "js.next_track": "次の曲", "js.paused": "一時停止中", "js.playing": "再生中", "js.podoo_is_out": "PoDooが出ました：スマホや古いタブレットがPCのリモコンに", "js.pody_the_cloud_pet": "雲のPoDy：なでたり話しかけたりできます", "js.previous_track": "前の曲", "js.privacy": "プライバシー", "js.soon": "近日公開", "js.sound_off": "サウンドオフ", "js.sound_on": "サウンドオン", "js.support": "応援する", "js.thank_you_here_s": "ありがとう！応援ページはこちら", "js.thanks_for_stopping_by": "来てくれてありがとう。どんな金額でも助かります", "js.that_tickles": "くすぐったい！", "js.the_address_is_coming": "アドレスはもうすぐ掲載します", "js.the_download_podee_button": "「PoDeeをダウンロード」ボタンはトップページとPoDeeのページにあります", "js.the_form_will_work": "フォームはもうすぐ使えるようになります", "js.track_1": "夜のドライブ", "js.track_2": "街の灯り", "js.track_3": "夜明け", "js.typed_text": "入力：{text}", "js.unmute_pody": "PoDyのミュートを解除", "js.version_line": "{bits}ビットWindows版 バージョン{v} · <a href=\"{link}\">{other}ビット版が必要ですか？<\/a>", "js.volume_n": "音量 {n}%", "js.write_to_pody": "PoDyに書く…", "js.guides": "Guides", "js.fixes": "Fixes", "js.report": "Report a problem", "js.download": "Download", "js.menu": "Menu", "js.notch": "PoDee: an island at the top of your screen"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=280b99f9"></script>
+<script src="../pody.js?v=3bf6c807"></script>
+</body>
+</html>

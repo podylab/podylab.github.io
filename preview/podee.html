@@ -9,27 +9,111 @@
 <link rel="icon" href="../media/podee-icon.svg?v=41ecf9f3" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css?v=629f9e8f" />
+<link rel="stylesheet" href="style.css?v=b3ba3dbb" />
 </head>
 <body>
 <main class="wrap">
-  <div class="hero">
-    <img class="cloud" src="../media/podee-icon.svg?v=41ecf9f3" alt="Облачко PoDy" />
-    <h1>Остров вверху экрана <em>для Windows</em></h1>
-    <p class="lead">PoDee живёт у верхнего края экрана: показывает часы и музыку, слушает голос, отвечает в чате и подсказывает, что сейчас делает Claude Code. Рядом сидит облачко PoDy и следит глазами за мышкой.</p>
-    <div class="btns">
+  <div class="hero hero2">
+    <div class="h-text">
+      <img class="cloud sm" src="../media/podee-icon.svg?v=41ecf9f3" alt="Облачко PoDy" />
+      <h1>Остров вверху экрана <em>для Windows</em></h1>
+      <p class="lead">PoDee живёт у верхнего края экрана: показывает часы и музыку, слушает голос, отвечает в чате и подсказывает, что сейчас делает Claude Code. Рядом сидит облачко PoDy и следит глазами за мышкой.</p>
+      <div class="btns">
       <a class="btn main" data-podee href="https://github.com/podylab/PoDee-releases/releases/latest/download/PoDee_x64-setup.exe"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Скачать для Windows</a><a class="btn ghost" href="https://apps.microsoft.com/detail/9P3ZM16J8S2B?hl=ru-ru" target="_blank" rel="noopener"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6V5a4 4 0 0 1 8 0v1h4.2a.8.8 0 0 1 .8.8V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6.8a.8.8 0 0 1 .8-.8zm1.6 0h4.8V5a2.4 2.4 0 0 0-4.8 0zM7.5 10v3.4h4.1V10zm4.9 0v3.4h4.1V10zm-4.9 4.2v3.4h4.1v-3.4zm4.9 0v3.4h4.1v-3.4z" fill-rule="evenodd"/></svg>Microsoft Store</a>
-      <a class="btn ghost" href="support.html">Поддержать</a>
     </div>
-    <p class="dl-count" data-downloads="PoDee-releases" hidden></p>
+      <p class="dl-count" data-downloads="PoDee-releases" hidden></p>
+      <ul class="facts">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Windows 10 и 11, 64 и 32 бит</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="2"/></svg>PoDee на русском и английском, сайт на 16 языках</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Всё хранится на компьютере. <a href="privacy.html">Приватность</a></span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19.5s-7-4.3-7-9.4A4 4 0 0 1 12 7.6a4 4 0 0 1 7 2.5c0 5.1-7 9.4-7 9.4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Бесплатно и без подписки. <a href="support.html">Поддержать</a></span></li>
+      </ul>
+    </div>
+    <div class="monitor" aria-hidden="true">
+      <div class="desk demo" id="demo" data-tab="home">
+        <div class="screen" style="background-image:url(../media/wallpapers/mint-small.jpg)">
+          <div class="dn">
+            <div class="dn-closed"><b data-clock>14:32</b></div>
+            <div class="dn-open">        <div class="isl">
+          <div class="isl-tabs">
+            <span data-t="home"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v8.5a1 1 0 0 1-1 1h-4.5V15h-5v5.5H5a1 1 0 0 1-1-1z"/></svg></span>
+            <span data-t="music"><svg viewBox="0 0 24 24"><path d="M9.5 17.5V6.2l9-2v11.3"/><circle cx="7" cy="17.5" r="2.5"/><circle cx="16" cy="15.5" r="2.5"/></svg></span>
+            <span data-t="cal"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3.5"/><path d="M3.5 10h17M8 3.2v3.5M16 3.2v3.5"/></svg></span>
+            <span data-t="chat"><svg viewBox="0 0 24 24"><path d="M5 5.5h14a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 3.5V16.5H5A1.5 1.5 0 0 1 3.5 15V7A1.5 1.5 0 0 1 5 5.5z"/></svg></span>
+            <span data-t="timer"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.3 1.6M9.5 3h5"/></svg></span>
+            <span data-t="water"><svg viewBox="0 0 24 24"><path d="M12 3.6s6 6.3 6 10.4a6 6 0 0 1-12 0c0-4.1 6-10.4 6-10.4z"/></svg></span>
+            <span data-t="code"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="3.5"/><path d="M7.5 10l3 2.5-3 2.5M13 15.2h3.5"/></svg></span>
+            <span class="heart"><svg viewBox="0 0 24 24"><path d="M12 19.5s-7-4.3-7-9.4A4 4 0 0 1 12 7.6a4 4 0 0 1 7 2.5c0 5.1-7 9.4-7 9.4z"/></svg></span>
+          </div>
+          <div class="isl-scene home">
+            <div class="big" data-clock>14:32</div>
+            <div class="mut" data-today>суббота, 1 ноября</div>
+            <div class="soon">Через 12 мин · Созвон с дизайнером</div>
+          </div>
+          <div class="isl-scene music">
+            <div class="row">
+              <span class="isl-art"></span>
+              <div class="t"><b>Тёплый город</b><span>Ночной трамвай</span><span class="isl-lyric">и фонари горят до утра</span></div>
+              <div class="ctl">
+                <i><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></i>
+                <i><svg viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></i>
+                <i><svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></i>
+              </div>
+            </div>
+            <div class="isl-bar"></div>
+          </div>
+          <div class="isl-scene cal">
+            <div class="isl-week" data-week></div>
+            <div class="isl-meet"><span>Через 12 мин · <em>Созвон с дизайнером</em></span></div>
+          </div>
+          <div class="isl-scene chat">
+            <div class="isl-say"><p class="me">Открой Телеграм</p><p class="ai">Открываю Telegram</p></div>
+            <div class="isl-input">Спросите PoDee или дайте команду…</div>
+          </div>
+          <div class="isl-scene code">
+            <div class="isl-term"><p class="top"><span>› правлю site.js</span><span class="mut">лимит: осталось 62%</span></p><p class="ok">✓ тесты прошли, 24 из 24</p><p class="q">? Запустить npm run build?</p></div>
+            <div class="isl-ask"><span>Разрешить</span><span>Нет</span></div>
+          </div>
+          <div class="isl-scene water">
+            <div class="row"><b>Вода</b><span class="mut" style="margin-left:auto">напомню через 60 мин</span></div>
+            <div class="isl-drops" data-drops></div>
+            <div class="row"><b style="font-size:1.3em">5</b><span class="mut">из 8 стаканов</span><span class="isl-pill">+ стакан</span></div>
+          </div>
+          <div class="isl-scene timer">
+            <div class="row">
+              <div class="isl-ring"><svg viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="42"/><circle class="arc" cx="50" cy="50" r="42"/></svg><b>18:42</b></div>
+              <div class="t"><b>Таймер</b><span>осталось 18 минут</span></div>
+              <div class="ctl"><i><svg viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></i></div>
+            </div>
+          </div>
+        </div></div>
+          </div>
+          <div class="d-pody"><b></b><i></i><i></i></div>
+          <div class="d-dock">
+          <span class="run" data-name="Проводник"><svg viewBox="0 0 40 40"><path d="M4 11a3 3 0 0 1 3-3h8.5l3 3H33a3 3 0 0 1 3 3v2H4z" fill="#e9a823"/><path d="M4 15h32v15a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z" fill="#ffcf4d"/><rect x="11" y="23" width="18" height="10" rx="1.5" fill="#2f7fd8"/></svg></span>
+          <span class="run round" data-name="Браузер" style="background:radial-gradient(circle at 30% 25%,#7ff0c9,#1fa8c9 55%,#1a5fc4)"><svg viewBox="0 0 40 40"><path d="M9 25c2-9 13-13 20-8-6-1-11 3-11 9 0 3 2 5 5 6-7 1-13-1-14-7z" fill="#fff" opacity=".92"/></svg></span>
+          <span class="run round" data-name="Мессенджер" style="background:linear-gradient(160deg,#4cc3f5,#1e88d0)"><svg viewBox="0 0 40 40"><path d="M9 19.5l20-8-3.5 17-6-4.5-3 3-.5-5.2 8.5-7.3-10.5 6.3z" fill="#fff"/></svg></span>
+          <span data-name="Музыка" style="background:linear-gradient(160deg,#ff7d97,#e0355f)"><svg viewBox="0 0 40 40"><path d="M16 27.5V12l13-3v15" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><circle cx="13" cy="27.5" r="3.6" fill="#fff"/><circle cx="26" cy="24.5" r="3.6" fill="#fff"/></svg></span>
+          <span data-name="Почта" style="background:linear-gradient(160deg,#5b9bff,#2b62d1)"><svg viewBox="0 0 40 40"><rect x="9" y="12" width="22" height="16" rx="2.5" fill="#fff"/><path d="M10 13.5l10 8 10-8" fill="none" stroke="#2b62d1" stroke-width="2"/></svg></span>
+          <span data-name="Заметки" style="background:linear-gradient(160deg,#ffe07a,#f5b82e)"><svg viewBox="0 0 40 40"><path d="M12 14h16M12 20h16M12 26h10" stroke="#5b4300" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          <b class="sep"></b>
+          <span class="run" data-name="Терминал" style="background:linear-gradient(160deg,#3a4247,#1d2225)"><svg viewBox="0 0 40 40"><path d="M11 14l6 5.5-6 5.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 27h9" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg></span>
+          <span data-name="Фото" style="background:linear-gradient(180deg,#8fd4ff,#d9f1ff)"><svg viewBox="0 0 40 40"><circle cx="27" cy="13" r="3.5" fill="#ffc53d"/><path d="M5 31l10-12 7 8 4-4 9 8z" fill="#3aa57a"/></svg></span>
+          <span class="run" data-name="Параметры" style="background:linear-gradient(160deg,#a5b1b8,#6c7a82)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="8.5" fill="none" stroke="#fff" stroke-width="4.5" stroke-dasharray="3.3 2.3"/><circle cx="20" cy="20" r="6" fill="none" stroke="#fff" stroke-width="2.6"/></svg></span>
+
+          </div>
+        </div>
+      </div>
+      <div class="stand"></div>
+    </div>
   </div>
 
   <section>
-    <h2>Что умеет PoDee</h2>
-    <p class="sub">Бесплатный для всех. Windows 10 и 11.</p>
+    <h2>Что внутри</h2>
+    <p class="sub">Наведите на карточку, и остров откроет её вкладку. На экране он выглядит так же.</p>
     <div class="desk stick" id="isl" data-tab="home" aria-hidden="true">
       <div class="screen">
-        <div class="isl">
+                <div class="isl">
           <div class="isl-tabs">
             <span data-t="home"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v8.5a1 1 0 0 1-1 1h-4.5V15h-5v5.5H5a1 1 0 0 1-1-1z"/></svg></span>
             <span data-t="music"><svg viewBox="0 0 24 24"><path d="M9.5 17.5V6.2l9-2v11.3"/><circle cx="7" cy="17.5" r="2.5"/><circle cx="16" cy="15.5" r="2.5"/></svg></span>
@@ -115,12 +199,17 @@
           <div class="d-pody"><b></b><i></i><i></i></div>
         </div>
         <div data-part="dock" class="d-dock">
-          <span class="run" style="background:linear-gradient(160deg,#ffd166,#f0a33a)"></span>
-          <span class="run" style="background:linear-gradient(160deg,#6cb6ff,#2f6fd6)"></span>
-          <span class="run" style="background:linear-gradient(160deg,#5ed1e8,#2896b8)"></span>
-          <span style="background:linear-gradient(160deg,#ff8a7a,#d9485f)"></span>
-          <span style="background:linear-gradient(160deg,#b39cff,#6a4fd0)"></span>
-          <span style="background:linear-gradient(160deg,#8fe3cc,#23806c)"></span>
+          <span class="run" data-name="Проводник"><svg viewBox="0 0 40 40"><path d="M4 11a3 3 0 0 1 3-3h8.5l3 3H33a3 3 0 0 1 3 3v2H4z" fill="#e9a823"/><path d="M4 15h32v15a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z" fill="#ffcf4d"/><rect x="11" y="23" width="18" height="10" rx="1.5" fill="#2f7fd8"/></svg></span>
+          <span class="run round" data-name="Браузер" style="background:radial-gradient(circle at 30% 25%,#7ff0c9,#1fa8c9 55%,#1a5fc4)"><svg viewBox="0 0 40 40"><path d="M9 25c2-9 13-13 20-8-6-1-11 3-11 9 0 3 2 5 5 6-7 1-13-1-14-7z" fill="#fff" opacity=".92"/></svg></span>
+          <span class="run round" data-name="Мессенджер" style="background:linear-gradient(160deg,#4cc3f5,#1e88d0)"><svg viewBox="0 0 40 40"><path d="M9 19.5l20-8-3.5 17-6-4.5-3 3-.5-5.2 8.5-7.3-10.5 6.3z" fill="#fff"/></svg></span>
+          <span data-name="Музыка" style="background:linear-gradient(160deg,#ff7d97,#e0355f)"><svg viewBox="0 0 40 40"><path d="M16 27.5V12l13-3v15" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><circle cx="13" cy="27.5" r="3.6" fill="#fff"/><circle cx="26" cy="24.5" r="3.6" fill="#fff"/></svg></span>
+          <span data-name="Почта" style="background:linear-gradient(160deg,#5b9bff,#2b62d1)"><svg viewBox="0 0 40 40"><rect x="9" y="12" width="22" height="16" rx="2.5" fill="#fff"/><path d="M10 13.5l10 8 10-8" fill="none" stroke="#2b62d1" stroke-width="2"/></svg></span>
+          <span data-name="Заметки" style="background:linear-gradient(160deg,#ffe07a,#f5b82e)"><svg viewBox="0 0 40 40"><path d="M12 14h16M12 20h16M12 26h10" stroke="#5b4300" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          <b class="sep"></b>
+          <span class="run" data-name="Терминал" style="background:linear-gradient(160deg,#3a4247,#1d2225)"><svg viewBox="0 0 40 40"><path d="M11 14l6 5.5-6 5.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 27h9" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg></span>
+          <span data-name="Фото" style="background:linear-gradient(180deg,#8fd4ff,#d9f1ff)"><svg viewBox="0 0 40 40"><circle cx="27" cy="13" r="3.5" fill="#ffc53d"/><path d="M5 31l10-12 7 8 4-4 9 8z" fill="#3aa57a"/></svg></span>
+          <span class="run" data-name="Параметры" style="background:linear-gradient(160deg,#a5b1b8,#6c7a82)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="8.5" fill="none" stroke="#fff" stroke-width="4.5" stroke-dasharray="3.3 2.3"/><circle cx="20" cy="20" r="6" fill="none" stroke="#fff" stroke-width="2.6"/></svg></span>
+
         </div>
         <div class="d-taskbar"><i></i><i></i><i></i><i></i><i></i></div>
       </div>
@@ -151,11 +240,17 @@
             <div class="isl-cloud"><i></i><i></i><i></i><i></i><b data-clock>14:32</b></div>
             <div class="d-pody near"><b></b><i></i><i></i></div>
             <div class="d-dock low">
-              <span class="run" style="background:linear-gradient(160deg,#ffd166,#f0a33a)"></span>
-              <span class="run" style="background:linear-gradient(160deg,#6cb6ff,#2f6fd6)"></span>
-              <span class="run" style="background:linear-gradient(160deg,#5ed1e8,#2896b8)"></span>
-              <span style="background:linear-gradient(160deg,#ff8a7a,#d9485f)"></span>
-              <span style="background:linear-gradient(160deg,#8fe3cc,#23806c)"></span>
+          <span class="run" data-name="Проводник"><svg viewBox="0 0 40 40"><path d="M4 11a3 3 0 0 1 3-3h8.5l3 3H33a3 3 0 0 1 3 3v2H4z" fill="#e9a823"/><path d="M4 15h32v15a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z" fill="#ffcf4d"/><rect x="11" y="23" width="18" height="10" rx="1.5" fill="#2f7fd8"/></svg></span>
+          <span class="run round" data-name="Браузер" style="background:radial-gradient(circle at 30% 25%,#7ff0c9,#1fa8c9 55%,#1a5fc4)"><svg viewBox="0 0 40 40"><path d="M9 25c2-9 13-13 20-8-6-1-11 3-11 9 0 3 2 5 5 6-7 1-13-1-14-7z" fill="#fff" opacity=".92"/></svg></span>
+          <span class="run round" data-name="Мессенджер" style="background:linear-gradient(160deg,#4cc3f5,#1e88d0)"><svg viewBox="0 0 40 40"><path d="M9 19.5l20-8-3.5 17-6-4.5-3 3-.5-5.2 8.5-7.3-10.5 6.3z" fill="#fff"/></svg></span>
+          <span data-name="Музыка" style="background:linear-gradient(160deg,#ff7d97,#e0355f)"><svg viewBox="0 0 40 40"><path d="M16 27.5V12l13-3v15" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><circle cx="13" cy="27.5" r="3.6" fill="#fff"/><circle cx="26" cy="24.5" r="3.6" fill="#fff"/></svg></span>
+          <span data-name="Почта" style="background:linear-gradient(160deg,#5b9bff,#2b62d1)"><svg viewBox="0 0 40 40"><rect x="9" y="12" width="22" height="16" rx="2.5" fill="#fff"/><path d="M10 13.5l10 8 10-8" fill="none" stroke="#2b62d1" stroke-width="2"/></svg></span>
+          <span data-name="Заметки" style="background:linear-gradient(160deg,#ffe07a,#f5b82e)"><svg viewBox="0 0 40 40"><path d="M12 14h16M12 20h16M12 26h10" stroke="#5b4300" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          <b class="sep"></b>
+          <span class="run" data-name="Терминал" style="background:linear-gradient(160deg,#3a4247,#1d2225)"><svg viewBox="0 0 40 40"><path d="M11 14l6 5.5-6 5.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 27h9" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg></span>
+          <span data-name="Фото" style="background:linear-gradient(180deg,#8fd4ff,#d9f1ff)"><svg viewBox="0 0 40 40"><circle cx="27" cy="13" r="3.5" fill="#ffc53d"/><path d="M5 31l10-12 7 8 4-4 9 8z" fill="#3aa57a"/></svg></span>
+          <span class="run" data-name="Параметры" style="background:linear-gradient(160deg,#a5b1b8,#6c7a82)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="8.5" fill="none" stroke="#fff" stroke-width="4.5" stroke-dasharray="3.3 2.3"/><circle cx="20" cy="20" r="6" fill="none" stroke="#fff" stroke-width="2.6"/></svg></span>
+
             </div>
           </div>
         </div>
@@ -163,6 +258,68 @@
       </figure>
     </div>
   </section>
+
+  <section id="clean">
+    <h2>Сделайте рабочий стол ещё чище</h2>
+    <p class="sub">PoDee умеет убрать лишнее. Всё возвращается одной галочкой.</p>
+    <div class="grid g3 clean">
+      <div class="card">
+        <div class="mini pic" aria-hidden="true">
+          <div class="m-set">
+            <b>Док</b>
+            <p><i class="on"></i><span>Запущенные программы</span></p>
+            <p class="hot"><i class="on"></i><span>Прятать значки на рабочем столе</span><em class="tap">1</em></p>
+          </div>
+        </div>
+        <h3>Спрячьте значки</h3>
+        <p>Настройки → Док → «Прятать значки на рабочем столе». Снимете галочку или закроете PoDee, и значки вернутся.</p>
+      </div>
+      <div class="card">
+        <div class="mini pic wall" aria-hidden="true" style="background-image:url(../media/wallpapers/sky-small.jpg)">
+          <div class="m-gone"></div>
+          <div class="d-dock low">
+          <span class="run" data-name="Проводник"><svg viewBox="0 0 40 40"><path d="M4 11a3 3 0 0 1 3-3h8.5l3 3H33a3 3 0 0 1 3 3v2H4z" fill="#e9a823"/><path d="M4 15h32v15a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z" fill="#ffcf4d"/><rect x="11" y="23" width="18" height="10" rx="1.5" fill="#2f7fd8"/></svg></span>
+          <span class="run round" data-name="Браузер" style="background:radial-gradient(circle at 30% 25%,#7ff0c9,#1fa8c9 55%,#1a5fc4)"><svg viewBox="0 0 40 40"><path d="M9 25c2-9 13-13 20-8-6-1-11 3-11 9 0 3 2 5 5 6-7 1-13-1-14-7z" fill="#fff" opacity=".92"/></svg></span>
+          <span class="run round" data-name="Мессенджер" style="background:linear-gradient(160deg,#4cc3f5,#1e88d0)"><svg viewBox="0 0 40 40"><path d="M9 19.5l20-8-3.5 17-6-4.5-3 3-.5-5.2 8.5-7.3-10.5 6.3z" fill="#fff"/></svg></span>
+          <span data-name="Музыка" style="background:linear-gradient(160deg,#ff7d97,#e0355f)"><svg viewBox="0 0 40 40"><path d="M16 27.5V12l13-3v15" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><circle cx="13" cy="27.5" r="3.6" fill="#fff"/><circle cx="26" cy="24.5" r="3.6" fill="#fff"/></svg></span>
+          <span data-name="Почта" style="background:linear-gradient(160deg,#5b9bff,#2b62d1)"><svg viewBox="0 0 40 40"><rect x="9" y="12" width="22" height="16" rx="2.5" fill="#fff"/><path d="M10 13.5l10 8 10-8" fill="none" stroke="#2b62d1" stroke-width="2"/></svg></span>
+          <span data-name="Заметки" style="background:linear-gradient(160deg,#ffe07a,#f5b82e)"><svg viewBox="0 0 40 40"><path d="M12 14h16M12 20h16M12 26h10" stroke="#5b4300" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          <b class="sep"></b>
+          <span class="run" data-name="Терминал" style="background:linear-gradient(160deg,#3a4247,#1d2225)"><svg viewBox="0 0 40 40"><path d="M11 14l6 5.5-6 5.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 27h9" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg></span>
+          <span data-name="Фото" style="background:linear-gradient(180deg,#8fd4ff,#d9f1ff)"><svg viewBox="0 0 40 40"><circle cx="27" cy="13" r="3.5" fill="#ffc53d"/><path d="M5 31l10-12 7 8 4-4 9 8z" fill="#3aa57a"/></svg></span>
+          <span class="run" data-name="Параметры" style="background:linear-gradient(160deg,#a5b1b8,#6c7a82)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="8.5" fill="none" stroke="#fff" stroke-width="4.5" stroke-dasharray="3.3 2.3"/><circle cx="20" cy="20" r="6" fill="none" stroke="#fff" stroke-width="2.6"/></svg></span>
+
+          </div>
+        </div>
+        <h3>Док вместо панели задач</h3>
+        <p>Программы открываются из дока, а панель задач Windows прячется. Выключите док или закройте PoDee, и она вернётся.</p>
+      </div>
+      <a class="card link" href="#walls">
+        <div class="mini pic wall" aria-hidden="true" style="background-image:url(../media/wallpapers/peach-small.jpg)">
+          <div class="sh notch"><b data-clock>14:32</b></div>
+          <div class="ch d-pody dark"><b></b><i></i><i></i></div>
+        </div>
+        <h3>Поставьте наши обои</h3>
+        <p>Шесть спокойных обоев в 4K, нарисованных под остров. Бесплатно, чуть ниже на странице.</p>
+      </a>
+    </div>
+  </section>
+
+
+  <section id="new">
+    <h2>Новое в 1.3.5</h2>
+    <p class="sub">Что появилось в последней версии. PoDee обновляется сам.</p>
+    <div class="grid g3 news">
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div><h3>Связь с PoDoo</h3><p>С телефона можно открыть и убрать остров, поставить таймер, добавить задачу и спросить PoDy. Ответ придёт на телефон.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5h16M4 7.5l1.2 11a2 2 0 0 0 2 1.8h9.6a2 2 0 0 0 2-1.8L20 7.5M9 4h6"/><path d="M9.5 12h5M12 9.5v5"/></svg></div><h3>Полка переделывает файлы</h3><p>Картинки в JPG и PNG, сжатие, сборка в PDF, текст с картинки, удаление фона. Видео и звук через FFmpeg.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="8" height="6" rx="1.5"/><rect x="13" y="4" width="8" height="6" rx="1.5"/><rect x="7" y="15" width="10" height="5" rx="2.5"/></svg></div><h3>Миниатюры окон в доке</h3><p>Если у программы несколько окон, при наведении видно каждое. Щелчок по программе, которая уже впереди, сворачивает её.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 17.5V6.2l9-2v11.3"/><circle cx="7" cy="17.5" r="2.5"/><circle cx="16" cy="15.5" r="2.5"/></svg></div><h3>Остров не подвисает</h3><p>Даже когда служба музыки Windows перестаёт отвечать.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="3"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg></div><h3>Ctrl+Alt+P</h3><p>Прячет остров наверх и возвращает обратно.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.4-5.7M20 4v4.5h-4.5"/></svg></div><h3>Обновление без хлопот</h3><p>Установщик сам закрывает PoDee перед обновлением и потом запускает снова.</p></div>
+    </div>
+    <p class="more-link"><a class="btn ghost" href="fixes.html">Все исправления</a></p>
+  </section>
+
 
   <section id="install">
     <h2>Установка за минуту</h2>
@@ -252,9 +409,57 @@
       </div>
     </div>
   </section>
+
+  <section id="walls">
+    <h2>Бесплатные обои</h2>
+    <p class="sub">Нарисованы кодом под PoDee: верх экрана остаётся свободным для острова. Каждая картинка 3840×2160.</p>
+    <div class="walls">
+      <figure class="wp">
+        <div class="wp-pic" style="background-image:url(../media/wallpapers/mint-small.jpg)" aria-hidden="true"><div class="sh notch"><b data-clock>14:32</b></div><div class="ch d-pody dark"><b></b><i></i><i></i></div></div>
+        <figcaption><span><b>Мята</b>Чёлка · PoDy</span><a class="btn ghost" href="../media/wallpapers/mint.jpg" download="PoDee-mint.jpg">Скачать</a></figcaption>
+      </figure>
+      <figure class="wp">
+        <div class="wp-pic" style="background-image:url(../media/wallpapers/sky-small.jpg)" aria-hidden="true"><div class="sh flare light"><b data-clock>14:32</b></div><div class="ch cat light"><b></b><i></i><i></i></div></div>
+        <figcaption><span><b>Небо</b>Наплыв · Кот</span><a class="btn ghost" href="../media/wallpapers/sky.jpg" download="PoDee-sky.jpg">Скачать</a></figcaption>
+      </figure>
+      <figure class="wp">
+        <div class="wp-pic" style="background-image:url(../media/wallpapers/peach-small.jpg)" aria-hidden="true"><div class="sh capsule"><b data-clock>14:32</b></div><div class="ch dot"><i></i><i></i><i></i></div></div>
+        <figcaption><span><b>Персик</b>Капсула · Кружок</span><a class="btn ghost" href="../media/wallpapers/peach.jpg" download="PoDee-peach.jpg">Скачать</a></figcaption>
+      </figure>
+      <figure class="wp">
+        <div class="wp-pic" style="background-image:url(../media/wallpapers/lavender-small.jpg)" aria-hidden="true"><div class="sh cloud light"><b data-clock>14:32</b></div><div class="ch d-pody"><b></b><i></i><i></i></div></div>
+        <figcaption><span><b>Лаванда</b>Облако · PoDy</span><a class="btn ghost" href="../media/wallpapers/lavender.jpg" download="PoDee-lavender.jpg">Скачать</a></figcaption>
+      </figure>
+      <figure class="wp">
+        <div class="wp-pic" style="background-image:url(../media/wallpapers/night-small.jpg)" aria-hidden="true"><div class="sh notch light"><b data-clock>14:32</b><span class="ch blob"><i></i><i></i></span></div></div>
+        <figcaption><span><b>Ночь</b>Чёлка · Пятнышко</span><a class="btn ghost" href="../media/wallpapers/night.jpg" download="PoDee-night.jpg">Скачать</a></figcaption>
+      </figure>
+      <figure class="wp">
+        <div class="wp-pic" style="background-image:url(../media/wallpapers/sand-small.jpg)" aria-hidden="true"><div class="sh flare"><b data-clock>14:32</b></div><div class="ch cat"><b></b><i></i><i></i></div></div>
+        <figcaption><span><b>Песок</b>Наплыв · Кот</span><a class="btn ghost" href="../media/wallpapers/sand.jpg" download="PoDee-sand.jpg">Скачать</a></figcaption>
+      </figure>
+    </div>
+    <p class="note">На картинках разные формы острова и персонажи. Выбрать свои можно в настройках: Внешний вид → Остров и Индикатор.</p>
+  </section>
+
+
+  <section class="end">
+    <div class="end-card">
+      <div class="end-chars" aria-hidden="true">
+        <figure><div class="seat"><div class="ch d-pody"><b></b><i></i><i></i></div></div><figcaption>PoDy</figcaption></figure>
+        <figure><div class="seat"><div class="ch cat dark"><b></b><i></i><i></i></div></div><figcaption>Кот</figcaption></figure>
+        <figure><div class="seat"><div class="ch dot"><i></i><i></i><i></i></div></div><figcaption>Кружок</figcaption></figure>
+        <figure><div class="seat"><div class="sh capsule mini-isl"><span class="ch blob"><i></i><i></i></span></div></div><figcaption>Пятнышко</figcaption></figure>
+      </div>
+      <h2>Остров уже ждёт</h2>
+      <p class="sub">Скачайте PoDee, выберите форму острова и соседа для него. Настройка займёт пару минут.</p>
+      <div class="btns"><a class="btn main" data-podee href="https://github.com/podylab/PoDee-releases/releases/latest/download/PoDee_x64-setup.exe"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.6l7.4-1v7.6H3zM11.4 3.4L21 2v9.2h-9.6zM3 12.8h7.4v7.6L3 19.4zM11.4 12.8H21V22l-9.6-1.4z"/></svg>Скачать для Windows</a><a class="btn ghost" href="guides.html">Гайды</a></div>
+    </div>
+  </section>
+
 </main>
-<script>window.PODY = {"words": {"js.a_message_for_pody": "Сообщение для PoDy", "js.about_podoo": "О PoDoo", "js.all_podee_versions": "Все версии PoDee", "js.back_to_top": "Наверх", "js.click": "Клик", "js.close": "Закрыть", "js.copied": "Скопировано", "js.copy_address": "Скопировать адрес", "js.couldn_t_copy_select": "Не вышло, выделите адрес", "js.download_podee_and_i": "Скачайте PoDee, и я поселюсь у вас наверху экрана", "js.downloads.few": "скачивания", "js.downloads.many": "скачиваний", "js.downloads.one": "скачивание", "js.downloads.other": "скачиваний", "js.good_even_better_when": "Хорошо. Особенно когда меня гладят", "js.hi_glad_you_came": "Привет! Рад, что вы зашли", "js.hi_i_m_pody": "Привет, я PoDy. Можно меня погладить", "js.i_like_you_too": "И вы мне нравитесь", "js.i_live_at_the": "Живу у верхнего края экрана: показываю музыку и время. Со мной можно поговорить голосом", "js.i_m_dizzy": "Голова кружится…", "js.i_only_know_a": "Я знаю пока немного слов. Спросите, что я умею", "js.if_podee_helps_you": "Если PoDee пригодился, проект можно поддержать", "js.improve_together": "Улучшить вместе", "js.language": "Язык сайта", "js.learn_more": "Подробнее", "js.made_with_pody_the": "Сделано с облачком PoDy", "js.message": "сообщение", "js.mute_pody": "Выключить звуки PoDy", "js.net_bnb": "Сеть BNB Smart Chain (BEP-20): BNB и USDT в этой сети.", "js.net_btc": "Сеть Bitcoin.", "js.net_doge": "Сеть Dogecoin.", "js.net_eth": "Сеть Ethereum (ERC-20): ETH и USDT в этой сети.", "js.net_ton": "Сеть TON: Toncoin и USDT. В комментарии можно написать пожелание.", "js.net_usdt": "Сеть TRC-20 (Tron). Другие сети не подойдут.", "js.next_track": "Следующий трек", "js.paused": "Пауза", "js.playing": "Воспроизведение", "js.podoo_is_out": "PoDoo уже вышел: старый телефон или планшет становится пультом для ПК", "js.pody_the_cloud_pet": "Облачко PoDy: погладить и поговорить", "js.previous_track": "Предыдущий трек", "js.privacy": "Конфиденциальность", "js.soon": "Скоро", "js.sound_off": "Звук выключен", "js.sound_on": "Звук включён", "js.support": "Поддержать", "js.thank_you_here_s": "Спасибо! Вот страница поддержки", "js.thanks_for_stopping_by": "Спасибо, что заглянули. Любая сумма помогает", "js.that_tickles": "Щекотно!", "js.the_address_is_coming": "Адрес появится скоро", "js.the_download_podee_button": "Кнопка «Скачать PoDee» есть на главной и на странице PoDee", "js.the_form_will_work": "Форма заработает совсем скоро", "js.track_1": "Ночная трасса", "js.track_2": "Огни города", "js.track_3": "Рассвет", "js.typed_text": "Напечатано: {text}", "js.unmute_pody": "Включить звуки PoDy", "js.version_line": "Версия {v} для {bits}-битной Windows · <a href=\"{link}\">нужна {other}-битная<\/a>", "js.volume_n": "Громкость {n}%", "js.write_to_pody": "Напишите PoDy…"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": ""};</script>
-<script src="site.js?v=f49b63dc"></script>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "Сообщение для PoDy", "js.about_podoo": "О PoDoo", "js.all_podee_versions": "Все версии PoDee", "js.back_to_top": "Наверх", "js.click": "Клик", "js.close": "Закрыть", "js.copied": "Скопировано", "js.copy_address": "Скопировать адрес", "js.couldn_t_copy_select": "Не вышло, выделите адрес", "js.download_podee_and_i": "Скачайте PoDee, и я поселюсь у вас наверху экрана", "js.downloads.few": "скачивания", "js.downloads.many": "скачиваний", "js.downloads.one": "скачивание", "js.downloads.other": "скачиваний", "js.good_even_better_when": "Хорошо. Особенно когда меня гладят", "js.hi_glad_you_came": "Привет! Рад, что вы зашли", "js.hi_i_m_pody": "Привет, я PoDy. Можно меня погладить", "js.i_like_you_too": "И вы мне нравитесь", "js.i_live_at_the": "Живу у верхнего края экрана: показываю музыку и время. Со мной можно поговорить голосом", "js.i_m_dizzy": "Голова кружится…", "js.i_only_know_a": "Я знаю пока немного слов. Спросите, что я умею", "js.if_podee_helps_you": "Если PoDee пригодился, проект можно поддержать", "js.improve_together": "Улучшить вместе", "js.language": "Язык сайта", "js.learn_more": "Подробнее", "js.made_with_pody_the": "Сделано с облачком PoDy", "js.message": "сообщение", "js.mute_pody": "Выключить звуки PoDy", "js.net_bnb": "Сеть BNB Smart Chain (BEP-20): BNB и USDT в этой сети.", "js.net_btc": "Сеть Bitcoin.", "js.net_doge": "Сеть Dogecoin.", "js.net_eth": "Сеть Ethereum (ERC-20): ETH и USDT в этой сети.", "js.net_ton": "Сеть TON: Toncoin и USDT. В комментарии можно написать пожелание.", "js.net_usdt": "Сеть TRC-20 (Tron). Другие сети не подойдут.", "js.next_track": "Следующий трек", "js.paused": "Пауза", "js.playing": "Воспроизведение", "js.podoo_is_out": "PoDoo уже вышел: старый телефон или планшет становится пультом для ПК", "js.pody_the_cloud_pet": "Облачко PoDy: погладить и поговорить", "js.previous_track": "Предыдущий трек", "js.privacy": "Конфиденциальность", "js.soon": "Скоро", "js.sound_off": "Звук выключен", "js.sound_on": "Звук включён", "js.support": "Поддержать", "js.thank_you_here_s": "Спасибо! Вот страница поддержки", "js.thanks_for_stopping_by": "Спасибо, что заглянули. Любая сумма помогает", "js.that_tickles": "Щекотно!", "js.the_address_is_coming": "Адрес появится скоро", "js.the_download_podee_button": "Кнопка «Скачать PoDee» есть на главной и на странице PoDee", "js.the_form_will_work": "Форма заработает совсем скоро", "js.track_1": "Ночная трасса", "js.track_2": "Огни города", "js.track_3": "Рассвет", "js.typed_text": "Напечатано: {text}", "js.unmute_pody": "Включить звуки PoDy", "js.version_line": "Версия {v} для {bits}-битной Windows · <a href=\"{link}\">нужна {other}-битная<\/a>", "js.volume_n": "Громкость {n}%", "js.write_to_pody": "Напишите PoDy…", "js.guides": "Гайды", "js.fixes": "Исправления", "js.report": "Сообщить о проблеме", "js.download": "Скачать", "js.menu": "Меню", "js.notch": "PoDee: остров вверху экрана"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": ""};</script>
+<script src="site.js?v=280b99f9"></script>
 <script src="pody.js?v=3bf6c807"></script>
 </body>
 </html>
