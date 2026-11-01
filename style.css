@@ -839,7 +839,8 @@ nav.hdr-isl { height: 42px; padding: 0 6px; border-radius: 999px; }
   .steps > li, .clean > .card { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; }
 }
 @media (min-width: 861px) {
-  .news > .card, .why > .card { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+  .news > .card { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+  .why > .card { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
   /* the app cards: every part has its own row, so a hidden download counter keeps its place */
   .apps > .app { grid-row: span 6; grid-template-rows: subgrid; row-gap: 14px; }
   .app > img { grid-row: 1; } .app > .btns { grid-row: 2; } .app > :is(.dl-count, .dl-alt) { grid-row: 3; }
