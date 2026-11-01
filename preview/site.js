@@ -110,19 +110,18 @@ const FLAGS = {
   hi: `${bands(["#ff9933", "#fff", "#138808"])}<circle cx="15" cy="10" r="2.6" fill="none" stroke="#000080" stroke-width=".8"/>`,
 };
 const flag = (code) => `<svg class="flag" viewBox="0 0 30 20" aria-hidden="true">${FLAGS[code] || ""}</svg>`;
-const links = [
-  ["podee.html", "PoDee"],
-  ["podoo.html", "PoDoo"],
-  ["guides.html", W("js.guides")],
-  ["fixes.html", W("js.fixes")],
-  ["support.html", W("js.support")],
+// the header belongs to the page's app: its guides, its fixes, its download. Pages of no app (home, support,
+// report) have only the common links and no download; the apps themselves are listed on the home page
+const APPS = [
+  { pages: ["podee.html", "guides.html", "fixes.html", "privacy.html"], links: [["guides.html", W("js.guides")], ["fixes.html", W("js.fixes")]], dl: `data-podee href="${CONFIG.podee}PoDee_x64-setup.exe"` },
+  { pages: ["podoo.html"], links: [], dl: 'href="https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe"' },
 ];
-// the phone's menu has the pages the footer keeps on a wide screen too
-const all = [...links, ["report.html", W("js.report")], ["privacy.html", W("js.privacy")]];
+const pageApp = APPS.find((a) => a.pages.includes(page));
+const links = [...(pageApp?.links || []), ["support.html", W("js.support")], ...(pageApp ? [] : [["report.html", W("js.report")]])];
+// the phone's menu also has the pages the footer keeps on a wide screen
+const all = [...links, ...[["report.html", W("js.report")], ["privacy.html", W("js.privacy")]].filter(([h]) => !links.some(([l]) => l === h))];
 const navLink = ([href, name]) => `<a href="${href}"${href === page ? ' aria-current="page"' : ""}>${name}</a>`;
 const here = LANGS.find(([code]) => code === LANG);
-// «Download» in the header takes the app of the page: PoDoo on its page, PoDee everywhere else
-const dl = page === "podoo.html" ? "https://github.com/podylab/PoDoo-releases/releases/latest/download/PoDoo_x64-setup.exe" : "";
 const THEME_KEY = "podylab.theme";
 const themeIcon = `<svg viewBox="0 0 24 24" aria-hidden="true"><g class="sun"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g><path class="moon" d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z"/></svg>`;
 document.body.insertAdjacentHTML(
@@ -130,10 +129,10 @@ document.body.insertAdjacentHTML(
   `<header><div class="wrap">
     <a class="brand" href="index.html"><img src="${up}media/podee-icon.svg" alt="" /> <span>Pody Lab</span></a>
     <div class="hdr-mid">
-      <nav class="hdr-isl" aria-label="Pody Lab"><a class="hdr-clock" href="podee.html" aria-label="${W("js.notch")}"><b data-now></b></a>${links.map(navLink).join("")}</nav>
+      <nav class="hdr-isl" aria-label="Pody Lab">${links.map(navLink).join("")}</nav>
       <i class="char hdr-char" data-c="auto" aria-hidden="true"></i>
     </div>
-    <a class="btn main hdr-dl" ${dl ? `href="${dl}"` : `data-podee href="${CONFIG.podee}PoDee_x64-setup.exe"`}><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 19.5h14"/></svg><span>${W("js.download")}</span></a>
+    ${pageApp ? `<a class="btn main hdr-dl" ${pageApp.dl}><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 19.5h14"/></svg><span>${W("js.download")}</span></a>` : ""}
     <button class="theme-btn" type="button" data-theme-toggle aria-label="${W("js.theme")}" title="${W("js.theme")}">${themeIcon}</button>
     <details class="langs" id="langs"><summary aria-label="${W("js.language")}">${flag(here?.[0] || LANG)}<span>${(here?.[0] || LANG).split("-")[0].toUpperCase()}</span></summary>
       <div class="langs-list">${LANGS.map(([code, folder, name]) => `<a href="${HOME}${folder}${page}${location.hash}" lang="${code}" hreflang="${code}" data-lang="${code}"${code === LANG ? ' aria-current="true"' : ""}>${flag(code)}${name}</a>`).join("")}</div>
@@ -147,8 +146,7 @@ document.body.insertAdjacentHTML(
   "beforeend",
   `<footer><div class="wrap">
     <span>© 2026 Pody Lab</span>
-    <a href="guides.html">${W("js.guides")}</a>
-    <a href="fixes.html">${W("js.fixes")}</a>
+    ${(pageApp?.links || []).map(([href, name]) => `<a href="${href}">${name}</a>`).join("")}
     <a href="report.html">${W("js.report")}</a>
     <a href="support.html#wish">${W("js.improve_together")}</a>
     <a href="privacy.html">${W("js.privacy")}</a>
@@ -170,10 +168,6 @@ matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e) => {
   try { saved = localStorage.getItem(THEME_KEY); } catch {}
   if (!saved) setTheme(e.matches ? "light" : "dark");
 });
-// the island in the header keeps the time, like PoDee's closed island
-const tick = () => document.querySelectorAll("[data-now]").forEach((el) => (el.textContent = new Date().toLocaleTimeString(LANG, { hour: "2-digit", minute: "2-digit" })));
-tick();
-setInterval(tick, 15e3);
 document.querySelectorAll("#langs a").forEach((a) =>
   a.addEventListener("click", () => {
     try { localStorage.setItem(LANG_KEY, a.dataset.lang); } catch {}

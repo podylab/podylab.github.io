@@ -1,6 +1,6 @@
 // PoDy on the site: the same cloud as in PoDee, in the corner of every page. His eyes follow
 // the mouse, he blinks and breathes; a click pets him (hearts and his happy chirp), poking
-// too often makes him dizzy. A little chat answers a few words, now and then he asks to
+// too often makes him dizzy. Now and then he says a word or asks to
 // support Pody Lab. Also here: the «back to top» button and the page's soft effects.
 // Needs site.js first (W, up).
 (() => {
@@ -103,7 +103,6 @@
       <div class="pody-talk" id="pody-talk" hidden>
         <button class="pody-close" id="pody-close" type="button" aria-label="${W("js.close")}">×</button>
         <p id="pody-say"></p>
-        <form id="pody-form" autocomplete="off"><input id="pody-input" maxlength="120" placeholder="${W("js.write_to_pody")}" aria-label="${W("js.a_message_for_pody")}" /></form>
       </div>
       <div class="pody-wrap">
         <button class="pody-sound" id="pody-sound" type="button"></button>
@@ -131,7 +130,6 @@
   const pody = document.getElementById("pody");
   const talk = document.getElementById("pody-talk");
   const say = document.getElementById("pody-say");
-  const input = document.getElementById("pody-input");
   const soundBtn = document.getElementById("pody-sound");
 
   const SOUND_ICONS = {
@@ -210,47 +208,20 @@
   // ---------- what he says ----------
 
   let hideTimer = 0;
-  /** PoDy says something; `link` adds a button under the words, `chat` keeps the box open to answer. */
-  function speak(text, { link = null, ms = 6500, chat = false } = {}) {
+  /** PoDy says something; `link` adds a button under the words. */
+  function speak(text, { link = null, ms = 6500 } = {}) {
     say.textContent = text;
     if (link) say.insertAdjacentHTML("beforeend", ` <a class="pody-link" href="${link[1]}">${link[0]}</a>`);
     talk.hidden = false;
-    talk.classList.toggle("chat", chat);
     talk.animate?.([{ opacity: 0, transform: "translateY(6px) scale(0.96)" }, { opacity: 1, transform: "none" }], { duration: 220, easing: "ease-out" });
     clearTimeout(hideTimer);
-    if (!chat) hideTimer = setTimeout(() => (talk.hidden = true), ms);
+    hideTimer = setTimeout(() => (talk.hidden = true), ms);
   }
   const support = [W("js.support"), "support.html"];
-  const podeePage = [W("js.learn_more"), "podee.html"];
 
-  // a few words he understands
-  const REPLIES = [
-    [/привет|здрав|хай|hi\b|hello|hey/i, () => [W("js.hi_glad_you_came")]],
-    [/скача|загруз|установ|download|install|get/i, () => [W("js.the_download_podee_button"), podeePage]],
-    [/подд|донат|задонат|деньг|оплат|support|donat|money|tip/i, () => [W("js.thank_you_here_s"), support]],
-    [/podoo|подо|пульт|телефон|phone|remote/i, () => [W("js.podoo_is_out"), [W("js.about_podoo"), "podoo.html"]]],
-    [/умеешь|можешь|кто ты|что ты|what.*(do|can)|who are/i, () => [W("js.i_live_at_the"), podeePage]],
-    [/как дела|как ты|how are/i, () => [W("js.good_even_better_when")]],
-    [/люблю|нравишься|милый|милаш|love|cute|♥|❤/i, () => { hearts(5); return [W("js.i_like_you_too")]; }],
-  ];
-  document.getElementById("pody-form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const text = input.value.trim();
-    if (!text) return;
-    input.value = "";
-    mood("talking", 700);
-    setTimeout(() => {
-      const hit = REPLIES.find(([re]) => re.test(text));
-      const [words, link] = hit ? hit[1]() : [W("js.i_only_know_a")];
-      speak(words, { link, chat: true });
-      mood("petted", 1200);
-      chirp("answer");
-      hop(6);
-    }, 450);
-  });
   document.getElementById("pody-close").addEventListener("click", () => (talk.hidden = true));
 
-  // a click pets him and opens the chat; too many quick clicks make him dizzy
+  // a click pets him; too many quick clicks make him dizzy
   let pokes = [];
   pody.addEventListener("click", () => {
     const now = Date.now();
@@ -274,10 +245,7 @@
     chirp("happy");
     hearts();
     hop();
-    if (talk.hidden || !talk.classList.contains("chat")) {
-      speak(page === "support.html" ? W("js.thanks_for_stopping_by") : W("js.hi_i_m_pody"), { chat: true });
-      setTimeout(() => input.focus({ preventScroll: true }), 50);
-    }
+    if (talk.hidden) speak(page === "support.html" ? W("js.thanks_for_stopping_by") : W("js.hi_i_m_pody"), { ms: 3500 });
   });
 
   // he greets once per visit, then now and then asks to support the project
@@ -300,7 +268,7 @@
   // the download button: he wants to move in
   document.querySelectorAll("[data-podee]").forEach((a) =>
     a.addEventListener("mouseenter", () => {
-      if (!talk.hidden && talk.classList.contains("chat")) return;
+      if (!talk.hidden) return;
       speak(W("js.download_podee_and_i"), { ms: 4000 });
       mood("petted", 1000);
     }),
