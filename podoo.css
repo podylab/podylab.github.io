@@ -22,7 +22,7 @@
 .land button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; -webkit-tap-highlight-color: transparent; }
 .land :is(img, svg) { display: block; max-width: 100%; }
 .land [hidden] { display: none !important; }
-.land :is(h1, h2, h3) { font-family: var(--font); font-weight: 900; letter-spacing: -.03em; line-height: 1.04; }
+.land :is(h1, h2, h3) { font-family: var(--font); font-weight: 600; letter-spacing: -.02em; line-height: 1.04; }
 .land h2 { font-size: clamp(32px, 4.6vw, 54px); text-wrap: balance; }
 .land h3 { font-size: 20px; letter-spacing: -.01em; line-height: 1.2; }
 .land :focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; border-radius: 6px; }
@@ -34,7 +34,7 @@
 .land h1, .land p, .land ul, .land ol, .land figure { margin: 0; padding: 0; }
 .land ul, .land ol { list-style: none; }
 .land img, .land svg { display: block; max-width: 100%; }
-.land h1 { font-family: var(--font); font-weight: 900; letter-spacing: -.035em; line-height: 1.02; }
+.land h1 { font-family: var(--font); font-weight: 600; letter-spacing: -.025em; line-height: 1.02; }
 .land .section-head { display: grid; gap: 18px; max-width: 760px; margin-bottom: clamp(32px, 5vw, 56px); }
 .land .section-head p { color: var(--ink-2); max-width: 60ch; }
 .land section { padding-block: clamp(64px, 10vw, 128px); }
@@ -59,7 +59,7 @@
   display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: center; gap: clamp(24px, 5vw, 72px);
 }
 .land .status { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 26px; font: 500 13px/1 var(--mono); color: var(--ink-2); }
-.land .led { width: 9px; height: 9px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 0 3px color-mix(in srgb, var(--signal) 25%, transparent), 0 0 14px var(--signal); animation: led 2.4s ease-in-out infinite; }
+.land .led { width: 8px; height: 8px; border-radius: 50%; background: var(--signal); }
 .land h1 { font-size: clamp(40px, 6.4vw, 84px); line-height: .96; letter-spacing: -.045em; margin-bottom: 28px; text-wrap: balance; }
 .land h1 .line { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
 .land h1 .line > span { display: block; }
@@ -151,7 +151,7 @@ html[lang="ru"] .land h1 { font-size: clamp(38px, 5.6vw, 76px); }
 .land .steps li { position: relative; display: grid; align-content: start; gap: 12px; padding: 30px 26px 28px; border: 1px solid var(--line); border-radius: 26px; background: color-mix(in srgb, var(--plastic) 60%, transparent); transition: transform .4s var(--ease), border-color .3s; }
 .land .steps li:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--signal) 55%, var(--line)); }
 .land .steps p { color: var(--ink-2); font-size: 16px; }
-.land .step-no { display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 8px; border-radius: 15px; font-weight: 900; font-size: 24px; color: #fff; background: linear-gradient(180deg, #8ee0c9, #3fb594); box-shadow: 0 5px 0 #1d6f5c; }
+.land .step-no { display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 8px; border-radius: 15px; font-weight: 600; font-size: 24px; color: #fff; background: linear-gradient(180deg, #8ee0c9, #3fb594); box-shadow: 0 5px 0 #1d6f5c; }
 .land .steps .textlink { justify-self: start; margin-top: 6px; }
 .land .download { background: radial-gradient(closest-side at 50% 45%, color-mix(in srgb, var(--signal) 13%, transparent), transparent); }
 .land .pill { display: inline-flex; align-items: center; gap: 10px; height: 36px; padding: 0 16px; border: 1px solid var(--line); border-radius: 999px; font: 500 13px var(--mono); color: var(--ink-2); }
