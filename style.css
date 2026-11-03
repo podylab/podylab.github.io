@@ -834,6 +834,13 @@ nav.hdr-isl { height: 42px; padding: 0 6px; border-radius: 999px; }
   .why > .card { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
   /* the app cards: every part has its own row, so a hidden download counter keeps its place */
   .apps > .app { grid-row: span 6; grid-template-rows: subgrid; row-gap: 14px; }
-  .app > img { grid-row: 1; } .app > .btns { grid-row: 2; } .app > :is(.dl-count, .dl-alt) { grid-row: 3; }
+  .app > img { grid-row: 1; }
+  /* the version line and the download counter share one cell: the counter sits at its right end,
+     so the card keeps one column (side by side they made a second one and squeezed the text) */
+  .app > :is(.dl-count, .dl-alt) { grid-row: 3; grid-column: 1; align-self: start; }
+  .app > .dl-count { justify-self: end; margin: 0; }
+  .app > .dl-alt { padding-right: 130px; }
+  /* a card with more buttons wraps to a second line; the other card's buttons keep their size, not stretch to that height */
+  .app > .btns { grid-row: 2; align-content: flex-start; align-items: flex-start; }
   .app > h3 { grid-row: 4; } .app > h3 + p { grid-row: 5; } .app > .more { grid-row: 6; align-self: end; }
 }
