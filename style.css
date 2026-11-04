@@ -740,6 +740,13 @@ kbd { padding: 4px 8px; border-radius: 8px; border: 1px solid var(--line); borde
 /* the corner companion: the cat on the dark theme */
 :root[data-theme="dark"] .pb-cloud, :root[data-theme="light"] .pb-cat { display: none; }
 .pb-cat .cat-head { fill: #050708; stroke: rgb(255 255 255 / .28); stroke-width: .6; }
+.pb-cat .tail-edge, .pb-cat .tail-fur { fill: none; stroke-linecap: round; }
+.pb-cat .tail-edge { stroke: rgb(255 255 255 / .28); stroke-width: 3.5; }
+.pb-cat .tail-fur { stroke: #050708; stroke-width: 2.3; }
+/* the cat's tail sways from where it leaves the body, as in PoDee */
+.cat-tail { transform-box: view-box; transform-origin: 24.2px 26.4px; animation: cat-tail 2.6s ease-in-out infinite; }
+@keyframes cat-tail { 0%, 100% { transform: rotate(-7deg); } 50% { transform: rotate(9deg); } }
+@media (prefers-reduced-motion: reduce) { .cat-tail { animation: none; } }
 .cat-face .ring { fill: #f6f3ea; }
 .cat-face .core { fill: #050708; }
 .cat-face .glint { fill: #f6f3ea; }

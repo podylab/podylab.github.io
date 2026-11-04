@@ -2,7 +2,7 @@
 // the crypto wallets and the wish form are built here for every page.
 const CONFIG = {
   podee: "https://github.com/podylab/PoDee-releases/releases/latest/download/", // + PoDee_x64-setup.exe or PoDee_x86-setup.exe
-  podeeVersion: "1.3.9", // shown until GitHub answers with the latest release; update it with every release
+  podeeVersion: "1.6.0", // shown until GitHub answers with the latest release; update it with every release
   releases: "https://github.com/podylab/PoDee-releases/releases",
   card: "https://www.donationalerts.com/r/polab", // the DonationAlerts page, e.g. https://www.donationalerts.com/r/name
   form: "https://formspree.io/f/xwllnbpp", // Formspree endpoint, e.g. https://formspree.io/f/xxxxxxx
@@ -63,7 +63,7 @@ const CHARS = {
   cloud: (t) => `<svg viewBox="0 0 38 27"><g fill="${t.body}"><circle cx="10.06" cy="15.3" r="7.76"/><circle cx="18.95" cy="10.24" r="10.24"/><circle cx="27.95" cy="15.86" r="7.43"/><rect x="2.53" y="14.18" width="33.19" height="12.83" rx="6.41"/></g>
     <path d="M4.23 13.18a6.2 6.2 0 0 1 3.21-3.5M11.5 5.94a8.6 8.6 0 0 1 4.51-3.78" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1.3" stroke-linecap="round"/>
     <g transform="translate(3 4)">${shinyEye(11.2, 11.4, 2.9, 3.3, t)}${shinyEye(20.8, 11.4, 2.9, 3.3, t)}<ellipse cx="7" cy="15.6" rx="2.3" ry="1.3" fill="#ff9fb2" opacity=".55"/><ellipse cx="25" cy="15.6" rx="2.3" ry="1.3" fill="#ff9fb2" opacity=".55"/><path d="M14.4 15.8q.8 1 1.6 0q.8 1 1.6 0" fill="none" stroke="${t.eye}" stroke-width="1.1" stroke-linecap="round"/></g></svg>`,
-  cat: (t) => `<svg viewBox="0 0 32 30"><path fill="${t.body}" d="M10.2 1.6L13.4 6.4Q17 5.8 20.6 6.2L23.6 3.2Q24.4 7.6 24.6 10.4C26.6 13.6 27.6 18.6 26.8 22.4C26 27 21.4 29.2 16 29.2C9.6 29.2 4.4 26.6 4.4 21.4C4.4 16.8 6.4 13.4 8.4 11.4C8.2 8 8.8 4.4 10.2 1.6ZM26.2 23.4C28.4 22.6 29.2 20.4 29 18.6C28.9 17.4 30.5 17 30.8 18.4C31.3 21.4 29.7 24.8 26.6 25.6Z"/>
+  cat: (t) => `<svg viewBox="0 0 32 30"><path class="cat-tail" fill="none" stroke="${t.body}" stroke-width="2.3" stroke-linecap="round" d="M24.2 26.4C28.6 26.2 30.8 22.6 30.1 18.4C29.9 17.3 29.1 16.9 28.5 17.4"/><path fill="${t.body}" d="M10.2 1.6L13.4 6.4Q17 5.8 20.6 6.2L23.6 3.2Q24.4 7.6 24.6 10.4C26.6 13.6 27.6 18.6 26.8 22.4C26 27 21.4 29.2 16 29.2C9.6 29.2 4.4 26.6 4.4 21.4C4.4 16.8 6.4 13.4 8.4 11.4C8.2 8 8.8 4.4 10.2 1.6Z"/>
     ${[[12.6, 11.4], [20.2, 11.8]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="3.5" fill="${t.eye}"/><circle cx="${x}" cy="${y}" r="2.6" fill="${t.body}"/><circle cx="${x - 0.9}" cy="${y - 0.9}" r=".8" fill="${t.eye}"/>`).join("")}</svg>`,
   blob: (t) => `<svg viewBox="0 0 34 30"><path fill="${t.body}" d="M3 17C3 11 7 7.4 12.6 7.8C14.6 5.6 18.4 5.2 20.6 7.2C25.8 6.4 31 9.6 31.2 14.6C33.4 16.4 33.2 20.2 31 21.6C30.6 26.2 25.6 28.6 20.4 27.4C17.6 29.4 13 29.2 11 27.2C6.4 27.6 2.6 25 3.4 21.4C2 20.2 2.2 18 3 17Z"/>
     <ellipse cx="8.4" cy="21.4" rx="1.8" ry="1" fill="#ff9fb2" opacity=".55"/><ellipse cx="25.6" cy="21.4" rx="1.8" ry="1" fill="#ff9fb2" opacity=".55"/>${shinyEye(12.8, 16.8, 2.5, 2.9, t)}${shinyEye(21.2, 16.8, 2.5, 2.9, t)}<path d="M16 21.2q1 .9 2 0" fill="none" stroke="${t.eye}" stroke-width="1.1" stroke-linecap="round"/></svg>`,

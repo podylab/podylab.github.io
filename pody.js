@@ -115,7 +115,8 @@
             </defs>
             <ellipse cx="532" cy="742" rx="290" ry="34" fill="url(#pody-shadow)"/>
             <g class="pody-body pb-cat">
-              <path transform="translate(274 262) scale(16)" class="cat-head" d="M10.2 1.6L13.4 6.4Q17 5.8 20.6 6.2L23.6 3.2Q24.4 7.6 24.6 10.4C26.6 13.6 27.6 18.6 26.8 22.4C26 27 21.4 29.2 16 29.2C9.6 29.2 4.4 26.6 4.4 21.4C4.4 16.8 6.4 13.4 8.4 11.4C8.2 8 8.8 4.4 10.2 1.6ZM26.2 23.4C28.4 22.6 29.2 20.4 29 18.6C28.9 17.4 30.5 17 30.8 18.4C31.3 21.4 29.7 24.8 26.6 25.6Z"/>
+              <g transform="translate(274 262) scale(16)"><g class="cat-tail"><path class="tail-edge" d="M24.2 26.4C28.6 26.2 30.8 22.6 30.1 18.4C29.9 17.3 29.1 16.9 28.5 17.4"/><path class="tail-fur" d="M24.2 26.4C28.6 26.2 30.8 22.6 30.1 18.4C29.9 17.3 29.1 16.9 28.5 17.4"/></g></g>
+              <path transform="translate(274 262) scale(16)" class="cat-head" d="M10.2 1.6L13.4 6.4Q17 5.8 20.6 6.2L23.6 3.2Q24.4 7.6 24.6 10.4C26.6 13.6 27.6 18.6 26.8 22.4C26 27 21.4 29.2 16 29.2C9.6 29.2 4.4 26.6 4.4 21.4C4.4 16.8 6.4 13.4 8.4 11.4C8.2 8 8.8 4.4 10.2 1.6Z"/>
               <g class="pody-face cat-face" transform="translate(274 262) scale(16)">${catFace}</g>
             </g>
             <g class="pody-body pb-cloud">
