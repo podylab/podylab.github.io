@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="root" content="../" />
 <script>try{var t=localStorage.getItem("podylab.theme")}catch(e){}document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")</script>
-<title>PoDee guides</title>
-<meta name="description" content="How to connect Claude Code, your calendar, voice, AI chat and a phone with PoDoo to PoDee." />
+<title>PoDeeガイド</title>
+<meta name="description" content="PoDeeにClaude Code、カレンダー、音声、AIチャット、PoDooを入れたスマホをつなぐ方法。" />
 <link rel="icon" href="../media/podee-icon.svg?v=41ecf9f3" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
@@ -33,71 +33,71 @@
 <main class="wrap">
   <div class="page-head">
     <img src="../media/podee-icon.svg?v=41ecf9f3" alt="" />
-    <div><h1>PoDee guides</h1><p class="lead">Step by step: Claude Code, calendar, voice with AI chat, and your phone.</p></div>
+    <div><h1>PoDeeガイド</h1><p class="lead">手順どおりに：Claude Code、カレンダー、音声とAIチャット、スマホとの連携。</p></div>
   </div>
 
   <section class="guides">
-    <div class="gtabs" role="tablist" aria-label="PoDee guides">
+    <div class="gtabs" role="tablist" aria-label="PoDeeガイド">
       <a role="tab" href="#claude" data-g="claude">Claude Code</a>
-      <a role="tab" href="#calendar" data-g="calendar">Calendar</a>
-      <a role="tab" href="#voice" data-g="voice">Voice and AI chat</a>
+      <a role="tab" href="#calendar" data-g="calendar">カレンダー</a>
+      <a role="tab" href="#voice" data-g="voice">音声とAIチャット</a>
       <a role="tab" href="#podoo" data-g="podoo">PoDoo + PoDee</a>
     </div>
-    <p class="note gopen">To open Settings, start PoDee again from the Start menu. No second island appears; the running app opens its settings.</p>
+    <p class="note gopen">設定を開くには、スタートメニューからPoDeeをもう一度起動します。2つ目のアイランドは出ず、起動中のアプリの設定が開きます。</p>
 
     <article class="guide" id="claude" role="tabpanel">
-      <h2>Claude Code on the island</h2>
-      <p class="sub">The island shows what the agent is busy with and asks you when it needs permission.</p>
+      <h2>アイランドにClaude Code</h2>
+      <p class="sub">アイランドにエージェントの作業内容が表示され、許可が必要なときは確認が出ます。</p>
       <ol class="gsteps">
-        <li><b>Open Agents</b><p>Settings → Agents → Claude Code.</p></li>
-        <li><b>Connect an account</b><p>Each account folder has its own row and its own Connect button. With several accounts, press Connect all. You can disconnect them one by one.</p></li>
-        <li><b>Restart your sessions</b><p>PoDee adds hooks to settings.json and keeps a copy as settings.json.podee-backup. Claude Code sessions that are already open pick them up after a restart.</p></li>
-        <li><b>Watch it by the clock</b><p>Appearance → “Next to the clock”: Claude's work shows right on the closed island.</p></li>
+        <li><b>「エージェント」を開く</b><p>設定 → エージェント → Claude Code。</p></li>
+        <li><b>アカウントを接続</b><p>アカウントフォルダーごとに行と「接続」ボタンがあります。アカウントが複数あるときは「すべて接続」を押します。切断はひとつずつできます。</p></li>
+        <li><b>セッションを再起動</b><p>PoDeeはsettings.jsonにフックを追加し、コピーをsettings.json.podee-backupとして残します。開いているClaude Codeセッションは、再起動後にフックを読み込みます。</p></li>
+        <li><b>時計の横で確認</b><p>外観 → 「時計の横」：Claudeの作業が閉じたアイランドにそのまま表示されます。</p></li>
       </ol>
     </article>
 
     <article class="guide" id="calendar" role="tabpanel">
-      <h2>Google or Outlook calendar</h2>
-      <p class="sub">PoDee reads your calendar from an iCal link. No login or password needed.</p>
+      <h2>GoogleまたはOutlookのカレンダー</h2>
+      <p class="sub">PoDeeはiCalリンクからカレンダーを読み込みます。ログインもパスワードも不要です。</p>
       <ol class="gsteps">
-        <li><b>Add a calendar</b><p>Settings → Calendar → “Connect calendar”. Enter a name and the iCal link.</p></li>
-        <li><b>The link from Google</b><p>In Google Calendar: Settings → your calendar → “Integrate calendar” → “Secret address in iCal format”. It ends in basic.ics. The public address only works if the calendar is public.</p></li>
-        <li><b>The link from Outlook</b><p>In Outlook: Settings → Calendar → Shared calendars → “Publish a calendar”. Pick the calendar and “Can view all details”, press Publish and copy the ICS link.</p></li>
-        <li><b>Reminders</b><p>Events refresh every 15 minutes. Choose how early to be reminded of a meeting in “Remind me”.</p></li>
+        <li><b>カレンダーを追加</b><p>設定 → カレンダー → 「カレンダーを接続」。名前とiCalリンクを入力します。</p></li>
+        <li><b>Googleのリンク</b><p>Googleカレンダーで：設定 → 自分のカレンダー → 「カレンダーの統合」 → 「iCal形式の非公開URL」。末尾はbasic.icsです。公開URLが使えるのは、カレンダーを一般公開している場合だけです。</p></li>
+        <li><b>Outlookのリンク</b><p>Outlookで：設定 → 予定表 → 共有予定表 → 「予定表を公開する」。予定表と「すべての詳細を表示可能」を選び、「公開」を押してICSリンクをコピーします。</p></li>
+        <li><b>リマインダー</b><p>予定は15分ごとに更新されます。会議の何分前に知らせるかは「何分前に通知」で選びます。</p></li>
       </ol>
     </article>
 
     <article class="guide" id="voice" role="tabpanel">
-      <h2>Voice and AI chat</h2>
-      <p class="sub">Voice commands, dictation and questions to AI, right on the island.</p>
+      <h2>音声とAIチャット</h2>
+      <p class="sub">音声コマンド、ディクテーション、AIへの質問をアイランドで。</p>
       <ol class="gsteps">
-        <li><b>Choose recognition</b><p>Settings → Voice → Recognition. Whisper on your PC works offline: the base model is 150 MB, small 490 MB (our pick), medium 1.5 GB. There's also cloud Whisper with a free Groq key, and Windows speech recognition.</p></li>
-        <li><b>Speak</b><p>Hold Ctrl+Alt+Space and say a command, such as “open Telegram”. Ctrl+Alt+D starts dictation.</p></li>
-        <li><b>Connect AI chat</b><p>Settings → AI chat → Provider. With an API key: “Get a key” opens the provider's page, and Gemini's key is free. Without a key, chat runs through a subscription: Claude Code, Gemini CLI or Codex.</p></li>
-        <li><b>Where the keys live</b><p>In Windows Credential Manager, not in the settings file.</p></li>
+        <li><b>認識方法を選ぶ</b><p>設定 → 音声 → 認識。PC上のWhisperはオフラインで動きます：baseモデルは150 MB、smallは490 MB（おすすめ）、mediumは1.5 GB。ほかに無料のGroqキーを使うクラウドのWhisperと、Windowsの音声認識もあります。</p></li>
+        <li><b>話す</b><p>Ctrl+Alt+Spaceを押したまま、「Telegramを開いて」のようにコマンドを話します。Ctrl+Alt+Dでディクテーションが始まります。</p></li>
+        <li><b>AIチャットを接続</b><p>設定 → AIチャット → プロバイダー。APIキーを使う場合：「キーを取得」でプロバイダーのページが開きます。Geminiのキーは無料です。キーなしの場合は、サブスクリプション経由で使えます：Claude Code、Gemini CLI、Codex。</p></li>
+        <li><b>キーの保存場所</b><p>設定ファイルではなく、Windows資格情報マネージャーです。</p></li>
       </ol>
       <div class="keys">
-        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd><span>voice command: hold and speak</span></p>
-        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd><span>dictation</span></p>
-        <p><kbd>Alt</kbd>+<kbd>P</kbd><span>open the island</span></p>
-        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd><span>hide the island and bring it back</span></p>
+        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd><span>音声コマンド：押したまま話す</span></p>
+        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd><span>ディクテーション</span></p>
+        <p><kbd>Alt</kbd>+<kbd>P</kbd><span>アイランドを開く</span></p>
+        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd><span>アイランドを隠す、戻す</span></p>
       </div>
     </article>
 
     <article class="guide" id="podoo" role="tabpanel">
       <h2>PoDoo + PoDee</h2>
-      <p class="sub">A phone with PoDoo controls the island: opens it, starts a timer, adds tasks and asks PoDy.</p>
+      <p class="sub">PoDooを入れたスマホでアイランドを操作できます：開く、タイマーをセット、タスクを追加、PoDyに質問。</p>
       <ol class="gsteps">
-        <li><b>Install PoDoo</b><p>PoDoo goes on your PC and on your phone. <a href="podoo.html">How to install</a></p></li>
-        <li><b>Turn on the link</b><p>In PoDee: Settings → Modules → “PoDoo link”. Commands are taken only from PoDoo on the same PC.</p></li>
-        <li><b>Control it from your phone</b><p>Open the PoDee page in PoDoo: the island opens and hides, timers and tasks take one tap. PoDy's answer arrives right on the phone.</p></li>
+        <li><b>PoDooをインストール</b><p>PoDooはPCとスマホの両方に必要です。 <a href="podoo.html">インストール方法</a></p></li>
+        <li><b>連携をオンにする</b><p>PoDeeで：設定 → モジュール → 「PoDooとの連携」。コマンドは同じPCのPoDooからだけ受け付けます。</p></li>
+        <li><b>スマホから操作</b><p>PoDooでPoDeeのページを開きます。アイランドの開閉、タイマーやタスクの追加はワンタップです。PoDyの答えはそのままスマホに届きます。</p></li>
       </ol>
     </article>
 
-    <p class="note">Something didn't work? <a href="report.html">Write to us</a></p>
+    <p class="note">うまくいきませんでしたか？ <a href="report.html">ご連絡ください</a></p>
   </section>
 </main>
-<script>window.PODY = {"words": {"js.a_message_for_pody": "PoDyへのメッセージ", "js.about_podoo": "PoDooについて", "js.all_podee_versions": "PoDeeの全バージョン", "js.back_to_top": "ページの先頭へ", "js.click": "クリック", "js.close": "閉じる", "js.copied": "コピーしました", "js.copy_address": "アドレスをコピー", "js.couldn_t_copy_select": "コピーできませんでした。アドレスを選択してください", "js.download_podee_and_i": "PoDeeをダウンロードしたら、画面の上に引っ越すよ", "js.downloads.few": "ダウンロード", "js.downloads.many": "ダウンロード", "js.downloads.one": "ダウンロード", "js.downloads.other": "ダウンロード", "js.good_even_better_when": "元気だよ。なでてもらえるともっと元気", "js.hi_glad_you_came": "こんにちは！来てくれてうれしい", "js.hi_i_m_pody": "こんにちは、PoDyだよ。なでてもいいよ", "js.i_like_you_too": "ぼくもきみが好き", "js.i_live_at_the": "画面の上に住んでいて、音楽と時刻を見せているよ。おしゃべりもできるよ", "js.i_m_dizzy": "目が回る…", "js.i_only_know_a": "まだ少しの言葉しか知らないんだ。できることを聞いてみて", "js.if_podee_helps_you": "PoDeeが役に立ったら、プロジェクトを応援できます", "js.improve_together": "一緒に良くする", "js.language": "サイトの言語", "js.learn_more": "詳しく見る", "js.made_with_pody_the": "雲のPoDyと一緒に作りました", "js.message": "メッセージ", "js.mute_pody": "PoDyをミュート", "js.net_bnb": "BNB Smart Chain（BEP-20）：このネットワークのBNBまたはUSDT。", "js.net_btc": "Bitcoinネットワーク。", "js.net_doge": "Dogecoinネットワーク。", "js.net_eth": "Ethereumネットワーク（ERC-20）：このネットワークのETHまたはUSDT。", "js.net_ton": "TONネットワーク：ToncoinまたはUSDT。コメントに要望を書けます。", "js.net_usdt": "TRC-20（Tron）ネットワークのみ。ほかのネットワークは使えません。", "js.next_track": "次の曲", "js.paused": "一時停止中", "js.playing": "再生中", "js.podoo_is_out": "PoDooが出ました：スマホや古いタブレットがPCのリモコンに", "js.pody_the_cloud_pet": "雲のPoDy：なでたり話しかけたりできます", "js.previous_track": "前の曲", "js.privacy": "プライバシー", "js.soon": "近日公開", "js.sound_off": "サウンドオフ", "js.sound_on": "サウンドオン", "js.support": "応援する", "js.thank_you_here_s": "ありがとう！応援ページはこちら", "js.thanks_for_stopping_by": "来てくれてありがとう。どんな金額でも助かります", "js.that_tickles": "くすぐったい！", "js.the_address_is_coming": "アドレスはもうすぐ掲載します", "js.the_download_podee_button": "「PoDeeをダウンロード」ボタンはトップページとPoDeeのページにあります", "js.the_form_will_work": "フォームはもうすぐ使えるようになります", "js.track_1": "夜のドライブ", "js.track_2": "街の灯り", "js.track_3": "夜明け", "js.typed_text": "入力：{text}", "js.unmute_pody": "PoDyのミュートを解除", "js.version_line": "{bits}ビットWindows版 バージョン{v} · <a href=\"{link}\">{other}ビット版が必要ですか？<\/a>", "js.volume_n": "音量 {n}%", "js.write_to_pody": "PoDyに書く…", "js.guides": "Guides", "js.fixes": "Fixes", "js.report": "Report a problem", "js.download": "Download", "js.menu": "Menu", "js.notch": "PoDee: an island at the top of your screen", "js.theme": "Light or dark theme"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "PoDyへのメッセージ", "js.about_podoo": "PoDooについて", "js.all_podee_versions": "PoDeeの全バージョン", "js.back_to_top": "ページの先頭へ", "js.click": "クリック", "js.close": "閉じる", "js.copied": "コピーしました", "js.copy_address": "アドレスをコピー", "js.couldn_t_copy_select": "コピーできませんでした。アドレスを選択してください", "js.download_podee_and_i": "PoDeeをダウンロードしたら、画面の上に引っ越すよ", "js.downloads.few": "ダウンロード", "js.downloads.many": "ダウンロード", "js.downloads.one": "ダウンロード", "js.downloads.other": "ダウンロード", "js.good_even_better_when": "元気だよ。なでてもらえるともっと元気", "js.hi_glad_you_came": "こんにちは！来てくれてうれしい", "js.hi_i_m_pody": "こんにちは、PoDyだよ。なでてもいいよ", "js.i_like_you_too": "ぼくもきみが好き", "js.i_live_at_the": "画面の上に住んでいて、音楽と時刻を見せているよ。おしゃべりもできるよ", "js.i_m_dizzy": "目が回る…", "js.i_only_know_a": "まだ少しの言葉しか知らないんだ。できることを聞いてみて", "js.if_podee_helps_you": "PoDeeが役に立ったら、プロジェクトを応援できます", "js.improve_together": "一緒に良くする", "js.language": "サイトの言語", "js.learn_more": "詳しく見る", "js.made_with_pody_the": "雲のPoDyと一緒に作りました", "js.message": "メッセージ", "js.mute_pody": "PoDyをミュート", "js.net_bnb": "BNB Smart Chain（BEP-20）：このネットワークのBNBまたはUSDT。", "js.net_btc": "Bitcoinネットワーク。", "js.net_doge": "Dogecoinネットワーク。", "js.net_eth": "Ethereumネットワーク（ERC-20）：このネットワークのETHまたはUSDT。", "js.net_ton": "TONネットワーク：ToncoinまたはUSDT。コメントに要望を書けます。", "js.net_usdt": "TRC-20（Tron）ネットワークのみ。ほかのネットワークは使えません。", "js.next_track": "次の曲", "js.paused": "一時停止中", "js.playing": "再生中", "js.podoo_is_out": "PoDooが出ました：スマホや古いタブレットがPCのリモコンに", "js.pody_the_cloud_pet": "雲のPoDy：なでたり話しかけたりできます", "js.previous_track": "前の曲", "js.privacy": "プライバシー", "js.soon": "近日公開", "js.sound_off": "サウンドオフ", "js.sound_on": "サウンドオン", "js.support": "応援する", "js.thank_you_here_s": "ありがとう！応援ページはこちら", "js.thanks_for_stopping_by": "来てくれてありがとう。どんな金額でも助かります", "js.that_tickles": "くすぐったい！", "js.the_address_is_coming": "アドレスはもうすぐ掲載します", "js.the_download_podee_button": "「PoDeeをダウンロード」ボタンはトップページとPoDeeのページにあります", "js.the_form_will_work": "フォームはもうすぐ使えるようになります", "js.track_1": "夜のドライブ", "js.track_2": "街の灯り", "js.track_3": "夜明け", "js.typed_text": "入力：{text}", "js.unmute_pody": "PoDyのミュートを解除", "js.version_line": "{bits}ビットWindows版 バージョン{v} · <a href=\"{link}\">{other}ビット版が必要ですか？<\/a>", "js.volume_n": "音量 {n}%", "js.write_to_pody": "PoDyに書く…", "js.guides": "ガイド", "js.fixes": "修正", "js.report": "問題を報告", "js.download": "ダウンロード", "js.menu": "メニュー", "js.notch": "PoDee：画面の上のアイランド", "js.theme": "ライトテーマまたはダークテーマ"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
 <script src="../site.js?v=4e67c140"></script>
 <script src="../pody.js?v=cbd2cd54"></script>
 </body>

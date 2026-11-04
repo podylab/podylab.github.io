@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="root" content="../" />
 <script>try{var t=localStorage.getItem("podylab.theme")}catch(e){}document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")</script>
-<title>PoDee guides</title>
-<meta name="description" content="How to connect Claude Code, your calendar, voice, AI chat and a phone with PoDoo to PoDee." />
+<title>Panduan PoDee</title>
+<meta name="description" content="Cara menghubungkan Claude Code, kalender, suara, chat AI, dan ponsel dengan PoDoo ke PoDee." />
 <link rel="icon" href="../media/podee-icon.svg?v=41ecf9f3" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
@@ -33,71 +33,71 @@
 <main class="wrap">
   <div class="page-head">
     <img src="../media/podee-icon.svg?v=41ecf9f3" alt="" />
-    <div><h1>PoDee guides</h1><p class="lead">Step by step: Claude Code, calendar, voice with AI chat, and your phone.</p></div>
+    <div><h1>Panduan PoDee</h1><p class="lead">Langkah demi langkah: Claude Code, kalender, suara dengan chat AI, dan koneksi ke ponsel.</p></div>
   </div>
 
   <section class="guides">
-    <div class="gtabs" role="tablist" aria-label="PoDee guides">
+    <div class="gtabs" role="tablist" aria-label="Panduan PoDee">
       <a role="tab" href="#claude" data-g="claude">Claude Code</a>
-      <a role="tab" href="#calendar" data-g="calendar">Calendar</a>
-      <a role="tab" href="#voice" data-g="voice">Voice and AI chat</a>
+      <a role="tab" href="#calendar" data-g="calendar">Kalender</a>
+      <a role="tab" href="#voice" data-g="voice">Suara dan chat AI</a>
       <a role="tab" href="#podoo" data-g="podoo">PoDoo + PoDee</a>
     </div>
-    <p class="note gopen">To open Settings, start PoDee again from the Start menu. No second island appears; the running app opens its settings.</p>
+    <p class="note gopen">Cara membuka pengaturan: jalankan PoDee sekali lagi dari menu Start. Tidak muncul pulau kedua, yang terbuka adalah pengaturan aplikasi yang sudah berjalan.</p>
 
     <article class="guide" id="claude" role="tabpanel">
-      <h2>Claude Code on the island</h2>
-      <p class="sub">The island shows what the agent is busy with and asks you when it needs permission.</p>
+      <h2>Claude Code di pulau</h2>
+      <p class="sub">Pulau menampilkan apa yang sedang dikerjakan agen dan bertanya kepadamu saat agen butuh izin.</p>
       <ol class="gsteps">
-        <li><b>Open Agents</b><p>Settings → Agents → Claude Code.</p></li>
-        <li><b>Connect an account</b><p>Each account folder has its own row and its own Connect button. With several accounts, press Connect all. You can disconnect them one by one.</p></li>
-        <li><b>Restart your sessions</b><p>PoDee adds hooks to settings.json and keeps a copy as settings.json.podee-backup. Claude Code sessions that are already open pick them up after a restart.</p></li>
-        <li><b>Watch it by the clock</b><p>Appearance → “Next to the clock”: Claude's work shows right on the closed island.</p></li>
+        <li><b>Buka «Agen»</b><p>Pengaturan → Agen → Claude Code.</p></li>
+        <li><b>Sambungkan akun</b><p>Setiap folder akun punya baris dan tombol «Sambungkan» sendiri. Kalau akunnya beberapa, tekan «Sambungkan semua». Memutuskannya bisa satu per satu.</p></li>
+        <li><b>Mulai ulang sesi</b><p>PoDee menambahkan hook ke settings.json dan menyimpan salinan settings.json.podee-backup. Sesi Claude Code yang sudah terbuka memuatnya setelah dimulai ulang.</p></li>
+        <li><b>Lihat di samping jam</b><p>Tampilan → «Di samping jam»: pekerjaan Claude terlihat langsung di pulau yang tertutup.</p></li>
       </ol>
     </article>
 
     <article class="guide" id="calendar" role="tabpanel">
-      <h2>Google or Outlook calendar</h2>
-      <p class="sub">PoDee reads your calendar from an iCal link. No login or password needed.</p>
+      <h2>Kalender Google atau Outlook</h2>
+      <p class="sub">PoDee membaca kalender dari tautan iCal. Tidak perlu login atau sandi.</p>
       <ol class="gsteps">
-        <li><b>Add a calendar</b><p>Settings → Calendar → “Connect calendar”. Enter a name and the iCal link.</p></li>
-        <li><b>The link from Google</b><p>In Google Calendar: Settings → your calendar → “Integrate calendar” → “Secret address in iCal format”. It ends in basic.ics. The public address only works if the calendar is public.</p></li>
-        <li><b>The link from Outlook</b><p>In Outlook: Settings → Calendar → Shared calendars → “Publish a calendar”. Pick the calendar and “Can view all details”, press Publish and copy the ICS link.</p></li>
-        <li><b>Reminders</b><p>Events refresh every 15 minutes. Choose how early to be reminded of a meeting in “Remind me”.</p></li>
+        <li><b>Tambahkan kalender</b><p>Pengaturan → Kalender → «Sambungkan kalender». Masukkan nama dan tautan iCal.</p></li>
+        <li><b>Tautan dari Google</b><p>Di Google Kalender: Setelan → kalendermu → «Integrasikan kalender» → «Alamat rahasia dalam format iCal». Akhirnya basic.ics. Alamat publik hanya berfungsi kalau kalendernya terbuka untuk semua orang.</p></li>
+        <li><b>Tautan dari Outlook</b><p>Di Outlook: Pengaturan → Kalender → Kalender bersama → «Terbitkan kalender». Pilih kalender dan «Dapat melihat semua detail», tekan «Terbitkan», lalu salin tautan ICS.</p></li>
+        <li><b>Pengingat</b><p>Acara diperbarui setiap 15 menit. Pilih berapa menit sebelum rapat kamu diingatkan di «Ingatkan sebelum».</p></li>
       </ol>
     </article>
 
     <article class="guide" id="voice" role="tabpanel">
-      <h2>Voice and AI chat</h2>
-      <p class="sub">Voice commands, dictation and questions to AI, right on the island.</p>
+      <h2>Suara dan chat AI</h2>
+      <p class="sub">Perintah suara, dikte, dan pertanyaan ke AI langsung di pulau.</p>
       <ol class="gsteps">
-        <li><b>Choose recognition</b><p>Settings → Voice → Recognition. Whisper on your PC works offline: the base model is 150 MB, small 490 MB (our pick), medium 1.5 GB. There's also cloud Whisper with a free Groq key, and Windows speech recognition.</p></li>
-        <li><b>Speak</b><p>Hold Ctrl+Alt+Space and say a command, such as “open Telegram”. Ctrl+Alt+D starts dictation.</p></li>
-        <li><b>Connect AI chat</b><p>Settings → AI chat → Provider. With an API key: “Get a key” opens the provider's page, and Gemini's key is free. Without a key, chat runs through a subscription: Claude Code, Gemini CLI or Codex.</p></li>
-        <li><b>Where the keys live</b><p>In Windows Credential Manager, not in the settings file.</p></li>
+        <li><b>Pilih pengenalan</b><p>Pengaturan → Suara → Pengenalan. Whisper di PC bekerja tanpa internet: model base 150 MB, small 490 MB (kami sarankan yang ini), medium 1,5 GB. Ada juga Whisper di cloud dengan kunci Groq gratis, dan Pengenalan Windows.</p></li>
+        <li><b>Bicara</b><p>Tahan Ctrl+Alt+Space dan ucapkan perintah, misalnya «buka Telegram». Ctrl+Alt+D menyalakan dikte.</p></li>
+        <li><b>Sambungkan chat AI</b><p>Pengaturan → Chat AI → Penyedia. Dengan kunci API: tombol «Dapatkan kunci» membuka halaman penyedia, dan kunci Gemini gratis. Tanpa kunci, chat berjalan lewat langganan: Claude Code, Gemini CLI, atau Codex.</p></li>
+        <li><b>Di mana kunci disimpan</b><p>Di Pengelola Kredensial Windows, bukan di file pengaturan.</p></li>
       </ol>
       <div class="keys">
-        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd><span>voice command: hold and speak</span></p>
-        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd><span>dictation</span></p>
-        <p><kbd>Alt</kbd>+<kbd>P</kbd><span>open the island</span></p>
-        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd><span>hide the island and bring it back</span></p>
+        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd><span>perintah suara: tahan dan bicara</span></p>
+        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd><span>dikte</span></p>
+        <p><kbd>Alt</kbd>+<kbd>P</kbd><span>buka pulau</span></p>
+        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd><span>sembunyikan pulau dan kembalikan</span></p>
       </div>
     </article>
 
     <article class="guide" id="podoo" role="tabpanel">
       <h2>PoDoo + PoDee</h2>
-      <p class="sub">A phone with PoDoo controls the island: opens it, starts a timer, adds tasks and asks PoDy.</p>
+      <p class="sub">Ponsel dengan PoDoo mengendalikan pulau: membukanya, memasang timer, menambah tugas, dan bertanya ke PoDy.</p>
       <ol class="gsteps">
-        <li><b>Install PoDoo</b><p>PoDoo goes on your PC and on your phone. <a href="podoo.html">How to install</a></p></li>
-        <li><b>Turn on the link</b><p>In PoDee: Settings → Modules → “PoDoo link”. Commands are taken only from PoDoo on the same PC.</p></li>
-        <li><b>Control it from your phone</b><p>Open the PoDee page in PoDoo: the island opens and hides, timers and tasks take one tap. PoDy's answer arrives right on the phone.</p></li>
+        <li><b>Pasang PoDoo</b><p>PoDoo perlu ada di PC dan di ponsel. <a href="podoo.html">Cara memasang</a></p></li>
+        <li><b>Nyalakan koneksi</b><p>Di PoDee: Pengaturan → Modul → «Koneksi PoDoo». Perintah hanya diterima dari PoDoo di PC yang sama.</p></li>
+        <li><b>Kendalikan dari ponsel</b><p>Buka halaman PoDee di PoDoo: pulau terbuka dan bersembunyi, timer dan tugas cukup satu ketukan. Jawaban PoDy langsung sampai di ponsel.</p></li>
       </ol>
     </article>
 
-    <p class="note">Something didn't work? <a href="report.html">Write to us</a></p>
+    <p class="note">Ada yang tidak berhasil? <a href="report.html">Tulis ke kami</a></p>
   </section>
 </main>
-<script>window.PODY = {"words": {"js.a_message_for_pody": "Pesan untuk PoDy", "js.about_podoo": "Tentang PoDoo", "js.all_podee_versions": "Semua versi PoDee", "js.back_to_top": "Kembali ke atas", "js.click": "Klik", "js.close": "Tutup", "js.copied": "Tersalin", "js.copy_address": "Salin alamat", "js.couldn_t_copy_select": "Gagal menyalin, pilih alamatnya", "js.download_podee_and_i": "Unduh PoDee, dan aku pindah ke atas layarmu", "js.downloads.few": "unduhan", "js.downloads.many": "unduhan", "js.downloads.one": "unduhan", "js.downloads.other": "unduhan", "js.good_even_better_when": "Baik. Lebih baik lagi kalau dielus", "js.hi_glad_you_came": "Hai! Senang kamu mampir", "js.hi_i_m_pody": "Hai, aku PoDy. Boleh dielus", "js.i_like_you_too": "Aku juga suka kamu", "js.i_live_at_the": "Aku tinggal di atas layarmu dan menampilkan musik dan jam. Kamu juga bisa ngobrol denganku", "js.i_m_dizzy": "Aku pusing…", "js.i_only_know_a": "Aku baru tahu sedikit kata. Tanya apa yang bisa kulakukan", "js.if_podee_helps_you": "Kalau PoDee membantumu, kamu bisa mendukung proyeknya", "js.improve_together": "Kembangkan bersama", "js.language": "Bahasa situs", "js.learn_more": "Selengkapnya", "js.made_with_pody_the": "Dibuat bersama awan PoDy", "js.message": "pesan", "js.mute_pody": "Bisukan PoDy", "js.net_bnb": "BNB Smart Chain (BEP-20): BNB atau USDT di jaringan ini.", "js.net_btc": "Jaringan Bitcoin.", "js.net_doge": "Jaringan Dogecoin.", "js.net_eth": "Jaringan Ethereum (ERC-20): ETH atau USDT di jaringan ini.", "js.net_ton": "Jaringan TON: Toncoin atau USDT. Di komentar kamu bisa menulis keinginan.", "js.net_usdt": "Hanya jaringan TRC-20 (Tron). Jaringan lain tidak bisa.", "js.next_track": "Lagu berikutnya", "js.paused": "Dijeda", "js.playing": "Diputar", "js.podoo_is_out": "PoDoo sudah rilis: ponsel atau tablet lama jadi remote PC kamu", "js.pody_the_cloud_pet": "Awan PoDy: elus dan ajak ngobrol", "js.previous_track": "Lagu sebelumnya", "js.privacy": "Privasi", "js.soon": "Segera", "js.sound_off": "Suara mati", "js.sound_on": "Suara nyala", "js.support": "Dukung", "js.thank_you_here_s": "Terima kasih! Ini halaman dukungannya", "js.thanks_for_stopping_by": "Terima kasih sudah mampir. Berapa pun membantu", "js.that_tickles": "Geli!", "js.the_address_is_coming": "Alamatnya segera hadir", "js.the_download_podee_button": "Tombol «Unduh PoDee» ada di beranda dan di halaman PoDee", "js.the_form_will_work": "Formulirnya akan segera berfungsi", "js.track_1": "Jalan malam", "js.track_2": "Lampu kota", "js.track_3": "Fajar", "js.typed_text": "Diketik: {text}", "js.unmute_pody": "Nyalakan suara PoDy", "js.version_line": "Versi {v} untuk Windows {bits}-bit · <a href=\"{link}\">perlu yang {other}-bit?<\/a>", "js.volume_n": "Volume {n}%", "js.write_to_pody": "Tulis ke PoDy…", "js.guides": "Guides", "js.fixes": "Fixes", "js.report": "Report a problem", "js.download": "Download", "js.menu": "Menu", "js.notch": "PoDee: an island at the top of your screen", "js.theme": "Light or dark theme"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "Pesan untuk PoDy", "js.about_podoo": "Tentang PoDoo", "js.all_podee_versions": "Semua versi PoDee", "js.back_to_top": "Kembali ke atas", "js.click": "Klik", "js.close": "Tutup", "js.copied": "Tersalin", "js.copy_address": "Salin alamat", "js.couldn_t_copy_select": "Gagal menyalin, pilih alamatnya", "js.download_podee_and_i": "Unduh PoDee, dan aku pindah ke atas layarmu", "js.downloads.few": "unduhan", "js.downloads.many": "unduhan", "js.downloads.one": "unduhan", "js.downloads.other": "unduhan", "js.good_even_better_when": "Baik. Lebih baik lagi kalau dielus", "js.hi_glad_you_came": "Hai! Senang kamu mampir", "js.hi_i_m_pody": "Hai, aku PoDy. Boleh dielus", "js.i_like_you_too": "Aku juga suka kamu", "js.i_live_at_the": "Aku tinggal di atas layarmu dan menampilkan musik dan jam. Kamu juga bisa ngobrol denganku", "js.i_m_dizzy": "Aku pusing…", "js.i_only_know_a": "Aku baru tahu sedikit kata. Tanya apa yang bisa kulakukan", "js.if_podee_helps_you": "Kalau PoDee membantumu, kamu bisa mendukung proyeknya", "js.improve_together": "Kembangkan bersama", "js.language": "Bahasa situs", "js.learn_more": "Selengkapnya", "js.made_with_pody_the": "Dibuat bersama awan PoDy", "js.message": "pesan", "js.mute_pody": "Bisukan PoDy", "js.net_bnb": "BNB Smart Chain (BEP-20): BNB atau USDT di jaringan ini.", "js.net_btc": "Jaringan Bitcoin.", "js.net_doge": "Jaringan Dogecoin.", "js.net_eth": "Jaringan Ethereum (ERC-20): ETH atau USDT di jaringan ini.", "js.net_ton": "Jaringan TON: Toncoin atau USDT. Di komentar kamu bisa menulis keinginan.", "js.net_usdt": "Hanya jaringan TRC-20 (Tron). Jaringan lain tidak bisa.", "js.next_track": "Lagu berikutnya", "js.paused": "Dijeda", "js.playing": "Diputar", "js.podoo_is_out": "PoDoo sudah rilis: ponsel atau tablet lama jadi remote PC kamu", "js.pody_the_cloud_pet": "Awan PoDy: elus dan ajak ngobrol", "js.previous_track": "Lagu sebelumnya", "js.privacy": "Privasi", "js.soon": "Segera", "js.sound_off": "Suara mati", "js.sound_on": "Suara nyala", "js.support": "Dukung", "js.thank_you_here_s": "Terima kasih! Ini halaman dukungannya", "js.thanks_for_stopping_by": "Terima kasih sudah mampir. Berapa pun membantu", "js.that_tickles": "Geli!", "js.the_address_is_coming": "Alamatnya segera hadir", "js.the_download_podee_button": "Tombol «Unduh PoDee» ada di beranda dan di halaman PoDee", "js.the_form_will_work": "Formulirnya akan segera berfungsi", "js.track_1": "Jalan malam", "js.track_2": "Lampu kota", "js.track_3": "Fajar", "js.typed_text": "Diketik: {text}", "js.unmute_pody": "Nyalakan suara PoDy", "js.version_line": "Versi {v} untuk Windows {bits}-bit · <a href=\"{link}\">perlu yang {other}-bit?<\/a>", "js.volume_n": "Volume {n}%", "js.write_to_pody": "Tulis ke PoDy…", "js.guides": "Panduan", "js.fixes": "Perbaikan", "js.report": "Laporkan masalah", "js.download": "Unduh", "js.menu": "Menu", "js.notch": "PoDee: pulau di bagian atas layar", "js.theme": "Tema terang atau gelap"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
 <script src="../site.js?v=4e67c140"></script>
 <script src="../pody.js?v=cbd2cd54"></script>
 </body>

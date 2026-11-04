@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="root" content="../" />
 <script>try{var t=localStorage.getItem("podylab.theme")}catch(e){}document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")</script>
-<title>PoDoo guides</title>
-<meta name="description" content="PoDoo step by step: connecting the phone, buttons and pages, the PoDee link, common questions." />
+<title>PoDooガイド</title>
+<meta name="description" content="PoDooを手順どおりに：スマホの接続、ボタンとページ、PoDeeとの連携、よくある質問。" />
 <link rel="icon" href="../media/podoo-icon.svg?v=9a46ef14" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
@@ -33,52 +33,52 @@
 <main class="wrap">
   <div class="page-head">
     <img src="../media/podoo-icon.svg?v=9a46ef14" alt="" />
-    <div><h1>PoDoo guides</h1><p class="lead">Step by step: connect the phone, set up buttons and link PoDoo with PoDee.</p></div>
+    <div><h1>PoDooガイド</h1><p class="lead">手順どおりに：スマホの接続、ボタンの設定、PoDooとPoDeeの連携。</p></div>
   </div>
 
   <section class="guides">
-    <div class="gtabs" role="tablist" aria-label="PoDoo guides">
-      <a role="tab" href="#connect" data-g="connect">Connecting</a>
-      <a role="tab" href="#buttons" data-g="buttons">Buttons and pages</a>
+    <div class="gtabs" role="tablist" aria-label="PoDooガイド">
+      <a role="tab" href="#connect" data-g="connect">接続</a>
+      <a role="tab" href="#buttons" data-g="buttons">ボタンとページ</a>
       <a role="tab" href="#podee" data-g="podee">PoDoo + PoDee</a>
-      <a role="tab" href="#faq" data-g="faq">Questions</a>
+      <a role="tab" href="#faq" data-g="faq">質問</a>
     </div>
 
     <article class="guide" id="connect" role="tabpanel">
-      <h2>Connecting the phone</h2>
-      <p class="sub">PoDoo waits in the tray on the PC. The phone finds it by itself on the same network.</p>
+      <h2>スマホをつなぐ</h2>
+      <p class="sub">PCのPoDooは通知領域で待っています。同じネットワークなら、スマホが自動で見つけます。</p>
       <ol class="gsteps">
-        <li><b>Over Wi-Fi</b><p>Open the app on the phone. The PC with PoDoo shows up in the list: tap it, check that the code matches on both screens, and allow the connection on the PC.</p></li>
-        <li><b>If the PC is not found</b><p>Tap “Can’t find your PC?”. Scan the QR code in the PoDoo window, type the six digits from the PC screen, or enter the address by hand.</p></li>
-        <li><b>Over a USB cable</b><p>Plug in the cable and turn on “USB tethering” on the phone. Android turns it off every time the cable is unplugged, so turn it on each time. The app then finds the PC by itself.</p></li>
-        <li><b>Over Bluetooth</b><p>First pair the phone with the PC in Windows settings. Then pick Bluetooth on the first screen of the app. The first load takes a few seconds.</p></li>
+        <li><b>Wi-Fiで</b><p>スマホでアプリを開きます。PoDooが動いているPCが一覧に出るのでタップし、スマホとPCのコードが同じか確認して、PCで接続を許可します。</p></li>
+        <li><b>PCが見つからないとき</b><p>「PCが見つかりませんか？」をタップします。PoDooのウィンドウのQRコードをカメラで読む、PCの画面の6桁の数字を入力する、アドレスを手で入力する、のいずれかです。</p></li>
+        <li><b>USBケーブルで</b><p>ケーブルをつなぎ、スマホで「USBテザリング」をオンにします。Androidはケーブルを抜くたびにこれをオフにするので、毎回オンにしてください。あとはアプリが自動でPCを見つけます。</p></li>
+        <li><b>Bluetoothで</b><p>まずWindowsの設定でスマホとPCをペアリングします。次にアプリの最初の画面でBluetoothを選びます。最初の読み込みには数秒かかります。</p></li>
       </ol>
     </article>
 
     <article class="guide" id="buttons" role="tabpanel">
-      <h2>Buttons and pages</h2>
-      <p class="sub">Everything is set up on the PC with the mouse. The phone updates right away.</p>
+      <h2>ボタンとページ</h2>
+      <p class="sub">設定はすべてPCでマウス操作。スマホにすぐ反映されます。</p>
       <ol class="gsteps">
-        <li><b>Add a button</b><p>A button can be an app, a website, a folder or file, a key combination, a script or a set of actions. Apps can simply be dragged onto the page.</p></li>
-        <li><b>Build a set of actions</b><p>Several steps in one button: open a project, start music, mute notifications.</p></li>
-        <li><b>Tie a page to an app</b><p>Pick apps for a page. When one of them is active on the PC, the dock switches to that page by itself. With none picked, you swipe to it.</p></li>
-        <li><b>Pick a theme</b><p>Sketchbook, Clay, Console, Poster, Glass and more. You can set your own background.</p></li>
+        <li><b>ボタンを追加</b><p>ボタンにできるのは、アプリ、サイト、フォルダーやファイル、キーの組み合わせ、スクリプト、アクションセットです。アプリはページにドラッグするだけです。</p></li>
+        <li><b>アクションセットを作る</b><p>いくつもの操作をひとつのボタンに：プロジェクトを開く、音楽をかける、通知をミュートする。</p></li>
+        <li><b>ページをアプリに結びつける</b><p>ページにアプリを選びます。そのアプリがPCでアクティブになると、ドックが自動でそのページに切り替わります。アプリを選ばなければ、ページは手動でめくります。</p></li>
+        <li><b>テーマを選ぶ</b><p>「スケッチブック」「粘土」「コンソール」「ポスター」「ガラス」など。自分の背景も設定できます。</p></li>
       </ol>
     </article>
 
     <article class="guide" id="podee" role="tabpanel">
       <h2>PoDoo + PoDee</h2>
-      <p class="sub">With PoDee on the PC, PoDoo gets a PoDee page. From it you control the PoDee island right from your phone.</p>
+      <p class="sub">PCにPoDeeがあると、PoDooにPoDeeのページが追加されます。そこからスマホでPoDeeのアイランドを操作できます。</p>
       <ol class="gsteps">
-        <li><b>Install PoDee</b><p>You need PoDee 1.3.5 and PoDoo 1.0.1 or newer. <a href="podee.html">Get PoDee</a></p></li>
-        <li><b>Turn on the link in PoDee</b><p>Settings → Modules → “Link with PoDoo”. Nothing to turn on in PoDoo itself.</p></li>
-        <li><b>Open the PoDee page</b><p>It shows up in the dock on the phone by itself. Open or hide the island, start a timer, add a task, ask PoDy. The answer from PoDy comes to the phone, and the chat is kept.</p></li>
+        <li><b>PoDeeをインストール</b><p>PoDee 1.3.5とPoDoo 1.0.1以降が必要です。 <a href="podee.html">PoDeeをダウンロード</a></p></li>
+        <li><b>PoDeeで連携をオンにする</b><p>設定 → モジュール → 「PoDooとの連携」。PoDoo側でオンにするものはありません。</p></li>
+        <li><b>PoDeeのページを開く</b><p>スマホのドックに自動で表示されます。アイランドの開閉、タイマーのセット、タスクの追加、PoDyへの質問ができます。PoDyの答えはスマホに届き、やり取りは保存されます。</p></li>
       </ol>
-      <p class="note">PoDee takes commands only from PoDoo on the same PC.</p>
+      <p class="note">PoDeeは同じPCのPoDooからのコマンドだけを受け付けます。</p>
     </article>
 
     <article class="guide" id="faq" role="tabpanel">
-      <h2>Questions</h2>
+      <h2>質問</h2>
       <div class="gfaq">
         <details><summary>アカウントやインターネットは必要？</summary><p>アカウントは不要。スマホとPCが同じローカルネットワークにあるか、ケーブルかBluetoothでつながっていれば大丈夫。PoDooはインターネットなしで動きます。</p></details>
         <details><summary>PC側のプログラムなしで動きますか？</summary><p>いいえ。スマホのアプリは画面だけで、操作を実行するのはPC側のプログラムです。そのためPC側のプログラムが必要です。</p></details>
@@ -88,10 +88,10 @@
       </div>
     </article>
 
-    <p class="note">Something didn't work? <a href="report.html">Write to us</a></p>
+    <p class="note">うまくいきませんでしたか？ <a href="report.html">ご連絡ください</a></p>
   </section>
 </main>
-<script>window.PODY = {"words": {"js.a_message_for_pody": "PoDyへのメッセージ", "js.about_podoo": "PoDooについて", "js.all_podee_versions": "PoDeeの全バージョン", "js.back_to_top": "ページの先頭へ", "js.click": "クリック", "js.close": "閉じる", "js.copied": "コピーしました", "js.copy_address": "アドレスをコピー", "js.couldn_t_copy_select": "コピーできませんでした。アドレスを選択してください", "js.download_podee_and_i": "PoDeeをダウンロードしたら、画面の上に引っ越すよ", "js.downloads.few": "ダウンロード", "js.downloads.many": "ダウンロード", "js.downloads.one": "ダウンロード", "js.downloads.other": "ダウンロード", "js.good_even_better_when": "元気だよ。なでてもらえるともっと元気", "js.hi_glad_you_came": "こんにちは！来てくれてうれしい", "js.hi_i_m_pody": "こんにちは、PoDyだよ。なでてもいいよ", "js.i_like_you_too": "ぼくもきみが好き", "js.i_live_at_the": "画面の上に住んでいて、音楽と時刻を見せているよ。おしゃべりもできるよ", "js.i_m_dizzy": "目が回る…", "js.i_only_know_a": "まだ少しの言葉しか知らないんだ。できることを聞いてみて", "js.if_podee_helps_you": "PoDeeが役に立ったら、プロジェクトを応援できます", "js.improve_together": "一緒に良くする", "js.language": "サイトの言語", "js.learn_more": "詳しく見る", "js.made_with_pody_the": "雲のPoDyと一緒に作りました", "js.message": "メッセージ", "js.mute_pody": "PoDyをミュート", "js.net_bnb": "BNB Smart Chain（BEP-20）：このネットワークのBNBまたはUSDT。", "js.net_btc": "Bitcoinネットワーク。", "js.net_doge": "Dogecoinネットワーク。", "js.net_eth": "Ethereumネットワーク（ERC-20）：このネットワークのETHまたはUSDT。", "js.net_ton": "TONネットワーク：ToncoinまたはUSDT。コメントに要望を書けます。", "js.net_usdt": "TRC-20（Tron）ネットワークのみ。ほかのネットワークは使えません。", "js.next_track": "次の曲", "js.paused": "一時停止中", "js.playing": "再生中", "js.podoo_is_out": "PoDooが出ました：スマホや古いタブレットがPCのリモコンに", "js.pody_the_cloud_pet": "雲のPoDy：なでたり話しかけたりできます", "js.previous_track": "前の曲", "js.privacy": "プライバシー", "js.soon": "近日公開", "js.sound_off": "サウンドオフ", "js.sound_on": "サウンドオン", "js.support": "応援する", "js.thank_you_here_s": "ありがとう！応援ページはこちら", "js.thanks_for_stopping_by": "来てくれてありがとう。どんな金額でも助かります", "js.that_tickles": "くすぐったい！", "js.the_address_is_coming": "アドレスはもうすぐ掲載します", "js.the_download_podee_button": "「PoDeeをダウンロード」ボタンはトップページとPoDeeのページにあります", "js.the_form_will_work": "フォームはもうすぐ使えるようになります", "js.track_1": "夜のドライブ", "js.track_2": "街の灯り", "js.track_3": "夜明け", "js.typed_text": "入力：{text}", "js.unmute_pody": "PoDyのミュートを解除", "js.version_line": "{bits}ビットWindows版 バージョン{v} · <a href=\"{link}\">{other}ビット版が必要ですか？<\/a>", "js.volume_n": "音量 {n}%", "js.write_to_pody": "PoDyに書く…", "js.guides": "Guides", "js.fixes": "Fixes", "js.report": "Report a problem", "js.download": "Download", "js.menu": "Menu", "js.notch": "PoDee: an island at the top of your screen", "js.theme": "Light or dark theme"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "PoDyへのメッセージ", "js.about_podoo": "PoDooについて", "js.all_podee_versions": "PoDeeの全バージョン", "js.back_to_top": "ページの先頭へ", "js.click": "クリック", "js.close": "閉じる", "js.copied": "コピーしました", "js.copy_address": "アドレスをコピー", "js.couldn_t_copy_select": "コピーできませんでした。アドレスを選択してください", "js.download_podee_and_i": "PoDeeをダウンロードしたら、画面の上に引っ越すよ", "js.downloads.few": "ダウンロード", "js.downloads.many": "ダウンロード", "js.downloads.one": "ダウンロード", "js.downloads.other": "ダウンロード", "js.good_even_better_when": "元気だよ。なでてもらえるともっと元気", "js.hi_glad_you_came": "こんにちは！来てくれてうれしい", "js.hi_i_m_pody": "こんにちは、PoDyだよ。なでてもいいよ", "js.i_like_you_too": "ぼくもきみが好き", "js.i_live_at_the": "画面の上に住んでいて、音楽と時刻を見せているよ。おしゃべりもできるよ", "js.i_m_dizzy": "目が回る…", "js.i_only_know_a": "まだ少しの言葉しか知らないんだ。できることを聞いてみて", "js.if_podee_helps_you": "PoDeeが役に立ったら、プロジェクトを応援できます", "js.improve_together": "一緒に良くする", "js.language": "サイトの言語", "js.learn_more": "詳しく見る", "js.made_with_pody_the": "雲のPoDyと一緒に作りました", "js.message": "メッセージ", "js.mute_pody": "PoDyをミュート", "js.net_bnb": "BNB Smart Chain（BEP-20）：このネットワークのBNBまたはUSDT。", "js.net_btc": "Bitcoinネットワーク。", "js.net_doge": "Dogecoinネットワーク。", "js.net_eth": "Ethereumネットワーク（ERC-20）：このネットワークのETHまたはUSDT。", "js.net_ton": "TONネットワーク：ToncoinまたはUSDT。コメントに要望を書けます。", "js.net_usdt": "TRC-20（Tron）ネットワークのみ。ほかのネットワークは使えません。", "js.next_track": "次の曲", "js.paused": "一時停止中", "js.playing": "再生中", "js.podoo_is_out": "PoDooが出ました：スマホや古いタブレットがPCのリモコンに", "js.pody_the_cloud_pet": "雲のPoDy：なでたり話しかけたりできます", "js.previous_track": "前の曲", "js.privacy": "プライバシー", "js.soon": "近日公開", "js.sound_off": "サウンドオフ", "js.sound_on": "サウンドオン", "js.support": "応援する", "js.thank_you_here_s": "ありがとう！応援ページはこちら", "js.thanks_for_stopping_by": "来てくれてありがとう。どんな金額でも助かります", "js.that_tickles": "くすぐったい！", "js.the_address_is_coming": "アドレスはもうすぐ掲載します", "js.the_download_podee_button": "「PoDeeをダウンロード」ボタンはトップページとPoDeeのページにあります", "js.the_form_will_work": "フォームはもうすぐ使えるようになります", "js.track_1": "夜のドライブ", "js.track_2": "街の灯り", "js.track_3": "夜明け", "js.typed_text": "入力：{text}", "js.unmute_pody": "PoDyのミュートを解除", "js.version_line": "{bits}ビットWindows版 バージョン{v} · <a href=\"{link}\">{other}ビット版が必要ですか？<\/a>", "js.volume_n": "音量 {n}%", "js.write_to_pody": "PoDyに書く…", "js.guides": "ガイド", "js.fixes": "修正", "js.report": "問題を報告", "js.download": "ダウンロード", "js.menu": "メニュー", "js.notch": "PoDee：画面の上のアイランド", "js.theme": "ライトテーマまたはダークテーマ"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
 <script src="../site.js?v=4e67c140"></script>
 <script src="../pody.js?v=cbd2cd54"></script>
 </body>
