@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="root" content="../" />
+<script>try{var t=localStorage.getItem("podylab.theme")}catch(e){}document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")</script>
+<title>PoDee нұсқаулықтары</title>
+<meta name="description" content="PoDee-ге Claude Code, күнтізбе, дауыс, ЖИ-чат және PoDoo бар телефонды қалай қосуға болады." />
+<link rel="icon" href="../media/podee-icon.svg?v=41ecf9f3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css?v=03a85e37" />
+<link rel="alternate" hreflang="ru" href="https://podylab.github.io/guides.html" />
+<link rel="alternate" hreflang="en" href="https://podylab.github.io/en/guides.html" />
+<link rel="alternate" hreflang="es" href="https://podylab.github.io/es/guides.html" />
+<link rel="alternate" hreflang="pt-BR" href="https://podylab.github.io/pt-br/guides.html" />
+<link rel="alternate" hreflang="de" href="https://podylab.github.io/de/guides.html" />
+<link rel="alternate" hreflang="fr" href="https://podylab.github.io/fr/guides.html" />
+<link rel="alternate" hreflang="it" href="https://podylab.github.io/it/guides.html" />
+<link rel="alternate" hreflang="tr" href="https://podylab.github.io/tr/guides.html" />
+<link rel="alternate" hreflang="pl" href="https://podylab.github.io/pl/guides.html" />
+<link rel="alternate" hreflang="uk" href="https://podylab.github.io/uk/guides.html" />
+<link rel="alternate" hreflang="kk" href="https://podylab.github.io/kk/guides.html" />
+<link rel="alternate" hreflang="id" href="https://podylab.github.io/id/guides.html" />
+<link rel="alternate" hreflang="vi" href="https://podylab.github.io/vi/guides.html" />
+<link rel="alternate" hreflang="ja" href="https://podylab.github.io/ja/guides.html" />
+<link rel="alternate" hreflang="ko" href="https://podylab.github.io/ko/guides.html" />
+<link rel="alternate" hreflang="zh-CN" href="https://podylab.github.io/zh/guides.html" />
+<link rel="alternate" hreflang="hi" href="https://podylab.github.io/hi/guides.html" />
+<link rel="alternate" hreflang="x-default" href="https://podylab.github.io/en/guides.html" />
+</head>
+<body>
+<main class="wrap">
+  <div class="page-head">
+    <img src="../media/podee-icon.svg?v=41ecf9f3" alt="" />
+    <div><h1>PoDee нұсқаулықтары</h1><p class="lead">Қадам бойынша: Claude Code, күнтізбе, дауыс пен ЖИ-чат және телефонмен байланыс.</p></div>
+  </div>
+
+  <section class="guides">
+    <div class="gtabs" role="tablist" aria-label="PoDee нұсқаулықтары">
+      <a role="tab" href="#claude" data-g="claude">Claude Code</a>
+      <a role="tab" href="#calendar" data-g="calendar">Күнтізбе</a>
+      <a role="tab" href="#voice" data-g="voice">Дауыс және ЖИ-чат</a>
+      <a role="tab" href="#podoo" data-g="podoo">PoDoo + PoDee</a>
+    </div>
+    <p class="note gopen">Баптауларды қалай ашуға болады: PoDee-ні «Бастау» мәзірінен қайта іске қосыңыз. Екінші арал шықпайды, жұмыс істеп тұрған бағдарламаның баптаулары ашылады.</p>
+
+    <article class="guide" id="claude" role="tabpanel">
+      <h2>Аралдағы Claude Code</h2>
+      <p class="sub">Арал агенттің не істеп жатқанын көрсетеді және агентке рұқсат керек болғанда сізден сұрайды.</p>
+      <ol class="gsteps">
+        <li><b>«Агенттер» бөлімін ашыңыз</b><p>Баптаулар → Агенттер → Claude Code.</p></li>
+        <li><b>Тіркелгіні қосыңыз</b><p>Әр тіркелгі қалтасының өз жолы мен «Қосу» батырмасы бар. Тіркелгі бірнеше болса, «Бәрін қосу» басыңыз. Өшіруге бір-бірден болады.</p></li>
+        <li><b>Сессияларды қайта іске қосыңыз</b><p>PoDee settings.json файлына хуктар қосып, settings.json.podee-backup көшірмесін сақтайды. Ашық тұрған Claude Code сессиялары оларды қайта іске қосылғаннан кейін алады.</p></li>
+        <li><b>Сағаттың жанынан қараңыз</b><p>Сыртқы көрініс → «Сағаттың жанында»: Claude жұмысы жабық аралда тікелей көрінеді.</p></li>
+      </ol>
+    </article>
+
+    <article class="guide" id="calendar" role="tabpanel">
+      <h2>Google немесе Outlook күнтізбесі</h2>
+      <p class="sub">PoDee күнтізбені iCal сілтемесі арқылы оқиды. Логин мен құпиясөз керек емес.</p>
+      <ol class="gsteps">
+        <li><b>Күнтізбені қосыңыз</b><p>Баптаулар → Күнтізбе → «Күнтізбені қосу». Атауы мен iCal сілтемесін жазыңыз.</p></li>
+        <li><b>Google сілтемесі</b><p>Google Күнтізбесінде: Параметрлер → күнтізбеңіз → «Күнтізбені біріктіру» → «iCal пішіміндегі жабық мекенжай». Ол basic.ics деп аяқталады. Ашық мекенжай күнтізбе бәріне ашық болғанда ғана жарайды.</p></li>
+        <li><b>Outlook сілтемесі</b><p>Outlook-та: Параметрлер → Күнтізбе → Ортақ күнтізбелер → «Күнтізбені жариялау». Күнтізбені және «Барлық мәліметті» таңдап, «Жариялау» басыңыз, ICS сілтемесін көшіріңіз.</p></li>
+        <li><b>Еске салғыштар</b><p>Оқиғалар әр 15 минут сайын жаңарады. Кездесуді қанша минут бұрын еске салуды «Еске салу» тармағында таңдаңыз.</p></li>
+      </ol>
+    </article>
+
+    <article class="guide" id="voice" role="tabpanel">
+      <h2>Дауыс және ЖИ-чат</h2>
+      <p class="sub">Дауыс командалары, диктовка және ЖИ-ге сұрақтар тікелей аралда.</p>
+      <ol class="gsteps">
+        <li><b>Тануды таңдаңыз</b><p>Баптаулар → Дауыс → Тану. Компьютердегі Whisper интернетсіз жұмыс істейді: base моделі 150 МБ, small 490 МБ (соны ұсынамыз), medium 1,5 ГБ. Бұдан басқа, тегін Groq кілті бар бұлттағы Whisper және Windows тануы бар.</p></li>
+        <li><b>Сөйлеңіз</b><p>Ctrl+Alt+Space басып тұрып, команда айтыңыз, мысалы «открой Telegram». Ctrl+Alt+D диктовканы қосады.</p></li>
+        <li><b>ЖИ-чатты қосыңыз</b><p>Баптаулар → ЖИ-чат → Провайдер. API кілтімен: «Кілт алу» батырмасы провайдер бетіне апарады, Gemini кілті тегін. Кілтсіз чат жазылым арқылы жұмыс істейді: Claude Code, Gemini CLI немесе Codex.</p></li>
+        <li><b>Кілттер қайда жатыр</b><p>Баптаулар файлында емес, Windows тіркелгі деректері реттегішінде.</p></li>
+      </ol>
+      <div class="keys">
+        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd><span>дауыс командасы: басып тұрып сөйлеңіз</span></p>
+        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd><span>диктовка</span></p>
+        <p><kbd>Alt</kbd>+<kbd>P</kbd><span>аралды ашу</span></p>
+        <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd><span>аралды жасыру және қайтару</span></p>
+      </div>
+    </article>
+
+    <article class="guide" id="podoo" role="tabpanel">
+      <h2>PoDoo + PoDee</h2>
+      <p class="sub">PoDoo бар телефон аралды басқарады: ашады, таймер қояды, тапсырма қосады және PoDy-ден сұрайды.</p>
+      <ol class="gsteps">
+        <li><b>PoDoo орнатыңыз</b><p>PoDoo компьютерге де, телефонға да керек. <a href="podoo.html">Қалай орнатуға болады</a></p></li>
+        <li><b>Байланысты қосыңыз</b><p>PoDee-де: Баптаулар → Модульдер → «PoDoo-мен байланыс». Командалар тек осы компьютердегі PoDoo-дан қабылданады.</p></li>
+        <li><b>Телефоннан басқарыңыз</b><p>PoDoo-да PoDee бетін ашыңыз: арал ашылады және жасырылады, таймер мен тапсырмалар бір басумен қойылады. PoDy жауабы тікелей телефонға келеді.</p></li>
+      </ol>
+    </article>
+
+    <p class="note">Бірдеңе шықпады ма? <a href="report.html">Бізге жазыңыз</a></p>
+  </section>
+</main>
+<script>window.PODY = {"words": {"js.a_message_for_pody": "PoDy-ге хабарлама", "js.about_podoo": "PoDoo туралы", "js.all_podee_versions": "PoDee-нің барлық нұсқалары", "js.back_to_top": "Жоғарыға", "js.click": "Шерту", "js.close": "Жабу", "js.copied": "Көшірілді", "js.copy_address": "Мекенжайды көшіру", "js.couldn_t_copy_select": "Болмады, мекенжайды белгілеңіз", "js.download_podee_and_i": "PoDee жүктеңіз, сонда экраныңыздың жоғарғы жағына қоныстанамын", "js.downloads.few": "жүктеу", "js.downloads.many": "жүктеу", "js.downloads.one": "жүктеу", "js.downloads.other": "жүктеу", "js.good_even_better_when": "Жақсы. Әсіресе мені сипағанда", "js.hi_glad_you_came": "Сәлем! Келгеніңізге қуаныштымын", "js.hi_i_m_pody": "Сәлем, мен PoDy-мін. Мені сипауға болады", "js.i_like_you_too": "Сіз де маған ұнайсыз", "js.i_live_at_the": "Экранның жоғарғы шетінде тұрамын: музыка мен уақытты көрсетемін. Менімен дауыспен сөйлесуге болады", "js.i_m_dizzy": "Басым айналып кетті…", "js.i_only_know_a": "Әзірге аз сөз білемін. Не істей алатынымды сұраңыз", "js.if_podee_helps_you": "PoDee пайдалы болса, жобаға қолдау көрсетуге болады", "js.improve_together": "Бірге жақсарту", "js.language": "Сайт тілі", "js.learn_more": "Толығырақ", "js.made_with_pody_the": "PoDy бұлтымен жасалған", "js.message": "хабарлама", "js.mute_pody": "PoDy дыбыстарын өшіру", "js.net_bnb": "BNB Smart Chain желісі (BEP-20): осы желідегі BNB және USDT.", "js.net_btc": "Bitcoin желісі.", "js.net_doge": "Dogecoin желісі.", "js.net_eth": "Ethereum желісі (ERC-20): осы желідегі ETH және USDT.", "js.net_ton": "TON желісі: Toncoin және USDT. Түсініктемеде тілек жазуға болады.", "js.net_usdt": "TRC-20 желісі (Tron). Басқа желілер жарамайды.", "js.next_track": "Келесі трек", "js.paused": "Кідірту", "js.playing": "Ойнап тұр", "js.podoo_is_out": "PoDoo шықты: телефон не планшет компьютердің пультіне айналады", "js.pody_the_cloud_pet": "PoDy бұлты: сипап, сөйлесуге болады", "js.previous_track": "Алдыңғы трек", "js.privacy": "Құпиялылық", "js.soon": "Жақында", "js.sound_off": "Дыбыс өшірулі", "js.sound_on": "Дыбыс қосулы", "js.support": "Қолдау", "js.thank_you_here_s": "Рақмет! Міне, қолдау беті", "js.thanks_for_stopping_by": "Кіргеніңізге рақмет. Кез келген сома көмектеседі", "js.that_tickles": "Қытық болды!", "js.the_address_is_coming": "Мекенжай жақында шығады", "js.the_download_podee_button": "«PoDee жүктеу» батырмасы басты бетте және PoDee бетінде бар", "js.the_form_will_work": "Форма жақында жұмыс істей бастайды", "js.track_1": "Түнгі жол", "js.track_2": "Қала шамдары", "js.track_3": "Таң", "js.typed_text": "Терілді: {text}", "js.unmute_pody": "PoDy дыбыстарын қосу", "js.version_line": "{bits} биттік Windows үшін {v} нұсқасы · <a href=\"{link}\">{other} биттік керек<\/a>", "js.volume_n": "Дыбыс {n}%", "js.write_to_pody": "PoDy-ге жазыңыз…", "js.guides": "Нұсқаулықтар", "js.fixes": "Түзетулер", "js.report": "Мәселе туралы хабарлау", "js.download": "Жүктеу", "js.menu": "Мәзір", "js.notch": "PoDee: экранның жоғарғы жағындағы арал", "js.theme": "Жарық немесе қараңғы тақырып"}, "langs": [["ru", "", "Русский"], ["en", "en/", "English"], ["es", "es/", "Español"], ["pt-BR", "pt-br/", "Português (Brasil)"], ["de", "de/", "Deutsch"], ["fr", "fr/", "Français"], ["it", "it/", "Italiano"], ["tr", "tr/", "Türkçe"], ["pl", "pl/", "Polski"], ["uk", "uk/", "Українська"], ["kk", "kk/", "Қазақша"], ["id", "id/", "Bahasa Indonesia"], ["vi", "vi/", "Tiếng Việt"], ["ja", "ja/", "日本語"], ["ko", "ko/", "한국어"], ["zh-CN", "zh/", "简体中文"], ["hi", "hi/", "हिन्दी"]], "home": "../"};</script>
+<script src="../site.js?v=df7109d6"></script>
+<script src="../pody.js?v=cbd2cd54"></script>
+</body>
+</html>

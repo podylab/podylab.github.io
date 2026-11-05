@@ -107,6 +107,7 @@ const FLAGS = {
   tr: `<rect width="30" height="20" fill="#e30a17"/><circle cx="11" cy="10" r="5" fill="#fff"/><circle cx="12.3" cy="10" r="4" fill="#e30a17"/><polygon points="${star(17.6, 10, 2.4, -Math.PI / 2)}" fill="#fff"/>`,
   pl: bands(["#fff", "#dc143c"]),
   uk: bands(["#0057b7", "#ffd700"]),
+  kk: `<rect width="30" height="20" fill="#00afca"/><circle cx="15" cy="9" r="4" fill="#fec50c"/><path d="M8 14c3 2 5 2 7 .5 2 1.500 4 1.500 7-.5" fill="none" stroke="#fec50c" stroke-width="1.200"/>`,
   id: bands(["#ce1126", "#fff"]),
   vi: `<rect width="30" height="20" fill="#da251d"/><polygon points="${star(15, 10.4, 6)}" fill="#ff0"/>`,
   ja: `<rect width="30" height="20" fill="#fff"/><circle cx="15" cy="10" r="6" fill="#bc002d"/>`,
