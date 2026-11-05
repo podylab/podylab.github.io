@@ -20,6 +20,19 @@ const CONFIG = {
 
 // the page's language: build.py writes PODY into every page (its words, the languages, this page's folder)
 const LANG = document.documentElement.lang;
+// browsers have no Kazakh dates and would write «M11 6, Fri»: the words are here
+if (LANG === "kk") {
+  const plain = Date.prototype.toLocaleDateString;
+  const MONTHS = "қаңтар ақпан наурыз сәуір мамыр маусым шілде тамыз қыркүйек қазан қараша желтоқсан".split(" ");
+  const DAYS = "жексенбі дүйсенбі сейсенбі сәрсенбі бейсенбі жұма сенбі".split(" ");
+  const DAYS_SHORT = "жс дс сс ср бс жм сб".split(" ");
+  Date.prototype.toLocaleDateString = function (l, o) {
+    if (!/^kk/.test(l) || !o) return plain.call(this, /^kk/.test(l) ? "ru-RU" : l, o);
+    const date = [o.year && `${this.getFullYear()} ж.`, o.day && this.getDate(), o.month && MONTHS[this.getMonth()]].filter(Boolean).join(" ");
+    const day = o.weekday && (o.weekday === "long" ? DAYS : DAYS_SHORT)[this.getDay()];
+    return [date, day].filter(Boolean).join(", ");
+  };
+}
 const WORDS = window.PODY?.words || {};
 // W("js.key", { name: value }) gives this page's words with {name} filled in
 const W = (k, vars = {}) => (WORDS[k] ?? k).replace(/\{(\w+)\}/g, (m, v) => vars[v] ?? m);
