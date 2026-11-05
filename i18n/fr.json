@@ -413,7 +413,7 @@
  "clean.bar_text": "Les applis s’ouvrent depuis le dock et la barre des tâches de Windows s’efface. Désactivez le module ou fermez PoDee, et la barre des tâches revient.",
  "clean.wall": "Mettez nos fonds d’écran",
  "clean.wall_text": "Neuf fonds d’écran doux en 4K faits pour l’île. Gratuits, un peu plus bas sur cette page.",
- "n160.title": "Nouveau dans la 1.6.0",
+ "n160.title": "Nouveau dans la 1.6",
  "n160.taskbar": "Styles du dock",
  "n160.taskbar_text": "Comme le thème, blanche, « Minuit », verre liquide ; toute la largeur ou selon le contenu, en bas ou en haut.",
  "n160.tiles": "Panneaux au-dessus des tuiles",
@@ -742,5 +742,11 @@
  "fixes.v161_5": "Îlot coloré : lettres et dates lisibles sur toute couleur, texte sombre sur une couleur claire.",
  "fixes.v161_6": "Un appel sur l'îlot compte depuis son vrai début, et un programme qui garde seulement le micro ne ressemble plus à un appel.",
  "n161.screens": "Second écran",
- "n161.screens_text": "Avec la 1.6.1, widgets et îlot vont sur n'importe quel écran. Plus un widget de paroles, le verre sombre et tous les réglages dans un fichier."
+ "n161.screens_text": "Avec la 1.6.1, widgets et îlot vont sur n'importe quel écran. Plus un widget de paroles, le verre sombre et tous les réglages dans un fichier.",
+ "fixes.v162_1": "L'îlot se place à gauche, au centre, à droite ou n'importe où le long du bord supérieur : par la poignée en bas du panneau ou dans les réglages.",
+ "fixes.v162_2": "Barre des tâches : nouvel aspect « Coulée » avec des courbes, et « Classique » colle désormais simplement au bord de l'écran.",
+ "fixes.v162_3": "Barre des tâches sans fond : tous les supports ont les mêmes coins.",
+ "fixes.v162_4": "Réglages : la position de l'indicateur est montrée par une marque simple.",
+ "n162.place": "L'îlot là où vous voulez",
+ "n162.place_text": "Dans la 1.6.2, l'îlot se place à gauche, au centre, à droite ou n'importe où le long du bord supérieur. Et la barre des tâches gagne l'aspect « Coulée »."
 }

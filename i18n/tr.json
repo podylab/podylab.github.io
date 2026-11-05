@@ -413,7 +413,7 @@
  "clean.bar_text": "Uygulamalar dock’tan açılır, Windows görev çubuğu gizlenir. Dock’u kapat ya da PoDee’den çık, görev çubuğu geri gelsin.",
  "clean.wall": "Duvar kâğıtlarımızı kullan",
  "clean.wall_text": "Adaya uygun dokuz yumuşak 4K duvar kâğıdı. Ücretsiz, bu sayfanın biraz aşağısında.",
- "n160.title": "1.6.0’daki yenilikler",
+ "n160.title": "1.6’daki yenilikler",
  "n160.taskbar": "Dock görünümleri",
  "n160.taskbar_text": "Temaya göre, beyaz, «Gece yarısı», sıvı cam; tam genişlikte ya da içeriğe göre, altta ya da üstte.",
  "n160.tiles": "Kutucukların üstünde paneller",
@@ -742,5 +742,11 @@
  "fixes.v161_5": "Renkli ada: harfler ve tarihler her renkte okunur, açık renkte metin koyu olur.",
  "fixes.v161_6": "Adadaki arama gerçek başlangıcından sayılır, yalnızca mikrofonu tutan program artık arama gibi görünmez.",
  "n161.screens": "İkinci monitör",
- "n161.screens_text": "1.6.1'de widget'lar ve ada her ekrana gelir. Ayrıca şarkı sözü widget'ı, koyu cam ve tek dosyada tüm ayarlar."
+ "n161.screens_text": "1.6.1'de widget'lar ve ada her ekrana gelir. Ayrıca şarkı sözü widget'ı, koyu cam ve tek dosyada tüm ayarlar.",
+ "fixes.v162_1": "Ada solda, ortada, sağda ya da üst kenarın herhangi bir yerinde durur: panelin altındaki tutamaçla veya ayarlardan.",
+ "fixes.v162_2": "Görev çubuğu: kavisli yeni «Akış» görünümü eklendi, «Klasik» ise artık yalnızca ekran kenarına yapışır.",
+ "fixes.v162_3": "Arka plansız görev çubuğu: tüm altlıkların köşeleri aynı.",
+ "fixes.v162_4": "Ayarlar: göstergenin konumu basit bir işaretle gösterilir.",
+ "n162.place": "Ada istediğiniz yerde",
+ "n162.place_text": "1.6.2'de ada solda, ortada, sağda ya da üst kenarın herhangi bir yerinde durur. Görev çubuğuna da «Akış» görünümü geldi."
 }

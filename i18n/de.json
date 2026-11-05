@@ -413,7 +413,7 @@
  "clean.bar_text": "Apps öffnen sich aus dem Dock, und die Windows-Taskleiste verschwindet. Schalte das Modul aus oder schließe PoDee, und die Taskleiste ist wieder da.",
  "clean.wall": "Nimm unsere Hintergrundbilder",
  "clean.wall_text": "Neun sanfte 4K-Hintergrundbilder, passend zur Insel. Kostenlos, etwas weiter unten auf dieser Seite.",
- "n160.title": "Neu in 1.6.0",
+ "n160.title": "Neu in 1.6",
  "n160.taskbar": "Ansichten des Docks",
  "n160.taskbar_text": "Wie das Design, Weiß, „Mitternacht“, Flüssiges Glas; volle Breite oder nach Inhalt, unten oder oben.",
  "n160.tiles": "Panels über den Kacheln",
@@ -742,5 +742,11 @@
  "fixes.v161_5": "Farbige Insel: Buchstaben und Daten bleiben auf jeder Farbe lesbar, auf hellen Farben wird der Text dunkel.",
  "fixes.v161_6": "Ein Anruf auf der Insel zählt ab dem echten Beginn, und ein Programm, das nur das Mikrofon hält, gilt nicht mehr als Anruf.",
  "n161.screens": "Zweiter Monitor",
- "n161.screens_text": "In 1.6.1 stehen Widgets und Insel auf jedem Bildschirm. Dazu ein Songtext-Widget, dunkles Glas und alle Einstellungen in einer Datei."
+ "n161.screens_text": "In 1.6.1 stehen Widgets und Insel auf jedem Bildschirm. Dazu ein Songtext-Widget, dunkles Glas und alle Einstellungen in einer Datei.",
+ "fixes.v162_1": "Die Insel steht links, in der Mitte, rechts oder an jeder Stelle am oberen Rand: per Griff unten am Panel oder in den Einstellungen.",
+ "fixes.v162_2": "Taskleiste: neue Ansicht «Fluss» mit Bögen, und «Klassisch» liegt jetzt einfach am Bildschirmrand an.",
+ "fixes.v162_3": "Taskleiste ohne Hintergrund: alle Unterlagen haben dieselben Ecken.",
+ "fixes.v162_4": "Einstellungen: Die Position des Indikators zeigt jetzt eine einfache Markierung.",
+ "n162.place": "Die Insel, wo Sie wollen",
+ "n162.place_text": "In 1.6.2 steht die Insel links, in der Mitte, rechts oder an jeder Stelle am oberen Rand. Und die Taskleiste bekommt die Ansicht «Fluss»."
 }

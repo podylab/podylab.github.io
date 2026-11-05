@@ -413,7 +413,7 @@
  "clean.bar_text": "Ứng dụng mở từ dock, còn thanh tác vụ Windows được ẩn đi. Tắt dock hoặc đóng PoDee là thanh tác vụ quay lại.",
  "clean.wall": "Dùng hình nền của chúng tôi",
  "clean.wall_text": "Chín hình nền 4K dịu mắt làm riêng cho đảo. Miễn phí, ngay bên dưới trang này.",
- "n160.title": "Mới trong 1.6.0",
+ "n160.title": "Mới trong 1.6",
  "n160.taskbar": "Kiểu dock",
  "n160.taskbar_text": "Theo chủ đề, trắng, «Nửa đêm», kính lỏng; toàn chiều rộng hoặc vừa nội dung, ở dưới hoặc ở trên.",
  "n160.tiles": "Bảng phía trên các ô",
@@ -742,5 +742,11 @@
  "fixes.v161_5": "Đảo có màu: chữ và ngày dễ đọc trên mọi màu, màu sáng dùng chữ tối.",
  "fixes.v161_6": "Cuộc gọi trên đảo tính từ lúc thật sự bắt đầu, và chương trình chỉ giữ micrô không còn trông như cuộc gọi.",
  "n161.screens": "Màn hình thứ hai",
- "n161.screens_text": "Ở 1.6.1, tiện ích và đảo đặt được trên mọi màn hình. Thêm tiện ích lời bài hát, kính tối và mọi cài đặt trong một tệp."
+ "n161.screens_text": "Ở 1.6.1, tiện ích và đảo đặt được trên mọi màn hình. Thêm tiện ích lời bài hát, kính tối và mọi cài đặt trong một tệp.",
+ "fixes.v162_1": "Đảo có thể đặt bên trái, ở giữa, bên phải hoặc bất kỳ đâu dọc mép trên: bằng tay cầm ở dưới bảng hoặc trong cài đặt.",
+ "fixes.v162_2": "Thanh tác vụ: thêm kiểu «Tràn» có đường cong, còn «Cổ điển» giờ chỉ bám sát mép màn hình.",
+ "fixes.v162_3": "Thanh tác vụ không nền: mọi tấm nền có góc giống nhau.",
+ "fixes.v162_4": "Cài đặt: vị trí chỉ báo được hiển thị bằng một dấu đơn giản.",
+ "n162.place": "Đảo ở nơi bạn muốn",
+ "n162.place_text": "Trong 1.6.2, đảo có thể đặt bên trái, ở giữa, bên phải hoặc bất kỳ đâu dọc mép trên. Thanh tác vụ cũng có thêm kiểu «Tràn»."
 }

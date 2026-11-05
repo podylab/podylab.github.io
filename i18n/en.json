@@ -413,7 +413,7 @@
  "clean.bar_text": "Apps open from the dock and the Windows taskbar steps aside. Turn the dock off or close PoDee and the taskbar returns.",
  "clean.wall": "Put on our wallpaper",
  "clean.wall_text": "Nine soft 4K wallpapers made for the island. Free, just below on this page.",
- "n160.title": "New in 1.6.0",
+ "n160.title": "New in 1.6",
  "n160.taskbar": "Taskbar looks",
  "n160.taskbar_text": "As the theme, white, «Midnight», liquid glass; full width or fit, at the bottom or the top.",
  "n160.tiles": "Panels above tiles",
@@ -742,5 +742,11 @@
  "fixes.v161_5": "Coloured island: letters and dates stay readable on any colour, and a light colour gets dark text.",
  "fixes.v161_6": "A call on the island counts from its real start, and a program that merely holds the microphone no longer looks like a call.",
  "n161.screens": "Second monitor",
- "n161.screens_text": "In 1.6.1 widgets and the island go on any screen. Also a song lyrics widget, dark glass and all your settings in one file."
+ "n161.screens_text": "In 1.6.1 widgets and the island go on any screen. Also a song lyrics widget, dark glass and all your settings in one file.",
+ "fixes.v162_1": "Put the island on the left, in the centre, on the right or anywhere along the top edge: by the handle at the bottom of its panel, or in settings.",
+ "fixes.v162_2": "Taskbar: a new «Merge» look with curved edges, while «Classic» now simply sits against the screen's edge.",
+ "fixes.v162_3": "Taskbar with no background: every plate has the same corners.",
+ "fixes.v162_4": "Settings: the indicator's position is drawn as a simple mark.",
+ "n162.place": "The island where you want it",
+ "n162.place_text": "In 1.6.2 the island goes on the left, in the centre, on the right or anywhere along the top edge. And the taskbar gets a «Merge» look."
 }

@@ -413,7 +413,7 @@
  "clean.bar_text": "Os apps abrem pelo dock e a barra de tarefas do Windows sai de cena. Desligue o dock ou feche o PoDee e a barra de tarefas volta.",
  "clean.wall": "Use nossos papéis de parede",
  "clean.wall_text": "Nove papéis de parede suaves em 4K feitos para a ilha. Grátis, um pouco mais abaixo nesta página.",
- "n160.title": "Novidades da 1.6.0",
+ "n160.title": "Novidades da 1.6",
  "n160.taskbar": "Visuais do dock",
  "n160.taskbar_text": "Como o tema, branco, «Meia-noite», vidro líquido; largura total ou ajustado ao conteúdo, embaixo ou em cima.",
  "n160.tiles": "Painéis acima dos blocos",
@@ -742,5 +742,11 @@
  "fixes.v161_5": "Ilha colorida: letras e datas legíveis em qualquer cor, com texto escuro em cores claras.",
  "fixes.v161_6": "Uma chamada na ilha conta desde o início real, e um programa que só segura o microfone não parece mais uma chamada.",
  "n161.screens": "Segundo monitor",
- "n161.screens_text": "Na 1.6.1, widgets e ilha ficam em qualquer tela. E mais: widget de letras, vidro escuro e todas as configurações em um arquivo."
+ "n161.screens_text": "Na 1.6.1, widgets e ilha ficam em qualquer tela. E mais: widget de letras, vidro escuro e todas as configurações em um arquivo.",
+ "fixes.v162_1": "A ilha fica à esquerda, no centro, à direita ou em qualquer ponto da borda superior: pela alça na parte de baixo do painel ou nas configurações.",
+ "fixes.v162_2": "Barra de tarefas: novo visual «Fluxo» com curvas, e «Clássica» agora apenas cola na borda da tela.",
+ "fixes.v162_3": "Barra de tarefas sem fundo: todas as bases têm os mesmos cantos.",
+ "fixes.v162_4": "Configurações: a posição do indicador aparece com uma marca simples.",
+ "n162.place": "A ilha onde você quiser",
+ "n162.place_text": "Na 1.6.2 a ilha fica à esquerda, no centro, à direita ou em qualquer ponto da borda superior. E a barra de tarefas ganha o visual «Fluxo»."
 }

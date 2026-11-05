@@ -413,7 +413,7 @@
  "clean.bar_text": "Programy otwierasz z docka, a pasek zadań Windows się chowa. Wyłącz dock albo zamknij PoDee, a pasek zadań wróci.",
  "clean.wall": "Ustaw naszą tapetę",
  "clean.wall_text": "Dziewięć łagodnych tapet 4K pod wyspę. Za darmo, trochę niżej na tej stronie.",
- "n160.title": "Nowości w 1.6.0",
+ "n160.title": "Nowości w 1.6",
  "n160.taskbar": "Wygląd docka",
  "n160.taskbar_text": "Jak motyw, biały, „Północ”, płynne szkło; na całą szerokość albo dopasowany do zawartości, na dole albo u góry.",
  "n160.tiles": "Panele nad kafelkami",
@@ -742,5 +742,11 @@
  "fixes.v161_5": "Kolorowa wyspa: litery i daty czytelne na każdym kolorze, na jasnym kolorze tekst jest ciemny.",
  "fixes.v161_6": "Rozmowa na wyspie liczy się od prawdziwego początku, a program, który tylko trzyma mikrofon, nie wygląda już jak rozmowa.",
  "n161.screens": "Drugi monitor",
- "n161.screens_text": "W 1.6.1 widżety i wyspa stają na dowolnym ekranie. Do tego widżet z tekstem piosenki, ciemne szkło i wszystkie ustawienia w jednym pliku."
+ "n161.screens_text": "W 1.6.1 widżety i wyspa stają na dowolnym ekranie. Do tego widżet z tekstem piosenki, ciemne szkło i wszystkie ustawienia w jednym pliku.",
+ "fixes.v162_1": "Wyspa staje po lewej, na środku, po prawej lub w dowolnym miejscu górnej krawędzi: za uchwyt na dole panelu albo w ustawieniach.",
+ "fixes.v162_2": "Pasek zadań: nowy wygląd «Spływ» z łukami, a «Klasyczna» po prostu przylega teraz do krawędzi ekranu.",
+ "fixes.v162_3": "Pasek zadań bez tła: wszystkie podkładki mają takie same rogi.",
+ "fixes.v162_4": "Ustawienia: położenie wskaźnika pokazuje prosty znacznik.",
+ "n162.place": "Wyspa tam, gdzie chcesz",
+ "n162.place_text": "W 1.6.2 wyspa staje po lewej, na środku, po prawej lub w dowolnym miejscu górnej krawędzi. A pasek zadań dostaje wygląd «Spływ»."
 }

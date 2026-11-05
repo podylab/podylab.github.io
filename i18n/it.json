@@ -413,7 +413,7 @@
  "clean.bar_text": "Le app si aprono dal dock e la barra delle applicazioni di Windows si nasconde. Disattiva il modulo o chiudi PoDee e la barra torna.",
  "clean.wall": "Metti i nostri sfondi",
  "clean.wall_text": "Nove sfondi delicati in 4K pensati per l’isola. Gratis, poco più in basso in questa pagina.",
- "n160.title": "Novità della 1.6.0",
+ "n160.title": "Novità della 1.6",
  "n160.taskbar": "Stili del dock",
  "n160.taskbar_text": "Come il tema, bianca, «Mezzanotte», vetro liquido; tutta la larghezza o in base al contenuto, in basso o in alto.",
  "n160.tiles": "Pannelli sopra i riquadri",
@@ -742,5 +742,11 @@
  "fixes.v161_5": "Isola colorata: lettere e date leggibili su ogni colore, testo scuro sui colori chiari.",
  "fixes.v161_6": "Una chiamata sull'isola conta dal suo vero inizio, e un programma che tiene solo il microfono non sembra più una chiamata.",
  "n161.screens": "Secondo monitor",
- "n161.screens_text": "Con la 1.6.1 widget e isola vanno su qualsiasi schermo. In più widget del testo, vetro scuro e tutte le impostazioni in un file."
+ "n161.screens_text": "Con la 1.6.1 widget e isola vanno su qualsiasi schermo. In più widget del testo, vetro scuro e tutte le impostazioni in un file.",
+ "fixes.v162_1": "L'isola va a sinistra, al centro, a destra o in qualsiasi punto del bordo superiore: con la maniglia in fondo al pannello o nelle impostazioni.",
+ "fixes.v162_2": "Barra delle applicazioni: nuovo aspetto «Colata» con le curve, e «Classica» ora aderisce semplicemente al bordo dello schermo.",
+ "fixes.v162_3": "Barra delle applicazioni senza sfondo: tutte le basi hanno gli stessi angoli.",
+ "fixes.v162_4": "Impostazioni: la posizione dell'indicatore è mostrata con un segno semplice.",
+ "n162.place": "L'isola dove vuoi",
+ "n162.place_text": "Nella 1.6.2 l'isola va a sinistra, al centro, a destra o in qualsiasi punto del bordo superiore. E la barra delle applicazioni ha l'aspetto «Colata»."
 }

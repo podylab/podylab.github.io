@@ -413,7 +413,7 @@
  "clean.bar_text": "Aplikasi dibuka dari dock, dan taskbar Windows disembunyikan. Matikan dock atau tutup PoDee, dan taskbar kembali.",
  "clean.wall": "Pasang wallpaper kami",
  "clean.wall_text": "Sembilan wallpaper lembut 4K yang dibuat untuk pulau. Gratis, sedikit di bawah pada halaman ini.",
- "n160.title": "Baru di 1.6.0",
+ "n160.title": "Baru di 1.6",
  "n160.taskbar": "Tampilan dock",
  "n160.taskbar_text": "Sesuai tema, putih, «Tengah malam», kaca cair; selebar layar atau sesuai isi, di bawah atau di atas.",
  "n160.tiles": "Panel di atas ubin",
@@ -742,5 +742,11 @@
  "fixes.v161_5": "Pulau berwarna: huruf dan tanggal terbaca di warna apa pun, warna terang memakai teks gelap.",
  "fixes.v161_6": "Panggilan di pulau dihitung dari awal sebenarnya, dan program yang hanya memegang mikrofon tak lagi tampak seperti panggilan.",
  "n161.screens": "Monitor kedua",
- "n161.screens_text": "Di 1.6.1 widget dan pulau bisa di layar mana pun. Ditambah widget lirik, kaca gelap, dan semua pengaturan dalam satu berkas."
+ "n161.screens_text": "Di 1.6.1 widget dan pulau bisa di layar mana pun. Ditambah widget lirik, kaca gelap, dan semua pengaturan dalam satu berkas.",
+ "fixes.v162_1": "Pulau bisa ditaruh di kiri, tengah, kanan, atau di mana saja di sepanjang tepi atas: lewat pegangan di bawah panel atau di pengaturan.",
+ "fixes.v162_2": "Bilah tugas: tampilan baru «Aliran» dengan lengkungan, dan «Klasik» kini cukup menempel di tepi layar.",
+ "fixes.v162_3": "Bilah tugas tanpa latar: semua alas punya sudut yang sama.",
+ "fixes.v162_4": "Pengaturan: posisi indikator ditunjukkan dengan tanda sederhana.",
+ "n162.place": "Pulau di tempat yang Anda mau",
+ "n162.place_text": "Di 1.6.2 pulau bisa di kiri, tengah, kanan, atau di mana saja di sepanjang tepi atas. Dan bilah tugas mendapat tampilan «Aliran»."
 }
