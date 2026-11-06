@@ -747,6 +747,9 @@
  "fixes.v162_2": "Barra de tareas: nuevo aspecto «Flujo» con curvas, y «Clásica» ahora solo se pega al borde de la pantalla.",
  "fixes.v162_3": "Barra de tareas sin fondo: todas las bases tienen las mismas esquinas.",
  "fixes.v162_4": "Ajustes: la posición del indicador se muestra con una marca sencilla.",
+ "n170.title": "Novedades de la 1.7",
+ "n170.shot": "Captura de pantalla",
+ "n170.shot_text": "En 1.7 todas las pantallas se congelan con PrtSc o tu propia tecla: selecciona una parte, márcala y compártela. No se sube nada.",
  "n162.place": "La isla donde quieras",
  "n162.place_text": "En 1.6.2 la isla va a la izquierda, al centro, a la derecha o a cualquier punto del borde superior. Y la barra de tareas estrena el aspecto «Flujo»."
 }

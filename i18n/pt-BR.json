@@ -747,6 +747,9 @@
  "fixes.v162_2": "Barra de tarefas: novo visual «Fluxo» com curvas, e «Clássica» agora apenas cola na borda da tela.",
  "fixes.v162_3": "Barra de tarefas sem fundo: todas as bases têm os mesmos cantos.",
  "fixes.v162_4": "Configurações: a posição do indicador aparece com uma marca simples.",
+ "n170.title": "Novidades da 1.7",
+ "n170.shot": "Captura de tela",
+ "n170.shot_text": "Na 1.7 todas as telas congelam com PrtSc ou uma tecla sua: selecione uma parte, marque e passe adiante. Nada é enviado à internet.",
  "n162.place": "A ilha onde você quiser",
  "n162.place_text": "Na 1.6.2 a ilha fica à esquerda, no centro, à direita ou em qualquer ponto da borda superior. E a barra de tarefas ganha o visual «Fluxo»."
 }

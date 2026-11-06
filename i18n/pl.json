@@ -747,6 +747,9 @@
  "fixes.v162_2": "Pasek zadań: nowy wygląd «Spływ» z łukami, a «Klasyczna» po prostu przylega teraz do krawędzi ekranu.",
  "fixes.v162_3": "Pasek zadań bez tła: wszystkie podkładki mają takie same rogi.",
  "fixes.v162_4": "Ustawienia: położenie wskaźnika pokazuje prosty znacznik.",
+ "n170.title": "Nowości w 1.7",
+ "n170.shot": "Zrzut ekranu",
+ "n170.shot_text": "W 1.7 wszystkie ekrany zatrzymują się po PrtSc lub własnym klawiszu: zaznacz fragment, dodaj notatki i przekaż dalej. Nic nie trafia do sieci.",
  "n162.place": "Wyspa tam, gdzie chcesz",
  "n162.place_text": "W 1.6.2 wyspa staje po lewej, na środku, po prawej lub w dowolnym miejscu górnej krawędzi. A pasek zadań dostaje wygląd «Spływ»."
 }

@@ -747,6 +747,9 @@
  "fixes.v162_2": "Barre des tâches : nouvel aspect « Coulée » avec des courbes, et « Classique » colle désormais simplement au bord de l'écran.",
  "fixes.v162_3": "Barre des tâches sans fond : tous les supports ont les mêmes coins.",
  "fixes.v162_4": "Réglages : la position de l'indicateur est montrée par une marque simple.",
+ "n170.title": "Nouveau dans la 1.7",
+ "n170.shot": "Capture d'écran",
+ "n170.shot_text": "Dans la 1.7, tous les écrans se figent avec PrtSc ou votre propre touche : sélectionnez une zone, annotez-la et partagez-la. Rien n'est envoyé en ligne.",
  "n162.place": "L'îlot là où vous voulez",
  "n162.place_text": "Dans la 1.6.2, l'îlot se place à gauche, au centre, à droite ou n'importe où le long du bord supérieur. Et la barre des tâches gagne l'aspect « Coulée »."
 }

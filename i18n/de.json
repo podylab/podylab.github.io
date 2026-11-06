@@ -747,6 +747,9 @@
  "fixes.v162_2": "Taskleiste: neue Ansicht «Fluss» mit Bögen, und «Klassisch» liegt jetzt einfach am Bildschirmrand an.",
  "fixes.v162_3": "Taskleiste ohne Hintergrund: alle Unterlagen haben dieselben Ecken.",
  "fixes.v162_4": "Einstellungen: Die Position des Indikators zeigt jetzt eine einfache Markierung.",
+ "n170.title": "Neu in 1.7",
+ "n170.shot": "Bildschirmfoto",
+ "n170.shot_text": "In 1.7 frieren alle Bildschirme mit PrtSc oder einer eigenen Taste ein: Bereich wählen, markieren und weitergeben. Nichts wird hochgeladen.",
  "n162.place": "Die Insel, wo Sie wollen",
  "n162.place_text": "In 1.6.2 steht die Insel links, in der Mitte, rechts oder an jeder Stelle am oberen Rand. Und die Taskleiste bekommt die Ansicht «Fluss»."
 }

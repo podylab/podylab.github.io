@@ -747,6 +747,9 @@
  "fixes.v162_2": "Görev çubuğu: kavisli yeni «Akış» görünümü eklendi, «Klasik» ise artık yalnızca ekran kenarına yapışır.",
  "fixes.v162_3": "Arka plansız görev çubuğu: tüm altlıkların köşeleri aynı.",
  "fixes.v162_4": "Ayarlar: göstergenin konumu basit bir işaretle gösterilir.",
+ "n170.title": "1.7’daki yenilikler",
+ "n170.shot": "Ekran görüntüsü",
+ "n170.shot_text": "1.7'de PrtSc veya kendi tuşunuzla tüm ekranlar donar: bir bölüm seçin, işaretleyin ve iletin. Hiçbir şey yüklenmez.",
  "n162.place": "Ada istediğiniz yerde",
  "n162.place_text": "1.6.2'de ada solda, ortada, sağda ya da üst kenarın herhangi bir yerinde durur. Görev çubuğuna da «Akış» görünümü geldi."
 }

@@ -747,6 +747,17 @@
  "fixes.v162_2": "Taskbar: a new «Merge» look with curved edges, while «Classic» now simply sits against the screen's edge.",
  "fixes.v162_3": "Taskbar with no background: every plate has the same corners.",
  "fixes.v162_4": "Settings: the indicator's position is drawn as a simple mark.",
+ "n170.title": "New in 1.7",
+ "n170.shot": "Screenshot",
+ "n170.shot_text": "In 1.7 every screen freezes on PrtSc or a key of your own: select a part, mark it up and pass it on. Nothing is uploaded.",
+ "fixes.v170_1": "Screenshot: PrtSc or a key of your own freezes every screen, then select a part, mark it up, pin it, print it or pass it on. Nothing is uploaded.",
+ "fixes.v170_2": "Kazakh: 17 languages now.",
+ "fixes.v170_3": "General: one switch shows or hides everything at once, or set the island, widgets and taskbar one by one.",
+ "fixes.v170_4": "Taskbar: the icon of an open app brings up its window instead of a new copy. Clicks work right up to the taskbar's edge.",
+ "fixes.v170_5": "VPN connects and disconnects from the taskbar with one button, with no password window.",
+ "fixes.v170_6": "Blinking tray icons no longer jump around.",
+ "fixes.v170_7": "Drag-selecting on the desktop works with hidden icons too, behind the widgets and the taskbar.",
+ "fixes.v170_8": "Less CPU when idle and less memory.",
  "n162.place": "The island where you want it",
  "n162.place_text": "In 1.6.2 the island goes on the left, in the centre, on the right or anywhere along the top edge. And the taskbar gets a «Merge» look."
 }

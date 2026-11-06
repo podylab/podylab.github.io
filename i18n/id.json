@@ -747,6 +747,9 @@
  "fixes.v162_2": "Bilah tugas: tampilan baru «Aliran» dengan lengkungan, dan «Klasik» kini cukup menempel di tepi layar.",
  "fixes.v162_3": "Bilah tugas tanpa latar: semua alas punya sudut yang sama.",
  "fixes.v162_4": "Pengaturan: posisi indikator ditunjukkan dengan tanda sederhana.",
+ "n170.title": "Baru di 1.7",
+ "n170.shot": "Tangkapan layar",
+ "n170.shot_text": "Di 1.7 semua layar membeku dengan PrtSc atau tombol pilihan Anda: pilih bagian, beri tanda, lalu teruskan. Tidak ada yang diunggah.",
  "n162.place": "Pulau di tempat yang Anda mau",
  "n162.place_text": "Di 1.6.2 pulau bisa di kiri, tengah, kanan, atau di mana saja di sepanjang tepi atas. Dan bilah tugas mendapat tampilan «Aliran»."
 }

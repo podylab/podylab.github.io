@@ -747,6 +747,9 @@
  "fixes.v162_2": "Thanh tác vụ: thêm kiểu «Tràn» có đường cong, còn «Cổ điển» giờ chỉ bám sát mép màn hình.",
  "fixes.v162_3": "Thanh tác vụ không nền: mọi tấm nền có góc giống nhau.",
  "fixes.v162_4": "Cài đặt: vị trí chỉ báo được hiển thị bằng một dấu đơn giản.",
+ "n170.title": "Mới trong 1.7",
+ "n170.shot": "Chụp màn hình",
+ "n170.shot_text": "Trong 1.7, mọi màn hình dừng lại khi nhấn PrtSc hoặc phím của bạn: chọn một phần, đánh dấu rồi chuyển tiếp. Không tải gì lên mạng.",
  "n162.place": "Đảo ở nơi bạn muốn",
  "n162.place_text": "Trong 1.6.2, đảo có thể đặt bên trái, ở giữa, bên phải hoặc bất kỳ đâu dọc mép trên. Thanh tác vụ cũng có thêm kiểu «Tràn»."
 }
