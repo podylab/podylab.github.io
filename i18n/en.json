@@ -759,5 +759,18 @@
  "fixes.v170_7": "Drag-selecting on the desktop works with hidden icons too, behind the widgets and the taskbar.",
  "fixes.v170_8": "Less CPU when idle and less memory.",
  "n162.place": "The island where you want it",
- "n162.place_text": "In 1.6.2 the island goes on the left, in the centre, on the right or anywhere along the top edge. And the taskbar gets a «Merge» look."
+ "n162.place_text": "In 1.6.2 the island goes on the left, in the centre, on the right or anywhere along the top edge. And the taskbar gets a «Merge» look.",
+ "fixes.v180_1": "New theme «Orbit»: every word and number made of dots, its own typeface with Cyrillic, one accent colour, dark and light. The island, taskbar, widgets, Settings and the power screen in one style.",
+ "fixes.v180_2": "Power screen in «Orbit»: lock, sleep, shut down, restart or sign out with the arrows or the mouse, with how long the PC has been on.",
+ "fixes.v180_3": "Wallpapers: a gallery that shows each one big before you set it; clouds by day and night, «Eclipse», «Planet», three Minecraft pictures.",
+ "fixes.v180_4": "Taskbar «Over all windows» keeps its strip of the screen: maximized windows no longer go under it.",
+ "fixes.v180_5": "Taskbar: quick settings like Windows 11, a rail on the side edge, tray icons remembered between runs, the AnyDesk icon shows again.",
+ "fixes.v180_6": "Health: its own page, eye exercises with sounds.",
+ "fixes.v180_7": "Widget settings in tabs; options that don't fit the theme are hidden.",
+ "fixes.v180_8": "Charging is lit more calmly: red only below 20 %.",
+ "n180.title": "New in 1.8",
+ "n180.dots": "The «Orbit» theme",
+ "n180.dots_text": "In 1.8 the island, taskbar, widgets and even Settings are made of dots: a typeface of its own with Cyrillic, one accent colour, dark and light.",
+ "n180.power": "Power screen",
+ "n180.power_text": "In «Orbit» shut down, sleep and restart are picked on the whole screen in big letters, with the arrows or the mouse."
 }
