@@ -783,5 +783,6 @@
  "fixes.v182_5": "Names on hover over the clock, tiles and Minecraft slots are easy to read: they used to be tiny.",
  "fixes.v182_6": "Weather on the taskbar shows at once, not after five minutes; if the network isn't up yet, PoDee asks again in half a minute.",
  "n182.player": "Player with lyrics",
- "n182.player_text": "The cover, time, buttons and the song's words under them. The words hide and show with one button."
+ "n182.player_text": "The cover, time, buttons and the song's words under them. The words hide and show with one button.",
+ "fixes.v182_7": "Text fits everywhere: a name on hover by the screen's edge no longer runs off it, the limits' reset times aren't cut, Control Center tiles and the toggles fit long names."
 }
