@@ -2,7 +2,7 @@
 // the crypto wallets and the wish form are built here for every page.
 const CONFIG = {
   podee: "https://github.com/podylab/PoDee-releases/releases/latest/download/", // + PoDee_x64-setup.exe or PoDee_x86-setup.exe
-  podeeVersion: "1.8.1", // shown until GitHub answers with the latest release; update it with every release
+  podeeVersion: "1.8.2", // shown until GitHub answers with the latest release; update it with every release
   releases: "https://github.com/podylab/PoDee-releases/releases",
   card: "https://www.donationalerts.com/r/polab", // the DonationAlerts page, e.g. https://www.donationalerts.com/r/name
   form: "https://formspree.io/f/xwllnbpp", // Formspree endpoint, e.g. https://formspree.io/f/xxxxxxx

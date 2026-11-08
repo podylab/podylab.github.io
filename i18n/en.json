@@ -775,5 +775,13 @@
  "n180.dots": "The «Orbit» theme",
  "n180.dots_text": "In 1.8 the island, taskbar, widgets and even Settings are made of dots: a typeface of its own with Cyrillic, one accent colour, dark and light.",
  "n180.power": "Power screen",
- "n180.power_text": "In «Orbit» shut down, sleep and restart are picked on the whole screen in big letters, with the arrows or the mouse."
+ "n180.power_text": "In «Orbit» shut down, sleep and restart are picked on the whole screen in big letters, with the arrows or the mouse.",
+ "fixes.v182_1": "New widget «Player with lyrics»: the cover, time and length, seek on the bar, the buttons and the song's words under it, shown or hidden with one button.",
+ "fixes.v182_2": "Lyrics on the desktop no longer jump: a long line fits in its place, in a slightly smaller face.",
+ "fixes.v182_3": "Taskbar on the left or right: icons at their normal size, full height too, and the bar no wider than it needs. In the Minecraft theme the clock and tiles are slots of the column, the tiles show their icons.",
+ "fixes.v182_4": "Minecraft theme: bigger words on the taskbar tiles.",
+ "fixes.v182_5": "Names on hover over the clock, tiles and Minecraft slots are easy to read: they used to be tiny.",
+ "fixes.v182_6": "Weather on the taskbar shows at once, not after five minutes; if the network isn't up yet, PoDee asks again in half a minute.",
+ "n182.player": "Player with lyrics",
+ "n182.player_text": "The cover, time, buttons and the song's words under them. The words hide and show with one button."
 }
