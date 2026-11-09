@@ -784,5 +784,22 @@
  "fixes.v182_6": "Weather on the taskbar shows at once, not after five minutes; if the network isn't up yet, PoDee asks again in half a minute.",
  "n182.player": "Player with lyrics",
  "n182.player_text": "The cover, time, buttons and the song's words under them. The words hide and show with one button.",
- "fixes.v182_7": "Text fits everywhere: a name on hover by the screen's edge no longer runs off it, the limits' reset times aren't cut, Control Center tiles and the toggles fit long names."
+ "fixes.v182_7": "Text fits everywhere: a name on hover by the screen's edge no longer runs off it, the limits' reset times aren't cut, Control Center tiles and the toggles fit long names.",
+ "fixes.v190_1": "New AnalogOS theme, light and dark. A full-width menu bar on top, the sections' icons on it, each with its own window. A liquid glass taskbar below: big app icons, a bin drawn as a bucket, the clock and status icons right on the glass. The Inter font and four wallpapers: Hills, Folds, Layers and Wave.",
+ "fixes.v190_2": "The assistant writes in messengers. Say «text Pete on Telegram: I'll be there at seven»: it finds the chat, types the message and sends it once you press Send. «Saved Messages» and «myself» go to Telegram. It no longer opens a Windows program in place of a messenger.",
+ "fixes.v190_3": "Windows wallpapers can be picked right in the gallery, and transparency goes up to 100%.",
+ "fixes.v190_4": "Right-click on the island opens PoDee's menu: Settings and Thanks, without Refresh and Save as.",
+ "fixes.v190_5": "A Claude Code agent's question leaves the island once you answer it in the terminal.",
+ "fixes.v190_6": "Liquid glass doesn't blink when the wallpaper changes and stays on while things move.",
+ "fixes.v190_7": "The «^» list and quick settings on the taskbar no longer jump or shrink while open.",
+ "fixes.v190_8": "Less memory: speech recognition models load only while recording.",
+ "fixes.v190_9": "Drag a file onto an app's icon on the taskbar: a ring lights round the icon and the app's window comes up so you can drop the file into it. Over the clock and the system icons the cursor shows you can't drop there, as in Windows.",
+ "fixes.v190_10": "The bin on the taskbar lights up while a file is held over it, and a full bin shows papers inside.",
+ "fixes.v190_11": "After start the taskbar shows up sooner and with its icons at once, with no empty strip at the bottom of the screen.",
+ "fixes.v190_12": "In AnalogOS the indicator's settings no longer offer what doesn't work on the menu bar.",
+ "n190.title": "New in 1.9",
+ "n190.analog": "AnalogOS theme",
+ "n190.analog_text": "A menu bar on top, liquid glass below, big icons and new wallpapers. Light and dark.",
+ "n190.msg": "Writes in messengers",
+ "n190.msg_text": "«Text Pete on Telegram»: the assistant finds the chat and sends once you press Send."
 }
