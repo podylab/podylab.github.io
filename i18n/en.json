@@ -812,5 +812,7 @@
  "fixes.v192_5": "Close a notification on the island with ✕ or a swipe; taskbar icons get an unread dot.",
  "fixes.v192_6": "Speech recognition knows names, and the new large-v3-turbo model hears them best.",
  "fixes.v192_7": "Fixed: the Microsoft Store version set a black wallpaper.",
- "fixes.v192_8": "Fixed: a blurred strip stayed over a full-screen game or remote desktop."
+ "fixes.v192_8": "Fixed: a blurred strip stayed over a full-screen game or remote desktop.",
+ "fixes.v193_1": "The AnalogOS transparency slider now takes effect in every panel at once. Before, the taskbar could stay see-through at 0% until a restart.",
+ "fixes.v193_2": "At 0%, liquid glass and widgets are solid too."
 }
