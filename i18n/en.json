@@ -804,5 +804,13 @@
  "n190.analog": "AnalogOS theme",
  "n190.analog_text": "A menu bar on top, liquid glass below, big icons and new wallpapers. Light and dark.",
  "n190.msg": "Writes in messengers",
- "n190.msg_text": "«Text Pete on Telegram»: the assistant finds the chat and sends once you press Send."
+ "n190.msg_text": "«Text Pete on Telegram»: the assistant finds the chat and sends once you press Send.",
+ "fixes.v192_1": "AnalogOS: choose your glass, frosted or liquid. What lies behind the menu bar, the taskbar and the section windows shows through, app windows included.",
+ "fixes.v192_2": "One transparency slider for both: at 0% the panels are solid, at 100% there is no haze.",
+ "fixes.v192_3": "All of AnalogOS is glass now: Start, menus, quick settings and a new power screen. Settings sit on Windows' own glass.",
+ "fixes.v192_4": "New AnalogOS wallpapers, Dunes and Fan, and a side taskbar with a blue Start.",
+ "fixes.v192_5": "Close a notification on the island with ✕ or a swipe; taskbar icons get an unread dot.",
+ "fixes.v192_6": "Speech recognition knows names, and the new large-v3-turbo model hears them best.",
+ "fixes.v192_7": "Fixed: the Microsoft Store version set a black wallpaper.",
+ "fixes.v192_8": "Fixed: a blurred strip stayed over a full-screen game or remote desktop."
 }
