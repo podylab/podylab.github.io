@@ -814,5 +814,10 @@
  "fixes.v192_7": "Fixed: the Microsoft Store version set a black wallpaper.",
  "fixes.v192_8": "Fixed: a blurred strip stayed over a full-screen game or remote desktop.",
  "fixes.v193_1": "The AnalogOS transparency slider now takes effect in every panel at once. Before, the taskbar could stay see-through at 0% until a restart.",
- "fixes.v193_2": "At 0%, liquid glass and widgets are solid too."
+ "fixes.v193_2": "At 0%, liquid glass and widgets are solid too.",
+ "fixes.v194_1": "In AnalogOS the battery now sits on the menu bar next to the date, with its percent. Wi-Fi, sound and the clock stay on the taskbar.",
+ "fixes.v194_2": "The widgets' edit bar, their settings and the list are light in the light theme and dark in the dark one, every label readable.",
+ "fixes.v194_3": "Open widget settings switch to the widget you click.",
+ "fixes.v194_4": "The «Soft square» shape no longer turns a long widget into an oval, and «Circle» no longer cuts off text.",
+ "fixes.v194_5": "Fixed: a right click on the Bitrix24 tray icon didn't open its window, and some apps' tray icons vanished after PoDee restarted."
 }
