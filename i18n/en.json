@@ -815,6 +815,8 @@
  "fixes.v192_8": "Fixed: a blurred strip stayed over a full-screen game or remote desktop.",
  "fixes.v193_1": "The AnalogOS transparency slider now takes effect in every panel at once. Before, the taskbar could stay see-through at 0% until a restart.",
  "fixes.v193_2": "At 0%, liquid glass and widgets are solid too.",
+ "fixes.v196_1": "Sleep, shut down and restart work again. On newer laptops with Modern Standby, «Sleep» used to do nothing.",
+ "fixes.v196_2": "When a game, a film or a remote desktop goes full screen, the island and the taskbar slide off the screen edge and come back afterwards. Turn it off in Settings → Modules → «In games and films».",
  "fixes.v195_1": "Shortcuts widget: an «Add shortcut» button, a name of your own for each shortcut, the path picked with «File…» or «Folder…». The file picker no longer hides under the widgets.",
  "fixes.v195_2": "«Claude limits» show only the accounts connected in Settings → Agents.",
  "fixes.v195_3": "In AnalogOS «^» and «Show desktop» on the taskbar are as tall as the letters, and the hints of the icons on the right are full size.",
