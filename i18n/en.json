@@ -827,6 +827,7 @@
  "fixes.v1912_3": "After Explorer restarts or the PC wakes from sleep, the menu bar takes its place again: maximized windows don't slide under it.",
  "fixes.v1912_4": "A PoDee window that crashed or hung (the island, the taskbar, widgets) loads again by itself instead of staying empty until a restart.",
  "fixes.v1912_5": "PoDee is lighter: about 0.9 GB of memory idle instead of 1.4. Windows share processes; the closed island and widgets keep less memory.",
+ "fixes.v1913_1": "A remote desktop full screen on the main monitor is no longer covered by the island when you switch to a window on another monitor: the edge of a window maximized there (Edge, a browser) is no longer taken for a window on top.",
  "fixes.v1910_1": "Wallpapers set by PoDee no longer leave a black screen, the Microsoft Store version included: the picture goes into your real Pictures folder (OneDrive too), and Windows switches the background to it even from «Solid color», «Slideshow» or «Windows spotlight».",
  "fixes.v1910_2": "AnalogOS: the taskbar's «Flare» flows into the screen's edge again, on frosted and liquid glass.",
  "fixes.v1910_3": "The menu bar on the main monitor takes its place at once on start instead of sliding right.",
