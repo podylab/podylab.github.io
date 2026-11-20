@@ -836,6 +836,7 @@
  "fixes.v1917_1": "PoDee's taskbar pins are now a list of its own, apart from Windows'. On the first start it's filled from Windows' pins, and Settings → Taskbar has a «Fill from Windows pins» button.",
  "fixes.v1917_2": "An open app always shows on the taskbar, even one pinned in Windows but removed from PoDee: Yandex Browser used to vanish from it.",
  "fixes.v1917_3": "The taskbar also shows the windows an app asks to have their own button, as Windows does.",
+ "fixes.v1920_1": "AnalogOS's menu bar slides off the screen for a fullscreen app together with its blurred glass, as one piece: no separate blurred strip is left behind.",
  "fixes.v1919_1": "Apps that Windows puts back under the menu bar (say, WhatsApp snapped to half the screen) are brought out by PoDee within a couple of seconds.",
  "fixes.v1919_2": "After a remote desktop or a game leaves full screen, the taskbar is back over the windows and takes clicks again. The same for widgets set over the windows.",
  "fixes.v1919_3": "A maximized window's invisible border no longer takes the taskbar's clicks.",
