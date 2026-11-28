@@ -840,6 +840,8 @@
  "fixes.v1917_1": "PoDee's taskbar pins are now a list of its own, apart from Windows'. On the first start it's filled from Windows' pins, and Settings → Taskbar has a «Fill from Windows pins» button.",
  "fixes.v1917_2": "An open app always shows on the taskbar, even one pinned in Windows but removed from PoDee: Yandex Browser used to vanish from it.",
  "fixes.v1917_3": "The taskbar also shows the windows an app asks to have their own button, as Windows does.",
+ "fixes.v1102_1": "A program that updated itself while open has its own icon on the taskbar again, not a blank page.",
+ "fixes.v1102_2": "The input language in the taskbar corner changes at once with Shift+Alt too.",
  "fixes.v1101_1": "The interface language changes at once in every window: the island, the taskbar and the widgets.",
  "fixes.v1101_2": "A closed program’s button leaves the taskbar at once, not a few seconds later. In RetroOS its button goes and the others close up right away.",
  "fixes.v1101_3": "The input language (RU, EN…) in the taskbar corner changes at once, after Win+Space too.",
